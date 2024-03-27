@@ -1,2 +1,3 @@
-spring.application.name=imyeomsu-lck
-asdasdas
+spring:
+  application:
+    name: imyeomsu-lck
