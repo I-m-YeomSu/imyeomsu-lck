@@ -21,20 +21,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
-@DynamicInsert
-@DynamicUpdate
-@Table(name = "team")
+@Table(name = "teams")
 public class Team {
 
 	//팀키
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "team_id")
 	private Long team;
 	
@@ -45,12 +41,12 @@ public class Team {
 	private String logo;
 	
 	//팀순위
-	private int teamRank;
+	private int teamRanking;
 	
 	//승점
-	private int winPoint;
+	private int winningPoint;
 	
 	//승수
-	private int winGame;
+	private int winningGame;
 	
 }

@@ -39,11 +39,11 @@ public class Predict {
 	@Column(name = "predict_id")
 	private Long predictId;
 	
-	private Long homeVote;
+	private Long homeTeamVote;
 	
-	private Long awayVote;
+	private Long awayTeamVote;
 	
-	private LocalDateTime date;
+	private LocalDateTime matchDate;
 
 	
 }

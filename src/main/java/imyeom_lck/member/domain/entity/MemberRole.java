@@ -1,4 +1,4 @@
-package imyeom_lck.memberrole.domain.entity;
+package imyeom_lck.member.domain.entity;
 
 import java.io.Serializable;
 
@@ -9,6 +9,9 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
@@ -38,44 +41,20 @@ CREATE TABLE members_roles (
 @Builder
 public class MemberRole {
 	
-	 @EmbeddedId
-	 private Pk pk;
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 private Long memberRoleId;
 	 
-	 @MapsId("memberId")
+
      @ManyToOne(fetch = FetchType.LAZY)
      @JoinColumn(name = "member_id")
-     private imyeom_lck.member.domain.entity.Member.Member member;
+     private Member member;
 	 
-	 @MapsId("roleId")
+
 	 @ManyToOne(fetch = FetchType.LAZY)
 	 @JoinColumn(name = "role_id")
 	 private Role role;
 	 
-	 @Embeddable
-     @EqualsAndHashCode
-     @Getter
-     @Builder
-     @AllArgsConstructor
-     @NoArgsConstructor
-     public static class Pk implements Serializable {
 
-         @Column(name = "account_id")
-         private Long memberId;
-
-         @Column(name = "role_id")
-         private Long roleId;
- 
-     }
-	 
-	 public static MemberRole createAccountRole(Member.Member member, Role role){
-	        return MemberRole.builder()
-	                .pk(Pk.builder()
-	                        .roleId(role.getRoleId())
-	                        .memberId(member.getMemberId())
-	                        .build())
-	                .member(member)
-	                .role(role)
-	                .build();
-	 }
 	 
 }

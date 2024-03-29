@@ -22,20 +22,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
-@DynamicInsert
-@DynamicUpdate
-@Table(name = "merchandise")
+@Table(name = "merchandises")
 public class Merchandise {
 	
 	//상품키
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "merchandise_id")
 	private Long merchandiseId;
 	

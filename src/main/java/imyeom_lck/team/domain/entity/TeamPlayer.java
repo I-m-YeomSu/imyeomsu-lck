@@ -1,8 +1,7 @@
-package imyeom_lck.teamplayer.domain.entity;
+package imyeom_lck.team.domain.entity;
 
 
 import imyeom_lck.player.domain.entity.Player;
-import imyeom_lck.team.domain.entity.Team;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -18,18 +17,16 @@ public class TeamPlayer {
 
 	//팀선수키
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "team_player_id")
 	private Long teamPlayerId;
 	
 	//팀
-	@MapsId("teamId")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private Team team;
 	
 	//선수
-	@MapsId("playerId")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "player_id")
     private Player player;
