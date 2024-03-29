@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -30,7 +31,7 @@ import lombok.ToString;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "league")
+@Table(name = "leagues")
 public class League {
 
 	//리그키
@@ -47,7 +48,7 @@ public class League {
 	//경기일정
 	@OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
 	@JoinColumn(name = "game_table_id")
-    private GameTable gameTable;
+    private MatchSchedule matchSchedule;
 	
 	//리그시작일
 	private LocalDateTime startDate;

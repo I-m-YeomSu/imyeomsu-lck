@@ -1,10 +1,11 @@
-package imyeom_lck;
+package imyeom_lck.match_schedule.domain.entity;
 
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import imyeom_lck.Predict;
 import imyeom_lck.game.domain.Game;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,7 +24,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,14 +31,14 @@ import lombok.ToString;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "game_tables")
-public class GameTable {
+@Table(name = "match schedules")
+public class MatchSchedule {
 
 	//경기일정키
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "game_table_id")
-	private Long gameTableId;
+	private Long matchScheduleId;
 	
 	//경기키
 	@OneToMany(mappedBy = "game_tables", fetch = FetchType.LAZY)
