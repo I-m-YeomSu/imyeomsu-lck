@@ -1,7 +1,5 @@
 package imyeom_lck.common.dto;
 
-package com.yalooStore.common_utils.dto;
-
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
@@ -14,7 +12,6 @@ import java.util.List;
  *
  * @param <T> 응답 데이터 타입
  * */
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

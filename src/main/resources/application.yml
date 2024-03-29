@@ -1,6 +1,8 @@
 spring:
   application:
     name: imyeomsu-lck
+
+
 ---
 spring:
   profiles:
