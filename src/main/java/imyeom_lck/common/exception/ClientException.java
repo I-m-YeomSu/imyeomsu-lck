@@ -14,7 +14,6 @@ public class ClientException extends RuntimeException{
     private final HttpStatus responseStatus;
     private final String displayErrorMessage;
 
-
     public ClientException(ErrorCode errorCode,String message) {
         this(errorCode, errorCode.getName(), message);
     }

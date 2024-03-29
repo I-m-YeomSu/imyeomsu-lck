@@ -1,4 +1,4 @@
-package imyeom_lck.common;
+package imyeom_lck.common.domain.entity;
 
 
 import java.time.LocalDateTime;

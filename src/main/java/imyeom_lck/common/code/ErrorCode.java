@@ -26,7 +26,6 @@ public enum ErrorCode {
     MEMBER_INVALID_REQUEST("잘못된 회원 정보 요청입니다.", HttpStatus.BAD_REQUEST),
 
 
-
     //401 unauthorized
     UNAUTHORIZED("해당 요청에 대한 안증이 필요합니다.", HttpStatus.UNAUTHORIZED),
     MEMBER_ORDER_UNAUTHORIZED("해당 주문에 대한 회원 권한이 없습니다.", HttpStatus.UNAUTHORIZED),
@@ -34,7 +33,6 @@ public enum ErrorCode {
 
     //403 forbidden
     FORBIDDEN("해당 요청 불가합니다.", HttpStatus.FORBIDDEN),
-
 
 
     //not found

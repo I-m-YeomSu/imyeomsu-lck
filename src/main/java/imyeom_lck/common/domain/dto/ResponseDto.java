@@ -1,4 +1,4 @@
-package imyeom_lck.common.dto;
+package imyeom_lck.common.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
