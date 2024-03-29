@@ -1,39 +1,27 @@
-package imyeom_lck.game.domain;
+package imyeom_lck.game.domain.entity;
 
 import imyeom_lck.player.domain.entity.Player;
-import imyeom_lck.Player;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Getter
-@Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
-@DynamicInsert
-@DynamicUpdate
 @Table(name = "game")
 public class Game {
 
-	//경기
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "game_id")
 	private Long gameId;
-
-	//선수
-	@OneToMany(mappedBy = "game", fetch = FetchType.LAZY)
-	@JoinColumn(name = "player_id")
-	private Player player;
 
 	//승패
 	private boolean winner;
 
-	//pog
+	//pog 해당부분은 따로 테이블로 뺄수도 있음 ~~~_~_~_~_~ㄴ
 	private String pog;
 
 }

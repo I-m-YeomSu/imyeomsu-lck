@@ -1,9 +1,10 @@
 package imyeom_lck.player.service.impl;
 
-import imyeom_lck.member.service.inter.MemberService;
+import imyeom_lck.player.service.inter.PlayerService;
+
 import org.springframework.stereotype.Service;
 
 @Service
-public class PlayerServiceImpl implements MemberService {
+public class PlayerServiceImpl implements PlayerService {
 
 }

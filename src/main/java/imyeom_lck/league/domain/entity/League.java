@@ -2,7 +2,6 @@ package imyeom_lck.league.domain.entity;
 
 import java.time.LocalDateTime;
 
-import imyeom_lck.GameTable;
 import imyeom_lck.team.domain.entity.Team;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -15,6 +14,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -25,37 +25,34 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
-@DynamicInsert
-@DynamicUpdate
 @Table(name = "leagues")
 public class League {
 
 	//리그키
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "league_id")
 	private Long leagueId;
 	
 	//팀
-	@OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "team_id")
     private Team team;
 	
 	//경기일정
-	@OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
-	@JoinColumn(name = "game_table_id")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "match_schedule_id")
     private MatchSchedule matchSchedule;
 	
 	//리그시작일
 	private LocalDateTime startDate;
 	
 	//리그종료일
+	@Column(name = "end_date", nullable = true)
 	private LocalDateTime endDate;
 	
 }

@@ -37,7 +37,7 @@ public class PointUsage {
 
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="member_id")
-	private Member.Member member;
+	private Member member;
 	
 	//포인트분류군
 	private Long usageClassification;
