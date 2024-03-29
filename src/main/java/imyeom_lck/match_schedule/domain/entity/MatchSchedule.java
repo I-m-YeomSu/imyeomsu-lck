@@ -2,6 +2,7 @@ package imyeom_lck.match_schedule.domain.entity;
 
 import java.time.LocalDateTime;
 
+import imyeom_lck.predict.domain.entity.Predict;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 

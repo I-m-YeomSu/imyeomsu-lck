@@ -1,5 +1,6 @@
 package imyeom_lck.game.domain;
 
+import imyeom_lck.player.domain.entity.Player;
 import imyeom_lck.Player;
 import jakarta.persistence.*;
 import lombok.*;
