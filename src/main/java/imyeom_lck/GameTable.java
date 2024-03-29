@@ -6,6 +6,7 @@ import imyeom_lck.predict.domain.entity.Predict;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import imyeom_lck.game.domain.Game;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

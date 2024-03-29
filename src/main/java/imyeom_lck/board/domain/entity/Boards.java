@@ -1,4 +1,4 @@
-package imyeom_lck;
+package imyeom_lck.board.domain.entity;
 
 import java.time.LocalDateTime;
 
@@ -6,6 +6,7 @@ import imyeom_lck.member.domain.entity.Member;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import imyeom_lck.member.domain.entity.Member;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
