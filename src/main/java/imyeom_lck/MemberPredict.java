@@ -1,5 +1,6 @@
 package imyeom_lck;
 
+import imyeom_lck.member.domain.entity.Member;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

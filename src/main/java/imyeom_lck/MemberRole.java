@@ -2,6 +2,7 @@ package imyeom_lck;
 
 import java.io.Serializable;
 
+import imyeom_lck.member.domain.entity.Member;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
