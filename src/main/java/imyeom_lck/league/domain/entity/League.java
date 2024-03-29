@@ -1,8 +1,9 @@
-package imyeom_lck;
+package imyeom_lck.league.domain.entity;
 
 import java.time.LocalDateTime;
 
-import imyeom_lck.predict.domain.entity.Predict;
+import imyeom_lck.GameTable;
+import imyeom_lck.team.domain.entity.Team;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -31,43 +32,29 @@ import lombok.ToString;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "game_tables")
-public class GameTable {
+@Table(name = "league")
+public class League {
 
-	//경기일정키
+	//리그키
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "game_table_id")
-	private Long gameTableId;
+    @Column(name = "league_id")
+	private Long leagueId;
 	
-	//경기키
-	@OneToMany(mappedBy = "game_tables", fetch = FetchType.LAZY)
-	@JoinColumn(name = "game_id")
-	private Game game;
+	//팀
+	@OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
+	@JoinColumn(name = "team_id")
+    private Team team;
 	
-	@OneToMany(mappedBy = "predict", fetch = FetchType.LAZY)
-	@JoinColumn(name = "predict_id")
-    private Predict predict;
+	//경기일정
+	@OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
+	@JoinColumn(name = "game_table_id")
+    private GameTable gameTable;
 	
-	//경기날짜및시간
-	private LocalDateTime matchDate;
+	//리그시작일
+	private LocalDateTime startDate;
 	
-	//홈팀
-	private int home;
-	
-	//원정팀
-	private int away;
-	
-	//홈팀승점
-	private int homePoint;
-	
-	//원정팀승점
-	private int awayPoint;
-	
-	//경기결과
-	private boolean matchResult;
-	
-	//showdown 여부
-	private boolean showdown;
+	//리그종료일
+	private LocalDateTime endDate;
 	
 }

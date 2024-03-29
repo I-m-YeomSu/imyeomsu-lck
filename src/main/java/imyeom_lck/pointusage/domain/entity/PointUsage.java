@@ -1,4 +1,4 @@
-package imyeom_lck;
+package imyeom_lck.pointusage.domain.entity;
 
 import java.time.LocalDateTime;
 
@@ -26,23 +26,25 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @Builder
 @Entity
-public class Boards {
+public class PointUsage {
 	
-	//게시판키
+	//포인트내역키
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "board_id")
-	private Long boardId;
-	
-	//회원키
+	@Column(name = "point_usage_id")
+	private Long pointUsageId;
+
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="member_id")
 	private Member.Member member;
-
-	//글
-	private String content;
 	
-	//날짜
-	private LocalDateTime date;
+	//포인트분류군
+	private Long usageClassification;
+	
+	//포인트날짜
+	private LocalDateTime usageDate;
+	
+	//포인트사용내역
+	private String pointHistory;
 	
 }

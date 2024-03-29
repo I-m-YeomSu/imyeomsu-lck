@@ -1,5 +1,6 @@
 package imyeom_lck;
 
+import imyeom_lck.player.domain.entity.Player;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;

@@ -1,48 +1,46 @@
-package imyeom_lck;
+package imyeom_lck.predict.domain.entity;
 
 import java.time.LocalDateTime;
 
-import imyeom_lck.member.domain.entity.Member;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-@RequiredArgsConstructor
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@Entity
 @DynamicInsert
 @DynamicUpdate
-@Getter
-@Builder
-@Entity
-public class Boards {
-	
-	//게시판키
+@Table(name = "predict")
+public class Predict {
+
+	//승부예측키
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "board_id")
-	private Long boardId;
+	@Column(name = "predict_id")
+	private Long predictId;
 	
-	//회원키
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="member_id")
-	private Member.Member member;
-
-	//글
-	private String content;
+	private Long homeVote;
 	
-	//날짜
+	private Long awayVote;
+	
 	private LocalDateTime date;
 	
 }
