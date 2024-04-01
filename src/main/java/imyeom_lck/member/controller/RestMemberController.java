@@ -5,6 +5,7 @@ import imyeom_lck.common.domain.dto.ResponseDto;
 import imyeom_lck.common.exception.ClientException;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.service.impl.MemberServiceImpl;
+import imyeom_lck.member.service.inter.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
