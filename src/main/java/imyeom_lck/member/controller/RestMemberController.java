@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class RestMemberController {
 
-    private final MemberServiceImpl memberService;
+    private final MemberService memberService;
 
     @GetMapping(value="/members/details/{memberId}")
     public ResponseDto<MemberDetailsResponseDTO> getMemberDetails(@PathVariable Long memberId) {
