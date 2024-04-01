@@ -45,6 +45,7 @@ connection_date datetime
  */
 
 @Getter
+@Setter
 @Builder
 @Entity
 @NoArgsConstructor
@@ -59,13 +60,13 @@ public class Member {
 
     @OneToMany(fetch=FetchType.LAZY)
     @JoinColumn(name = "point_usage_id")
-    private List<PointUsage> pointUsages = new ArrayList<>();
+    private List<PointUsage> pointUsages;
 
     @Column(nullable = false)
     private Long financeId;
 
     @Column(nullable = false)
-    private Long loginId;
+    private String loginId;
 
     private String password;
 
