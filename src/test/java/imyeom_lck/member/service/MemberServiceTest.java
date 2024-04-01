@@ -24,6 +24,7 @@ public class MemberServiceTest {
     private static final String PASSWORD = "password1";
     private static final String PHONENUMBER = "phonenum1";
     private static final String LOGIN_ID = "loginId1";
+    private static final boolean CHECK = false;
 
     @InjectMocks
     private MemberServiceImpl memberService;
@@ -40,6 +41,7 @@ public class MemberServiceTest {
         member.setPassword(PASSWORD);
         member.setPhoneNumber(PHONENUMBER);
         member.setLoginId(LOGIN_ID);
+        member.isDeleted();
     }
 
     @Test
@@ -64,6 +66,17 @@ public class MemberServiceTest {
 
         // then
         assertEquals(MEMBER_ID, foundMember);
+    }
+
+    @Test
+    void deletemember(){
+        //given
+        when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
+
+        //when
+        Member delmember = memberService.deleteMember(MEMBER_ID);
+
+        assertEquals(delmember.isDeleted(), true);
     }
 
 }
