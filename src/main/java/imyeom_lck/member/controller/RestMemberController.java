@@ -2,6 +2,7 @@ package imyeom_lck.member.controller;
 
 
 import imyeom_lck.common.domain.dto.ResponseDto;
+import imyeom_lck.common.exception.ClientException;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.service.impl.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +27,14 @@ public class RestMemberController {
                 .status(HttpStatus.OK)
                 .success(true)
                 .build();
+    }
+
+    @GetMapping(value = "/members/{loginId}")
+    public Long getMemberId(@PathVariable String loginId) {
+        try {
+            return memberService.findByLoginId(loginId);
+        } catch (ClientException e) {
+            return null;
+        }
     }
 }
