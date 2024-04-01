@@ -13,7 +13,7 @@ public class MemberDetailsResponseDTO {
     private String memberPhone;
     private String memberPassword;
     private String cheeringTeam;
-    private String pushAlert;
+    private boolean isAlert;
     private int memberPoint;
 }
 

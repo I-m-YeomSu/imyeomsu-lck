@@ -33,7 +33,14 @@ public class MemberServiceImpl implements MemberService {
         Member member = memberRepository.findById(memberId)
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다."));
 
-        return new MemberDetailsResponseDTO();
+        return new MemberDetailsResponseDTO(
+                member.getName(),
+                member.getPhoneNumber(),
+                member.getPassword(),
+                member.getCheeringTeam(),
+                member.isAlert(),
+                member.getPoint()
+        );
     }
 
     public Long findByLoginId(String loginId) {
