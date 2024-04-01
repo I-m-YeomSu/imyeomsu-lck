@@ -41,7 +41,6 @@ public class MemberServiceTest {
         member.setPassword(PASSWORD);
         member.setPhoneNumber(PHONENUMBER);
         member.setLoginId(LOGIN_ID);
-        member.isDeleted();
     }
 
     @Test
@@ -77,6 +76,7 @@ public class MemberServiceTest {
         Member delmember = memberService.deleteMember(MEMBER_ID);
 
         assertEquals(delmember.isDeleted(), true);
+        assertEquals(delmember.getLoginId(), "deleted" + LOGIN_ID);
     }
 
 }
