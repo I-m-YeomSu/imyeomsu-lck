@@ -4,6 +4,7 @@ package imyeom_lck.member.controller;
 import imyeom_lck.common.domain.dto.ResponseDto;
 import imyeom_lck.common.exception.ClientException;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
+import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.domain.entity.SignUpRequest;
@@ -46,6 +47,7 @@ public class RestMemberController {
     //회원가입 - 트러블슈팅 == PK는 빌드하지 않기
     @PostMapping(value = "/signUp")
     public Member signUp(SignUpRequestDTO signUpRequestDTO){
+
         return memberService.signUp(signUpRequestDTO);
     }
 
@@ -53,11 +55,15 @@ public class RestMemberController {
     //삭제
     @PostMapping(value = "/delete")
     public Member deleteMember(Long memberId){
+
         return memberService.deleteMember(memberId);
     }
 
 
     //업데이트
-
+    @PostMapping(value = "/update")
+    public Member updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO){
+        return memberService.updateMember(memberId, memberUpdateDTO);
+    }
 
 }
