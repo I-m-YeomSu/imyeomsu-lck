@@ -1,0 +1,69 @@
+package imyeom_lck.member.service;
+
+
+import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
+import imyeom_lck.member.domain.entity.Member;
+import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
+import imyeom_lck.member.service.impl.MemberServiceImpl;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
+public class MemberServiceTest {
+    private static final Long MEMBER_ID = 1L;
+    private static final String PASSWORD = "password1";
+    private static final String PHONENUMBER = "phonenum1";
+    private static final String LOGIN_ID = "loginId1";
+
+    @InjectMocks
+    private MemberServiceImpl memberService;
+
+    @Mock
+    private JpaMemberRepository memberRepository;
+
+    private Member member;
+
+    @BeforeEach
+    void setUp() {
+        member = new Member();
+        member.setMemberId(MEMBER_ID);
+        member.setPassword(PASSWORD);
+        member.setPhoneNumber(PHONENUMBER);
+        member.setLoginId(LOGIN_ID);
+    }
+
+    @Test
+    void getMemberDetails() {
+        // given
+        when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
+
+        // when
+        MemberDetailsResponseDTO responseDTO = memberService.getMemberDetails(MEMBER_ID);
+
+        // then
+        assertNotNull(responseDTO); // 회원 정보가 null이 아닌지 확인
+    }
+
+    @Test
+    void getMemberId() {
+        // given
+        when(memberRepository.findByLoginId(LOGIN_ID)).thenReturn(Optional.of(member));
+
+        // when
+        Long foundMember = memberService.findByLoginId(LOGIN_ID); // 숫자를 문자열로 변환하여 전달
+
+        // then
+        assertEquals(MEMBER_ID, foundMember);
+    }
+
+}
