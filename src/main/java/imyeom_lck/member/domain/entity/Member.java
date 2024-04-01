@@ -95,4 +95,5 @@ public class Member {
         this.isDeleted = true;
         return this;
     }
+
 }
