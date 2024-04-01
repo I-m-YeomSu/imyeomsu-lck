@@ -16,3 +16,4 @@ public class MemberDetailsResponseDTO {
     private String pushAlert;
     private int memberPoint;
 }
+
