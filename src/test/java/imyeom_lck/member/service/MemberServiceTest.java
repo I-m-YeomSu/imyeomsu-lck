@@ -2,6 +2,7 @@ package imyeom_lck.member.service;
 
 
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
+import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
 import imyeom_lck.member.service.impl.MemberServiceImpl;
@@ -33,6 +34,7 @@ public class MemberServiceTest {
     private JpaMemberRepository memberRepository;
 
     private Member member;
+    private MemberUpdateDTO memberUpdateDTO;
 
     @BeforeEach
     void setUp() {
@@ -41,6 +43,11 @@ public class MemberServiceTest {
         member.setPassword(PASSWORD);
         member.setPhoneNumber(PHONENUMBER);
         member.setLoginId(LOGIN_ID);
+
+        memberUpdateDTO = new MemberUpdateDTO();
+        memberUpdateDTO.setLoginId("updateID!!");
+        memberUpdateDTO.setPassword("updatePW!!");
+        memberUpdateDTO.setPhoneNumber("updatePN!!");
     }
 
     @Test
@@ -73,10 +80,26 @@ public class MemberServiceTest {
         when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
 
         //when
+        MemberUpdateDTO memberUpdateDTO = new MemberUpdateDTO();
         Member delmember = memberService.deleteMember(MEMBER_ID);
 
+        //then
         assertEquals(delmember.isDeleted(), true);
         assertEquals(delmember.getLoginId(), "deleted" + LOGIN_ID);
+    }
+
+    @Test
+    void updatemember(){
+        //given
+        when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
+
+        //when
+        Member updatemember = memberService.updateMember(MEMBER_ID, memberUpdateDTO);
+
+        //then
+        assertEquals(updatemember.getLoginId(),"updateID!!");
+        assertEquals(updatemember.getPassword(),"updatePW!!");
+        assertEquals(updatemember.getPhoneNumber(),"updatePN!!");
     }
 
 }
