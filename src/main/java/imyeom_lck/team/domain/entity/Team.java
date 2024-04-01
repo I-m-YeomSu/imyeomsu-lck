@@ -37,16 +37,16 @@ public class Team {
 	//팀명
 	private String teamName;
 	
-	//로고
+	//팀 로고 - S3 path값
 	private String logo;
 	
 	//팀순위
 	private int teamRanking;
-	
-	//승점
-	private int winningPoint;
-	
+
 	//승수
 	private int winningGame;
-	
+
+	//승점
+	private int winningPoint;
+
 }

@@ -83,5 +83,4 @@ public class Member {
 
     private boolean isDeleted;
 
-
 }

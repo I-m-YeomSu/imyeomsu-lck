@@ -2,10 +2,8 @@ package imyeom_lck.match_schedule.domain.entity;
 
 import java.time.LocalDateTime;
 
-import imyeom_lck.game.domain.entity.Game;
-import imyeom_lck.predict.domain.entity.Predict;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
+import imyeom_lck.team.domain.entity.Team;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,14 +13,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Builder
@@ -38,31 +33,23 @@ public class MatchSchedule {
     @Column(name = "match_schedule_id")
 	private Long matchScheduleId;
 	
-	//경기키
+	//홈-팀키
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "game_id")
-	private Game game;
+	@JoinColumn(name = "team_id")
+	private Team homeTeam;
 
-	
+	//원정-팀키
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "team_id")
+	private Team awayTeam;
+
 	//경기날짜및시간
 	private LocalDateTime matchDate;
-	
-	//홈팀
-	private int homeTeam;
-	
-	//원정팀
-	private int awayTeam;
-	
-	//홈팀승점
-	private int homePoint;
-	
-	//원정팀승점
-	private int awayPoint;
-	
+
 	//경기결과
 	private boolean matchResult;
 	
-	//showdown 여부
+	//Saturday Showdown 여부
 	private boolean isShowdown;
 	
 }
