@@ -40,5 +40,6 @@ public class PointUsage {
 	
 	//포인트사용내역
 	private String pointHistory;
+
 	
 }

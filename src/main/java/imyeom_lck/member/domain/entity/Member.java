@@ -1,6 +1,7 @@
 package imyeom_lck.member.domain.entity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.annotations.DynamicInsert;
@@ -44,33 +45,28 @@ connection_date datetime
  */
 
 @Getter
-@Setter
 @Builder
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@Entity
-@DynamicInsert
-@DynamicUpdate
 @SQLRestriction("IS_DELETED = false")
 @Table(name = "members")
 public class Member {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "member_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn()
-    private PointUsage pointUsages;
-
-    private Long financeId;
-
-    @Column(nullable = false, unique = true)
-    private String loginId;
+    @OneToMany(fetch=FetchType.LAZY)
+    @JoinColumn(name = "point_usage_id")
+    private List<PointUsage> pointUsages = new ArrayList<>();
 
     @Column(nullable = false)
+    private Long financeId;
+
+    @Column(nullable = false)
+    private Long loginId;
+
     private String password;
 
     private String name;
@@ -83,12 +79,10 @@ public class Member {
 
     private int point;
 
-    private String alert;
-
-    @Column(name = "connection_date")
-    private List<String> connectionDate;
+    private boolean isAlert;
 
     private boolean isDeleted;
+
 
     public Member deletedMember(String loginId) {
         this.loginId = "deleted" + loginId;
