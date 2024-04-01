@@ -37,7 +37,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     public Long findByLoginId(String loginId) {
-        Member member = memberRepository.findById(Long.valueOf(loginId))
+        Member member = memberRepository.findByLoginId(loginId)
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_NOT_FOUND, "해당 id를 가진 회원이 없습니다."));
 
         return member.getMemberId();
