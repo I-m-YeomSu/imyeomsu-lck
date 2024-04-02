@@ -41,7 +41,8 @@ public class MemberServiceImpl implements MemberService {
                 member.getPassword(),
                 member.getCheeringTeam(),
                 member.isAlert(),
-                member.getPoint()
+                member.getPoint(),
+                member.isDeleted()
         );
     }
 
@@ -53,12 +54,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member signUp(SignUpRequestDTO signUpRequestDTO) {
-
-//        Member member = memberRepository.findById(signUpRequestDTO.getMemberId()).
-//                orElseThrow(() -> new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다."));
-
-        log.info(" signuprequestdto {}",signUpRequestDTO.getLoginId());
+    public MemberDetailsResponseDTO signUp(SignUpRequestDTO signUpRequestDTO) {
 
         Member member = Member.builder()
                 .loginId(signUpRequestDTO.getLoginId())
@@ -78,21 +74,21 @@ public class MemberServiceImpl implements MemberService {
 
         jpaMemberRoleRepository.save(memberRole);
 
-        return member;
+        return MemberDetailsResponseDTO.fromEntity(member);
     }
 
     @Override
-    public Member deleteMember(Long memberId) {
+    public MemberDetailsResponseDTO deleteMember(Long memberId) {
         Member deleteMember = memberRepository.findById(memberId)
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다."));
 
         deleteMember.deletedMember(deleteMember.getLoginId());
 
-        return deleteMember;
+        return MemberDetailsResponseDTO.fromEntity(deleteMember);
     }
 
     @Override
-    public MemberUpdateDTO updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO){
+    public MemberDetailsResponseDTO updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO){
         Member updateMember = memberRepository.findById(memberId)
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다."));
 
@@ -102,13 +98,8 @@ public class MemberServiceImpl implements MemberService {
         updateMember.setPhoneNumber(memberUpdateDTO.getPhoneNumber());
         updateMember.setCheeringTeam(memberUpdateDTO.getCheeringTeam());
 
+        return MemberDetailsResponseDTO.fromEntity(updateMember);
 
-        return MemberUpdateDTO.builder()
-            .loginId(updateMember.getLoginId())
-            .name(updateMember.getName())
-            .phoneNumber(updateMember.getPhoneNumber())
-            .cheeringTeam(updateMember.getCheeringTeam())
-            .build();
     }
 }
 

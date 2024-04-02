@@ -61,24 +61,41 @@ public class RestMemberController {
 
     @Operation(summary = "회원가입")
     @PostMapping(value = "/signUp")
-    public Member signUp(@Valid @RequestBody SignUpRequestDTO signUpRequestDTO){
+    public ResponseDto<MemberDetailsResponseDTO> signUp(@Valid @RequestBody SignUpRequestDTO signUpRequestDTO){
 
-        return memberService.signUp(signUpRequestDTO);
+        return ResponseDto.<MemberDetailsResponseDTO>builder()
+                .data(memberService.signUp(signUpRequestDTO))
+                .status(HttpStatus.OK)
+                .success(true)
+                .build();
     }
 
 
     @Operation(summary = "memberId 로 회원삭제")
     @PostMapping(value = "/delete")
-    public Member deleteMember(@Valid @PathVariable("memberId") Long memberId){
+    public ResponseDto<MemberDetailsResponseDTO> deleteMember(@Valid @PathVariable("memberId") Long memberId){
 
-        return memberService.deleteMember(memberId);
+        MemberDetailsResponseDTO memberDetailsResponseDTO = memberService.deleteMember(memberId);
+
+        return ResponseDto.<MemberDetailsResponseDTO>builder()
+                .data(memberDetailsResponseDTO)
+                .status(HttpStatus.OK)
+                .success(true)
+                .build();
     }
 
 
     @Operation(summary = "회원 업데이트")
     @PostMapping(value = "/update/{id}")
-    public MemberUpdateDTO updateMember (@Valid @PathVariable("id") Long id, @RequestBody  MemberUpdateDTO memberUpdateDTO){
-        return memberService.updateMember(id, memberUpdateDTO);
+    public ResponseDto<MemberDetailsResponseDTO> updateMember (@Valid @PathVariable("id") Long id, @RequestBody  MemberUpdateDTO memberUpdateDTO){
+
+        MemberDetailsResponseDTO memberDetailsResponseDTO = memberService.updateMember(id, memberUpdateDTO);
+
+        return ResponseDto.<MemberDetailsResponseDTO>builder()
+                .data(memberDetailsResponseDTO)
+                .status(HttpStatus.OK)
+                .success(true)
+                .build();
     }
 
 }

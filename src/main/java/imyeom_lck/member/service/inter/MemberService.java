@@ -11,9 +11,9 @@ public interface MemberService {
 	MemberDetailsResponseDTO getMemberDetails(Long memberId);
 	Long findByLoginId(String loginId);
 
-	Member signUp(SignUpRequestDTO signUpRequestDTO);
+	MemberDetailsResponseDTO signUp(SignUpRequestDTO signUpRequestDTO);
 
-	Member deleteMember(Long memberId);
+	MemberDetailsResponseDTO deleteMember(Long memberId);
 
-	MemberUpdateDTO updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO);
+	MemberDetailsResponseDTO updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO);
 }
