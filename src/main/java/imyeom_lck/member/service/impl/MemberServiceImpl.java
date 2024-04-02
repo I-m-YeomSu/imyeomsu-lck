@@ -91,7 +91,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO){
+    public MemberUpdateDTO updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO){
         Member updateMember = memberRepository.findById(memberId)
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다."));
 
@@ -100,9 +100,14 @@ public class MemberServiceImpl implements MemberService {
         updateMember.setName(memberUpdateDTO.getName());
         updateMember.setPhoneNumber(memberUpdateDTO.getPhoneNumber());
         updateMember.setCheeringTeam(memberUpdateDTO.getCheeringTeam());
-        updateMember.setAlert(memberUpdateDTO.isAlert());
 
-        return updateMember;
+
+        return MemberUpdateDTO.builder()
+            .loginId(updateMember.getLoginId())
+            .name(updateMember.getName())
+            .phoneNumber(updateMember.getPhoneNumber())
+            .cheeringTeam(updateMember.getCheeringTeam())
+            .build();
     }
 }
 

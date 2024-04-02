@@ -61,9 +61,9 @@ public class RestMemberController {
 
 
     //업데이트
-    @PostMapping(value = "/update")
-    public Member updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO){
-        return memberService.updateMember(memberId, memberUpdateDTO);
+    @PostMapping(value = "/update/{id}")
+    public MemberUpdateDTO updateMember(@PathVariable("id") Long id, MemberUpdateDTO memberUpdateDTO){
+        return memberService.updateMember(id, memberUpdateDTO);
     }
 
 }
