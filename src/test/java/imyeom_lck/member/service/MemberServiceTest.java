@@ -38,13 +38,11 @@ public class MemberServiceTest {
 
     @BeforeEach
     void setUp() {
-        member = new Member();
         member.setMemberId(MEMBER_ID);
         member.setPassword(PASSWORD);
         member.setPhoneNumber(PHONENUMBER);
         member.setLoginId(LOGIN_ID);
 
-        memberUpdateDTO = new MemberUpdateDTO();
         memberUpdateDTO.setLoginId("updateID!!");
         memberUpdateDTO.setPassword("updatePW!!");
         memberUpdateDTO.setPhoneNumber("updatePN!!");
@@ -81,7 +79,6 @@ public class MemberServiceTest {
         when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
 
         //when
-        MemberUpdateDTO memberUpdateDTO = new MemberUpdateDTO();
         Member delmember = memberService.deleteMember(MEMBER_ID);
 
         //then
