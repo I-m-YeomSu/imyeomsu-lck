@@ -11,8 +11,10 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi memberControllerApi() {
-        String[] paths = {"/members/**"};
+        // 경로
+        String[] paths = {"/members/**"}; 
 
+        // 그룹 만들어서 리턴
         return GroupedOpenApi.builder()
                 .group("RestMemberController")
                 .pathsToMatch(paths)

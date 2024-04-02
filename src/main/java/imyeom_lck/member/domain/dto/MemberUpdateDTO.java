@@ -28,5 +28,4 @@ public class MemberUpdateDTO {
     @Schema(description = "응원팀", example = "cheeringTeam")
     private String cheeringTeam;
 
-
 }
