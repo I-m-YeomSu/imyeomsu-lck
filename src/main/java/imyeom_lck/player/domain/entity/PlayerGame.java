@@ -1,6 +1,5 @@
 package imyeom_lck.player.domain.entity;
 
-import imyeom_lck.game.domain.entity.Game;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
