@@ -4,6 +4,7 @@ package imyeom_lck.match_schedule.controller;
 import imyeom_lck.common.domain.dto.ResponseDto;
 import imyeom_lck.common.exception.ClientException;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
+import imyeom_lck.match_schedule.domain.dto.NextMatchResponseDTO;
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.service.inter.MemberService;
@@ -28,6 +29,19 @@ public class RestMatchScheduleController {
 
         ResponseDto<List<MatchesResponseDTO>> response = ResponseDto.<List<MatchesResponseDTO>>builder()
                 .data(matchesResponseDTO)
+                .status(HttpStatus.OK)
+                .success(true)
+                .build();
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(value = "/matches/nextMatch")
+    public ResponseEntity<ResponseDto<NextMatchResponseDTO>> getNextMatch() {
+        NextMatchResponseDTO nextMatchResponseDTO = matchScheduleService.getNextMatch();
+
+        ResponseDto<NextMatchResponseDTO> response = ResponseDto.<NextMatchResponseDTO>builder()
+                .data(nextMatchResponseDTO)
                 .status(HttpStatus.OK)
                 .success(true)
                 .build();
