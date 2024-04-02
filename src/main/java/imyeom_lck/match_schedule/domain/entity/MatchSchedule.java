@@ -32,16 +32,10 @@ public class MatchSchedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "match_schedule_id")
 	private Long matchScheduleId;
-	
-	//홈-팀키
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "team_id")
-	private Team homeTeam;
 
-	//원정-팀키
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "team_id")
-	private Team awayTeam;
+	private Long homeTeam;
+
+	private Long awayTeam;
 
 	//경기날짜및시간
 	private LocalDateTime matchDate;
