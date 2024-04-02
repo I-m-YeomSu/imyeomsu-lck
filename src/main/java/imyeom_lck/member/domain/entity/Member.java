@@ -84,4 +84,14 @@ public class Member {
 
     private boolean isDeleted;
 
+
+    public Member deletedMember(String loginId) {
+        this.loginId = "deleted" + loginId;
+        this.isDeleted = true;
+        return this;
+        
+    }
+
+
+
 }
