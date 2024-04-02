@@ -1,6 +1,8 @@
-package imyeom_lck;
+package imyeom_lck.swagger;
+
 
 import org.springdoc.core.models.GroupedOpenApi;
+import org.springdoc.core.properties.SwaggerUiConfigParameters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
 
     @Bean
-    public GroupedOpenApi chatOpenApi() {
+    public GroupedOpenApi memberControllerApi() {
         String[] paths = {"/members/**"};
 
         return GroupedOpenApi.builder()
-                .group("COUPLE API v1")
+                .group("RestMemberController")
                 .pathsToMatch(paths)
                 .build();
     }

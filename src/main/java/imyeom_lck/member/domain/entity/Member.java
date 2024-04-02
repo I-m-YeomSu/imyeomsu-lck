@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SQLRestriction;
@@ -54,36 +55,47 @@ connection_date datetime
 @Table(name = "members")
 public class Member {
 
-
+    @Schema(description = "유저 번호", example = "1")
     @Id
     @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberId;
 
+    @Schema(description = "포인트 사용내역", example = "pointUsages")
     @OneToMany(fetch=FetchType.LAZY)
     @JoinColumn(name = "point_usage_id")
     private List<PointUsage> pointUsages;
 
+    @Schema(description = "금융상픔번호", example = "1")
     @Column(nullable = false)
     private Long financeId;
 
+    @Schema(description = "유저 아이디", example = "loginId")
     @Column(nullable = false)
     private String loginId;
 
+    @Schema(description = "유저 비밀번호", example = "password")
     private String password;
 
+    @Schema(description = "유저 이름", example = "name")
     private String name;
 
+    @Schema(description = "핸드폰 번호", example = "phoneNumber")
     private String phoneNumber;
 
+    @Schema(description = "응원팀", example = "cheeringTeam")
     private String cheeringTeam;
 
+    @Schema(description = "유저 접속정보", example = "connectionStatus")
     private boolean connectionStatus;
 
+    @Schema(description = "보유 포인트", example = "point")
     private int point;
 
+    @Schema(description = "알람", example = "true")
     private boolean isAlert;
 
+    @Schema(description = "유저 삭제상태", example = "false")
     private boolean isDeleted;
 
 

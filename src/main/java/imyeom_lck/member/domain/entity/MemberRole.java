@@ -40,16 +40,17 @@ CREATE TABLE members_roles (
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 public class MemberRole {
-	
+
+
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long memberRoleId;
-	 
+
 
      @ManyToOne(fetch = FetchType.LAZY)
      @JoinColumn(name = "member_id")
      private Member member;
-	 
+
 
 	 @ManyToOne(fetch = FetchType.LAZY)
 	 @JoinColumn(name = "role_id")
