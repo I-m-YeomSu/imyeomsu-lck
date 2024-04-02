@@ -35,6 +35,7 @@ public class MemberServiceImpl implements MemberService {
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다."));
 
         return new MemberDetailsResponseDTO(
+                member.getLoginId(),
                 member.getName(),
                 member.getPhoneNumber(),
                 member.getPassword(),
