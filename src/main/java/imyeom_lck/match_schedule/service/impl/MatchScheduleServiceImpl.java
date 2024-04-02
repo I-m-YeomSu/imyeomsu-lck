@@ -25,7 +25,11 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
         for(MatchSchedule matchSchedule : matchSchedules) {
             matchesResponseDTOS.add(new MatchesResponseDTO(
                     matchSchedule.getHomeTeam(),
+<<<<<<< HEAD
+                    matchSchedule.getAwayTeam(),
+=======
 //                    matchSchedule.getAwayTeam().getTeam(),
+>>>>>>> ea8f5c012d0fe60b0e1fdd4fae393c33ea668e3a
                     matchSchedule.getMatchDate().toString(),
                     matchSchedule.isMatchResult(),
                     matchSchedule.isShowdown())

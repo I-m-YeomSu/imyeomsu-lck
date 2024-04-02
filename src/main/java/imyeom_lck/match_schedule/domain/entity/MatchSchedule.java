@@ -48,9 +48,24 @@ public class MatchSchedule {
 
 
 	//setter 대신 Builder 패턴 쓰기
+<<<<<<< HEAD
+	@Builder
+	public static MatchSchedule createMatchSchedule(
+			Long homeTeam,
+			Long awayTeam,
+			LocalDateTime matchDate,
+			boolean matchResult,
+			boolean isShowdown) {
+=======
 //	public static void createMatchSchedule()
+>>>>>>> ea8f5c012d0fe60b0e1fdd4fae393c33ea668e3a
 
-
-
-	
+		return MatchSchedule.builder()
+				.homeTeam(homeTeam)
+				.awayTeam(awayTeam)
+				.matchDate(matchDate)
+				.matchResult(matchResult)
+				.isShowdown(isShowdown)
+				.build();
+    }
 }

@@ -53,6 +53,8 @@ connection_date datetime
 @SQLRestriction("IS_DELETED = false")
 @Table(name = "members")
 public class Member {
+
+
     @Id
     @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
