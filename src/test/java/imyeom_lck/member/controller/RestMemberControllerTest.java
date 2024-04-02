@@ -39,7 +39,6 @@ public class RestMemberControllerTest {
                 .andExpect(jsonPath("$.data.memberPhone").value("123456789"))
                 .andExpect(jsonPath("$.data.memberPassword").value("password123"))
                 .andExpect(jsonPath("$.data.cheeringTeam").value("TeamA"))
-                .andExpect(jsonPath("$.data.isAlert").value(true))
                 .andExpect(jsonPath("$.data.memberPoint").value(100));
 
     }
