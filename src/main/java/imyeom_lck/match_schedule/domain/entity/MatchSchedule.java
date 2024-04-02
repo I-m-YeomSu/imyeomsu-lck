@@ -35,7 +35,7 @@ public class MatchSchedule {
 
 	private Long homeTeam;
 
-	private Long awayTeam;
+//	private Long awayTeam;
 
 	//경기날짜및시간
 	private LocalDateTime matchDate;
@@ -48,7 +48,7 @@ public class MatchSchedule {
 
 
 	//setter 대신 Builder 패턴 쓰기
-	public static void createMatchSchedule()
+//	public static void createMatchSchedule()
 
 
 

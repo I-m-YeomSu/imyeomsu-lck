@@ -11,23 +11,24 @@ import java.time.LocalDateTime;
 
 public class DummyMatchSchedule {
 
-    public static MatchSchedule createDummyMatchSchedule(String memberName, String password, String phoneNumber, String loginId) {
-        MatchSchedule matchSchedule = new MatchSchedule();
-
-        member.setName(memberName);
-        member.setPassword(password);
-        member.setPhoneNumber(phoneNumber);
-        member.setLoginId(loginId);
-        return member;
-
-
-        private Long matchScheduleId;
-        private Team homeTeam;
-        private Team awayTeam;
-        private LocalDateTime matchDate;
-        private boolean matchResult;
-        private boolean isShowdown;
-        return matchSchedule
-
-    }
+//    public static MatchSchedule createDummyMatchSchedule(String memberName, String password, String phoneNumber, String loginId) {
+//        MatchSchedule matchSchedule = new MatchSchedule();
+//
+//
+////        member.setName(memberName);
+////        member.setPassword(password);
+////        member.setPhoneNumber(phoneNumber);
+////        member.setLoginId(loginId);
+////        return member;
+//
+////
+////        private Long matchScheduleId;
+////        private Team homeTeam;
+////        private Team awayTeam;
+////        private LocalDateTime matchDate;
+////        private boolean matchResult;
+////        private boolean isShowdown;
+////        return matchSchedule
+//
+//    }
 }

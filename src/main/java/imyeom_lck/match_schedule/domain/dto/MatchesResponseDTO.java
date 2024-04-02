@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class MatchesResponseDTO {
 
     private Long homeTeam;
-    private Long awayTeam;
+//    private Long awayTeam;
     private String matchDate;
     private boolean matchResult;
     private boolean isShowdown;
