@@ -9,7 +9,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi chatOpenApi() {
-        String[] paths = {"/swagger/**"};
+        String[] paths = {"/members/**"};
 
         return GroupedOpenApi.builder()
                 .group("COUPLE API v1")

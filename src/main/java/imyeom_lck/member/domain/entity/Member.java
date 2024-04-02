@@ -89,7 +89,7 @@ public class Member {
         this.loginId = "deleted" + loginId;
         this.isDeleted = true;
         return this;
-        
+
     }
 
 
