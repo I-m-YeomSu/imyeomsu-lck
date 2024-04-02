@@ -36,7 +36,7 @@ public class RestMemberControllerTest {
     @DisplayName("회원Id로 회원 정보 조회 - 회원이 존재하는 경우")
     @Test
     public void testMemberDetails() throws Exception {
-        MemberDetailsResponseDTO dummyMemberDetails = new MemberDetailsResponseDTO("mem1", "123456789", "password1", "TeamA", true, 100);
+        MemberDetailsResponseDTO dummyMemberDetails = new MemberDetailsResponseDTO("id", "mem1", "123456789", "password1", "TeamA", true, 100, false);
         given(this.memberService.getMemberDetails(anyLong()))
                 .willReturn(dummyMemberDetails);
 
@@ -76,11 +76,11 @@ public class RestMemberControllerTest {
                 .phoneNumber("01033333333")
                 .build();
 
-        Member dummyMember = Member.builder()
-                .name("name1")
+        MemberDetailsResponseDTO dummyMember = MemberDetailsResponseDTO.builder()
+                .memberName("name1")
                 .loginId("memberId1")
-                .password("password1")
-                .phoneNumber("01033333333")
+                .memberPassword("password1")
+                .memberPhone("01033333333")
                 .build();
 
         given(this.memberService.signUp(any(SignUpRequestDTO.class))).willReturn(dummyMember);
@@ -107,11 +107,11 @@ public class RestMemberControllerTest {
                 .phoneNumber("01033333333")
                 .build();
 
-        Member dummyMember = Member.builder()
-                .name("name1")
+        MemberDetailsResponseDTO dummyMember = MemberDetailsResponseDTO.builder()
+                .memberName("name1")
                 .loginId("memberId1")
-                .password("password1")
-                .phoneNumber("01033333333")
+                .memberPassword("password1")
+                .memberPhone("01033333333")
                 .build();
 
         given(this.memberService.signUp(any(SignUpRequestDTO.class))).willReturn(dummyMember);
@@ -133,12 +133,11 @@ public class RestMemberControllerTest {
 
         Long deletedMemberId = 1L;
 
-        Member dummyMember = Member.builder()
-                .name("name1")
+        MemberDetailsResponseDTO dummyMember = MemberDetailsResponseDTO.builder()
+                .memberName("name1")
                 .loginId("memberId1")
-                .password("password1")
-                .phoneNumber("01033333333")
-                .isDeleted(true)
+                .memberPassword("password1")
+                .memberPhone("01033333333")
                 .build();
 
 
@@ -160,12 +159,11 @@ public class RestMemberControllerTest {
 
         Long deletedMemberId = 1L;
 
-        Member dummyMember = Member.builder()
-                .name("name1")
+        MemberDetailsResponseDTO dummyMember = MemberDetailsResponseDTO.builder()
+                .memberName("name1")
                 .loginId("memberId1")
-                .password("password1")
-                .phoneNumber("01033333333")
-                .isDeleted(true)
+                .memberPassword("password1")
+                .memberPhone("01033333333")
                 .build();
 
 
@@ -194,14 +192,14 @@ public class RestMemberControllerTest {
                 .phoneNumber("01033333333")
                 .build();
 
-        MemberUpdateDTO dummyMember = MemberUpdateDTO.builder()
-                .name("update!!!")
-                .loginId("update!!!")
-                .password("update!!!")
-                .phoneNumber("update!!!")
+        MemberDetailsResponseDTO dummyMember = MemberDetailsResponseDTO.builder()
+                .memberName("change!!")
+                .loginId("change!!")
+                .memberPassword("change!!")
+                .memberPhone("change!!")
                 .build();
 
-        given(this.memberService.updateMember(anyLong(), any(MemberUpdateDTO.class))).willReturn(memberUpdateDTO);
+        given(this.memberService.updateMember(anyLong(), any(MemberUpdateDTO.class))).willReturn(dummyMember);
 
 
         this.mvc.perform(post("/members/update/{id}",updateMemberId)

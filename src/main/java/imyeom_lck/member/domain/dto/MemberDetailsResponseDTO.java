@@ -31,6 +31,9 @@ public class MemberDetailsResponseDTO {
     @Schema(description = "보유포인트", example = "memberPoint")
     private int memberPoint;
 
+    @Schema(description = "유저 삭제상태", example = "false")
+    private boolean isDeleted;
+
     public static MemberDetailsResponseDTO fromEntity(Member member){
         return MemberDetailsResponseDTO.builder()
                 .memberName(member.getName())
@@ -39,6 +42,7 @@ public class MemberDetailsResponseDTO {
                 .memberPoint(member.getPoint())
                 .cheeringTeam(member.getCheeringTeam())
                 .isAlert(member.isAlert())
+                .isDeleted(member.isDeleted())
                 .build();
     }
 }

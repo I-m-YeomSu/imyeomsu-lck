@@ -79,7 +79,7 @@ public class MemberServiceTest {
         when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
 
         //when
-        Member delmember = memberService.deleteMember(MEMBER_ID);
+        MemberDetailsResponseDTO delmember = memberService.deleteMember(MEMBER_ID);
 
         //then
         assertEquals(delmember.isDeleted(), true);
@@ -92,12 +92,12 @@ public class MemberServiceTest {
         when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
 
         //when
-        MemberUpdateDTO updatemember = memberService.updateMember(MEMBER_ID, memberUpdateDTO);
+        MemberDetailsResponseDTO updatemember = memberService.updateMember(MEMBER_ID, memberUpdateDTO);
 
         //then
         assertEquals(updatemember.getLoginId(),"updateID!!");
-        assertEquals(updatemember.getPassword(),"updatePW!!");
-        assertEquals(updatemember.getPhoneNumber(),"updatePN!!");
+        assertEquals(updatemember.getMemberPassword(),"updatePW!!");
+        assertEquals(updatemember.getMemberPhone(),"updatePN!!");
         assertEquals(updatemember.getCheeringTeam(),"updateCT!!");
     }
 
