@@ -1,15 +1,22 @@
 package imyeom_lck.match_schedule.service.impl;
 
+import imyeom_lck.common.code.ErrorCode;
+import imyeom_lck.common.exception.ClientException;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
+import imyeom_lck.match_schedule.domain.dto.NextMatchResponseDTO;
 import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
 import imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository;
+import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
+import imyeom_lck.member.domain.entity.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,5 +40,20 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
         }
 
         return matchesResponseDTOS;
+    }
+
+    public NextMatchResponseDTO getNextMatch() {
+
+        LocalDateTime nowDateTime =  LocalDateTime.now();
+
+        MatchSchedule matchSchedule = matchRepository.findAllByMatchDateGreaterThanOrderByMatchDateAsc(nowDateTime)
+                .orElseThrow(() -> new ClientException(ErrorCode.NOT_FOUND, "다음 경기를 찾을 수 없습니다."));
+
+        return new NextMatchResponseDTO(
+                matchSchedule.getHomeTeam(),
+                matchSchedule.getAwayTeam(),
+                matchSchedule.getMatchDate().toString(),
+                matchSchedule.isShowdown()
+        );
     }
 }
