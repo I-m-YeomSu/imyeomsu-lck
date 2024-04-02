@@ -10,9 +10,8 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class SignUpRequestDTO {
-
-    private Long memberId;
 
     private String loginId;
 
