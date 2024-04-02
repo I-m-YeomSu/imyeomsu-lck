@@ -15,11 +15,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -187,32 +187,35 @@ public class RestMemberControllerTest {
 
         Long updateMemberId = 1L;
 
-        MemberUpdateDTO memberUpdateDTO = MemberUpdateDTO.builder()
+        Member dummyMember = Member.builder()
                 .name("name1")
                 .loginId("memberId1")
                 .password("password1")
                 .phoneNumber("01033333333")
                 .build();
 
-        Member dummyMember = Member.builder()
+        MemberUpdateDTO memberUpdateDTO = MemberUpdateDTO.builder()
                 .name("update!!!")
                 .loginId("update!!!")
                 .password("update!!!")
                 .phoneNumber("update!!!")
                 .build();
 
-        given(this.memberService.updateMember(anyLong(), any(MemberUpdateDTO.class))).willReturn(dummyMember);
+        given(this.memberService.updateMember(anyLong(), any(MemberUpdateDTO.class)))
+            .willReturn(memberUpdateDTO);
 
 
-        this.mvc.perform(post("/members/update")
-                        .param("id", updateMemberId.toString())
-                        .param("memberUpdateDTO", String.valueOf(memberUpdateDTO))
+        ObjectMapper mapper = new ObjectMapper();
+
+        this.mvc.perform(post("/members/update/{id}", updateMemberId)
+                        .content(mapper.writeValueAsString(memberUpdateDTO))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("update!!!"))
                 .andExpect(jsonPath("$.loginId").value("update!!!"))
                 .andExpect(jsonPath("$.password").value("update!!!"))
-                .andExpect(jsonPath("$.phoneNumber").value("update!!!"));
+                .andExpect(jsonPath("$.phoneNumber").value("update!!!"))
+            .andDo(print());
 
 
     }

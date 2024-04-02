@@ -92,7 +92,7 @@ public class MemberServiceTest {
         when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
 
         //when
-        Member updatemember = memberService.updateMember(MEMBER_ID, memberUpdateDTO);
+        MemberUpdateDTO updatemember = memberService.updateMember(MEMBER_ID, memberUpdateDTO);
 
         //then
         assertEquals(updatemember.getLoginId(),"updateID!!");

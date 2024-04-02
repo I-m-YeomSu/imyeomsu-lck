@@ -22,6 +22,5 @@ public class MemberUpdateDTO {
 
     private String cheeringTeam;
 
-    private boolean isAlert;
 
 }
