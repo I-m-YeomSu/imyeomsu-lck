@@ -51,5 +51,12 @@ public class MatchSchedule {
 	
 	//Saturday Showdown 여부
 	private boolean isShowdown;
+
+
+	//setter 대신 Builder 패턴 쓰기
+	public static void createMatchSchedule()
+
+
+
 	
 }
