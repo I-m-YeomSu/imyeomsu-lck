@@ -26,9 +26,7 @@ public class PlayerGame {
 	@JoinColumn(name = "player_id")
 	private Player player;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "game_id")
-	private Game game;
+
 
 
 }
