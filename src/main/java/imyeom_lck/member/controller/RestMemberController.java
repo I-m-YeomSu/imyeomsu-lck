@@ -44,7 +44,7 @@ public class RestMemberController {
         }
     }
 
-    //회원가입 - 트러블슈팅 == PK는 빌드하지 않기
+    //회원가입
     @PostMapping(value = "/signUp")
     public Member signUp(SignUpRequestDTO signUpRequestDTO){
 

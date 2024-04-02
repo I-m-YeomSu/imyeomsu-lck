@@ -48,6 +48,7 @@ public class MemberServiceTest {
         memberUpdateDTO.setLoginId("updateID!!");
         memberUpdateDTO.setPassword("updatePW!!");
         memberUpdateDTO.setPhoneNumber("updatePN!!");
+        memberUpdateDTO.setCheeringTeam("updateCT!!");
     }
 
     @Test
@@ -100,6 +101,7 @@ public class MemberServiceTest {
         assertEquals(updatemember.getLoginId(),"updateID!!");
         assertEquals(updatemember.getPassword(),"updatePW!!");
         assertEquals(updatemember.getPhoneNumber(),"updatePN!!");
+        assertEquals(updatemember.getCheeringTeam(),"updateCT!!");
     }
 
 }

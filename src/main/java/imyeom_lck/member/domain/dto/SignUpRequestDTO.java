@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SignUpRequestDTO {
 
+    private Long memberId;
 
     private String loginId;
 
