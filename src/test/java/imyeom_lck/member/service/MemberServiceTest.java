@@ -78,6 +78,20 @@ public class MemberServiceTest {
     }
 
     @Test
+    void signUp(){
+        //given
+        when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
+
+        //when
+        MemberDetailsResponseDTO delmember = memberService.deleteMember(MEMBER_ID);
+
+        //then
+        assertEquals(true, delmember.isDeleted());
+        assertEquals("deleted"  + LOGIN_ID , delmember.getLoginId());
+    }
+
+
+    @Test
     void deletemember(){
         //given
         when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
