@@ -12,21 +12,21 @@ pipeline {
             steps {
                 // GitHub에서 소스 코드를 체크아웃합니다.
                 git branch: 'main',
-                credentialsId: '',
-                git 'https://github.com/your/repository.git'
+                url: 'https://github.com/your/repository.git'
             }
         }
         stage('Chmod +x') {
-	        steps {
-	            sh '''
-	                chmod +x gradlew
-	            '''
-	            }
-	        }
+            steps {
+                sh '''
+                    chmod +x gradlew
+                '''
+            }
+        }
         stage('Gradle Build') {
+            steps {
                 echo 'build start with gradle'
                 sh './gradlew clean build'
-            
+            }
         }
         stage('Code Coverage') {
             steps {
@@ -63,4 +63,5 @@ pipeline {
         }
     }
 }
+
 ```
