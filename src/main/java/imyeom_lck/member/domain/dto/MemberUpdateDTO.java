@@ -3,13 +3,13 @@ package imyeom_lck.member.domain.dto;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MemberUpdateDTO {
 
     @Schema(description = "유저 아이디", example = "loginId")

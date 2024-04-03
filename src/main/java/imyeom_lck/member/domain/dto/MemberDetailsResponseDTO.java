@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,6 +37,7 @@ public class MemberDetailsResponseDTO {
 
     public static MemberDetailsResponseDTO fromEntity(Member member){
         return MemberDetailsResponseDTO.builder()
+                .loginId(member.getLoginId())
                 .memberName(member.getName())
                 .memberPhone(member.getPhoneNumber())
                 .memberPassword(member.getPassword())
