@@ -38,16 +38,19 @@ public class MemberServiceTest {
 
     @BeforeEach
     void setUp() {
+        member = new Member();
         member.setMemberId(MEMBER_ID);
         member.setPassword(PASSWORD);
         member.setPhoneNumber(PHONENUMBER);
         member.setLoginId(LOGIN_ID);
 
+        memberUpdateDTO = new MemberUpdateDTO();
         memberUpdateDTO.setLoginId("updateID!!");
         memberUpdateDTO.setPassword("updatePW!!");
         memberUpdateDTO.setPhoneNumber("updatePN!!");
         memberUpdateDTO.setCheeringTeam("updateCT!!");
     }
+
 
     @Test
     void getMemberDetails() {
@@ -58,7 +61,8 @@ public class MemberServiceTest {
         MemberDetailsResponseDTO responseDTO = memberService.getMemberDetails(MEMBER_ID);
 
         // then
-        assertNotNull(responseDTO); // 회원 정보가 null이 아닌지 확인
+        assertNotNull(responseDTO.getLoginId()); // 회원 정보가 null이 아닌지 확인
+
     }
 
     @Test
@@ -82,8 +86,8 @@ public class MemberServiceTest {
         MemberDetailsResponseDTO delmember = memberService.deleteMember(MEMBER_ID);
 
         //then
-        assertEquals(delmember.isDeleted(), true);
-        assertEquals(delmember.getLoginId(), "deleted" + LOGIN_ID);
+        assertEquals(true, delmember.isDeleted());
+        assertEquals("deleted"  + LOGIN_ID , delmember.getLoginId());
     }
 
     @Test
