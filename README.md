@@ -10,9 +10,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // GitHub에서 소스 코드를 체크아웃합니다.
                 git branch: 'main',
-                url: 'https://github.com/your/repository.git'
+                credentialsId: '',
+                git 'https://github.com/your/repository.git'
             }
         }
         stage('Chmod +x') {
