@@ -1,11 +1,14 @@
 package imyeom_lck.member.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
-import imyeom_lck.member.domain.dto.MemberUpdateDTO;
-import imyeom_lck.member.domain.dto.SignUpRequestDTO;
-import imyeom_lck.member.domain.entity.Member;
-import imyeom_lck.member.service.impl.MemberServiceImpl;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.BDDMockito.given;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,16 +16,13 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
+import imyeom_lck.member.domain.dto.MemberUpdateDTO;
+import imyeom_lck.member.domain.dto.SignUpRequestDTO;
+import imyeom_lck.member.service.impl.MemberServiceImpl;
 
 @WebMvcTest(RestMemberController.class)
 public class RestMemberControllerTest {
@@ -124,6 +124,7 @@ public class RestMemberControllerTest {
 //                .andExpect(jsonPath("$.data.loginId").value("memberId1"))
 //                .andExpect(jsonPath("$.data.memberPassword").value("password1"))
 //                .andExpect(jsonPath("$.data.memberPhone").value("01033333333"));
+//                .andExpect(jsonPath("$.data.memberPhone").value("010"));
 //
 //    }
 
