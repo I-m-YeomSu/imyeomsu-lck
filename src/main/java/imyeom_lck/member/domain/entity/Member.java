@@ -1,12 +1,8 @@
 package imyeom_lck.member.domain.entity;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SQLRestriction;
 
 import imyeom_lck.pointusage.domain.entity.PointUsage;
@@ -17,8 +13,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -26,7 +20,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 /*
 CREATE TABLE members(
@@ -67,7 +60,7 @@ public class Member {
     private List<PointUsage> pointUsages;
 
     @Schema(description = "금융상픔번호", example = "1")
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Long financeId;
 
     @Schema(description = "유저 아이디", example = "loginId")
