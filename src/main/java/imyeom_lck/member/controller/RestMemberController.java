@@ -72,7 +72,7 @@ public class RestMemberController {
 
 
     @Operation(summary = "memberId 로 회원삭제")
-    @PostMapping(value = "/delete")
+    @PostMapping(value = "/delete/{memberId}")
     public ResponseDto<MemberDetailsResponseDTO> deleteMember(@Valid @PathVariable("memberId") Long memberId){
 
         MemberDetailsResponseDTO memberDetailsResponseDTO = memberService.deleteMember(memberId);
