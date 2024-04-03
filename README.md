@@ -1,7 +1,10 @@
 # imyeomsu
 고가용성을 확보한 LCK 이벤트 프로젝트입니다.
 
-v1
+```
+lookslike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
+```
+
 파이프라인 테스트 스크립트
 ```
 pipeline {
