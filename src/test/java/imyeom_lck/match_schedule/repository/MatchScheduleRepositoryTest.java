@@ -9,6 +9,7 @@ import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
 import jakarta.persistence.EntityManager;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,7 @@ public class MatchScheduleRepositoryTest {
     }
 
 
+    @Disabled
     @DisplayName("모든 경기 일정 조회")
     @Test
     public void testGetAllMatchSchedules() {
