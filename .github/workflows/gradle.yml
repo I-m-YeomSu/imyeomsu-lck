@@ -1,61 +1,38 @@
-name: Java CI with Gradle
+name: Standalone Coveralls Report
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [ pull_request ]
 
+# In this workflow we will:
+# - wait for all sibling workflows to finish
+# - download artifacts with coverage reports from `coveralls` workflow
+# - send acquired artifacts to Coveralls as single report
 jobs:
-  build:
+  report:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5
-      - name: Build with Gradle Wrapper
-        run: |
-          chmod +x ./gradlew
-          ./gradlew build
+    - uses: actions/checkout@v3
 
-  dependency-submission:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-      - name: Generate and submit dependency graph
-        uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5
+    - name: Wait on tests (PR)
+      uses: lewagon/wait-on-check-action@v1.3.1
+      with:
+        # NOTE: The ref value should be different when triggered by pull_request event.
+        #       See: https://github.com/lewagon/wait-on-check-action/issues/25.
+        ref: ${{ github.event.pull_request.head.sha }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        wait-interval: 10 # seconds
+        running-workflow-name: report # the name of this job
+        allowed-conclusions: success,skipped,cancelled,failure
 
-  coveralls:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-      - name: Set execute permission for Gradle Wrapper
-        run: chmod +x ./gradlew
-      - name: Coveralls GitHub Action
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-        run: |
-          # 혹시 빌드하는 repo가 root가 아니면 cd 명령어를 통해 이동해주자.
-          # cd (빌드하는 repo의 경로)
-          ./gradlew clean test jacocoTestReport coveralls
+    - name: Download artifact
+      id: download-artifact
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        pr: ${{github.event.pull_request.number}}
+        workflow: coveralls.yml
+        workflow_conclusion: success
+
+    - uses: coverallsapp/github-action@v2
+      with:
+        format: lcov
+        debug: true
