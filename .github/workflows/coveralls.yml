@@ -9,27 +9,9 @@ jobs:
   coveralls:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      - name: Setup JDK
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-      
-      - name: Setup Gradle
-        uses: gradle/setup-gradle@v1
-        with:
-          gradle-version: '7.2' # 사용하는 Gradle 버전으로 변경하세요
-      
-      - name: Build and run tests
-        run: ./gradlew clean test
-      
-      - name: Generate coverage report
-        run: ./gradlew jacocoTestReport
-      
-      - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@v2.0.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./build/reports/jacoco/test/lcov.info # 생성된 커버리지 보고서의 경로로 변경하세요
+      - name: Coveralls GitHub Action
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        run: |
+          #cd (혹시 빌드하는 repo가 root가 아니면 cd 명령어를 통해 이동해주자.)
+          ./gradlew clean test jacocoTestReport coveralls
