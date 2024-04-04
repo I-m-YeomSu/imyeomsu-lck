@@ -1,33 +1,57 @@
-name: Test all platforms
+name: Java CI with Gradle
 
-on: [ push, pull_request ]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  test-linux:
-    uses: ./.github/workflows/test.yml
-    secrets:
-      token: ${{ secrets.COVERALLS_REPO_TOKEN }}
-
-  test-macos:
-    uses: ./.github/workflows/test.yml
-    with:
-      os: macos
-    secrets:
-      token: ${{ secrets.COVERALLS_REPO_TOKEN }}
-
-  test-windows:
-    uses: ./.github/workflows/test.yml
-    with:
-      os: windows
-    secrets:
-      token: ${{ secrets.COVERALLS_REPO_TOKEN }}
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      
+      - name: Setup Gradle
+        uses: gradle/setup-gradle@v1
+        with:
+          gradle-version: '7.2' # Gradle 버전을 맞게 설정해주세요
+      
+      - name: Build with Gradle Wrapper
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
 
   coveralls:
     runs-on: ubuntu-latest
-    if: ${{ always() }}
-    needs: [test-linux, test-macos, test-windows]
+    permissions:
+      contents: read
     steps:
-    - uses: coverallsapp/github-action@v2
-      with:
-        carryforward: "linux-1,linux-2,macos-2,macos-2,windows-1,windows-1"
-        parallel-finished: true
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      
+      - name: Set execute permission for Gradle Wrapper
+        run: chmod +x ./gradlew
+      
+      - name: Coveralls GitHub Action
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        run: 
+          # 빌드하는 repo가 root가 아니면 해당 경로로 이동해줍니다.
+          # cd (빌드하는 repo의 경로)
+          ./gradlew clean test jacocoTestReport coveralls
