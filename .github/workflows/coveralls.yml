@@ -24,10 +24,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/setup-gradle@v1
         with:
-          gradle-version: '7.2' # Gradle 버전을 맞게 설정해주세요
+          gradle-version: '8.6' # Gradle 버전을 맞게 설정해주세요
       
       - name: Build with Gradle Wrapper
-        run: |
+        run:
           chmod +x ./gradlew
           ./gradlew build
 
