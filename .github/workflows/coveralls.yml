@@ -9,6 +9,9 @@ jobs:
   coveralls:
     runs-on: ubuntu-latest
     steps:
+      - name: Set execute permission for Gradle Wrapper
+        run: chmod +x ./gradlew
+      
       - name: Coveralls GitHub Action
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
