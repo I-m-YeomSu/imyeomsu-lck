@@ -105,23 +105,19 @@ public class MemberRepositoryTest {
 
     }
 
-    // **************************** sign up ********************************************
 
 
     @DisplayName("SignUpRequest test")
     @Test
     public void testSignUpRequest_Success() {
+
+        //given
         entityManager.persist(signUpRequest1);
-//        entityManager.persist(member2);
+
 
         // when
-//        Member foundMember = memberRepository.findById(member2.getMemberId()).orElse(null);
         SignUpRequest createMember = signUpRequestRepository.findById(signUpRequest1.getMemberId()).orElse(null);
 
-//        assertEquals("mem2", foundMember.getName());
-//        assertEquals("password2", foundMember.getPassword());
-//        assertEquals("phonenum2", foundMember.getPhoneNumber());
-//        assertEquals("loginId2", foundMember.getLoginId());
 
         assertEquals("mem2", createMember.getName());
         assertEquals("password2", createMember.getPassword());

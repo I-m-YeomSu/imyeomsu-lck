@@ -12,4 +12,18 @@ public class DummyMember {
                 .loginId(loginId)
                 .build();
     }
+
+    public static Member dummy(){
+        return Member.builder()
+                .financeId(1L)
+                .password("pwd")
+                .name("test")
+                .loginId("test")
+                .phoneNumber("01022223333")
+                .cheeringTeam("1")
+                .connectionStatus(false)
+                .point(1000)
+                .alert(false)
+                .isDeleted(false).build();
+    }
 }

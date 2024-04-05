@@ -8,6 +8,10 @@ import jakarta.persistence.PersistenceContext;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 
+
+/*
+* 슬라이스 테스트를 위한 테스트 설정 파일입니다.
+* */
 @TestConfiguration
 public class QuerydslTestConfig {
 

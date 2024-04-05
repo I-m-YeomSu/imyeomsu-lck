@@ -3,6 +3,7 @@ package imyeom_lck.board.domain.entity;
 import java.time.LocalDateTime;
 
 import imyeom_lck.member.domain.entity.Member;
+import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -15,13 +16,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Builder
 @Entity
@@ -43,5 +40,6 @@ public class Board {
 	
 	//날짜
 	private LocalDateTime date;
-	
+
+
 }

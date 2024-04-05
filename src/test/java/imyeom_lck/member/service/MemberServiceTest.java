@@ -39,16 +39,15 @@ public class MemberServiceTest {
     @BeforeEach
     void setUp() {
         member = new Member();
-        member.setMemberId(MEMBER_ID);
-        member.setPassword(PASSWORD);
-        member.setPhoneNumber(PHONENUMBER);
-        member.setLoginId(LOGIN_ID);
 
         memberUpdateDTO = new MemberUpdateDTO();
         memberUpdateDTO.setLoginId("updateID!!");
         memberUpdateDTO.setPassword("updatePW!!");
         memberUpdateDTO.setPhoneNumber("updatePN!!");
         memberUpdateDTO.setCheeringTeam("updateCT!!");
+
+        member.updateMember(memberUpdateDTO);
+
     }
 
 
