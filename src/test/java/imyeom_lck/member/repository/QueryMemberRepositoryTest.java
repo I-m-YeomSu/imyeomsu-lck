@@ -105,6 +105,7 @@ public class QueryMemberRepositoryTest {
         List<PointUsage> puList = queryMemberRepository.queryDSLFindAllPUByMemberId(member1.getMemberId());
 
         assertEquals("History1", puList.get(0).getPointHistory());
+        assertEquals(member1.getMemberId(), puList.get(0).getMember().getMemberId());
 
     }
 

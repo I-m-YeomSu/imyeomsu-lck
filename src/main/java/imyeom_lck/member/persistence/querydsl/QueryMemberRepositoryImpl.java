@@ -9,6 +9,7 @@ import imyeom_lck.member.domain.entity.QMember;
 import imyeom_lck.pointusage.domain.dto.PointUsageResponseDTO;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 import imyeom_lck.pointusage.domain.entity.QPointUsage;
+import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
