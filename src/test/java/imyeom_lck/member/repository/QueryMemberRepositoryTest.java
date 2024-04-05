@@ -1,0 +1,77 @@
+package imyeom_lck.member.repository;
+
+import com.querydsl.jpa.impl.JPAQueryFactory;
+import imyeom_lck.config.QuerydslTestConfig;
+import imyeom_lck.member.domain.entity.Member;
+import imyeom_lck.member.dummy.DummyMember;
+import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
+import imyeom_lck.member.persistence.querydsl.QueryMemberRepositoryImpl;
+import imyeom_lck.pointusage.domain.entity.PointUsage;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.Import;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@Import(QuerydslTestConfig.class)
+public class QueryMemberRepositoryTest {
+
+
+    @Autowired
+    private JPAQueryFactory jpaQueryFactory;
+    private QueryMemberRepository queryMemberRepository;
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    private Member member1;
+    private Member member2;
+    private PointUsage pointUsage1;
+    private PointUsage pointUsage2;
+
+    @BeforeEach
+    public void setUp() {
+
+        member1 = DummyMember.createDummyMember("mem1", "password1" , "phonenum1", "loginId1");
+        member2 = DummyMember.createDummyMember("mem2", "password2" , "phonenum2", "loginId2");
+
+        pointUsage1 = new PointUsage(2L, member2, 2L, LocalDateTime.of(2020, 4, 2, 0, 0),"History2");
+        pointUsage2 = new PointUsage(1L, member1, 1L, LocalDateTime.of(2020, 4, 3, 0, 0),"History1");
+
+        queryMemberRepository = new QueryMemberRepositoryImpl(jpaQueryFactory);
+    }
+
+    @DisplayName("모든 멤버 찾기")
+    @Test
+    public void testGetMemberDetails_Success() {
+
+        // given
+        entityManager.persist(member1);
+        entityManager.persist(member2);
+
+        // when
+        List<Member> memberList = queryMemberRepository.queryDSLFindAll();
+
+        assertEquals("mem2", memberList.get(1).getName());
+        assertEquals("password2", memberList.get(1).getPassword());
+        assertEquals("phonenum2", memberList.get(1).getPhoneNumber());
+        assertEquals("loginId2", memberList.get(1).getLoginId());
+        assertEquals("mem1", memberList.get(0).getName());
+        assertEquals("password1", memberList.get(0).getPassword());
+        assertEquals("phonenum1", memberList.get(0).getPhoneNumber());
+        assertEquals("loginId1", memberList.get(0).getLoginId());
+
+    }
+
+}

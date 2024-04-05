@@ -27,6 +27,10 @@ public class Role {
 
     private String name;
 
+    /*
+    insert into roles values(1,"admin");
+    insert into roles values(2,"user");
+     */
 
     public static Role createRole(String roleName){
 

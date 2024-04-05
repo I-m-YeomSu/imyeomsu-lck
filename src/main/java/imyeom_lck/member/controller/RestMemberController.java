@@ -8,6 +8,8 @@ import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.domain.entity.Member;
+import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
+import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
 import imyeom_lck.member.service.inter.MemberService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -97,5 +99,7 @@ public class RestMemberController {
                 .success(true)
                 .build();
     }
+
+
 
 }
