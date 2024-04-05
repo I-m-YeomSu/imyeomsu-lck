@@ -54,7 +54,7 @@ jobs:
       - name: Coveralls GitHub Action
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-        run: |
+        run:
           # 혹시 빌드하는 repo가 root가 아니면 cd 명령어를 통해 이동해주자.
           # cd (빌드하는 repo의 경로)
           ./gradlew clean test jacocoTestReport coveralls
