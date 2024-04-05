@@ -54,11 +54,6 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberId;
 
-    @Schema(description = "포인트 사용내역", example = "pointUsages")
-    @OneToMany(fetch=FetchType.LAZY)
-    @JoinColumn(name = "point_usage_id")
-    private List<PointUsage> pointUsages;
-
     @Schema(description = "금융상픔번호", example = "1")
     @Column(nullable = true)
     private Long financeId;
@@ -86,7 +81,7 @@ public class Member {
     private int point;
 
     @Schema(description = "알람", example = "true")
-    private boolean isAlert;
+    private boolean alert;
 
     @Schema(description = "유저 삭제상태", example = "false")
     private boolean isDeleted;

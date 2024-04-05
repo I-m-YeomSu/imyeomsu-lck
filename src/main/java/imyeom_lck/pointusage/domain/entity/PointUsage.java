@@ -21,7 +21,10 @@ import lombok.RequiredArgsConstructor;
 @Builder
 @Entity
 public class PointUsage {
-	
+	/*
+	INSERT INTO PointUsage (member_id, usageClassification, usageDate, pointHistory) VALUES
+    (1, 1, 1, '2023-04-01 10:00:00', '상품 구매에 따른 포인트 적립');
+	 */
 	//포인트내역키
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
