@@ -71,7 +71,7 @@ jacocoTestReport {
 
 
 coveralls {
-	jacocoReportPath 'build/customJacocoReportDir/test/html/jacocoTestReport.xml'
+	jacocoReportPath 'build/customJacocoReportDir/test/jacocoTestReport.xml'
 }
 
 dependencies {
