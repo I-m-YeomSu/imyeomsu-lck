@@ -40,7 +40,9 @@ public class QueryMemberServiceImpl implements QueryMemberService {
     }
 
     public List<PointUsage> queryDSLFindAllPUByMemberId(Long id){
-        return queryMemberRepository.queryDSLFindAllPUByMemberId(id);
+        List<PointUsage> tmplist = queryMemberRepository.queryDSLFindAllPUByMemberId(id);
+        log.info("{}:",tmplist.get(0).getPointHistory());
+        return tmplist;
     }
 
 }

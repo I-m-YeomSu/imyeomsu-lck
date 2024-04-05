@@ -7,6 +7,7 @@ import imyeom_lck.pointusage.domain.entity.PointUsage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,8 +34,8 @@ public class QueryMemberRestController {
         return queryMemberService.findById(id);
     }
 
-    @GetMapping(value = "/findpu")
-    public List<PointUsage> findByPointUsage(Long id){
+    @GetMapping(value = "/findpu/{id}")
+    public List<PointUsage> findByPointUsage(@PathVariable(value = "id") Long id){
         return queryMemberService.queryDSLFindAllPUByMemberId(id);
     }
 

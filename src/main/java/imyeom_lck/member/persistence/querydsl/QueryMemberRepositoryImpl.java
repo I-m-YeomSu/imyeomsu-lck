@@ -51,9 +51,7 @@ public class QueryMemberRepositoryImpl implements QueryMemberRepository {
     @Override
     public List<PointUsage> queryDSLFindAllPUByMemberId(Long id) {
 
-//        QMember member = QMember.member;
         QPointUsage pointUsage = QPointUsage.pointUsage;
-
         return jpaQueryFactory
                 .selectFrom(pointUsage)
                 .where(pointUsage.member.memberId.eq(id))

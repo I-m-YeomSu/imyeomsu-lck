@@ -83,11 +83,7 @@ public class MemberServiceImpl implements MemberService {
         Member updateMember = memberRepository.findById(memberId)
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다."));
 
-        updateMember.setLoginId(memberUpdateDTO.getLoginId());
-        updateMember.setPassword(memberUpdateDTO.getPassword());
-        updateMember.setName(memberUpdateDTO.getName());
-        updateMember.setPhoneNumber(memberUpdateDTO.getPhoneNumber());
-        updateMember.setCheeringTeam(memberUpdateDTO.getCheeringTeam());
+        updateMember.updateMember(memberUpdateDTO);
 
         return MemberDetailsResponseDTO.fromEntity(updateMember);
     }

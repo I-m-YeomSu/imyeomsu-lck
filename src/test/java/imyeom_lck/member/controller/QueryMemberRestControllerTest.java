@@ -1,10 +1,12 @@
 package imyeom_lck.member.controller;
 
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
+import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
 import imyeom_lck.member.service.impl.QueryMemberServiceImpl;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,22 @@ public class QueryMemberRestControllerTest {
 
     @MockBean
     private QueryMemberRepository queryMemberRepository;
+
+    MemberUpdateDTO memberUpdateDTO;
+
+    @BeforeEach
+    void setUp(){
+
+        memberUpdateDTO = MemberUpdateDTO.builder()
+                .loginId("update")
+                .password("update")
+                .name("update")
+                .phoneNumber("update")
+                .cheeringTeam("update")
+                .build();
+
+    }
+
 
     @DisplayName("모든 멤버찾기")
     @Test
@@ -82,10 +100,7 @@ public class QueryMemberRestControllerTest {
     @Test
     public void findPointUsage() throws Exception{
         Member dummymember = new Member(){};
-        dummymember.setName("name");
-        dummymember.setMemberId(1L);
-        dummymember.setPassword("pw");
-        dummymember.setLoginId("loginId");
+        dummymember.updateMember(memberUpdateDTO);
 
         PointUsage pointUsage1 = new PointUsage(1L, dummymember, 1L, LocalDateTime.of(2020, 4, 3, 0, 0),"History1");
         System.out.print(LocalDateTime.now());

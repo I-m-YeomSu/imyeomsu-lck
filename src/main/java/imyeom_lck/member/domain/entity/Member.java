@@ -2,7 +2,9 @@ package imyeom_lck.member.domain.entity;
 
 import java.util.List;
 
+import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.*;
 import org.hibernate.annotations.SQLRestriction;
 
 import imyeom_lck.pointusage.domain.entity.PointUsage;
@@ -15,11 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /*
 CREATE TABLE members(
@@ -39,7 +37,6 @@ connection_date datetime
  */
 
 @Getter
-@Setter
 @Builder
 @Entity
 @NoArgsConstructor
@@ -48,7 +45,7 @@ connection_date datetime
 @Table(name = "members")
 public class Member {
 
-    @Schema(description = "유저 번호", example = "1")
+    @Schema(description = "유저 번호", example = "1")// 스웨거 설정
     @Id
     @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -92,6 +89,14 @@ public class Member {
         this.isDeleted = true;
         return this;
 
+    }
+
+    public void updateMember(MemberUpdateDTO dto){
+        this.loginId = dto.getLoginId();
+        this.password = dto.getPassword();
+        this.name = dto.getName();
+        this.phoneNumber = dto.getPhoneNumber();
+        this.cheeringTeam = dto.getCheeringTeam();
     }
 
 
