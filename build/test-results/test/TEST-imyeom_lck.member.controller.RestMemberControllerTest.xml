@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="imyeom_lck.member.controller.RestMemberControllerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-04-05T00:38:08" hostname="1-09" time="0.687">
+  <properties/>
+  <testcase name="회원수정 - 성공" classname="imyeom_lck.member.controller.RestMemberControllerTest" time="0.371"/>
+  <testcase name="회원가입 - 성공" classname="imyeom_lck.member.controller.RestMemberControllerTest" time="0.26"/>
+  <testcase name="로그인Id로 회원Id 찾기 - 회원이 존재하는 경우" classname="imyeom_lck.member.controller.RestMemberControllerTest" time="0.022"/>
+  <testcase name="회원Id로 회원 정보 조회 - 회원이 존재하는 경우" classname="imyeom_lck.member.controller.RestMemberControllerTest" time="0.012"/>
+  <testcase name="삭제 - 성공" classname="imyeom_lck.member.controller.RestMemberControllerTest" time="0.01"/>
+  <system-out><![CDATA[2024-04-05T09:38:06.807+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [imyeom_lck.member.controller.RestMemberControllerTest]: RestMemberControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-05T09:38:06.854+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration imyeom_lck.ImyeomsuLckApplication for test class imyeom_lck.member.controller.RestMemberControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-05T09:38:06.924+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] i.m.controller.RestMemberControllerTest  : Starting RestMemberControllerTest using Java 17 with PID 17516 (started by Admin in C:\Users\Admin\Documents\GitHub\imyeomsu-lck)
+2024-04-05T09:38:06.924+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] i.m.controller.RestMemberControllerTest  : The following 1 profile is active: "local"
+2024-04-05T09:38:07.489+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-04-05T09:38:08.560+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-04-05T09:38:08.561+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-04-05T09:38:08.563+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-04-05T09:38:08.585+09:00  INFO 17516 --- [imyeomsu-lck] [    Test worker] i.m.controller.RestMemberControllerTest  : Started RestMemberControllerTest in 1.726 seconds (process running for 28.201)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

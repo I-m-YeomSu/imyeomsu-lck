@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayerGame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">imyeomsu-lck</a> &gt; <a href="index.source.html" class="el_package">imyeom_lck.player.domain.entity</a> &gt; <span class="el_source">PlayerGame.java</span></div><h1>PlayerGame.java</h1><pre class="source lang-java linenums">package imyeom_lck.player.domain.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+/*
+* N : M 愿�怨꾩뿉�꽌 吏꾪뻾�븯�뒗 以묎컙 �뿰寃� �뿭�븷 �뀒�씠釉붿엯�땲�떎.
+* �빐�떦 �뀒�씠釉붿� 蹂듯빀�궎瑜� �궗�슜�빐�꽌 PK濡� 留뚮뱾�뼱 �궗�슜�븷 �닔�룄 �엳吏�留�
+* �씠瑜� ���떊�빐�꽌 �쓽誘� �뾾�뒗 PK 媛믪쓣 �뫊�꽌 吏꾪뻾�빀�땲�떎.
+* */
+@Entity
+@Table(name = &quot;player_games&quot;)
+<span class="fc" id="L19">public class PlayerGame {</span>
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long playerGameId;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = &quot;player_id&quot;)
+	private Player player;
+
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

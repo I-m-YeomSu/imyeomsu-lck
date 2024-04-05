@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Member.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">imyeomsu-lck</a> &gt; <a href="index.source.html" class="el_package">imyeom_lck.member.domain.entity</a> &gt; <span class="el_source">Member.java</span></div><h1>Member.java</h1><pre class="source lang-java linenums">package imyeom_lck.member.domain.entity;
+
+import java.util.List;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import org.hibernate.annotations.SQLRestriction;
+
+import imyeom_lck.pointusage.domain.entity.PointUsage;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+/*
+CREATE TABLE members(
+member_id bigint primary key auto_increment,
+point_usage_id bigint,
+finance_id bigint,
+login_id varchar(255) unique not null, password varchar(255) not null,
+name varchar(255),
+phone_number varchar(255),
+cheering_team varchar(255),
+connection_status bit(1),
+point int,
+is_deleted bit(1),
+alert varchar(255),
+connection_date datetime
+)
+ */
+
+@Getter
+@Setter
+@Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@SQLRestriction(&quot;IS_DELETED = false&quot;)
+@Table(name = &quot;members&quot;)
+public class Member {
+
+    @Schema(description = &quot;�쑀�� 踰덊샇&quot;, example = &quot;1&quot;)
+    @Id
+    @Column(name = &quot;member_id&quot;)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long memberId;
+
+    @Schema(description = &quot;�룷�씤�듃 �궗�슜�궡�뿭&quot;, example = &quot;pointUsages&quot;)
+    @OneToMany(fetch=FetchType.LAZY)
+    @JoinColumn(name = &quot;point_usage_id&quot;)
+    private List&lt;PointUsage&gt; pointUsages;
+
+    @Schema(description = &quot;湲덉쑖�긽�뵒踰덊샇&quot;, example = &quot;1&quot;)
+    @Column(nullable = true)
+    private Long financeId;
+
+    @Schema(description = &quot;�쑀�� �븘�씠�뵒&quot;, example = &quot;loginId&quot;)
+    @Column(nullable = false)
+    private String loginId;
+
+    @Schema(description = &quot;�쑀�� 鍮꾨�踰덊샇&quot;, example = &quot;password&quot;)
+    private String password;
+
+    @Schema(description = &quot;�쑀�� �씠由�&quot;, example = &quot;name&quot;)
+    private String name;
+
+    @Schema(description = &quot;�빖�뱶�룿 踰덊샇&quot;, example = &quot;phoneNumber&quot;)
+    private String phoneNumber;
+
+    @Schema(description = &quot;�쓳�썝��&quot;, example = &quot;cheeringTeam&quot;)
+    private String cheeringTeam;
+
+    @Schema(description = &quot;�쑀�� �젒�냽�젙蹂�&quot;, example = &quot;connectionStatus&quot;)
+    private boolean connectionStatus;
+
+    @Schema(description = &quot;蹂댁쑀 �룷�씤�듃&quot;, example = &quot;point&quot;)
+    private int point;
+
+    @Schema(description = &quot;�븣�엺&quot;, example = &quot;true&quot;)
+    private boolean isAlert;
+
+    @Schema(description = &quot;�쑀�� �궘�젣�긽�깭&quot;, example = &quot;false&quot;)
+    private boolean isDeleted;
+
+
+    public Member deletedMember(String loginId) {
+<span class="fc" id="L96">        this.loginId = &quot;deleted&quot; + loginId;</span>
+<span class="fc" id="L97">        this.isDeleted = true;</span>
+<span class="fc" id="L98">        return this;</span>
+
+    }
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
