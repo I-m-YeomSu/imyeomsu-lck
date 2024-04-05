@@ -10,7 +10,10 @@ public class IndexController {
     @GetMapping("/")
     public String indexForm(){
 
-        return "index";
+        return "main/index";
     }
-
+    @GetMapping("/event/main")
+    public String mainEventForm(){
+        return "event/main";
+    }
 }

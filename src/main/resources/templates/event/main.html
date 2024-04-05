@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mini Finance - Settings</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/tooplate-mini-finance.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="navbar sticky-top flex-md-nowrap">
+        <div class="col-md-3 col-lg-3 me-0 px-3 fs-6">
+            <a class="navbar-brand" href="../main/index.html">
+                <i class="bi-box"></i>
+                우리 X LCK
+            </a>
+        </div>
+
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-nav me-lg-2">
+            <div class="nav-item text-nowrap d-flex align-items-center">
+                <div class="dropdown ps-3">
+                    <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi-bell"></i>
+                        <span
+                            class="position-absolute start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </a>
+
+                    <ul class="dropdown-menu notifications-block-wrap bg-white shadow">
+                        <small>Notifications</small>
+
+                        <li class="notifications-block border-bottom pb-2 mb-2">
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="notifications-icon-wrap bg-success">
+                                    <i class="notifications-icon bi-check-circle-fill"></i>
+                                </div>
+
+                                <div>
+                                    <span>Your account has been created successfuly.</span>
+
+                                    <p>12 days ago</p>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="notifications-block border-bottom pb-2 mb-2">
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="notifications-icon-wrap bg-info">
+                                    <i class="notifications-icon bi-folder"></i>
+                                </div>
+
+                                <div>
+                                    <span>Please check. We have sent a Daily report.</span>
+
+                                    <p>10 days ago</p>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="notifications-block">
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="notifications-icon-wrap bg-danger">
+                                    <i class="notifications-icon bi-question-circle"></i>
+                                </div>
+
+                                <div>
+                                    <span>Account verification failed.</span>
+
+                                    <p>1 hour ago</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block sidebar collapse">
+                <div class="position-sticky py-4 px-3 sidebar-sticky">
+                    <ul class="nav flex-column h-100">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../main/index.html">
+                                <i class="bi-house-fill me-2"></i>
+                                홈
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../leagues/league.html">
+                                <i class="bi-wallet me-2"></i>
+                                리그 정보
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="main.html">
+                                <i class="bi-person me-2"></i>
+                                이벤트
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../profile.html">
+                                <i class="bi-person me-2"></i>
+                                내 정보
+                            </a>
+                        </li>
+
+                        <li class="nav-item border-top mt-auto pt-2">
+                            <a class="nav-link" href="#">
+                                <i class="bi-box-arrow-left me-2"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="main-wrapper col-md-9 ms-sm-auto py-4 col-lg-9 px-md-4 border-start">
+                <div class="row my-4">
+
+                    <!-- 진행이벤트 블럭 -->
+                    <div class="custom-block bg-white">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-between">
+                                <!-- 대표이벤트 타이틀 -->
+                                <div class="col-md-auto">
+                                    <h5 class="mb-4">진행중인 이벤트</h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>우리은행 X LCK 핫타임 이벤트</p>
+                                            <p>상세내용 알아보러 가기 ></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 -->
+                                <div class="col-md-auto">
+                                    <img src="이미지" alt="Event Image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--승부예측 블럭-->
+                    <div class="custom-block bg-white">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-between">
+                                <!-- 승부예측 타이틀 -->
+                                <div class="col-md-auto">
+                                    <h5 class="mb-4">승부예측</h5>
+                                    <div class="row">
+                                        <p>04월06일(토) 15:00</p>
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <!-- 2024 LCK Spring 플레이오프 3R -->
+                                                <p>2024 LCK Spring 플레이오프 3R</p>
+                                            </div>
+                                            <div class="row align-items-center justify-content-between">
+                                                <!-- 로고 이미지 -->
+                                                <div class="col-md-auto">
+                                                    <img src="로고이미지경로" alt="팀 로고" class="team-logo">
+                                                </div>
+                                                <!-- 팀 이름 -->
+                                                <div class="col-md-auto">
+                                                    <p>젠지</p>
+                                                </div>
+                                                <!-- 일정 -->
+                                                <div class="col-md-auto text-center">
+                                                    <p class="percentage">87</p>
+                                                </div>
+                                                <div class="col-md-auto text-center">
+                                                    <p class="percentage">13</p>
+                                                </div>
+                                                <!-- 상대팀 이름 -->
+                                                <div class="col-md-auto">
+                                                    <p>한화생명</p>
+                                                </div>
+                                                <!-- 상대팀 로고 이미지 -->
+                                                <div class="col-md-auto">
+                                                    <img src="상대팀로고이미지경로" alt="상대팀 로고" class="team-logo">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- 진행이벤트 블럭 -->
+                    <div class="custom-block bg-white">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-between">
+                                <!-- 대표이벤트 타이틀 -->
+                                <div class="col-md-auto">
+                                    <h5 class="mb-4">진행중인 이벤트</h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>우리은행 X LCK 콜라보 카드 출시!</p>
+                                            <p>상세내용 알아보러 가기 ></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 -->
+                                <div class="col-md-auto">
+                                    <img src="이미지" alt="Event Image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
