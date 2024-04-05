@@ -27,45 +27,51 @@ ext {
 
 jacoco {
 	toolVersion = "0.8.12"
-	//reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+	reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
 }
 
 test {
 	finalizedBy jacocoTestReport // report is always generated after tests run
-
 	ignoreFailures = true
-
 }
 
 jacocoTestReport {
 	reports {
-		xml.required.set(true)  // github actions 에서 사용하기 위해 리포트를 xml 파일 생성
-		html.required.set(true) // 우리가 읽을 수 있는 html 파일 리포트 생성
+		dependsOn test
+		reports {
+			html.required = true
+			xml.required = true
+		}
 
-////		// QueryDSL Q클래스 제외 (커버리지를 측정할 필요가 없는 클래스 제외)
-////		def Qdomains = []
-////		for (qPattern in "**/QA".."**/QZ") {
-////			Qdomains.add(qPattern + "*")
-////		}
-////
-////		afterEvaluate {
-////			classDirectories.setFrom(files(classDirectories.files.collect {
-////				fileTree(dir: it,
-////						exclude: [] + Qdomains)
-////			}))
-////		}
+		// QueryDSL QDomain 제외시키기
+		def QDomains = []
 
-		xml.destination file("${buildDir}/jacoco/index.xml")   // `build` 디렉토리에 리포트 파일 생성
-		html.destination file("${buildDir}/jacoco/index.html")
-
-		//xml.destination layout.buildDirectory.dir("/jacoco/index.xml").get().asFile
-		//html.destination layout.buildDirectory.dir("/jacoco/index.xml").get().asFile
+		for (qPattern in '**/QA'..'**/QZ') {
+			QDomains.add(qPattern + '*')
+		}
+		afterEvaluate {
+			classDirectories.setFrom(
+					// 그 외의 매칭되는 클래스도 제외 대상
+					files(classDirectories.files.collect {
+						fileTree(dir: it, excludes: [
+								"co.kirikiri.domain.**.**",
+								"**/*Application*",
+								"**/*Config*",
+								"**/*Dto*",
+								"**/*Request*",
+								"**/*Response*",
+								"**/*Interceptor*",
+								"**/*Exception*"
+						] + QDomains)
+					})
+			)
+		}
 	}
-
 }
 
+
 coveralls {
-	jacocoReportPath 'build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml'
+	jacocoReportPath 'build/customJacocoReportDir/test/jacocoTestReport.xml'
 }
 
 dependencies {
@@ -116,6 +122,9 @@ clean {
 tasks.named('test') {
 	outputs.dir snippetsDir
 	useJUnitPlatform()
+
+	finalizedBy jacocoTestReport
+
 }
 
 tasks.named('asciidoctor') {
