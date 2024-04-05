@@ -4,6 +4,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import imyeom_lck.config.QuerydslTestConfig;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.dummy.DummyMember;
+import imyeom_lck.member.dummy.dummyPointUsage;
 import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
 import imyeom_lck.member.persistence.querydsl.QueryMemberRepositoryImpl;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
@@ -20,6 +21,7 @@ import org.springframework.context.annotation.Import;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -43,18 +45,18 @@ public class QueryMemberRepositoryTest {
     @BeforeEach
     public void setUp() {
 
-        member1 = DummyMember.createDummyMember("mem1", "password1" , "phonenum1", "loginId1");
-        member2 = DummyMember.createDummyMember("mem2", "password2" , "phonenum2", "loginId2");
+        member1 = DummyMember.createDummyMember("mem1", "password1", "phonenum1", "loginId1");
+        member2 = DummyMember.createDummyMember("mem2", "password2", "phonenum2", "loginId2");
 
-        pointUsage1 = new PointUsage(2L, member2, 2L, LocalDateTime.of(2020, 4, 2, 0, 0),"History2");
-        pointUsage2 = new PointUsage(1L, member1, 1L, LocalDateTime.of(2020, 4, 3, 0, 0),"History1");
+        pointUsage1 = dummyPointUsage.createPointUsage(1L, member1, LocalDateTime.of(2020, 4, 1, 0, 0), "History1");
+        pointUsage2 = dummyPointUsage.createPointUsage(2L, member2, LocalDateTime.of(2020, 4, 2, 0, 0), "History2");
 
         queryMemberRepository = new QueryMemberRepositoryImpl(jpaQueryFactory);
     }
 
     @DisplayName("모든 멤버 찾기")
     @Test
-    public void testGetMemberDetails_Success() {
+    public void getAllMember() {
 
         // given
         entityManager.persist(member1);
@@ -71,6 +73,38 @@ public class QueryMemberRepositoryTest {
         assertEquals("password1", memberList.get(0).getPassword());
         assertEquals("phonenum1", memberList.get(0).getPhoneNumber());
         assertEquals("loginId1", memberList.get(0).getLoginId());
+
+    }
+
+    @DisplayName("memberId로 멤버 찾기")
+    @Test
+    public void getOneMember() {
+        // given
+        entityManager.persist(member1);
+        entityManager.persist(member2);
+
+        // when
+        Member returnMember = queryMemberRepository.queryDSLFindByMemberId(member1.getMemberId()).orElseThrow();
+
+        assertEquals("mem2", returnMember.getName());
+        assertEquals("password2", returnMember.getPassword());
+        assertEquals("phonenum2", returnMember.getPhoneNumber());
+        assertEquals("loginId2", returnMember.getLoginId());
+
+    }
+
+    @DisplayName("memberId로 사용내역조회")
+    @Test
+    public void getPU(){
+        // given
+        entityManager.persist(member1);
+        entityManager.persist(member2);
+        entityManager.persist(pointUsage1);
+        entityManager.persist(pointUsage2);
+
+        List<PointUsage> puList = queryMemberRepository.queryDSLFindAllPUByMemberId(member1.getMemberId());
+
+        assertEquals("History1", puList.get(0).getPointHistory());
 
     }
 
