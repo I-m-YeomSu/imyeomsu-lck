@@ -4,6 +4,7 @@ import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
 import imyeom_lck.member.service.inter.QueryMemberService;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
+import imyeomsu.lck.common_utils.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
