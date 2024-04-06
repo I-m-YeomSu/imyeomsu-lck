@@ -1,9 +1,7 @@
 package imyeom_lck.member.controller;
 
 
-import imyeom_lck.common.code.ErrorCode;
-import imyeom_lck.common.domain.dto.ResponseDto;
-import imyeom_lck.common.exception.ClientException;
+
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
@@ -11,6 +9,8 @@ import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
 import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
 import imyeom_lck.member.service.inter.MemberService;
+import imyeomsu.lck.common_utils.dto.ResponseDto;
+import imyeomsu.lck.common_utils.exception.ClientException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;

@@ -1,7 +1,5 @@
 package imyeom_lck.member.service.impl;
 
-import imyeom_lck.common.code.ErrorCode;
-import imyeom_lck.common.exception.ClientException;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
@@ -14,6 +12,8 @@ import imyeom_lck.member.persistence.jpa.JpaMemberRoleRepository;
 import imyeom_lck.member.service.inter.MemberService;
 import imyeom_lck.role.domain.entity.Role;
 import imyeom_lck.role.persistence.jpa.JpaRoleRepository;
+import imyeomsu.lck.common_utils.code.ErrorCode;
+import imyeomsu.lck.common_utils.exception.ClientException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

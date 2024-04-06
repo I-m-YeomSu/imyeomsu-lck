@@ -1,7 +1,8 @@
 package imyeom_lck.common.advice;
 
-import imyeom_lck.common.domain.dto.ResponseDto;
-import imyeom_lck.common.exception.ClientException;
+
+import imyeomsu.lck.common_utils.dto.ResponseDto;
+import imyeomsu.lck.common_utils.exception.ClientException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

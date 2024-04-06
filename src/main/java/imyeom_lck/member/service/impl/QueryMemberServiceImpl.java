@@ -1,7 +1,5 @@
 package imyeom_lck.member.service.impl;
 
-import imyeom_lck.common.code.ErrorCode;
-import imyeom_lck.common.exception.ClientException;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
@@ -9,8 +7,6 @@ import imyeom_lck.member.service.inter.QueryMemberService;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.antlr.v4.runtime.tree.ErrorNode;
-import org.apache.catalina.connector.ClientAbortException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

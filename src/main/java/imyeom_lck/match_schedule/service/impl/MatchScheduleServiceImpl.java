@@ -1,13 +1,14 @@
 package imyeom_lck.match_schedule.service.impl;
 
-import imyeom_lck.common.code.ErrorCode;
-import imyeom_lck.common.exception.ClientException;
+
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
 import imyeom_lck.match_schedule.domain.dto.NextMatchResponseDTO;
 import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
 import imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.entity.Member;
+import imyeomsu.lck.common_utils.code.ErrorCode;
+import imyeomsu.lck.common_utils.exception.ClientException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

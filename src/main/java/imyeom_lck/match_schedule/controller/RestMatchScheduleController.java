@@ -1,13 +1,13 @@
 package imyeom_lck.match_schedule.controller;
 
 
-import imyeom_lck.common.domain.dto.ResponseDto;
-import imyeom_lck.common.exception.ClientException;
+
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
 import imyeom_lck.match_schedule.domain.dto.NextMatchResponseDTO;
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.service.inter.MemberService;
+import imyeomsu.lck.common_utils.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
