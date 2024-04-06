@@ -51,6 +51,8 @@ public class RestMemberController {
     @Operation(summary = "loginId 로 회원찾기")
     @GetMapping(value = "/{loginId}")
     public Long getMemberId(@Valid @PathVariable String loginId) {
+
+
         try {
             return memberService.findByLoginId(loginId);
         } catch (ClientException e) {
