@@ -16,7 +16,7 @@ class LeagueControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @DisplayName("리그 정보를 보여주는 뷰 화면 테스트 - 성")
+    @DisplayName("리그 정보를 보여주는 뷰 화면 테스트 - 성공")
     @Test
     void leagueInfoForm() throws Exception {
         this.mockMvc.perform(get("/leagues"))
