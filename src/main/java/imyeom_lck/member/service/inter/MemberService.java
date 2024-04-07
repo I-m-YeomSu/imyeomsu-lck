@@ -2,6 +2,7 @@ package imyeom_lck.member.service.inter;
 
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.MemberUpdateDTO;
+import imyeom_lck.member.domain.dto.SignUpMemberResponse;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.domain.entity.SignUpRequest;
@@ -9,9 +10,9 @@ import imyeom_lck.member.domain.entity.SignUpRequest;
 public interface MemberService {
 
 	MemberDetailsResponseDTO getMemberDetails(Long memberId);
-	Long findByLoginId(String loginId);
+	MemberDetailsResponseDTO findByLoginId(String loginId);
 
-	MemberDetailsResponseDTO signUp(SignUpRequestDTO signUpRequestDTO);
+	SignUpMemberResponse signUp(SignUpRequestDTO signUpRequestDTO);
 
 	MemberDetailsResponseDTO deleteMember(Long memberId);
 

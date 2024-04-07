@@ -4,6 +4,7 @@ package imyeom_lck.member.controller;
 
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.MemberUpdateDTO;
+import imyeom_lck.member.domain.dto.SignUpMemberResponse;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.service.inter.MemberService;
 import imyeomsu.lck.common_utils.dto.ResponseDto;
@@ -20,6 +21,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,34 +39,33 @@ public class RestMemberController {
             @ApiResponse(responseCode = "404", description = "존재하지 않는 리소스 접근", content = @Content(schema = @Schema(implementation = ErrorResponse.class))) })
     @Operation(summary = "memberId 로 회원찾기")
     @GetMapping(value="/details/{memberId}")
-    public ResponseDto<MemberDetailsResponseDTO> getMemberDetails(@Parameter(name = "id", description = "posts 의 id", in = ParameterIn.PATH) @Valid @PathVariable Long memberId) {
+    public ResponseEntity<ResponseDto<MemberDetailsResponseDTO>> getMemberDetails(@Parameter(name = "id", description = "posts 의 id", in = ParameterIn.PATH) @Valid @PathVariable Long memberId) {
 
         MemberDetailsResponseDTO MemberDetailsResponseDTO = memberService.getMemberDetails(memberId);
 
-        return ResponseDto.<imyeom_lck.member.domain.dto.MemberDetailsResponseDTO>builder()
+        return ResponseEntity.ok(ResponseDto.<imyeom_lck.member.domain.dto.MemberDetailsResponseDTO>builder()
                 .data(MemberDetailsResponseDTO)
                 .status(HttpStatus.OK)
                 .success(true)
-                .build();
+                .build());
     }
 
-    @Operation(summary = "loginId 로 회원찾기")
+    @Operation(summary = "로그인 아이디로 회원 찾기")
     @GetMapping(value = "/{loginId}")
-    public Long getMemberId(@Valid @PathVariable String loginId) {
-
-
-        try {
-            return memberService.findByLoginId(loginId);
-        } catch (ClientException e) {
-            return null;
-        }
+    public ResponseEntity<ResponseDto<MemberDetailsResponseDTO>> getMemberId(@Valid @PathVariable String loginId) {
+        
+        return ResponseEntity.ok(ResponseDto.<MemberDetailsResponseDTO>builder()
+                .data(memberService.findByLoginId(loginId))
+                .status(HttpStatus.OK)
+                .success(true)
+                .build());
     }
 
     @Operation(summary = "회원가입")
     @PostMapping(value = "/signUp")
-    public ResponseDto<MemberDetailsResponseDTO> signUp(@Valid @RequestBody SignUpRequestDTO signUpRequestDTO){
+    public ResponseDto<SignUpMemberResponse> signUp(@Valid @RequestBody SignUpRequestDTO signUpRequestDTO){
 
-        return ResponseDto.<MemberDetailsResponseDTO>builder()
+        return ResponseDto.<SignUpMemberResponse>builder()
                 .data(memberService.signUp(signUpRequestDTO))
                 .status(HttpStatus.OK)
                 .success(true)

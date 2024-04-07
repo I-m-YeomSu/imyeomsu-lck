@@ -5,10 +5,15 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import imyeom_lck.member.domain.dto.SignUpMemberResponse;
+import imyeom_lck.member.domain.entity.Member;
+import imyeom_lck.member.dummy.DummyMember;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +38,17 @@ public class RestMemberControllerTest {
     @MockBean
     private MemberServiceImpl memberService;
 
+    private Member member;
+    private MemberDetailsResponseDTO memberDetailsResponseDTO;
+
+    @BeforeEach
+    void setUp() {
+        member = DummyMember.dummy();
+        memberDetailsResponseDTO = MemberDetailsResponseDTO.fromEntity(member);
+
+    }
+
+
     @DisplayName("회원Id로 회원 정보 조회 - 회원이 존재하는 경우")
     @Test
     public void testMemberDetails() throws Exception {
@@ -53,15 +69,16 @@ public class RestMemberControllerTest {
     @DisplayName("로그인Id로 회원Id 찾기 - 회원이 존재하는 경우")
     @Test
     public void testGetMemberId() throws Exception {
-        String existingLoginId = "loginId1";
-        Long expectedMemberId = 1L;
+        String existingLoginId = "test";
 
-        given(memberService.findByLoginId(existingLoginId)).willReturn(expectedMemberId);
+
+        given(memberService.findByLoginId(existingLoginId)).willReturn(memberDetailsResponseDTO);
 
         mvc.perform(get("/members/{loginId}", existingLoginId)
                         .contentType(MediaType.APPLICATION_JSON))
                         .andExpect(status().isOk())
-                        .andExpect(content().string(String.valueOf(expectedMemberId)));
+                        .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andDo(print());
 
     }
 
@@ -76,7 +93,7 @@ public class RestMemberControllerTest {
                 .phoneNumber("01033333333")
                 .build();
 
-        MemberDetailsResponseDTO dummyMember = MemberDetailsResponseDTO.builder()
+        SignUpMemberResponse dummyMember = SignUpMemberResponse.builder()
                 .memberName("name1")
                 .loginId("memberId1")
                 .memberPassword("password1")

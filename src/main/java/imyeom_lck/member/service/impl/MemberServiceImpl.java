@@ -2,6 +2,7 @@ package imyeom_lck.member.service.impl;
 
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.MemberUpdateDTO;
+import imyeom_lck.member.domain.dto.SignUpMemberResponse;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.domain.entity.MemberRole;
@@ -37,15 +38,15 @@ public class MemberServiceImpl implements MemberService {
         return MemberDetailsResponseDTO.fromEntity(member);
     }
 
-    public Long findByLoginId(String loginId) {
+    public MemberDetailsResponseDTO findByLoginId(String loginId) {
         Member member = memberRepository.findByLoginId(loginId)
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_NOT_FOUND, "해당 id를 가진 회원이 없습니다."));
 
-        return member.getMemberId();
+        return MemberDetailsResponseDTO.fromEntity(member);
     }
 
     @Override
-    public MemberDetailsResponseDTO signUp(SignUpRequestDTO signUpRequestDTO) {
+    public SignUpMemberResponse signUp(SignUpRequestDTO signUpRequestDTO) {
 
         Member member = Member.builder()
                 .loginId(signUpRequestDTO.getLoginId())
@@ -55,17 +56,16 @@ public class MemberServiceImpl implements MemberService {
                 .build();
 
         memberRepository.save(member);
-        Optional<Role> op = jpaRoleRepository.findById((long)2);
-        if (op.isEmpty()) {
-            throw new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다.");
-        }
-        Role role = op.get();
+
+        Role role = jpaRoleRepository.findById(2L).orElseThrow(()->{
+            throw new ClientException(ErrorCode.ROLE_NOT_FOUND, "역할에 대한 정보가 없습니다.");
+        });
 
         MemberRole memberRole = MemberRole.createMemberRole(member, role);
 
         jpaMemberRoleRepository.save(memberRole);
 
-        return MemberDetailsResponseDTO.fromEntity(member);
+        return SignUpMemberResponse.fromEntity(member, role);
     }
 
     @Override

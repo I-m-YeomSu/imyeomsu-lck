@@ -4,9 +4,11 @@ package imyeom_lck.member.service;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import imyeom_lck.member.domain.entity.Member;
+import imyeom_lck.member.dummy.DummyMember;
 import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
 import imyeom_lck.member.service.impl.MemberServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -21,11 +23,8 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class MemberServiceTest {
-    private static final Long MEMBER_ID = 1L;
-    private static final String PASSWORD = "password1";
-    private static final String PHONENUMBER = "phonenum1";
-    private static final String LOGIN_ID = "loginId1";
-    private static final boolean CHECK = false;
+    private final Long MEMBER_ID = 1L;
+    private final String LOGIN_ID = "test";
 
     @InjectMocks
     private MemberServiceImpl memberService;
@@ -38,42 +37,49 @@ public class MemberServiceTest {
 
     @BeforeEach
     void setUp() {
-        member = new Member();
+        member = DummyMember.dummy();
 
         memberUpdateDTO = new MemberUpdateDTO();
-        memberUpdateDTO.setLoginId("updateID!!");
-        memberUpdateDTO.setPassword("updatePW!!");
-        memberUpdateDTO.setPhoneNumber("updatePN!!");
-        memberUpdateDTO.setCheeringTeam("updateCT!!");
 
-        member.updateMember(memberUpdateDTO);
+        memberUpdateDTO = MemberUpdateDTO.builder()
+                .loginId("updateID!!")
+                .password("updatePW!!")
+                .phoneNumber("updatePN!!")
+                .cheeringTeam("updateCT!!")
+                .build();
 
+        //member.updateMember(memberUpdateDTO);
     }
 
 
+    @DisplayName("회원 정보 찾기 - 성공")
     @Test
     void getMemberDetails() {
+
         // given
-        when(memberRepository.findById(MEMBER_ID)).thenReturn(Optional.of(member));
+        when(memberRepository.findById(1L)).thenReturn(Optional.of(member));
+
 
         // when
-        MemberDetailsResponseDTO responseDTO = memberService.getMemberDetails(MEMBER_ID);
+        MemberDetailsResponseDTO responseDTO = memberService.getMemberDetails(1L);
+
 
         // then
         assertNotNull(responseDTO.getLoginId()); // 회원 정보가 null이 아닌지 확인
 
     }
 
+    @DisplayName("회원 로그인 아이디로 회원 정보 찾기 - 성공")
     @Test
     void getMemberId() {
         // given
-        when(memberRepository.findByLoginId(LOGIN_ID)).thenReturn(Optional.of(member));
+        when(memberRepository.findByLoginId("test")).thenReturn(Optional.of(member));
 
         // when
-        Long foundMember = memberService.findByLoginId(LOGIN_ID); // 숫자를 문자열로 변환하여 전달
+        MemberDetailsResponseDTO foundMember = memberService.findByLoginId("test"); // 숫자를 문자열로 변환하여 전달
 
         // then
-        assertEquals(MEMBER_ID, foundMember);
+        assertEquals(LOGIN_ID, foundMember.getLoginId());
     }
 
     @Test

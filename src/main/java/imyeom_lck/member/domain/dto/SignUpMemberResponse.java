@@ -1,15 +1,16 @@
 package imyeom_lck.member.domain.dto;
 
 import imyeom_lck.member.domain.entity.Member;
+import imyeom_lck.role.domain.entity.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
+
 @Getter
-@Setter
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class MemberDetailsResponseDTO {
+@NoArgsConstructor
+@Builder
+public class SignUpMemberResponse {
 
     @Schema(description = "유저 아이디", example = "loginId")
     private String loginId;
@@ -17,7 +18,7 @@ public class MemberDetailsResponseDTO {
     @Schema(description = "유저 이름", example = "memberName")
     private String memberName;
 
-    @Schema(description = "핸드폰번호", example = "memberPhone")
+    @Schema(description = "핸드폰 번호", example = "memberPhone")
     private String memberPhone;
 
     @Schema(description = "비밀번호", example = "memberPassword")
@@ -32,12 +33,14 @@ public class MemberDetailsResponseDTO {
     @Schema(description = "보유포인트", example = "memberPoint")
     private int memberPoint;
 
-    @Schema(description = "유저 삭제상태", example = "false")
+    @Schema(description = "유저 삭제 상태", example = "false")
     private boolean isDeleted;
 
+    @Schema(description = "유저 권한 상태", example = "ROLE_USER")
+    private String roleName;
 
-    public static MemberDetailsResponseDTO fromEntity(Member member){
-        return MemberDetailsResponseDTO.builder()
+    public static SignUpMemberResponse fromEntity(Member member, Role role){
+        return SignUpMemberResponse.builder()
                 .loginId(member.getLoginId())
                 .memberName(member.getName())
                 .memberPhone(member.getPhoneNumber())
@@ -46,7 +49,8 @@ public class MemberDetailsResponseDTO {
                 .cheeringTeam(member.getCheeringTeam())
                 .isAlert(member.isAlert())
                 .isDeleted(member.isDeleted())
+                .roleName(role.getName())
                 .build();
     }
-}
 
+}

@@ -109,7 +109,7 @@ public class QueryMemberRestControllerTest {
 
         given(this.qdslService.queryDSLFindAllPUByMemberId(anyLong())).willReturn(dummyList);
 
-        this.mvc.perform(get("/api/findpu?id=1")
+        this.mvc.perform(get("/api/findup?id=1")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].pointUsageId").value(1))
