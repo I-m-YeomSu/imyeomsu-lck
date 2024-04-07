@@ -19,7 +19,8 @@ public class DummyMatchSchedule {
                                                          boolean matchResult,
                                                          boolean isShowdown) {
 
-        return MatchSchedule.createMatchSchedule(homeTeam, awayTeam, matchDate, matchResult, isShowdown);
+        return MatchSchedule
+                .createMatchSchedule(homeTeam, awayTeam, matchDate, matchResult, isShowdown);
     }
 
 }
