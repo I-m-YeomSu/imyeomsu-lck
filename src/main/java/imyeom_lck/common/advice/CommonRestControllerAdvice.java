@@ -3,6 +3,7 @@ package imyeom_lck.common.advice;
 
 import imyeomsu.lck.common_utils.dto.ResponseDto;
 import imyeomsu.lck.common_utils.exception.ClientException;
+import imyeomsu.lck.common_utils.exception.ServerException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -49,14 +50,27 @@ public class CommonRestControllerAdvice {
 //    }
 
     @ExceptionHandler(ClientException.class)
-    public ResponseEntity<ResponseDto<Object>> clientExceptionHandler(ClientException e){
+    public ResponseEntity<ResponseDto<?>> clientExceptionHandler(ClientException e){
 
-        ResponseDto<Object> response = ResponseDto.builder()
+        ResponseDto<?> response = ResponseDto.builder()
                 .success(false)
                 .status(e.getResponseStatus())
                 .errorMessages(List.of(e.getDisplayErrorMessage())).build();
 
         return ResponseEntity.status(e.getResponseStatus()).body(response);
+    }
+
+    @ExceptionHandler(ServerException.class)
+    public ResponseEntity<ResponseDto<?>> serverExceptionHandler(ServerException e) {
+        ResponseDto<?> response = ResponseDto.builder()
+                .success(false)
+                .status(e.getResponseStatus())
+                .errorMessages(List.of(e.getDisplayErrorMessage()))
+                .build();
+
+        return ResponseEntity
+                .status(e.getResponseStatus())
+                .body(response);
     }
 
 }
