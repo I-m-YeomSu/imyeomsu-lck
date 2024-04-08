@@ -46,7 +46,7 @@ public class MatchScheduleRepositoryTest {
     }
 
 
-    @Disabled
+
     @DisplayName("모든 경기 일정 조회")
     @Test
     public void testGetAllMatchSchedules() {
