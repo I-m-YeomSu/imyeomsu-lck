@@ -41,7 +41,6 @@ class MemberTest {
 	}
 
 
-	@Disabled
 	@Test
 	@DisplayName("회원 id값 찾는 테스트")
 	void getMemberId() {
