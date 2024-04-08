@@ -1,0 +1,77 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main th:fragment="main-wrapper" class="main-wrapper col-md-9 ms-sm-auto py-4 col-lg-9 px-md-4 border-start">
+    <div class="row">
+        <div class="custom-block custom-block-balance">
+            <img src="main.png" alt="League of Legends Image">
+        </div>
+        <!-- 대표이벤트 블럭 -->
+        <div class="custom-block bg-white">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <!-- 대표이벤트 타이틀 -->
+                    <div class="col-md-auto">
+                        <h5 class="mb-4">진행중인 이벤트</h5>
+                        <div class="row">
+                            <div class="col">
+                                <p>우리은행 X LCK 핫타임 이벤트</p>
+                                <p>상세내용 알아보러 가기 ></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 이미지 -->
+                    <div class="col-md-auto">
+                        <img src="이미지" alt="Event Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 다음일정 블럭 -->
+        <div class="custom-block bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- 2024 LCK Spring 플레이오프 3R -->
+                    <div class="col-md-12">
+                        <h5 class="mb-4">2024 LCK Spring 플레이오프 3R</h5>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-between">
+                    <!-- 로고 이미지 -->
+                    <div class="col-md-auto">
+                        <img src="로고이미지경로" alt="팀 로고" class="team-logo">
+                    </div>
+                    <!-- 팀 이름 -->
+                    <div class="col-md-auto">
+                        <p>젠지</p>
+                    </div>
+                    <!-- 일정 -->
+                    <div class="col-md-auto text-center">
+                        <div class="row">
+                            <div class="col">
+                                <p class="schedule-text schedule-date">04/06</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="schedule-text schedule-time">15:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 상대팀 이름 -->
+                    <div class="col-md-auto">
+                        <p>한화생명</p>
+                    </div>
+                    <!-- 상대팀 로고 이미지 -->
+                    <div class="col-md-auto">
+                        <img src="상대팀로고이미지경로" alt="상대팀 로고" class="team-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
