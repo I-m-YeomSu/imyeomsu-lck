@@ -19,6 +19,7 @@
                 </jsonFormatter>
             </layout>
         </encoder>
+
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>logbackTest/logback/logTest.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxFileSize>100MB</maxFileSize>
