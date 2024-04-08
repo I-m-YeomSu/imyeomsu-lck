@@ -74,7 +74,7 @@ public class RestMemberControllerTest {
 
         given(memberService.findByLoginId(existingLoginId)).willReturn(memberDetailsResponseDTO);
 
-        mvc.perform(get("/api/members/{loginId}", existingLoginId)
+        mvc.perform(get("/api/members/details/{loginId}", existingLoginId)
                         .contentType(MediaType.APPLICATION_JSON))
                         .andExpect(status().isOk())
                         .andExpect(content().contentType(MediaType.APPLICATION_JSON))

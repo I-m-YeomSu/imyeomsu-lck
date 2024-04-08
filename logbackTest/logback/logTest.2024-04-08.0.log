@@ -1,0 +1,435 @@
+{
+  "timestamp" : "1712555491423",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1712555491425",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1712555491431",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1712555493248",
+  "level" : "INFO",
+  "thread" : "background-preinit",
+  "logger" : "org.hibernate.validator.internal.util.Version",
+  "message" : "HV000001: Hibernate Validator 8.0.1.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1712555493289",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 17296 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555493290",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1712555493958",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494060",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 94 ms. Found 14 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494564",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 555 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494571",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-555\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494573",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494573",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494623",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494623",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 1298 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494744",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494799",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.hibernate.Version",
+  "message" : "HHH000412: Hibernate ORM core version 6.4.4.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1712555494827",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1712555495006",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1712555495029",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1712555495204",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26679788",
+  "context" : "default"
+}{
+  "timestamp" : "1712555495206",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1712555495247",
+  "level" : "WARN",
+  "thread" : "main",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555495248",
+  "level" : "WARN",
+  "thread" : "main",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1712555496270",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555496390",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1712555496911",
+  "level" : "WARN",
+  "thread" : "main",
+  "logger" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "context" : "default"
+}{
+  "timestamp" : "1712555498037",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"http-nio-555\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555498054",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port 555 (http) with context path ''",
+  "context" : "default"
+}{
+  "timestamp" : "1712555498065",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Started ImyeomsuLckApplication in 5.305 seconds (process running for 5.702)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555532474",
+  "level" : "INFO",
+  "thread" : "http-nio-555-exec-2",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring DispatcherServlet 'dispatcherServlet'",
+  "context" : "default"
+}{
+  "timestamp" : "1712555532474",
+  "level" : "INFO",
+  "thread" : "http-nio-555-exec-2",
+  "logger" : "org.springframework.web.servlet.DispatcherServlet",
+  "message" : "Initializing Servlet 'dispatcherServlet'",
+  "context" : "default"
+}{
+  "timestamp" : "1712555532475",
+  "level" : "INFO",
+  "thread" : "http-nio-555-exec-2",
+  "logger" : "org.springframework.web.servlet.DispatcherServlet",
+  "message" : "Completed initialization in 0 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1712555536200",
+  "level" : "INFO",
+  "thread" : "http-nio-555-exec-1",
+  "logger" : "imyeom_lck.Logback",
+  "message" : "loglog",
+  "context" : "default"
+}{
+  "timestamp" : "1712555767424",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1712555767426",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1712555767430",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1712555769185",
+  "level" : "INFO",
+  "thread" : "background-preinit",
+  "logger" : "org.hibernate.validator.internal.util.Version",
+  "message" : "HV000001: Hibernate Validator 8.0.1.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1712555769219",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 11868 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555769221",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1712555769875",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1712555769949",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 67 ms. Found 14 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770349",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 555 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770358",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-555\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770359",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770359",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770408",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770409",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 1157 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770528",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770580",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.hibernate.Version",
+  "message" : "HHH000412: Hibernate ORM core version 6.4.4.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770607",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770781",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770802",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770962",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56f84c9b",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770964",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770998",
+  "level" : "WARN",
+  "thread" : "main",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555770999",
+  "level" : "WARN",
+  "thread" : "main",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1712555771877",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1712555771987",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1712555772369",
+  "level" : "WARN",
+  "thread" : "main",
+  "logger" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "context" : "default"
+}{
+  "timestamp" : "1712555773312",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"http-nio-555\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1712555773327",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port 555 (http) with context path ''",
+  "context" : "default"
+}{
+  "timestamp" : "1712555773335",
+  "level" : "INFO",
+  "thread" : "main",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Started ImyeomsuLckApplication in 4.617 seconds (process running for 5.006)",
+  "context" : "default"
+}

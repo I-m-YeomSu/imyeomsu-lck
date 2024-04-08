@@ -72,7 +72,6 @@ jacocoTestReport {
 	}
 }
 
-
 coveralls {
 	jacocoReportPath 'build/customJacocoReportDir/test/jacocoTestReport.xml'
 }
@@ -111,10 +110,23 @@ dependencies {
 	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
 
 
+	// logback 설정
+	// https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder
+	implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.4'
+	// https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+	testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.3'
+	// https://mvnrepository.com/artifact/ch.qos.logback/logback-core
+	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.5.3'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.12'
+	// https://mvnrepository.com/artifact/ch.qos.logback.contrib/logback-json-classic
+	implementation group: 'ch.qos.logback.contrib', name: 'logback-json-classic', version: '0.1.5'
+	// https://mvnrepository.com/artifact/ch.qos.logback.contrib/logback-jackson
+	implementation group: 'ch.qos.logback.contrib', name: 'logback-jackson', version: '0.1.5'
+
 
 
 }
-
 // querydsl generated 경로 설정
 def querydslDir = "build/generated/querydsl"
 
