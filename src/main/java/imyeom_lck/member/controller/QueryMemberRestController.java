@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/query/members")
 @Slf4j
 public class QueryMemberRestController {
 
@@ -30,8 +30,8 @@ public class QueryMemberRestController {
     }
 
 
-    @GetMapping(value = "/findone")
-    public MemberDetailsResponseDTO findById(Long id){
+    @GetMapping(value = "/findone/{id}")
+    public MemberDetailsResponseDTO findById(@PathVariable(value = "id") Long id){
         return queryMemberService.findById(id);
     }
 

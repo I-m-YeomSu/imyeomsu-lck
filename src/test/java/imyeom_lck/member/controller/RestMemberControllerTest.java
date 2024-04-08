@@ -56,7 +56,7 @@ public class RestMemberControllerTest {
         given(this.memberService.getMemberDetails(anyLong()))
                 .willReturn(dummyMemberDetails);
 
-        this.mvc.perform(get("/members/details/{memberId}", 1L)
+        this.mvc.perform(get("/api/members/details/{memberId}", 1L)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.memberName").value("mem1"))
@@ -74,7 +74,7 @@ public class RestMemberControllerTest {
 
         given(memberService.findByLoginId(existingLoginId)).willReturn(memberDetailsResponseDTO);
 
-        mvc.perform(get("/members/{loginId}", existingLoginId)
+        mvc.perform(get("/api/members/{loginId}", existingLoginId)
                         .contentType(MediaType.APPLICATION_JSON))
                         .andExpect(status().isOk())
                         .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -102,7 +102,7 @@ public class RestMemberControllerTest {
 
         given(this.memberService.signUp(any(SignUpRequestDTO.class))).willReturn(dummyMember);
 
-        this.mvc.perform(post("/members/signUp")
+        this.mvc.perform(post("/api/members/signUp")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(signUpRequestDTO)))
                 .andExpect(status().isOk())
@@ -161,7 +161,7 @@ public class RestMemberControllerTest {
 
 
         given(this.memberService.deleteMember(anyLong())).willReturn(dummyMember);
-        this.mvc.perform(post("/members/delete/{memberId}",deletedMemberId)
+        this.mvc.perform(post("/api/members/delete/{memberId}",deletedMemberId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.memberName").value("name1"))
@@ -196,7 +196,7 @@ public class RestMemberControllerTest {
         given(this.memberService.updateMember(anyLong(), any(MemberUpdateDTO.class))).willReturn(dummyMember);
 
 
-        this.mvc.perform(post("/members/update/{id}",updateMemberId)
+        this.mvc.perform(post("/api/members/update/{id}",updateMemberId)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(memberUpdateDTO)))
                 .andExpect(status().isOk());

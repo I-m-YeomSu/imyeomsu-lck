@@ -54,6 +54,7 @@ public class QueryMemberRepositoryImpl implements QueryMemberRepository {
         QPointUsage pointUsage = QPointUsage.pointUsage;
         return jpaQueryFactory
                 .selectFrom(pointUsage)
+                .innerJoin(pointUsage.member).fetchJoin()
                 .where(pointUsage.member.memberId.eq(id))
                 .fetch();
 

@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Tag(name = "MemberController", description = "회원관련 API")
 @RequiredArgsConstructor
-@RequestMapping(value = "/members")
+@RequestMapping(value = "/api/members")
 @Slf4j
 public class RestMemberController {
 
@@ -38,7 +38,7 @@ public class RestMemberController {
             @ApiResponse(responseCode = "200", description = "게시글 조회 성공", content = @Content(schema = @Schema(implementation = MemberDetailsResponseDTO.class))),
             @ApiResponse(responseCode = "404", description = "존재하지 않는 리소스 접근", content = @Content(schema = @Schema(implementation = ErrorResponse.class))) })
     @Operation(summary = "memberId 로 회원찾기")
-    @GetMapping(value="/details/{memberId}")
+    @GetMapping(value="/{memberId}")
     public ResponseEntity<ResponseDto<MemberDetailsResponseDTO>> getMemberDetails(@Parameter(name = "id", description = "posts 의 id", in = ParameterIn.PATH) @Valid @PathVariable Long memberId) {
 
         MemberDetailsResponseDTO MemberDetailsResponseDTO = memberService.getMemberDetails(memberId);
@@ -51,7 +51,7 @@ public class RestMemberController {
     }
 
     @Operation(summary = "로그인 아이디로 회원 찾기")
-    @GetMapping(value = "/{loginId}")
+    @GetMapping(value = "/details/{loginId}")
     public ResponseEntity<ResponseDto<MemberDetailsResponseDTO>> getMemberId(@Valid @PathVariable String loginId) {
         
         return ResponseEntity.ok(ResponseDto.<MemberDetailsResponseDTO>builder()

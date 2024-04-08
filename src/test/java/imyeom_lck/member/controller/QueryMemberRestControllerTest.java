@@ -64,7 +64,7 @@ public class QueryMemberRestControllerTest {
 
         given(this.qdslService.findall())
                 .willReturn(dummyList);
-        this.mvc.perform(get("/api/findall")
+        this.mvc.perform(get("/api/query/members/findall")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].memberName").value("mem1"))
@@ -86,7 +86,7 @@ public class QueryMemberRestControllerTest {
         given(this.qdslService.findById(anyLong()))
                 .willReturn(dummyMemberDetails);
 
-        this.mvc.perform(get("/api/findone?id=1")
+        this.mvc.perform(get("/api/query/members/findone/{id}", 1L)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.memberName").value("mem1"))
@@ -109,7 +109,7 @@ public class QueryMemberRestControllerTest {
 
         given(this.qdslService.queryDSLFindAllPUByMemberId(anyLong())).willReturn(dummyList);
 
-        this.mvc.perform(get("/api/findup?id=1")
+        this.mvc.perform(get("/api/query/members/findpu/{id}",1L)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].pointUsageId").value(1))
