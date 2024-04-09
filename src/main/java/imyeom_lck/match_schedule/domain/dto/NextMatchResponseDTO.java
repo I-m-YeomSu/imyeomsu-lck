@@ -1,5 +1,6 @@
 package imyeom_lck.match_schedule.domain.dto;
 
+import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,24 +12,21 @@ import lombok.NoArgsConstructor;
 @Builder
 public class NextMatchResponseDTO {
 
-    private Long homeTeam;
-    private Long awayTeam;
+    private String homeTeaName;
+    private String awayTeamName;
+    private String homeTeamLogo;
+    private String awayTeamLogo;
     private String matchDate;
-    private boolean isShowdown;
 
 
-    public static NextMatchResponseDTO createNextMatchResponseDTO(
-            Long homeTeam,
-            Long awayTeam,
-            String matchDate,
-            boolean isShowdown) {
+    public static NextMatchResponseDTO fromEntity(MatchSchedule matchSchedule) {
 
         return NextMatchResponseDTO.builder()
-                .homeTeam(homeTeam)
-                .awayTeam(awayTeam)
-                .matchDate(matchDate)
-                .isShowdown(isShowdown)
-                .build();
+            .homeTeaName(matchSchedule.getHomeTeamName())
+            .awayTeamName(matchSchedule.getAwayTeamName())
+            .homeTeamLogo(matchSchedule.getHomeTeamLogo())
+            .awayTeamLogo(matchSchedule.getAwayTeamLogo())
+            .matchDate(matchSchedule.getMatchDate()).build();
     }
 
 }
