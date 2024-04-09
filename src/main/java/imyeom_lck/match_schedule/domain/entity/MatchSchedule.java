@@ -1,6 +1,8 @@
 package imyeom_lck.match_schedule.domain.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import imyeom_lck.team.domain.entity.Team;
 
@@ -27,42 +29,20 @@ import lombok.NoArgsConstructor;
 @Table(name = "match schedules")
 public class MatchSchedule {
 
-	//경기일정키
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "match_schedule_id")
-	private Long matchScheduleId;
-
-	private Long homeTeam;
-
-	private Long awayTeam;
-
-	//경기날짜및시간
-	private LocalDateTime matchDate;
-
-	//경기결과
-	private boolean matchResult;
-	
-	//Saturday Showdown 여부
-	private boolean isShowdown;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "match_schedule_id")
+	private Long matchId;
+	private String matchDate;
+	private String matchTime;
+	private String matchState;
+	private String matchTitle;
+	private String homeTeamScore;
+	private String awayTeamScore;
+	private String homeTeamName;
+	private String homeTeamLogo;
+	private String awayTeamName;
+	private String awayTeamLogo;
 
 
-
-	@Builder
-	public static MatchSchedule createMatchSchedule(
-			Long homeTeam,
-			Long awayTeam,
-			LocalDateTime matchDate,
-			boolean matchResult,
-			boolean isShowdown) {
-
-
-		return MatchSchedule.builder()
-				.homeTeam(homeTeam)
-				.awayTeam(awayTeam)
-				.matchDate(matchDate)
-				.matchResult(matchResult)
-				.isShowdown(isShowdown)
-				.build();
-    }
 }

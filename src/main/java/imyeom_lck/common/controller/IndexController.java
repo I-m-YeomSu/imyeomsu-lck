@@ -16,4 +16,10 @@ public class IndexController {
     public String mainEventForm(){
         return "event/main";
     }
+
+    @GetMapping("/zz")
+    public String zz(){
+
+        return "index";
+    }
 }
