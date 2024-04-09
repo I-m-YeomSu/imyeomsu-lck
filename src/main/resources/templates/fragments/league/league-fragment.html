@@ -1,0 +1,252 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main th:fragment="league-fragment" id="league-fragment" class="main-wrapper col-md-9 ms-sm-auto py-4 col-lg-9 px-md-4 border-start">
+
+    <div class="row my-4">
+        <div class="col-lg-12 col-12">
+            <div class="custom-block bg-white">
+                <h5 class="mb-4">리그 순위</h5>
+
+                <div class="table-responsive">
+                    <table class="account-table table">
+                        <thead>
+                        <tr>
+                            <th scope="col">팀명</th>
+
+                            <th scope="col">승</th>
+
+                            <th scope="col">패</th>
+
+                            <th scope="col">승률</th>
+
+                            <th scope="col">득실차</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td scope="row">
+                                <img src="team1_logo.jpg" class="team-logo">
+                                팀명 1
+                            </td>
+
+                            <td scope="row">10:00 PM</td>
+
+                            <td scope="row">Shopping</td>
+
+                            <td scope="row">C2C Transfer</td>
+
+                            <td class="text-danger" scope="row">
+                                <span class="me-1">-</span>
+                                $100.00
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team2_logo.jpg" class="team-logo">
+                                팀명 2
+                            </td>
+
+                            <td scope="row">10:42 AM</td>
+
+                            <td scope="row">Food Delivery</td>
+
+                            <td scope="row">Mobile Reload</td>
+
+                            <td class="text-success" scope="row">
+                                <span class="me-1">+</span>
+                                $250
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team3_logo.jpg" class="team-logo">
+                                팀명 3
+                            </td>
+
+                            <td scope="row">8:20 PM</td>
+
+                            <td scope="row">Billing</td>
+
+                            <td scope="row">Goverment</td>
+
+                            <td class="text-success" scope="row">
+                                <span class="me-2">+</span>$50
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team4_logo.jpg" class="team-logo">
+                                팀명 4
+                            </td>
+
+                            <td scope="row">10:48 PM</td>
+
+                            <td scope="row">Shopee</td>
+
+                            <td scope="row">QR Code</td>
+
+                            <td class="text-danger" scope="row">
+                                <span class="me-2">-</span>$380
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team5_logo.jpg" class="team-logo">
+                                팀명 5
+                            </td>
+
+                            <td scope="row">12:30 AM</td>
+
+                            <td scope="row">Food Delivery</td>
+
+                            <td scope="row">Mobile Reload</td>
+
+                            <td class="text-success" scope="row">
+                                <span class="me-2">+</span>$250
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team6_logo.jpg" class="team-logo">
+                                팀명 6
+                            </td>
+
+                            <td scope="row">2:40 PM</td>
+
+                            <td scope="row">Food Delivery</td>
+
+                            <td scope="row">Mobile Reload</td>
+
+                            <td class="text-success" scope="row">
+                                <span class="me-2">+</span>$50
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team7_logo.jpg" class="team-logo">
+                                팀명 7
+                            </td>
+
+                            <td scope="row">8:50 AM</td>
+
+                            <td scope="row">Food Delivery</td>
+
+                            <td scope="row">Mobile Reload</td>
+
+                            <td class="text-success" scope="row">
+                                <span class="me-2">+</span>$50
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team8_logo.jpg" class="team-logo">
+                                팀명 8
+                            </td>
+
+                            <td scope="row">6:45 PM</td>
+
+                            <td scope="row">Food Delivery</td>
+
+                            <td scope="row">Mobile Reload</td>
+
+                            <td class="text-danger" scope="row">
+                                <span class="me-2">-</span>$500
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team9_logo.jpg" class="team-logo">
+                                팀명 9
+                            </td>
+
+                            <td scope="row">11:20 AM</td>
+
+                            <td scope="row">Food Delivery</td>
+
+                            <td scope="row">Mobile Reload</td>
+
+                            <td class="text-success" scope="row">
+                                <span class="me-2">+</span>$856
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td scope="row">
+                                <img src="team10_logo.jpg" class="team-logo">
+                                팀명 10
+                            </td>
+
+                            <td scope="row">11:00 PM</td>
+
+                            <td scope="row">Food Delivery</td>
+
+                            <td scope="row">Mobile Reload</td>
+
+                            <td class="text-success" scope="row">
+                                <span class="me-2">+</span>$50
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="custom-block bg-white">
+                <h5 class="mb-4">리그 뉴스</h5>
+                <div class="card mb-3 custom-card">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/150" alt="Card image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 custom-card">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/150" alt="Card image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 custom-card">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/150" alt="Card image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</main>
+</body>
+</html>

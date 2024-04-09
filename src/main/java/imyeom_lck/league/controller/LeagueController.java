@@ -12,7 +12,7 @@ public class LeagueController {
 	@GetMapping
 	public String legueInfoForm(){
 
-		return "leagues/league";
+		return "fragments/league/league-fragment";
 	}
 
 }
