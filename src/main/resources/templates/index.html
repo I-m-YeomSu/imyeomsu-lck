@@ -28,25 +28,25 @@
                 <div class="position-sticky py-4 px-3 sidebar-sticky">
                     <ul class="nav flex-column h-100">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">
+                            <a class="nav-link" href="/main">
                                 <i class="bi-house-fill me-2"></i>
                                 홈
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn" onclick="getForm('/leagues', '#replaceAttribute')">
+                            <a class="nav-link" href="/leagues">
                                 <i class="bi-wallet me-2"></i>
                                 리그 정보
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="event.html">
+                            <a class="nav-link" href="/event/main">
                                 <i class="bi-gear me-2"></i>
                                 이벤트
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profile.html">
+                            <a class="nav-link" href="/auth/my-profile">
                                 <i class="bi-person me-2"></i>
                                 내 정보
                             </a>
@@ -60,7 +60,6 @@
                     </ul>
                 </div>
             </nav>
-
 
             <div id="replaceAttribute"></div>
 
@@ -154,19 +153,22 @@
     chart.render();
 
 
-    function getForm(url, replaceAttribute) {
+    // 버튼 클릭 이벤트 핸들러
+    // 클릭한 페이지로 동적으로 변경하는 함수
+    function changePage(url) {
+        var replaceElement = document.querySelector("#replaceAttribute");
+        if (!replaceElement) {
+            console.error("Replace element not found");
+            return;
+        }
+
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     var fragment = xhr.responseText;
-                    var element = document.querySelector(replaceAttribute);
-                    if (element) {
-                        element.outerHTML = fragment;
-                    } else {
-                        console.error("Element not found:", replaceAttribute);
-                    }
+                    replaceElement.innerHTML = fragment;
                 } else {
                     console.error("Request failed:", xhr.status, xhr.statusText);
                 }
@@ -174,5 +176,19 @@
         };
         xhr.send();
     }
+
+    // 네비게이션 메뉴의 클릭 이벤트 리스너 등록
+    document.addEventListener("DOMContentLoaded", function() {
+        var navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach(function(navLink) {
+            navLink.addEventListener("click", function(event) {
+                event.preventDefault(); // 기본 클릭 이벤트를 중지합니다.
+                var url = event.target.getAttribute("href"); // 클릭한 링크의 href 속성을 가져옵니다.
+                changePage(url); // 클릭한 페이지로 변경합니다.
+            });
+        });
+    });
+
+
 </script>
 </html>

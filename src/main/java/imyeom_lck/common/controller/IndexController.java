@@ -14,12 +14,17 @@ public class IndexController {
 
     @GetMapping("/event/main")
     public String mainEventForm(){
-        return "event/main";
+        return "fragments/event/event-main-fragment";
     }
 
     @GetMapping("/zz")
     public String zz(){
 
         return "index";
+    }
+
+    @GetMapping("/main")
+    public String main(){
+        return "fragments/main/main-wrapper";
     }
 }

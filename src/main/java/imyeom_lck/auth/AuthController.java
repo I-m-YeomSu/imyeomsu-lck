@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AuthController {
 	@GetMapping("/my-profile")
 	public String profileForm(){
-		return "auth/user/profile";
+		return "fragments/auth/my-profile";
 
 	}
 }

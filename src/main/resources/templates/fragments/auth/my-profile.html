@@ -1,0 +1,126 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main th:fragment="my-profile" id="replaceAttribute" class="main-wrapper col-md-9 ms-sm-auto py-4 col-lg-9 px-md-4 border-start">
+    <div class="row my-4">
+        <div class="col-lg-7 col-12">
+            <div class="custom-block custom-block-profile">
+                <div class="row">
+                    <div class="col-lg-12 col-12 mb-3">
+                        <h4>내 정보</h4>
+                    </div>
+
+                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-profile-image-wrap">
+                            <img src="images/medium-shot-happy-man-smiling.jpg"
+                                 class="custom-block-profile-image img-fluid" alt="">
+
+                            <a href="setting.html" class="bi-pencil-square custom-block-edit-icon"></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 col-12">
+                        <p class="d-flex flex-wrap mb-2">
+                            <strong>Name:</strong>
+
+                            <span>Thomas Edison</span>
+                        </p>
+                        <p class="d-flex flex-wrap mb-2">
+                            <strong>Phone:</strong>
+
+                            <a href="#">
+                                (60) 12 345 6789
+                            </a>
+                        </p>
+                        <p class="d-flex flex-wrap mb-2">
+                            <strong>Email:</strong>
+
+                            <a href="#">
+                                thomas@site.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-block custom-block-profile bg-white">
+                <h6 class="mb-4">응원 팀</h6>
+                <div class="d-flex align-items-center">
+                    <div>
+                        <p>우리 팀 경기 알림</p>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="teamNotificationsSwitch">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div>
+                        <p>모든 팀 경기 알림</p>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox"
+                                   id="allTeamsNotificationsSwitch">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12 col-12">
+                <div class="custom-block custom-block-contact">
+                    <h6 class="mb-4">내 금융상품</h6>
+
+                    <p>
+                        <strong>~~~~~~</strong>
+                        <a href="예시" class="ms-2">
+                            예시
+                        </a>
+                    </p>
+
+                    <a href="#" class="btn custom-btn custom-btn-bg-white mt-3">
+                        보러가기
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5 col-12">
+            <div class="custom-block bg-white">
+                <h6 class="mb-4">우리 팀</h6>
+                <div class="my-team-logo">
+                    <img src="your-team-logo.jpg" style="width: 100px; height: auto;">
+                </div>
+                <ul class="team-list">
+                    <li id="team1" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 1</li>
+                    <li id="team2" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 2</li>
+                    <li id="team3" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 3</li>
+                    <li id="team4" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 4</li>
+                    <li id="team5" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 5</li>
+                    <li id="team6" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 6</li>
+                    <li id="team7" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 7</li>
+                    <li id="team8" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 8</li>
+                    <li id="team9" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 9</li>
+                    <li id="team10" onclick="selectTeam(this)" onmouseover="hoverTeam(this)"
+                        onmouseout="unhoverTeam(this)">팀 10</li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</main>
+</body>
+</html>
