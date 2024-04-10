@@ -40,9 +40,12 @@ public class MatchScheduleRepositoryTest {
 
     @BeforeEach
     public void setUp(){
-        matchSchedule1 = DummyMatchSchedule.createDummyMatchSchedule(123L,456L, LocalDateTime.now(), true, false);
-        matchSchedule2 = DummyMatchSchedule.createDummyMatchSchedule(456L,123L, LocalDateTime.now(), false, false);
-        matchSchedule3 = DummyMatchSchedule.createDummyMatchSchedule(789L,787L, LocalDateTime.now(), true, false);
+
+        matchSchedule1 = DummyMatchSchedule.createDummyMatchSchedule("homeTeamName1","awayTeamName1", "4월 11일 (목)", "12:00");
+        matchSchedule2 = DummyMatchSchedule.createDummyMatchSchedule("homeTeamName2","awayTeamName2", "4월 12일 (목)", "12:00");
+        matchSchedule3 = DummyMatchSchedule.createDummyMatchSchedule("homeTeamName3","awayTeamName3", "4월 13일 (목)", "12:00");
+
+
     }
 
 
@@ -61,7 +64,6 @@ public class MatchScheduleRepositoryTest {
 
         // then
         assertEquals(3, matchScheduleList.size());
-
 
 
     }

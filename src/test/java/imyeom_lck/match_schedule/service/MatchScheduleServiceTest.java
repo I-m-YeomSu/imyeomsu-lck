@@ -26,6 +26,7 @@ public class MatchScheduleServiceTest {
 
     @InjectMocks
     private MatchScheduleServiceImpl matchScheduleService;
+
     @Mock
     private JpaMatchScheduleRepository matchScheduleRepository;
 
@@ -35,14 +36,15 @@ public class MatchScheduleServiceTest {
 
     @BeforeEach
     void setUp(){
-        matchSchedule1 = DummyMatchSchedule.createDummyMatchSchedule(123L,456L, LocalDateTime.now(), true, false);
-        matchSchedule2 = DummyMatchSchedule.createDummyMatchSchedule(456L,123L, LocalDateTime.now(), false, false);
-        matchSchedule3 = DummyMatchSchedule.createDummyMatchSchedule(789L,787L, LocalDateTime.now(), true, false);
-    }
+        matchSchedule1 = DummyMatchSchedule.createDummyMatchSchedule("homeTeamName1","awayTeamName1", "4월 11일 (목)", "12:00");
+        matchSchedule2 = DummyMatchSchedule.createDummyMatchSchedule("homeTeamName2","awayTeamName2", "4월 12일 (목)", "12:00");
+        matchSchedule3 = DummyMatchSchedule.createDummyMatchSchedule("homeTeamName3","awayTeamName3", "4월 13일 (목)", "12:00");
 
+    }
 
     @Test
     void getAllMatches() {
+
         // given
         List<MatchSchedule> matchSchedules = List.of(matchSchedule1, matchSchedule2, matchSchedule3);
         when(matchScheduleRepository.findAll()).thenReturn(matchSchedules);
@@ -59,11 +61,9 @@ public class MatchScheduleServiceTest {
             MatchesResponseDTO responseDTO = responseDTOs.get(i);
             MatchSchedule matchSchedule = matchSchedules.get(i);
 
-            assertEquals(matchSchedule.getHomeTeam(), responseDTO.getHomeTeam());
-            assertEquals(matchSchedule.getAwayTeam(), responseDTO.getAwayTeam());
-            assertEquals(matchSchedule.getMatchDate().toString(), responseDTO.getMatchDate());
-            assertEquals(matchSchedule.isMatchResult(), responseDTO.isMatchResult());
-            assertEquals(matchSchedule.isShowdown(), responseDTO.isShowdown());
+            assertEquals(matchSchedule.getMatchTime(), responseDTO.getMatchTime());
+            assertEquals(matchSchedule.getMatchDate(), responseDTO.getMatchDate());
+            assertEquals(matchSchedule.getMatchState(), responseDTO.getMatchState());
         }
 
         // findAll 메서드가 한 번 호출되었는지 확인

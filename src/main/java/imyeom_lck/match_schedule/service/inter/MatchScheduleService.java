@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface MatchScheduleService {
     List<MatchesResponseDTO> getAllMatches();
-    NextMatchResponseDTO getNextMatch();
+    //NextMatchResponseDTO getNextMatch();
 
 }

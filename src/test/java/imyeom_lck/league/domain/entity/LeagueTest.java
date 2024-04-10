@@ -25,7 +25,7 @@ class LeagueTest {
     void setUp() {
 
         team = Team.builder().build();
-        matchSchedule = DummyMatchSchedule.createDummyMatchSchedule(1L,2L, LocalDateTime.now(), false, false);
+        matchSchedule = DummyMatchSchedule.createDummyMatchSchedule("homeTeamName1","awayTeamName1", "4월 11일 (목)", "12:00");
 
         league = League.builder()
             .leagueId(1L)

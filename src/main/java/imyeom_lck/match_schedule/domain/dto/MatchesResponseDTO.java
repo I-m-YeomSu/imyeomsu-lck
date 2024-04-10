@@ -1,16 +1,10 @@
 package imyeom_lck.match_schedule.domain.dto;
 
 import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
-import imyeom_lck.team.domain.entity.Team;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
@@ -18,34 +12,48 @@ import java.time.LocalDateTime;
 @Builder
 public class MatchesResponseDTO {
 
-    private Long homeTeam;
-    private Long awayTeam;
     private String matchDate;
-    private boolean matchResult;
-    private boolean isShowdown;
+    private String matchTime;
+    private String matchState;
+    private String matchTitle;
+    private String homeTeamScore;
+    private String awayTeamScore;
+    private String homeTeamName;
+    private String homeTeamLogo;
+    private String awayTeamName;
+    private String awayTeamLogo;
 
 
-    public static MatchesResponseDTO createMatchResponseDTO(
-            Long homeTeam,
-            Long awayTeam,
-            String matchDate,
-            boolean matchResult,
-            boolean isShowdown) {
 
-//        return new MatchesResponseDTO(
-//                homeTeam,
-//                awayTeam,
-//                matchDate,
-//                matchResult,
-//                isShowdown);
-
+    public static MatchesResponseDTO fromEntity(MatchSchedule matchSchedule) {
 
         return MatchesResponseDTO.builder()
-                .homeTeam(homeTeam)
-                .awayTeam(awayTeam)
-                .matchDate(matchDate)
-                .matchResult(matchResult)
-                .isShowdown(isShowdown)
+				.matchDate(matchSchedule.getMatchDate())
+				.matchTime(matchSchedule.getMatchTime())
+				.matchState(matchSchedule.getMatchState())
+				.matchTitle(matchSchedule.getMatchTitle())
+                .homeTeamScore(matchSchedule.getHomeTeamScore())
+                .awayTeamScore(matchSchedule.getAwayTeamScore())
+				.homeTeamName(matchSchedule.getHomeTeamName())
+                .awayTeamName(matchSchedule.getAwayTeamName())
+				.homeTeamLogo(matchSchedule.getHomeTeamLogo())
+				.awayTeamLogo(matchSchedule.getAwayTeamLogo())
+				.build();
+    }
+
+    public static MatchSchedule toEntity(MatchSchedule matchSchedule) {
+
+        return MatchSchedule.builder()
+                .matchDate(matchSchedule.getMatchDate())
+                .matchTime(matchSchedule.getMatchTime())
+                .matchState(matchSchedule.getMatchState())
+                .matchTitle(matchSchedule.getMatchTitle())
+                .homeTeamScore(matchSchedule.getHomeTeamScore())
+                .awayTeamScore(matchSchedule.getAwayTeamScore())
+                .homeTeamName(matchSchedule.getHomeTeamName())
+                .awayTeamName(matchSchedule.getAwayTeamName())
+                .homeTeamLogo(matchSchedule.getHomeTeamLogo())
+                .awayTeamLogo(matchSchedule.getAwayTeamLogo())
                 .build();
     }
 

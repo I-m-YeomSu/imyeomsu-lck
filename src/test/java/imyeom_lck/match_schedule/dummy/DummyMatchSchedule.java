@@ -13,14 +13,20 @@ import java.time.LocalDateTime;
 public class DummyMatchSchedule {
 
 
-    public static MatchSchedule createDummyMatchSchedule(Long homeTeam,
-                                                         Long awayTeam,
-                                                         LocalDateTime matchDate,
-                                                         boolean matchResult,
-                                                         boolean isShowdown) {
+    public static MatchSchedule createDummyMatchSchedule(String homeTeam,
+                                                         String awayTeam,
+                                                         String matchDate,
+                                                         String matchTime) {
 
-        return MatchSchedule
-                .createMatchSchedule(homeTeam, awayTeam, matchDate, matchResult, isShowdown);
+
+        return MatchSchedule.builder()
+                    .matchDate(matchDate)
+                    .matchTime(matchTime)
+                    .homeTeamName(homeTeam)
+                    .awayTeamName(awayTeam)
+                    .build();
+
     }
-
 }
+
+
