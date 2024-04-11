@@ -4,6 +4,7 @@ package imyeom_lck.league.domain.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Table(name = "ranks")
+@Getter
 @Entity
 public class Rank {
 
@@ -24,7 +26,7 @@ public class Rank {
     private String difference;
     private String winrate;
     private Long kda;
-    private int kill;
-    private int death;
-    private int assist;
+    private int killcount;
+    private int deathcount;
+    private int assistcount;
 }

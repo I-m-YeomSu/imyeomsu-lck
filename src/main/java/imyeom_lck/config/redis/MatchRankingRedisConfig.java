@@ -13,7 +13,7 @@ public class MatchRankingRedisConfig extends RedisConfig {
 
 	@Bean
 	public RedisConnectionFactory matchRankingRedisConnectionFactory() {
-		return redisConnectionFactory(1);  // Redis DB 선택
+		return redisConnectionFactory(2);  // Redis DB 선택
 	}
 
 
