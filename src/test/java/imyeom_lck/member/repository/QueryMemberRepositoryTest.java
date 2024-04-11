@@ -86,10 +86,10 @@ public class QueryMemberRepositoryTest {
         // when
         Member returnMember = queryMemberRepository.queryDSLFindByMemberId(member1.getMemberId()).orElseThrow();
 
-        assertEquals("mem2", returnMember.getName());
-        assertEquals("password2", returnMember.getPassword());
-        assertEquals("phonenum2", returnMember.getPhoneNumber());
-        assertEquals("loginId2", returnMember.getLoginId());
+        assertEquals("mem1", returnMember.getName());
+        assertEquals("password1", returnMember.getPassword());
+        assertEquals("phonenum1", returnMember.getPhoneNumber());
+        assertEquals("loginId1", returnMember.getLoginId());
 
     }
 

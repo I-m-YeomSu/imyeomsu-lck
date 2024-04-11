@@ -60,4 +60,6 @@ src/test/resources/application.yml
 # q type이 들어있는 generated는 무시
 /src/main/generated/
 
-*.log
+logbackTest
+
+src/main/resources/logback-spring.xml
