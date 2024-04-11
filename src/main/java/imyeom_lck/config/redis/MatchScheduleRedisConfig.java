@@ -15,6 +15,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class MatchScheduleRedisConfig extends RedisConfig {
 
 	@Bean
+	@Primary
 	public RedisConnectionFactory matchScheduleRedisConnectionFactory() {
 		return redisConnectionFactory(0);  // Redis DB 선택
 	}

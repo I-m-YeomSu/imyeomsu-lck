@@ -22,6 +22,7 @@ public class RedisConfig {
     @Value("${spring.data.redis.port}")
     private int port;
 
+
     public RedisConnectionFactory redisConnectionFactory(int dbIndex) {
         final RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
         redisStandaloneConfiguration.setHostName(host);
@@ -30,18 +31,7 @@ public class RedisConfig {
         return new LettuceConnectionFactory(redisStandaloneConfiguration);
     }
 
-//    @Bean
-//    @Qualifier("matchRankingRedisTemplate")
-//    public RedisTemplate<?, ?> matchRankingRedisTemplate(ObjectMapper objectMapper, RedisConnectionFactory redisConnectionFactory) {
-//        RedisTemplate<?, ?> template = new RedisTemplate<>();
-//
-//        template.setKeySerializer(new StringRedisSerializer());
-//        template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-//        template.setHashKeySerializer(new StringRedisSerializer());
-//        template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-//        template.setConnectionFactory(redisConnectionFactory);
-//        return template;
-//    }
+
 
 }
 
