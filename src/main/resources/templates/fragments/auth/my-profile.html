@@ -20,17 +20,16 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-9 col-12">
+                    <div th:action="@{/auth//my-profile/{memberId}}" th:method="get" th:object="${memberDetails}" class="col-lg-9 col-12">
                         <p class="d-flex flex-wrap mb-2">
                             <strong>Name:</strong>
 
-                            <span>Thomas Edison</span>
+                            <span th:text="${memberDetails.getMemberName()}"></span>
                         </p>
                         <p class="d-flex flex-wrap mb-2">
                             <strong>Phone:</strong>
 
-                            <a href="#">
-                                (60) 12 345 6789
+                            <a href="#" th:text="${memberDetails.getMemberPhone()}">
                             </a>
                         </p>
                         <p class="d-flex flex-wrap mb-2">
