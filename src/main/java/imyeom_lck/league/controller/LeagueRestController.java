@@ -3,9 +3,7 @@ package imyeom_lck.league.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import imyeom_lck.league.domain.entity.Rank;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +15,15 @@ import java.util.Set;
 
 @RestController
 @Slf4j
-@RequiredArgsConstructor
 public class LeagueRestController {
 
     private final RedisTemplate<String, String> matchRankingRedisTemplate;
     private final ObjectMapper objectMapper;
+
+    public LeagueRestController(@Qualifier("matchRankingRedisTemplate") RedisTemplate<String, String> matchRankingRedisTemplate, ObjectMapper objectMapper) {
+        this.matchRankingRedisTemplate = matchRankingRedisTemplate;
+        this.objectMapper = objectMapper;
+    }
 
     @GetMapping("/redistest")
     public List<Rank> redistest() throws JsonProcessingException {
