@@ -54,16 +54,16 @@
                     <li class="nav-item border-top mt-auto pt-2">
                         <a class="nav-link" href="#">
                             <i class="bi-box-arrow-left me-2"></i>
-                            Logout
+                            LOGIN
                         </a>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div id="replaceAttribute"></div>
+        <div th:insert="~{fragments/main/main-wrapper :: main-wrapper}" id="replaceAttribute"></div>
 
-        <div th:insert="~{fragments/main/main-wrapper :: main-wrapper}"></div>
+<!--        <div th:insert="~{fragments/main/main-wrapper :: main-wrapper}"></div>-->
 
     </div>
 </div>

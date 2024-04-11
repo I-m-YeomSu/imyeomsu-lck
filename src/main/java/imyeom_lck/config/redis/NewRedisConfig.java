@@ -16,16 +16,16 @@ public class NewRedisConfig extends RedisConfig {
 	}
 
 
-//	@Bean
-//	@Qualifier("newsRedisTemplate")
-//	public RedisTemplate<?, ?> newsRedisTemplate(ObjectMapper objectMapper) {
-//		RedisTemplate<?, ?> template = new RedisTemplate<>();
-//
-//		template.setKeySerializer(new StringRedisSerializer());
-//		template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-//		template.setHashKeySerializer(new StringRedisSerializer());
-//		template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-//		template.setConnectionFactory(newsRedisConnectionFactory());
-//		return template;
-//	}
+	@Bean
+	@Qualifier("newsRedisTemplate")
+	public RedisTemplate<?, ?> newsRedisTemplate(ObjectMapper objectMapper) {
+		RedisTemplate<?, ?> template = new RedisTemplate<>();
+
+		template.setKeySerializer(new StringRedisSerializer());
+		template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
+		template.setHashKeySerializer(new StringRedisSerializer());
+		template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
+		template.setConnectionFactory(newsRedisConnectionFactory());
+		return template;
+	}
 }

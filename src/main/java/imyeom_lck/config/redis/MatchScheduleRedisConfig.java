@@ -18,17 +18,17 @@ public class MatchScheduleRedisConfig extends RedisConfig {
 	}
 
 
-//	@Bean
-//	@Qualifier("matchScheduleRedisTemplate")
-//	public RedisTemplate<?, ?> matchScheduleRedisTemplate(ObjectMapper objectMapper) {
-//		RedisTemplate<?, ?> template = new RedisTemplate<>();
-//
-//		template.setKeySerializer(new StringRedisSerializer());
-//		template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-//		template.setHashKeySerializer(new StringRedisSerializer());
-//		template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-//		template.setConnectionFactory(matchScheduleRedisConnectionFactory());
-//		return template;
-//	}
+	@Bean
+	@Qualifier("matchScheduleRedisTemplate")
+	public RedisTemplate<?, ?> matchScheduleRedisTemplate(ObjectMapper objectMapper) {
+		RedisTemplate<?, ?> template = new RedisTemplate<>();
+
+		template.setKeySerializer(new StringRedisSerializer());
+		template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
+		template.setHashKeySerializer(new StringRedisSerializer());
+		template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
+		template.setConnectionFactory(matchScheduleRedisConnectionFactory());
+		return template;
+	}
 
 }

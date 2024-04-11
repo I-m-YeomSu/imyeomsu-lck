@@ -15,6 +15,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @Configuration
 public class RedisConfig {
+
     @Value("${spring.data.redis.host}")
     private String host;
 
@@ -28,16 +29,6 @@ public class RedisConfig {
         redisStandaloneConfiguration.setDatabase(dbIndex);
         return new LettuceConnectionFactory(redisStandaloneConfiguration);
     }
-    @Bean
-    public RedisTemplate<?, ?> matchRankingRedisTemplate(ObjectMapper objectMapper,RedisConnectionFactory redisConnectionFactory) {
-        RedisTemplate<?, ?> template = new RedisTemplate<>();
 
-        template.setKeySerializer(new StringRedisSerializer());
-        template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-        template.setHashKeySerializer(new StringRedisSerializer());
-        template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-        template.setConnectionFactory(redisConnectionFactory);
-        return template;
-    }
 }
 

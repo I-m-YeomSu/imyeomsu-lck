@@ -17,16 +17,16 @@ public class MatchRankingRedisConfig extends RedisConfig {
 	}
 
 
-//	@Bean
-//	@Qualifier("matchRankingRedisTemplate")
-//	public RedisTemplate<?, ?> matchRankingRedisTemplate(ObjectMapper objectMapper) {
-//		RedisTemplate<?, ?> template = new RedisTemplate<>();
-//
-//		template.setKeySerializer(new StringRedisSerializer());
-//		template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-//		template.setHashKeySerializer(new StringRedisSerializer());
-//		template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-//		template.setConnectionFactory(matchRankingRedisConnectionFactory());
-//		return template;
-//	}
+	@Bean
+	@Qualifier("matchRankingRedisTemplate")
+	public RedisTemplate<?, ?> matchRankingRedisTemplate(ObjectMapper objectMapper) {
+		RedisTemplate<?, ?> template = new RedisTemplate<>();
+
+		template.setKeySerializer(new StringRedisSerializer());
+		template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
+		template.setHashKeySerializer(new StringRedisSerializer());
+		template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
+		template.setConnectionFactory(matchRankingRedisConnectionFactory());
+		return template;
+	}
 }
