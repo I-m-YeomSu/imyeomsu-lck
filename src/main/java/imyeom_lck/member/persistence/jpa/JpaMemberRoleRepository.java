@@ -7,6 +7,5 @@ import java.util.Optional;
 
 public interface JpaMemberRoleRepository extends JpaRepository<MemberRole, Long> {
 
-//    Optional<MemberRole> save(MemberRole memberRole);
 
 }
