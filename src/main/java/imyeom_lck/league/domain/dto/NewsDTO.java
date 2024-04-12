@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 
 @Getter
@@ -16,6 +17,7 @@ public class NewsDTO{
     private String title;
     private String content;
     private String thumbnail;
-    private String date;
+    private LocalDate date;
+    private int index;
 
 }

@@ -9,6 +9,7 @@
             <div class="custom-block bg-white">
                 <h5 class="mb-4">리그 순위</h5>
 
+<!--                랭킹              -->
                 <div class="table-responsive" th:object="${ranking}">
                     <table class="account-table table">
                         <thead>
@@ -29,7 +30,7 @@
                         <tr th:each="rank : ${ranking}">
                             <td scope="row">
                                 <img th:src="${rank.logo}" class="team-logo">
-                                <span th:text="${rank.teamName}"></span>
+                                <span th:text="${rank.name}"></span>
                             </td>
 
                             <td scope="row" >
@@ -54,51 +55,113 @@
                 </div>
             </div>
 
+<!--            &lt;!&ndash;                뉴스              &ndash;&gt;-->
+<!--            <div class="custom-block bg-white">-->
+<!--                <h5 class="mb-4">리그 뉴스</h5>-->
+<!--                <div th:each="entry : ${newsList}">-->
+<!--                    <br>-->
+<!--                    <h5 class="mb-4" th:text="${entry.key}"></h5>-->
+<!--                    <div class="card mb-3 custom-card" th:each="news : ${entry.value}">-->
+<!--                        <div class="row g-0" >-->
+<!--                            <div class="col-md-4">-->
+<!--                                <img th:src="${news.thumbnail}">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-8">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title" th:text="${news.title}"></h5>-->
+<!--                                    <p class="card-text" th:text="${news.content}"></p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
+<!--            &lt;!&ndash; Pagination &ndash;&gt;-->
+<!--            <nav aria-label="Page navigation">-->
+<!--                <ul class="pagination justify-content-center mt-4"  >-->
+<!--                    <li class="page-item">-->
+<!--                        <a class="page-link" href="#" aria-label="Previous">-->
+<!--                            <span aria-hidden="true">&laquo;</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="page-item" th:each="date : ${reversedDates}">-->
+<!--                        <a class="page-link" href="#" th:text="${date}"></a>-->
+<!--                    </li>-->
+<!--                    <li class="page-item">-->
+<!--                        <a class="page-link" href="#" aria-label="Next">-->
+<!--                            <span aria-hidden="true">&raquo;</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </nav>-->
+
+
+
+
+
+
+            <!--                뉴스              -->
             <div class="custom-block bg-white">
                 <h5 class="mb-4">리그 뉴스</h5>
-                <div class="card mb-3 custom-card">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://via.placeholder.com/150" alt="Card image">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">card's content.</p>
+                <div th:each="entry : ${newsList}" id="news-container">
+                    <br>
+                    <h5 class="mb-4" th:text="${entry.key}"></h5>
+                    <div class="card mb-3 custom-card" th:each="news : ${entry.value}">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img th:src="${news.thumbnail}">
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3 custom-card">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://via.placeholder.com/150" alt="Card image">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3 custom-card">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://via.placeholder.com/150" alt="Card image">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">card's content.</p>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${news.title}"></h5>
+                                    <p class="card-text" th:text="${news.content}"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mt-4"  >
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item" th:each="date : ${reversedDates}">
+                        <a class="page-link" href="#" th:text="${date}" onclick="showNews(this.getAttribute('date'))"></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <script th:inline="javascript">
+                function showNews(date) {
+                    var newsContainers = document.querySelectorAll('#news-container .mb-4');
+                    for (var i = 0; i < newsContainers.length; i++) {
+                        var containerDate = newsContainers[i].textContent;
+                        if (containerDate === date) {
+                            newsContainers[i].parentNode.style.display = 'block';
+                        } else {
+                            newsContainers[i].parentNode.style.display = 'none';
+                        }
+                    }
+                }
+            </script>
+
         </div>
     </div>
 </main>
 </body>
+    <script>
+
+    </script>
 </html>

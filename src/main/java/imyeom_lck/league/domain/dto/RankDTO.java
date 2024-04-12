@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public class RankDTO {
     private String logo;
-    private String TeamName;
+    private String name;
     private int win;
     private int lose;
     private int difference;
