@@ -20,7 +20,7 @@ public class AuthController {
 
 	private final MemberService memberService;
 
-	@GetMapping("/my-profile/{memberId}")
+	@GetMapping("/{memberId}")
 	public String profileForm(@PathVariable("memberId") Long memberId, Model model) {
 
 		MemberDetailsResponseDTO memberDetailsResponseDTO = memberService.getMemberDetails(memberId);

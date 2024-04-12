@@ -2,10 +2,7 @@ package imyeom_lck.league.domain.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 @AllArgsConstructor
@@ -13,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Table(name = "ranks")
 @Getter
+@Setter
 @Entity
 public class Rank {
 
