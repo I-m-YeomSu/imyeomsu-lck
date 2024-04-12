@@ -1,21 +1,15 @@
 package imyeom_lck.league.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import imyeom_lck.league.domain.dto.NewsDTO;
 import imyeom_lck.league.domain.dto.RankDTO;
-import imyeom_lck.league.domain.entity.Rank;
 import imyeom_lck.league.service.inter.LeagueService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import java.awt.event.WindowFocusListener;
 import java.util.*;
 
 @RestController

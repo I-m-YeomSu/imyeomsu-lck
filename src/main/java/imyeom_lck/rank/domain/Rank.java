@@ -1,4 +1,4 @@
-package imyeom_lck.league.domain.entity;
+package imyeom_lck.rank.domain;
 
 
 import jakarta.persistence.*;
@@ -10,7 +10,6 @@ import lombok.*;
 @Builder
 @Table(name = "ranks")
 @Getter
-@Setter
 @Entity
 public class Rank {
 
@@ -18,13 +17,13 @@ public class Rank {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long rankId;
     private String logo;
-    private String TeamName;
+    private String teamName;
     private int win;
     private int lose;
     private String difference;
     private String winrate;
     private Long kda;
-    private int killcount;
-    private int deathcount;
-    private int assistcount;
+    private int killCount;
+    private int deathCount;
+    private int assistCount;
 }

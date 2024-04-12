@@ -17,14 +17,21 @@ public class IndexController {
         return "fragments/event/event-main-fragment";
     }
 
-    @GetMapping("/zz")
-    public String zz(){
-
-        return "index";
-    }
 
     @GetMapping("/main")
     public String main(){
         return "fragments/main/main-wrapper";
     }
+
+    @GetMapping("/zz")
+    public String mm(){
+
+        return "test";
+    }
+    @GetMapping("/hot-time")
+    public String test(){
+
+        return "fragments/event/hot-time-event";
+    }
+
 }
