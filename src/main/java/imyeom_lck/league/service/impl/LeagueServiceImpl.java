@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -28,39 +30,24 @@ public class LeagueServiceImpl implements LeagueService {
         this.objectMapper = objectMapper;
     }
 
-    public List<RankDTO> redistest(){
+    public List<RankDTO> getrank() throws JsonProcessingException {
         Set<String> keys = matchRankingRedisTemplate.keys("*");
         List<RankDTO> rankList = new ArrayList<>();
+
         for (String key : keys) {
             Object keys2 = matchRankingRedisTemplate.opsForValue().get(key);
-            String json = keys2.toString();
-            json = json.substring(1, json.length() - 1);
-            String[] pairs = json.split(",");
 
-            List<String> slist = new ArrayList<>();
+            String s = objectMapper.writeValueAsString(keys2);
 
-            for(String s : pairs){
-                String[] kv = s.split("=");
-                slist.add(kv[1]);
-            }
+            RankDTO rankDTO = objectMapper.readValue(s, RankDTO.class);
 
-            RankDTO rank = RankDTO.builder()
-                    .logo(slist.get(0))
-                    .TeamName(slist.get(1))
-                    .win(Integer.parseInt(slist.get(2)))
-                    .lose(Integer.parseInt(slist.get(3)))
-                    .difference(Integer.parseInt(slist.get(4)))
-                    .winrate(slist.get(5))
-                    .kda(slist.get(6))
-                    .killcount(Integer.parseInt(slist.get(7)))
-                    .deathcount(Integer.parseInt(slist.get(8)))
-                    .assistcount(Integer.parseInt(slist.get(9)))
-                    .build();
+            rankList.add(rankDTO);
 
-            rankList.add(rank);
         }
+
         return rankList;
     }
+
     public List<RankDTO> ranksort(List<RankDTO> rankList){
 
         Collections.sort(rankList, new Comparator<RankDTO>() {
@@ -78,79 +65,28 @@ public class LeagueServiceImpl implements LeagueService {
     }
 
     @Override
-    public List<NewsDTO> getnews() throws JsonProcessingException {
+    public Map<LocalDate, List<NewsDTO>> getnews() throws JsonProcessingException {
         Set<String> keys = newsRedisTemplate.keys("*");
+        Map<LocalDate, List<NewsDTO>> newsMap = new TreeMap<>(Comparator.reverseOrder());
 
         for (String key : keys) {
             Object keys2 = newsRedisTemplate.opsForValue().get(key);
-
             String s = objectMapper.writeValueAsString(keys2);
-            log.info("JSON@@@@@@@@@@@@@@@@@@@@ {}",s);
-
             NewsDTO newsDTO = objectMapper.readValue(s, NewsDTO.class);
 
-            log.info("news DTO{} ", newsDTO.getContent());
-            log.info("news DTO{} ", newsDTO.getTitle());
-            log.info("news DTO{} ", newsDTO.getDate());
-            log.info("news DTO{} ", newsDTO.getThumbnail());
-
-
-
-            log.info("key!!!!!!!!!!!!!!!!!!!!!!!!!!!!! {} ",key);
+            // 현재 날짜에 해당하는 리스트 가져오기
+            List<NewsDTO> newsList = newsMap.getOrDefault(newsDTO.getDate(), new ArrayList<>());
+            // 뉴스 추가
+            newsList.add(newsDTO);
+            // 리스트 정렬
+            newsList.sort(Comparator.comparingInt(NewsDTO::getIndex));
+            // 리스트 갱신
+            newsMap.put(newsDTO.getDate(), newsList);
         }
 
-        return null;
+        return newsMap;
     }
 
-//    public List<NewsDTO> getnews(){
-//        Set<String> keys = newsRedisTemplate.keys("*");
-//        List<NewsDTO> newsList = new ArrayList<>();
-//        for (String key : keys) {
-//            Object keys2 = newsRedisTemplate.opsForValue().get(key);
-//            String json = keys2.toString();
-//            json = json.substring(1, json.length() - 1);
-//
-//            String title = parseValue(json, "title");
-//            String content = parseValue(json, "content");
-//            String thumbnail = parseValue(json, "thumbnail");
-//            String date = parseValue(json, "date");
-//
-//            Pattern pattern = Pattern.compile(key + "=([^,]+)");
-//            Matcher matcher = pattern.matcher(data);
-//
-//            if (matcher.find()) {
-//                return matcher.group(1);
-//            }
-//
-////            log.info("----------------:{}",json);
-//
-//
-////            String[] pairs = json.split("=");
-////            List<String> slist = new ArrayList<>();
-////
-////            for(String s : pairs){
-////                String[] kv = s.split("=");
-////                log.info("----------------:{}",kv[0]);
-////                slist.add(kv[1]);
-////            }
-//
-////            NewsDTO news = NewsDTO.builder()
-////                    .logo(slist.get(0))
-////                    .TeamName(slist.get(1))
-////                    .win(Integer.parseInt(slist.get(2)))
-////                    .lose(Integer.parseInt(slist.get(3)))
-////                    .difference(Integer.parseInt(slist.get(4)))
-////                    .winrate(slist.get(5))
-////                    .kda(slist.get(6))
-////                    .killcount(Integer.parseInt(slist.get(7)))
-////                    .deathcount(Integer.parseInt(slist.get(8)))
-////                    .assistcount(Integer.parseInt(slist.get(9)))
-////                    .build();
-////
-////            newsList.add(news);
-//        }
-//        return newsList;
-//    }
 
 
 }

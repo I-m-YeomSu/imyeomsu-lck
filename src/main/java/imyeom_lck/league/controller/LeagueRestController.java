@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.event.WindowFocusListener;
+import java.time.LocalDate;
 import java.util.*;
 
 @RestController
@@ -21,8 +23,8 @@ public class LeagueRestController {
     private final LeagueService leagueService;
 
     @GetMapping("/getrank")
-    public List<RankDTO> getrank() {
-        List<RankDTO> rankList = leagueService.redistest();
+    public List<RankDTO> getrank() throws JsonProcessingException {
+        List<RankDTO> rankList = leagueService.getrank();
 
         rankList = leagueService.ranksort(rankList);
 
@@ -30,13 +32,14 @@ public class LeagueRestController {
     }
 
     @GetMapping("/getnews")
-    public List<NewsDTO> getnews() throws JsonProcessingException {
+    public Map<LocalDate, List<NewsDTO>> getnews() throws JsonProcessingException {
 
+        Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getnews();
+//        newsList = leagueService.newssort(newsList);
 
-        List<NewsDTO> newsList = leagueService.getnews();
-//        newsList = leagueService.ranksort(newsList);
+        LocalDate today = LocalDate.now();
 
-        return newsList;
+        return newsMap;
     }
 
 

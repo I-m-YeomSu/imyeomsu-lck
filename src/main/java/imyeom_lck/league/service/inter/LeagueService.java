@@ -4,12 +4,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import imyeom_lck.league.domain.dto.NewsDTO;
 import imyeom_lck.league.domain.dto.RankDTO;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 public interface LeagueService {
-    List<RankDTO> redistest();
+    List<RankDTO> getrank() throws JsonProcessingException;
 
     List<RankDTO> ranksort(List<RankDTO> rankList);
 
-    List<NewsDTO> getnews() throws JsonProcessingException;
+    Map<LocalDate, List<NewsDTO>> getnews() throws JsonProcessingException;
+
 }
