@@ -17,7 +17,7 @@ public class MatchScheduleRedisConfig extends RedisConfig {
 	@Bean
 	@Primary
 	public RedisConnectionFactory matchScheduleRedisConnectionFactory() {
-		return redisConnectionFactory(0);  // Redis DB 선택
+		return redisConnectionFactory(2);  // Redis DB 선택
 	}
 
 

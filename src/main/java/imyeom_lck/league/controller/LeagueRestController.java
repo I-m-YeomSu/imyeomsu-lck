@@ -2,6 +2,7 @@ package imyeom_lck.league.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import imyeom_lck.league.domain.dto.NewsDTO;
 import imyeom_lck.league.domain.dto.RankDTO;
 import imyeom_lck.league.domain.entity.Rank;
 import imyeom_lck.league.service.inter.LeagueService;
@@ -35,7 +36,8 @@ public class LeagueRestController {
 
     @GetMapping("/getnews")
     public List<NewsDTO> getnews(){
-        List<NewsDTO> newsList = leagueService.getNews();
+        List<NewsDTO> newsList = leagueService.getnews();
+//        newsList = leagueService.ranksort(newsList);
 
         return newsList;
     }
