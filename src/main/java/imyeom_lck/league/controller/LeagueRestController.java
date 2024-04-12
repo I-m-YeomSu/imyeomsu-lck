@@ -13,14 +13,15 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.awt.event.WindowFocusListener;
 import java.util.*;
 
 @RestController
 @Slf4j
-@RequiredArgsConstructor
 @RequestMapping(value = "/api/leagues")
+@RequiredArgsConstructor
 public class LeagueRestController {
 
     private final LeagueService leagueService;
@@ -35,7 +36,9 @@ public class LeagueRestController {
     }
 
     @GetMapping("/getnews")
-    public List<NewsDTO> getnews(){
+    public List<NewsDTO> getnews() throws JsonProcessingException {
+
+
         List<NewsDTO> newsList = leagueService.getnews();
 //        newsList = leagueService.ranksort(newsList);
 

@@ -1,5 +1,6 @@
 package imyeom_lck.league.service.inter;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import imyeom_lck.league.domain.dto.NewsDTO;
 import imyeom_lck.league.domain.dto.RankDTO;
 
@@ -10,5 +11,5 @@ public interface LeagueService {
 
     List<RankDTO> ranksort(List<RankDTO> rankList);
 
-    List<NewsDTO> getnews();
+    List<NewsDTO> getnews() throws JsonProcessingException;
 }

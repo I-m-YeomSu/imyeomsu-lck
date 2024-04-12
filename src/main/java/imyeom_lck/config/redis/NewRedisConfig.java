@@ -15,7 +15,7 @@ public class NewRedisConfig extends RedisConfig {
 
 	@Bean
 	public RedisConnectionFactory newsRedisConnectionFactory() {
-		return redisConnectionFactory(0);  // Redis DB 선택
+		return redisConnectionFactory(2);  // Redis DB 선택
 	}
 
 
