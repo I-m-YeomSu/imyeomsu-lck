@@ -6,6 +6,15 @@ plugins {
 	id 'jacoco'
 	id 'com.github.kt3k.coveralls' version '2.12.2'
 	id 'maven-publish'
+	id 'com.github.node-gradle.node' version '3.4.0'
+
+}
+// node 정보 추가
+node {
+	version = '20.12.2'// 맞게 수정 했음
+	npmVersion = '8.12.1' // 맞게 수정했음
+	download = true
+	nodeProjectDir = file('${projectDir}/src/main/resources/static')
 }
 
 java {
@@ -152,4 +161,8 @@ tasks.named('test') {
 tasks.named('asciidoctor') {
 	inputs.dir snippetsDir
 	dependsOn test
+}
+task copyFrontLib(type: Copy) {
+	from "${projectDir}/src/main/resources/static"
+	into "${projectDir}/build/resources/main/static/."
 }
