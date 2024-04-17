@@ -26,7 +26,7 @@ public class QueryMemberRepositoryImpl implements QueryMemberRepository {
 
     private final JPAQueryFactory jpaQueryFactory;
 
-
+    @Override
     public List<Member> queryDSLFindAll() {
 
         QMember member = QMember.member;
