@@ -14,5 +14,4 @@ public interface MatchScheduleService {
 
     List<MatchesViewResponseDTO> getAllMatcheSchedule() throws JsonProcessingException;
 
-//    List<MatchesViewResponseDTO> sortAllMatcheSchedule(List<MatchesResponseDTO> scheduleList) throws JsonProcessingException;
 }
