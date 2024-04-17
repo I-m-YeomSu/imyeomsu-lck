@@ -2,6 +2,7 @@
 
  import com.fasterxml.jackson.core.JsonProcessingException;
  import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
+ import imyeom_lck.match_schedule.domain.dto.MatchesViewResponseDTO;
  import imyeom_lck.match_schedule.domain.dto.NextMatchResponseDTO;
  import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
  import imyeomsu.lck.common_utils.dto.ResponseDto;
@@ -46,10 +47,10 @@
 //     }
 
      @GetMapping(value="/getmatchschedule")
-     public ResponseEntity<ResponseDto<List<MatchesResponseDTO>>> getAllMatcheSchedule() throws JsonProcessingException {
-         List<MatchesResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatcheSchedule();
+     public ResponseEntity<ResponseDto<List<MatchesViewResponseDTO>>> getAllMatcheSchedule() throws JsonProcessingException {
+         List<MatchesViewResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatcheSchedule();
 
-         return ResponseEntity.ok(ResponseDto.<List<MatchesResponseDTO>>builder()
+         return ResponseEntity.ok(ResponseDto.<List<MatchesViewResponseDTO>>builder()
                  .data(matchesResponseDTO)
                  .status(HttpStatus.OK)
                  .success(true)
