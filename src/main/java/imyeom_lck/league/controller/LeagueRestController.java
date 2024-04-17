@@ -35,7 +35,6 @@ public class LeagueRestController {
     public Map<LocalDate, List<NewsDTO>> getnews() throws JsonProcessingException {
 
         Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getnews();
-//        newsList = leagueService.newssort(newsList);
 
         LocalDate today = LocalDate.now();
 
