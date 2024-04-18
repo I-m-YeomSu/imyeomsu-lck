@@ -13,9 +13,9 @@ public class CouponCountRepository {
     private final RedisTemplate<String, String> hotTimeRedisTemplate;
     private final ObjectMapper objectMapper;
 
-    public CouponCountRepository(@Qualifier("hotTimeRedisTemplate") RedisTemplate<String, String> matchRankingRedisTemplate,
+    public CouponCountRepository(@Qualifier("hotTimeRedisTemplate") RedisTemplate<String, String> hotTimeRedisTemplate,
                             ObjectMapper objectMapper) {
-        this.hotTimeRedisTemplate = matchRankingRedisTemplate;
+        this.hotTimeRedisTemplate = hotTimeRedisTemplate;
         this.objectMapper = objectMapper;
     }
 
