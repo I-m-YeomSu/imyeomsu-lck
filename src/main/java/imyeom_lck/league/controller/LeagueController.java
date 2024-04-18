@@ -28,14 +28,13 @@ public class LeagueController {
 
 		Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getnews();
 
-		// newsMap의 LocalDate를 역순으로 정렬
+		// Localdate 역순으로 newsList 저장
 		Map<LocalDate, List<NewsDTO>> reversedNewsMap = new TreeMap<>(Comparator.reverseOrder());
 		reversedNewsMap.putAll(newsMap);
 
-		// 역순으로 정렬된 LocalDate만 따로 추출하여 리스트로 변환
+		// Localdate만 역순으로 저장
 		List<LocalDate> reversedDates = new ArrayList<>(reversedNewsMap.keySet());
 
-		// 역순으로 정렬된 newsMap을 모델에 추가
 		model.addAttribute("ranking", rankList);
 		model.addAttribute("newsList", reversedNewsMap);
 		model.addAttribute("reversedDates", reversedDates);

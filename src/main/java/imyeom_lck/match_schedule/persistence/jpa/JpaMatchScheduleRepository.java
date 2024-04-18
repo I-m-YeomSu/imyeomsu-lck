@@ -11,7 +11,4 @@ public interface JpaMatchScheduleRepository extends JpaRepository<MatchSchedule,
 
     List <MatchSchedule> findAll();
 
-    // 다음 경기 일정 찾기
-    //Optional <MatchSchedule> findAllByMatchDateGreaterThanOrderByMatchDateAsc(String matchDate);
-    //Optional <MatchSchedule> findByMatchDate(LocalDateTime matchDate);
 }
