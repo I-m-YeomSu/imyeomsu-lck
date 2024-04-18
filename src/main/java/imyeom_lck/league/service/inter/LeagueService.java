@@ -8,11 +8,17 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 public interface LeagueService {
     List<RankDTO> getrank() throws JsonProcessingException;
 
     List<RankDTO> ranksort(List<RankDTO> rankList);
 
     Map<LocalDate, List<NewsDTO>> getnews() throws JsonProcessingException;
+
+    Page<NewsDTO> getPageAllNews(Pageable pageable) throws JsonProcessingException;
+
 
 }

@@ -46,102 +46,9 @@
 
 
 <div th:insert="~{fragments/nav/template-nav :: template-nav}" class="replaceAttribute"></div>
-<div th:insert="~{fragments/nav/template-header :: template-header}" class="replaceAttribute"></div>
-<div th:insert="~{fragments/utils/template-slider :: template-slider}" class="replaceAttribute mt-5"></div>
-
-
-
-<!-- Takeaways -->
-<div class="cards">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>Key Takeaways</h2>
-                <p class="p-heading">Here are the main topics that will be covered in the SEO training course. They cover all the basics of SEO and even some advanced techniques that will help you along the way</p>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-        <div class="row">
-            <div class="col-lg-12">
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-atom"></i>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Position Analysis</h4>
-                        <p>Understand where your website is currently positioned in search engine queries</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Keyword Planning</h4>
-                        <p>Find the best relevant keywords that fit your website SEO strategy in the long run</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Writing Articles</h4>
-                        <p>How to plan your content strategy and write articles that are optimized for SEO</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Gathering Backlinks</h4>
-                        <p>Backlinks are vital for SEO and we'll teach you everything there is to know about them</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="far fa-handshake"></i>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Build Partnerships</h4>
-                        <p>Partnerships will help you establish your website or blog as an authority in your field</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Evaluate Actions</h4>
-                        <p>Learn how to use the right analytics tools to evaluate your SEO actions and improve them</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of cards -->
-<!-- end of takeaways -->
+<div th:insert="~{fragments/header/template-header :: template-header}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/utils/template-slider :: template-slider}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/utils/template-card :: template-news}" class="replaceAttribute"></div>
 
 
 <!-- Testimonials -->
@@ -166,7 +73,7 @@
                                     <div class="testimonial-author">Jude Thorn - Online Marketer</div>
                                 </div> <!-- end of text-wrapper -->
                             </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
+                            <!-- end of slidae -->
 
                             <!-- Slide -->
                             <div class="swiper-slide">
@@ -222,245 +129,11 @@
 <!-- end of testimonials -->
 
 
-<!-- Date -->
-<div id="date" class="basic-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="text-container">
-                    <h2>December 22nd 2020 at Innovation Hub Space</h2>
-                    <p>Our mission is to help people do better SEO. The team is excited to invite you to the next SEO Training Course session which undoubtedly will provide you with the necessary skills to improve your online presence. Fill out the form to register and we'll contact you in less than 24h</p>
-                    <a class="btn-solid-lg page-scroll" href="#register">REGISTER</a>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of basic-5 -->
-<!-- end of date -->
+
+<div th:insert="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
 
 
-<!-- Newsletter -->
-<div class="form-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Stay updated with news by subscribing to our newsletter and our social channels</h3>
-
-                <!-- Newsletter Form -->
-                <form id="newsletterForm" data-toggle="validator" data-focus="false">
-                    <div class="form-group">
-                        <input type="email" class="form-control-input" id="nemail" required>
-                        <label class="label-control" for="nemail">Email</label>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group checkbox">
-                        <input type="checkbox" id="nterms" value="Agreed-to-Terms" required>I've read and agree to Corso's written <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="form-control-submit-button">SIGN UP</button>
-                    </div>
-                    <div class="form-message">
-                        <div id="nmsgSubmit" class="h3 text-center hidden"></div>
-                    </div>
-                </form>
-                <!-- end of newsletter form -->
-
-                <!-- Social Links -->
-                <div class="icon-container">
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-facebook-f fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
-                            </a>
-                        </span>
-                </div> <!-- end of icon-container -->
-                <!-- end of social icons -->
-
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of form-2 -->
-<!-- end of newsletter -->
-
-
-<!-- Contact -->
-<div id="contact" class="form-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="text-container">
-                    <h2>Contact Details</h2>
-                    <p>For registration questions please get in touch using the contact details below. For any questions use the form.</p>
-                    <h3>Main Office Location</h3>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="media">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="media-body">22 Innovative, San Francisco, CA 94043, US</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-mobile-alt"></i>
-                            <div class="media-body">+44 68 554 332, &nbsp;&nbsp;<i class="fas fa-mobile-alt"></i>&nbsp; +44 31 276 112</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-envelope"></i>
-                            <div class="media-body"><a class="light-gray" href="mailto:contact@zigo.com">contact@zigo.com</a> <i class="fas fa-globe"></i><a class="light-gray" href="#your-link">www.zigo.com</a></div>
-                        </li>
-                    </ul>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-6">
-
-                <!-- Contact Form -->
-                <form id="contactForm" data-toggle="validator" data-focus="false">
-                    <div class="form-group">
-                        <input type="text" class="form-control-input" id="cname" required>
-                        <label class="label-control" for="cname">Name</label>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control-input" id="cemail" required>
-                        <label class="label-control" for="cemail">Email</label>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control-textarea" id="cmessage" required></textarea>
-                        <label class="label-control" for="cmessage">Your message</label>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group checkbox">
-                        <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I have read and agree to Corso's stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="form-control-submit-button">SUBMIT</button>
-                    </div>
-                    <div class="form-message">
-                        <div id="cmsgSubmit" class="h3 text-center hidden"></div>
-                    </div>
-                </form>
-                <!-- end of contact form -->
-
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of form-3 -->
-<!-- end of contact -->
-
-
-<!-- Footer -->
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="footer-col first">
-                    <h5>About Corso</h5>
-                    <p class="p-small">We're passionate about teaching people how to do better SEO for their online presence</p>
-                </div>
-            </div> <!-- end of col -->
-            <div class="col-md-3">
-                <div class="footer-col second">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled li-space-lg p-small">
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="article-details.html">Article Details</a></div>
-                        </li>
-                    </ul>
-                </div>
-            </div> <!-- end of col -->
-            <div class="col-md-3">
-                <div class="footer-col third">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled li-space-lg p-small">
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="article-details.html">Article Details</a></div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
-                        </li>
-                    </ul>
-                </div>
-            </div> <!-- end of col -->
-            <div class="col-md-3">
-                <div class="footer-col fourth">
-                    <h5>Social Media</h5>
-                    <p class="p-small">For news & updates follow us</p>
-                    <a href="#your-link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#your-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#your-link">
-                        <i class="fab fa-pinterest-p"></i>
-                    </a>
-                    <a href="#your-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#your-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#your-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of footer -->
-<!-- end of footer -->
-
-
-<!-- Copyright -->
-<div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Inovatik</a> - All rights reserved</p>
-            </div> <!-- end of col -->
-        </div> <!-- enf of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of copyright -->
-<!-- end of copyright -->
 
 
 <!-- Scripts -->
@@ -473,5 +146,8 @@
 <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
 <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
 <script src="js/scripts.js"></script> <!-- Custom scripts -->
+
 </body>
+
+
 </html>

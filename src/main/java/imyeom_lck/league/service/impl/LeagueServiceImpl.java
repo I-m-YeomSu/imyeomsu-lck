@@ -7,6 +7,9 @@ import imyeom_lck.league.domain.dto.RankDTO;
 import imyeom_lck.league.service.inter.LeagueService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -14,17 +17,21 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import javax.swing.text.html.parser.Entity;
+
 @Service
 @Slf4j
 public class LeagueServiceImpl implements LeagueService {
+
 
     private final RedisTemplate<String, String> matchRankingRedisTemplate;
     private final RedisTemplate<String, String> newsRedisTemplate;
     private final ObjectMapper objectMapper;
 
-    public LeagueServiceImpl(@Qualifier("matchRankingRedisTemplate") RedisTemplate<String, String> matchRankingRedisTemplate,
-                             @Qualifier("newsRedisTemplate") RedisTemplate<String, String> newsRedisTemplate,
-                             ObjectMapper objectMapper) {
+    public LeagueServiceImpl(
+        @Qualifier("matchRankingRedisTemplate") RedisTemplate<String, String> matchRankingRedisTemplate,
+        @Qualifier("newsRedisTemplate") RedisTemplate<String, String> newsRedisTemplate,
+        ObjectMapper objectMapper) {
         this.matchRankingRedisTemplate = matchRankingRedisTemplate;
         this.newsRedisTemplate = newsRedisTemplate;
         this.objectMapper = objectMapper;
@@ -48,7 +55,7 @@ public class LeagueServiceImpl implements LeagueService {
         return rankList;
     }
 
-    public List<RankDTO> ranksort(List<RankDTO> rankList){
+    public List<RankDTO> ranksort(List<RankDTO> rankList) {
 
         Collections.sort(rankList, new Comparator<RankDTO>() {
             @Override
@@ -66,6 +73,31 @@ public class LeagueServiceImpl implements LeagueService {
 
     @Override
     public Map<LocalDate, List<NewsDTO>> getnews() throws JsonProcessingException {
+
+        Map<LocalDate, List<NewsDTO>> newsMap = getNewsMap();
+
+        return newsMap;
+    }
+
+    /*
+    * page를 사용한 뉴스 크롤링 데이터를 찾아오는 메서드입니다.
+    * */
+    @Override
+    public Page<NewsDTO> getPageAllNews(Pageable pageable) throws JsonProcessingException {
+        List<NewsDTO> list = new ArrayList<>();
+
+        Map<LocalDate, List<NewsDTO>> newsMap = getNewsMap();
+        for (List<NewsDTO> value : newsMap.values()) {
+            for (NewsDTO newsDTO : value) {
+                list.add(newsDTO);
+            }
+        }
+
+
+        return new PageImpl<>(list, pageable, list.size());
+    }
+
+    private Map<LocalDate, List<NewsDTO>> getNewsMap() throws JsonProcessingException {
         Set<String> keys = newsRedisTemplate.keys("*");
         Map<LocalDate, List<NewsDTO>> newsMap = new TreeMap<>(Comparator.reverseOrder());
 
@@ -83,10 +115,6 @@ public class LeagueServiceImpl implements LeagueService {
             // 리스트 갱신
             newsMap.put(newsDTO.getDate(), newsList);
         }
-
         return newsMap;
     }
-
-
-
 }

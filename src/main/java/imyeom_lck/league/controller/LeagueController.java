@@ -21,7 +21,7 @@ public class LeagueController {
 
 	private final LeagueService leagueService;
 
-	@GetMapping()
+	@GetMapping
 	public String legueInfoForm(Model model) throws JsonProcessingException {
 		List<RankDTO> rankList = leagueService.getrank();
 		rankList = leagueService.ranksort(rankList);
@@ -42,5 +42,7 @@ public class LeagueController {
 
 		return "fragments/league/league-fragment";
 	}
+
+
 
 }
