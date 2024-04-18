@@ -16,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CommentResponseDTO {
 
+    private Long commentId;
     private String memberName;
     private LocalDateTime commentCreateTime;
     private String content;
@@ -26,6 +27,7 @@ public class CommentResponseDTO {
     public static CommentResponseDTO fromEntity(Comment comment){
 
         return CommentResponseDTO.builder()
+                .commentId(comment.getCommentId())
                 .memberName(comment.getMember().getName())
                 .commentCreateTime(comment.getCommentCreateTime())
                 .content(comment.getContent())
