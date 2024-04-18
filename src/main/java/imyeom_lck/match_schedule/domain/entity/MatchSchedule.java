@@ -45,19 +45,5 @@ public class MatchSchedule {
 	private String awayTeamLogo;
 
 
-//	public MatchSchedule createMatchSchedule(){
-//		return MatchSchedule.builder()
-//				.matchDate()
-//				.matchTime()
-//				.matchState()
-//				.matchTitle()
-//				.homeTeamScore()
-//				.awayTeamScore()
-//				.homeTeamName()
-//				.homeTeamLogo()
-//				.awayTeamLogo()
-//				.awayTeamLogo()
-//				.build();
-//
-//	}
+
 }

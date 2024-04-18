@@ -5,6 +5,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
+import imyeom_lck.match_schedule.persistence.querydsl.QueryMatchScheduleRepository;
+import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
+import io.lettuce.core.XReadArgs;
+import lombok.RequiredArgsConstructor;
+
 import imyeom_lck.match_schedule.domain.dto.MatchesViewResponseDTO;
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
 import lombok.extern.slf4j.Slf4j;
@@ -33,6 +38,8 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
 
     @Override
     public List<MatchesResponseDTO> getAllMatches() {
+
+
         return null;
     }
 
