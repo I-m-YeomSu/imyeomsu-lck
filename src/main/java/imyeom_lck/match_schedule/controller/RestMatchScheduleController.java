@@ -33,18 +33,6 @@
                  .build());
 
      }
-//
-//     @GetMapping(value = "/matches/nextMatch")
-//     public ResponseEntity<ResponseDto<NextMatchResponseDTO>> getNextMatch() {
-//         NextMatchResponseDTO nextMatchResponseDTO = matchScheduleService.getNextMatch();
-//
-//
-//         return ResponseEntity.ok(ResponseDto.<NextMatchResponseDTO>builder()
-//                 .data(nextMatchResponseDTO)
-//                 .status(HttpStatus.OK)
-//                 .success(true)
-//                 .build());
-//     }
 
      @GetMapping(value="/getmatchschedule")
      public ResponseEntity<ResponseDto<List<MatchesViewResponseDTO>>> getAllMatcheSchedule() throws JsonProcessingException {
