@@ -23,8 +23,8 @@
      private final MatchScheduleService matchScheduleService;
 
      @GetMapping(value="/getAll")
-     public ResponseEntity<ResponseDto<List<MatchesResponseDTO>>> getAllMatches() {
-         List<MatchesResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatches();
+     public ResponseEntity<ResponseDto<List<MatchesResponseDTO>>> getAllMatches() throws JsonProcessingException {
+         List<MatchesResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatchesByRedis();
 
          return ResponseEntity.ok(ResponseDto.<List<MatchesResponseDTO>>builder()
                  .data(matchesResponseDTO)

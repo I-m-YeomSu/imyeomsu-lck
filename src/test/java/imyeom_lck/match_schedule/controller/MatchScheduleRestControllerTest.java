@@ -45,7 +45,7 @@ public class MatchScheduleRestControllerTest {
                 "Team B", "team_b_logo.png");
         List<MatchesResponseDTO> matches = Arrays.asList(match1, match2);
 
-        when(matchScheduleService.getAllMatches()).thenReturn(matches);
+        when(matchScheduleService.getAllMatchesByRedis()).thenReturn(matches);
 
         // when & then
         mvc.perform(get("/matches")

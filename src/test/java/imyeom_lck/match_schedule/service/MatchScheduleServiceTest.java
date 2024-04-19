@@ -21,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 @ExtendWith(MockitoExtension.class)
 public class MatchScheduleServiceTest {
 
@@ -43,14 +45,14 @@ public class MatchScheduleServiceTest {
     }
 
     @Test
-    void getAllMatches() {
+    void getAllMatches() throws JsonProcessingException {
 
         // given
         List<MatchSchedule> matchSchedules = List.of(matchSchedule1, matchSchedule2, matchSchedule3);
         when(matchScheduleRepository.findAll()).thenReturn(matchSchedules);
 
         // when
-        List <MatchesResponseDTO> responseDTOs = matchScheduleService.getAllMatches();
+        List <MatchesResponseDTO> responseDTOs = matchScheduleService.getAllMatchesByRedis();
 
         // then
         assertNotNull(responseDTOs);

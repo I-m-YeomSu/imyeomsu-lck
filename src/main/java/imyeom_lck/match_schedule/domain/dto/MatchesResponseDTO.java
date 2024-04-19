@@ -23,8 +23,6 @@ public class MatchesResponseDTO {
     private String awayTeamName;
     private String awayTeamLogo;
 
-
-
     public static MatchesResponseDTO fromEntity(MatchSchedule matchSchedule) {
 
         return MatchesResponseDTO.builder()

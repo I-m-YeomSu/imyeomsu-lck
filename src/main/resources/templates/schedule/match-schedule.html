@@ -3,34 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Landing page template built with HTML and Bootstrap 4 for presenting training courses, classes, workshops and for convincing visitors to register using the form.">
-    <meta name="author" content="Inovatik">
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-    <meta property="og:site_name" content="" /> <!-- website name -->
-    <meta property="og:site" content="" /> <!-- website link -->
-    <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-    <meta property="og:type" content="article" />
-
-    <!-- Website Title -->
     <title>Corso - Training Course Landing Page Template</title>
-
-    <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/fontawesome-all.css" rel="stylesheet">
     <link href="../css/swiper.css" rel="stylesheet">
     <link href="../css/magnific-popup.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
-
-    <!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- modal -->
 </head>
+
 <body data-spy="scroll" data-target=".fixed-top">
 
 <!-- Preloader -->
@@ -43,31 +28,54 @@
 </div>
 <!-- end of preloader -->
 
-
-
-
 <div th:insert="~{fragments/nav/template-nav :: template-nav}" class="replaceAttribute"></div>
 <div th:insert="~{fragments/header/common-template-header :: common-template-header}" class="replaceAttribute"></div>
 
-<!-- Date -->
-<div id="date" class="basic-5">
+<div>
+    <span id="prevMonth" onclick="changeMonth(-1)">&#60;</span>
+    <span id="currentDate" onclick="showCalendar()"></span>
+    <span id="nextMonth" onclick="changeMonth(1)">&#62;</span>
+</div>
+
+<div id="calendarModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="calendar"></div>
+    </div>
+</div>
+
+<div id="match-details" class="match-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="text-container">
-                    <h2>December 22nd 2020 at Innovation Hub Space</h2>
-                    <p>Our mission is to help people do better SEO. The team is excited to invite you to the next SEO Training Course session which undoubtedly will provide you with the necessary skills to improve your online presence. Fill out the form to register and we'll contact you in less than 24h</p>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of basic-5 -->
+                <div class="match-info">
+                    <div class="match-header">
+                        <span class="match-date">December 22nd, 2020</span>
+                        <span class="match-status">경기 종료</span>
+                    </div>
+                    <div class="team-info-container">
+                        <div class="home-team-info">
+                            <h3>홈팀 이름</h3>
+                            <img src="../images/genz.svg" alt="홈팀 로고">
+                        </div>
+                        <div class="match-score">
+                            <span class="home-score">0</span>
+                            <span class="vs">VS</span>
+                            <span class="away-score">0</span>
+                        </div>
+                        <div class="away-team-info">
+                            <h3 style="">원정팀 이름</h3>
+                            <img src="../images/genz.svg" alt="원정팀 로고">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div th:insert="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
 <div th:insert="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
-
-
-
 
 <!-- Scripts -->
 <script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
@@ -80,7 +88,207 @@
 <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
 <script src="../js/scripts.js"></script> <!-- Custom scripts -->
 
+<!-- Bootstrap Datepicker -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+
+<script>let currentDate = new Date(2024, 3, 19); // 년, 월, 일 (월은 0부터 시작)
+
+function changeMonth(offset) {
+    currentDate.setMonth(currentDate.getMonth() + offset);
+    updateDateDisplay();
+}
+
+function updateDateDisplay() {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+    const day = currentDate.getDate();
+    const dateString = `${year}년 ${month.toString().padStart(2, '0')}월 ${day.toString().padStart(2, '0')}일`;
+    document.getElementById('currentDate').textContent = dateString;
+}
+
+function showCalendar() {
+    const calendarModal = document.getElementById('calendarModal');
+    calendarModal.style.display = 'block';
+    renderCalendar();
+}
+
+function closeModal() {
+    const calendarModal = document.getElementById('calendarModal');
+    calendarModal.style.display = 'none';
+}
+
+function renderCalendar() {
+    const calendarElement = document.getElementById('calendar');
+    calendarElement.innerHTML = ''; // 이전 달력 내용 제거
+
+    const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+
+    const calendarHeader = document.createElement('div');
+    calendarHeader.textContent = `${year}년 ${monthNames[month]}`;
+    calendarElement.appendChild(calendarHeader);
+
+    const calendarBody = document.createElement('div');
+    calendarBody.classList.add('calendar-body');
+    calendarElement.appendChild(calendarBody);
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    let date = 1;
+    for (let i = 0; i < 6; i++) {
+        const week = document.createElement('div');
+        week.classList.add('week');
+        calendarBody.appendChild(week);
+
+        for (let j = 0; j < 7; j++) {
+            if (i === 0 && j < firstDay) {
+                const emptyCell = document.createElement('div');
+                emptyCell.classList.add('empty-cell');
+                week.appendChild(emptyCell);
+            } else if (date > lastDate) {
+                break;
+            } else {
+                const cell = document.createElement('div');
+                cell.classList.add('date-cell');
+                cell.textContent = date;
+                cell.addEventListener('click', () => handleDateClick(year, month + 1, date));
+                week.appendChild(cell);
+                date++;
+            }
+        }
+    }
+}
+
+function handleDateClick(year, month, date) {
+    const selectedDate = new Date(year, month - 1, date);
+    const formattedMonth = month.toString().padStart(2, '0');
+    const formattedDate = date.toString().padStart(2, '0');
+    const formattedTime = selectedDate.toLocaleTimeString('ko-KR', { hour12: false });
+
+    fetchMatchSchedule(year, formattedMonth, formattedDate, formattedTime);
+    closeModal();
+}
+
+function fetchMatchSchedule(year, month, date, time) {
+    const url = `/match-schedule?year=${year}&month=${month}&time=${time}&date=${date}`;
+
+    // AJAX 요청 보내기
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            // 데이터 처리 로직 작성
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+updateDateDisplay();
+
+// 현재 날짜를 가져와서 currentDate에 표시하는 함수
+function setCurrentDate() {
+    var currentDateElement = document.getElementById("currentDate");
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
+    currentDateElement.innerHTML = `${yyyy}년 ${mm}월 ${dd}일`;
+}
+
+// 페이지 로드 시 현재 날짜를 표시
+window.onload = function() {
+    setCurrentDate();
+};
+
+
+</script>
+
+<script>
+    // 현재 날짜 정보
+    let currentDate = new Date();
+    let currentYear = currentDate.getFullYear();
+    let currentMonth = currentDate.getMonth();
+
+    // 캘린더 패널 생성 함수
+    function createCalendarPanel(year, month) {
+        // 요일 배열
+        const daysOfWeek = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
+        // 캘린더 패널 요소 생성
+        const calendarPanel = document.createElement('div');
+        calendarPanel.classList.add('datepicker-panel');
+        calendarPanel.dataset.view = 'days picker';
+
+        // 이전 달, 현재 달, 다음 달 표시
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const prevMonth = month === 0 ? 11 : month - 1;
+        const nextMonth = month === 11 ? 0 : month + 1;
+        const prevYear = prevMonth === 11 ? year - 1 : year;
+        const nextYear = nextMonth === 0 ? year + 1 : year;
+
+        const monthHeader = document.createElement('ul');
+        monthHeader.innerHTML = `
+                <li data-view="month prev">&lsaquo;</li>
+                <li data-view="month current">${monthNames[month]} ${year}</li>
+                <li data-view="month next">&rsaquo;</li>
+            `;
+        calendarPanel.appendChild(monthHeader);
+
+        // 요일 표시
+        const weekRow = document.createElement('ul');
+        weekRow.dataset.view = 'week';
+        daysOfWeek.forEach(day => {
+            const dayElement = document.createElement('li');
+            dayElement.textContent = day;
+            weekRow.appendChild(dayElement);
+        });
+        calendarPanel.appendChild(weekRow);
+
+        // 날짜 표시
+        const daysOfMonth = getDaysInMonth(year, month);
+        const firstDayOfWeek = new Date(year, month, 1).getDay(); // 첫째 날의 요일
+        let date = 1;
+
+        for (let i = 0; i < 6; i++) {
+            const weekRow = document.createElement('ul');
+            for (let j = 0; j < 7; j++) {
+                const dayElement = document.createElement('li');
+                if (i === 0 && j < firstDayOfWeek) {
+                    dayElement.classList.add('muted', 'day', 'prev');
+                    const prevMonthDate = getDaysInMonth(prevYear, prevMonth) - firstDayOfWeek + j + 1;
+                    dayElement.textContent = prevMonthDate;
+                } else if (date > daysOfMonth) {
+                    dayElement.classList.add('muted', 'day', 'next');
+                    dayElement.textContent = date - daysOfMonth;
+                    date++;
+                } else {
+                    dayElement.classList.add('day');
+                    dayElement.textContent = date;
+                    date++;
+                }
+                weekRow.appendChild(dayElement);
+            }
+            calendarPanel.appendChild(weekRow);
+        }
+
+        return calendarPanel;
+    }
+
+    // 해당 연도, 월의 일 수 반환
+    function getDaysInMonth(year, month) {
+        return new Date(year, month + 1, 0).getDate();
+    }
+
+    // 캘린더 패널 생성
+    const calendarPanel = createCalendarPanel(currentYear, currentMonth);
+
+    // 생성된 캘린더 패널을 원하는 요소에 추가
+    document.getElementById('calendar').appendChild(calendarPanel);
+</script>
+
 </body>
-
-
 </html>

@@ -14,8 +14,8 @@ public interface MatchScheduleService {
 
 
 
-    List<MatchesResponseDTO> getAllMatches();
-    //NextMatchResponseDTO getNextMatch();
+    List<MatchesResponseDTO> getAllMatchesByRedis() throws JsonProcessingException;
+    List<MatchesResponseDTO> getAllMatchesByRdb() throws JsonProcessingException;
 
     List<MatchesViewResponseDTO> getAllMatcheSchedule() throws JsonProcessingException;
 

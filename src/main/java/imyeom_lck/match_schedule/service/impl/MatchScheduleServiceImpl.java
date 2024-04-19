@@ -5,6 +5,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
+import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
+import imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository;
 import imyeom_lck.match_schedule.persistence.querydsl.QueryMatchScheduleRepository;
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
 import io.lettuce.core.XReadArgs;
@@ -29,20 +31,45 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
 
     private final RedisTemplate<String, String> matchScheduleRedisTemplate;
     private final ObjectMapper objectMapper;
+    private final JpaMatchScheduleRepository jpaMatchScheduleRepository;
 
     public MatchScheduleServiceImpl(@Qualifier("matchScheduleRedisTemplate") RedisTemplate<String, String> matchScheduleRedisTemplate,
-                                    ObjectMapper objectMapper) {
+                                    ObjectMapper objectMapper, JpaMatchScheduleRepository jpaMatchScheduleRepository) {
         this.matchScheduleRedisTemplate = matchScheduleRedisTemplate;
         this.objectMapper = objectMapper;
+		this.jpaMatchScheduleRepository = jpaMatchScheduleRepository;
+	}
+
+    @Override
+    public List<MatchesResponseDTO> getAllMatchesByRedis() throws JsonProcessingException {
+        Set<String> keys = matchScheduleRedisTemplate.keys("*");
+        List<MatchesResponseDTO> dtos = new ArrayList<>();
+
+        for (String key : keys) {
+            String s = matchScheduleRedisTemplate.opsForValue().get(key);
+
+            String json = objectMapper.writeValueAsString(s);
+            MatchesResponseDTO matchesResponseDTO = objectMapper.readValue(json, MatchesResponseDTO.class);
+            
+            dtos.add(matchesResponseDTO);
+        }
+
+        return dtos;
     }
 
     @Override
-    public List<MatchesResponseDTO> getAllMatches() {
+    public List<MatchesResponseDTO> getAllMatchesByRdb() throws JsonProcessingException {
 
+        List<MatchSchedule> entity = jpaMatchScheduleRepository.findAll();
+        List<MatchesResponseDTO> dtos = new ArrayList<>();
 
-        return null;
+        for (MatchSchedule matchSchedule : entity) {
+            MatchesResponseDTO matchesResponseDTO = MatchesResponseDTO.fromEntity(matchSchedule);
+            dtos.add(matchesResponseDTO);
+        }
+
+        return dtos;
     }
-
 
     @Override
     public List<MatchesViewResponseDTO> getAllMatcheSchedule() throws JsonProcessingException {
@@ -53,6 +80,7 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
             Object keys2 = matchScheduleRedisTemplate.opsForValue().get(key);
 
             String s = objectMapper.writeValueAsString(keys2);
+            objectMapper.readValue(s, MatchesViewResponseDTO.class);
 
             JsonNode node = objectMapper.readTree(s);
             String matchDate = node.get("matchDate").asText();
@@ -83,6 +111,8 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
 
         return matches;
     }
+    
+    
 
 
 }

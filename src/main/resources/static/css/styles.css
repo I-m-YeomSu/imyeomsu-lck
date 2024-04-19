@@ -2274,3 +2274,182 @@ common-header
 	text-align: center;
 	padding: 20px;
 }
+
+/*
+match schedule all
+**/
+
+.match-section {
+	background-color: #fbf9f5;
+	padding: 6rem 0;
+}
+
+.match-section .match-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/date-background.jpg') center center no-repeat;
+	background-size: cover;
+	border-radius: 0.75rem;
+	padding: 2rem;
+	text-align: center;
+}
+
+.match-section .match-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.match-section .match-date,
+.match-section .match-status {
+	color: #eee;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.match-section .team-info-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.match-section .home-team-info,
+.match-section .away-team-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #eee;
+	margin: 0 2rem;
+}
+
+.match-section .home-team-info img,
+.match-section .away-team-info img {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 0.5rem;
+}
+
+.match-section .match-score {
+	color: #eee;
+	font-size: 2rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	margin: 0 2rem;
+}
+
+.match-section .match-score span {
+	margin: 0 1rem;
+}
+
+/* 캘린더**/
+
+
+/* Optional: has to be larger than 1050 */
+.datepicker {
+	z-index: 1600 !important;
+}
+/* Optional: in case your body is less than datapicker height */
+.modal-body {
+	height: 200px;
+}
+
+
+/**모달 */
+/* 추가적인 스타일링 */
+#calendarModal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+/* 캘린더 스타일 */
+#calendar {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 5px;
+	width: 200px;
+	height: 300px;
+}
+.day {
+	border: 1px solid #ccc;
+	padding: 5px;
+	text-align: center;
+}
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
