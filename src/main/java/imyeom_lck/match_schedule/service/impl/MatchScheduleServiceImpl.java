@@ -33,6 +33,7 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
     private final ObjectMapper objectMapper;
     private final JpaMatchScheduleRepository jpaMatchScheduleRepository;
 
+
     public MatchScheduleServiceImpl(@Qualifier("matchScheduleRedisTemplate") RedisTemplate<String, String> matchScheduleRedisTemplate,
                                     ObjectMapper objectMapper, JpaMatchScheduleRepository jpaMatchScheduleRepository) {
         this.matchScheduleRedisTemplate = matchScheduleRedisTemplate;
@@ -72,8 +73,9 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
     }
 
     @Override
-    public List<MatchesViewResponseDTO> getAllMatcheSchedule() throws JsonProcessingException {
+    public List<MatchesViewResponseDTO> getAllMatchSchedule() throws JsonProcessingException {
         Set<String> keys = matchScheduleRedisTemplate.keys("*");
+
         List<MatchesViewResponseDTO> matches = new ArrayList<>();
 
         for (String key : keys) {
@@ -111,8 +113,8 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
 
         return matches;
     }
-    
-    
+
+
 
 
 }

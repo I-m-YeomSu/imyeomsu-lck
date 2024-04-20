@@ -31,48 +31,21 @@
 <div th:insert="~{fragments/nav/template-nav :: template-nav}" class="replaceAttribute"></div>
 <div th:insert="~{fragments/header/common-template-header :: common-template-header}" class="replaceAttribute"></div>
 
-<div>
+<div class="schedule-calendar">
     <span id="prevMonth" onclick="changeMonth(-1)">&#60;</span>
     <span id="currentDate" onclick="showCalendar()"></span>
     <span id="nextMonth" onclick="changeMonth(1)">&#62;</span>
 </div>
 
 <div id="calendarModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content2">
         <span class="close" onclick="closeModal()">&times;</span>
-        <div id="calendar"></div>
+        <div class="calendar"></div>
     </div>
 </div>
 
-<div id="match-details" class="match-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="match-info">
-                    <div class="match-header">
-                        <span class="match-date">December 22nd, 2020</span>
-                        <span class="match-status">경기 종료</span>
-                    </div>
-                    <div class="team-info-container">
-                        <div class="home-team-info">
-                            <h3>홈팀 이름</h3>
-                            <img src="../images/genz.svg" alt="홈팀 로고">
-                        </div>
-                        <div class="match-score">
-                            <span class="home-score">0</span>
-                            <span class="vs">VS</span>
-                            <span class="away-score">0</span>
-                        </div>
-                        <div class="away-team-info">
-                            <h3 style="">원정팀 이름</h3>
-                            <img src="../images/genz.svg" alt="원정팀 로고">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div th:insert="~{fragments/main/match-schedule-wrapper :: match-schedule-wrapper}" class="replaceAttribute"></div>
+
 
 <div th:insert="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
 <div th:insert="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
@@ -87,10 +60,7 @@
 <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
 <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
 <script src="../js/scripts.js"></script> <!-- Custom scripts -->
-
-<!-- Bootstrap Datepicker -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-
+<script src="../js/calendar.js"></script> <!-- Custom scripts -->
 
 <script>let currentDate = new Date(2024, 3, 19); // 년, 월, 일 (월은 0부터 시작)
 
@@ -109,8 +79,10 @@ function updateDateDisplay() {
 
 function showCalendar() {
     const calendarModal = document.getElementById('calendarModal');
+
+
     calendarModal.style.display = 'block';
-    renderCalendar();
+
 }
 
 function closeModal() {
@@ -196,99 +168,22 @@ function setCurrentDate() {
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
     var yyyy = today.getFullYear();
-    currentDateElement.innerHTML = `${yyyy}년 ${mm}월 ${dd}일`;
+    currentDateElement.innerHTML = `${yyyy}년 ${mm}월`;
 }
 
 // 페이지 로드 시 현재 날짜를 표시
 window.onload = function() {
     setCurrentDate();
 };
-
+function showCalendar() {
+    const calendarControl = new CalendarControl();
+    const modal = document.getElementById("calendarModal");
+    modal.style.display = "block"; // 모달 표시
+}
 
 </script>
 
-<script>
-    // 현재 날짜 정보
-    let currentDate = new Date();
-    let currentYear = currentDate.getFullYear();
-    let currentMonth = currentDate.getMonth();
 
-    // 캘린더 패널 생성 함수
-    function createCalendarPanel(year, month) {
-        // 요일 배열
-        const daysOfWeek = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-
-        // 캘린더 패널 요소 생성
-        const calendarPanel = document.createElement('div');
-        calendarPanel.classList.add('datepicker-panel');
-        calendarPanel.dataset.view = 'days picker';
-
-        // 이전 달, 현재 달, 다음 달 표시
-        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        const prevMonth = month === 0 ? 11 : month - 1;
-        const nextMonth = month === 11 ? 0 : month + 1;
-        const prevYear = prevMonth === 11 ? year - 1 : year;
-        const nextYear = nextMonth === 0 ? year + 1 : year;
-
-        const monthHeader = document.createElement('ul');
-        monthHeader.innerHTML = `
-                <li data-view="month prev">&lsaquo;</li>
-                <li data-view="month current">${monthNames[month]} ${year}</li>
-                <li data-view="month next">&rsaquo;</li>
-            `;
-        calendarPanel.appendChild(monthHeader);
-
-        // 요일 표시
-        const weekRow = document.createElement('ul');
-        weekRow.dataset.view = 'week';
-        daysOfWeek.forEach(day => {
-            const dayElement = document.createElement('li');
-            dayElement.textContent = day;
-            weekRow.appendChild(dayElement);
-        });
-        calendarPanel.appendChild(weekRow);
-
-        // 날짜 표시
-        const daysOfMonth = getDaysInMonth(year, month);
-        const firstDayOfWeek = new Date(year, month, 1).getDay(); // 첫째 날의 요일
-        let date = 1;
-
-        for (let i = 0; i < 6; i++) {
-            const weekRow = document.createElement('ul');
-            for (let j = 0; j < 7; j++) {
-                const dayElement = document.createElement('li');
-                if (i === 0 && j < firstDayOfWeek) {
-                    dayElement.classList.add('muted', 'day', 'prev');
-                    const prevMonthDate = getDaysInMonth(prevYear, prevMonth) - firstDayOfWeek + j + 1;
-                    dayElement.textContent = prevMonthDate;
-                } else if (date > daysOfMonth) {
-                    dayElement.classList.add('muted', 'day', 'next');
-                    dayElement.textContent = date - daysOfMonth;
-                    date++;
-                } else {
-                    dayElement.classList.add('day');
-                    dayElement.textContent = date;
-                    date++;
-                }
-                weekRow.appendChild(dayElement);
-            }
-            calendarPanel.appendChild(weekRow);
-        }
-
-        return calendarPanel;
-    }
-
-    // 해당 연도, 월의 일 수 반환
-    function getDaysInMonth(year, month) {
-        return new Date(year, month + 1, 0).getDate();
-    }
-
-    // 캘린더 패널 생성
-    const calendarPanel = createCalendarPanel(currentYear, currentMonth);
-
-    // 생성된 캘린더 패널을 원하는 요소에 추가
-    document.getElementById('calendar').appendChild(calendarPanel);
-</script>
 
 </body>
 </html>
