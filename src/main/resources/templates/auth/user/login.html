@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>login</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/fontawesome-all.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/magnific-popup.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+
+    <link rel="icon" href="images/favicon.png">
+
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+
+
+<div th:insert="~{fragments/nav/template-nav :: template-nav}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/header/common-template-header :: common-template-header}" class="replaceAttribute"></div>
+
+<div class="wrapper-container">
+
+    <div class="login-container">
+        <input type="checkbox" id="check">
+        <div class="login form">
+            <header>Login</header>
+            <form action="#">
+                <input type="text" placeholder="Enter your email">
+                <input type="password" placeholder="Enter your password">
+                <a href="#">Forgot password?</a>
+                <input type="button" class="button" value="Login">
+            </form>
+            <div class="signup">
+            <span class="signup">Don't have an account?
+             <label for="check">Signup</label>
+            </span>
+            </div>
+        </div>
+        <div class="registration form">
+            <header>Signup</header>
+            <form action="#">
+                <input type="text" placeholder="Enter your email">
+                <input type="password" placeholder="Create a password">
+                <input type="password" placeholder="Confirm your password">
+                <input type="button" class="button" value="Signup">
+            </form>
+            <div class="signup">
+            <span class="signup">Already have an account?
+             <label for="check">Login</label>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
+<div th:replace="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
+
+
+
+<!-- Scripts -->
+<script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="../js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="../js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="../js/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
+<script src="../js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+<script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+<script src="../js/scripts.js"></script> <!-- Custom scripts -->
+
+</body>
+</html>

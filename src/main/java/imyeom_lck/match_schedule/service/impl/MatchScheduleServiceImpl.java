@@ -44,15 +44,22 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
     @Override
     public List<MatchesResponseDTO> getAllMatchesByRedis() throws JsonProcessingException {
         Set<String> keys = matchScheduleRedisTemplate.keys("*");
+        log.info("서비스 - 여기를 오고");
+
         List<MatchesResponseDTO> dtos = new ArrayList<>();
 
-        for (String key : keys) {
-            String s = matchScheduleRedisTemplate.opsForValue().get(key);
+        if (!keys.isEmpty()){
 
-            String json = objectMapper.writeValueAsString(s);
-            MatchesResponseDTO matchesResponseDTO = objectMapper.readValue(json, MatchesResponseDTO.class);
-            
-            dtos.add(matchesResponseDTO);
+            for (String key : keys) {
+                String s = matchScheduleRedisTemplate.opsForValue().get(key);
+                log.info("서비스 - 여기는 안 오겠지?");
+
+                String json = objectMapper.writeValueAsString(s);
+                MatchesResponseDTO matchesResponseDTO = objectMapper.readValue(json, MatchesResponseDTO.class);
+
+                dtos.add(matchesResponseDTO);
+            }
+
         }
 
         return dtos;

@@ -10,19 +10,23 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/match-schedule")
 @RequiredArgsConstructor
+@Slf4j
 public class MatchScheduleController {
 
 	private final MatchScheduleService matchScheduleService;
@@ -33,19 +37,18 @@ public class MatchScheduleController {
 	 * */
 	@GetMapping("/all-matches")
 	public String getAllMatchSchedule(Model model) throws JsonProcessingException {
-
+		log.info("여기를 오고");
 		List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
+		log.info("여기도 오나?");
 		model.addAttribute("matches", allMatchesByRedis);
 
 		return "schedule/match-schedule";
 	}
 
 
-	/**
-	 * 해당
-	 * */
 	@GetMapping("/dd")
-	public String getMatchSchedule(String scheduleDate, Model model) throws JsonProcessingException {
+	public String getMatchSchedule(@RequestParam(name = "scheduleDate") String scheduleDate,
+								   Model model) throws JsonProcessingException {
 
 		LocalDate now = LocalDate.now();
 		int month = now.getMonth().getValue();
@@ -65,7 +68,7 @@ public class MatchScheduleController {
 		int chooseDay = date.getDayOfMonth();
 
 		if (chooseMonth == month && chooseYear == year && chooseDay == day){
-
+			log.info("여기 동작해야 됨");
 			List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
 			model.addAttribute("matches", allMatchesByRedis);
 		}

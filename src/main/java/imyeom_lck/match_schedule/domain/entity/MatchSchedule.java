@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "match schedules")
+@Table(name = "match_schedules")
 public class MatchSchedule {
 
 	@Id
