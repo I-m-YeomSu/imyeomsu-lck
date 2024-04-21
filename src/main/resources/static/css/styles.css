@@ -959,8 +959,9 @@ input[type='checkbox'] {
 /*     06. Partners     */
 /************************/
 .slider-1 {
+
 	top:-100px;
-	padding-top: 6rem;
+	padding-top: 30rem;
 	padding-bottom: 3rem;
 	background-color: #fbf9f5;
 	text-align: center;
@@ -2108,8 +2109,10 @@ a:hover.back-to-top {
 	}
 
 	.header .outer-container {
+		padding-bottom: 20rem;
 		width: 69.375rem;
 		bottom: -6rem;
+		top: 30rem;
 	}
 
 	.header .swiper-container {
@@ -2183,6 +2186,7 @@ a:hover.back-to-top {
 
 	/* Testimonials */
 	.slider-2 .swiper-container {
+		position: relative;
 		width: 90%;
 	}
 
