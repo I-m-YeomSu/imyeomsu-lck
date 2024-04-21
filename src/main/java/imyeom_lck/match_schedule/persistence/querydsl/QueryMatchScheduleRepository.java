@@ -4,9 +4,10 @@ import org.springframework.data.domain.Page;
 
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
 import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
+import org.springframework.data.domain.Pageable;
 
 public interface QueryMatchScheduleRepository {
 
-	Page<MatchesResponseDTO> findMatchScheduleByMonth(String month);
+	Page<MatchSchedule> findMatchScheduleByMonth(String month, Pageable pageable);
 
 }

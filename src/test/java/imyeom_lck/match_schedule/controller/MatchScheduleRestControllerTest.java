@@ -1,10 +1,8 @@
 package imyeom_lck.match_schedule.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
 import imyeom_lck.match_schedule.domain.dto.MatchesViewResponseDTO;
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -45,7 +42,7 @@ public class MatchScheduleRestControllerTest {
                 "Team B", "team_b_logo.png");
         List<MatchesResponseDTO> matches = Arrays.asList(match1, match2);
 
-        when(matchScheduleService.getAllMatches()).thenReturn(matches);
+        when(matchScheduleService.getAllMatchesByRedis()).thenReturn(matches);
 
         // when & then
         mvc.perform(get("/matches")
@@ -92,7 +89,7 @@ public class MatchScheduleRestControllerTest {
 
         List<MatchesViewResponseDTO> matches = Arrays.asList(match1, match2);
 
-        when(matchScheduleService.getAllMatcheSchedule()).thenReturn(matches);
+        when(matchScheduleService.getAllMatchSchedule()).thenReturn(matches);
         mvc.perform(MockMvcRequestBuilders.get("/api/matches/getmatchschedule").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data[0].matchTitle").value("Football Match"));

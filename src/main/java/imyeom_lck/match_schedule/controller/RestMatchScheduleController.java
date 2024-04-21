@@ -3,7 +3,6 @@
  import com.fasterxml.jackson.core.JsonProcessingException;
  import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
  import imyeom_lck.match_schedule.domain.dto.MatchesViewResponseDTO;
- import imyeom_lck.match_schedule.domain.dto.NextMatchResponseDTO;
  import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
  import imyeomsu.lck.common_utils.dto.ResponseDto;
  import lombok.RequiredArgsConstructor;
@@ -23,8 +22,8 @@
      private final MatchScheduleService matchScheduleService;
 
      @GetMapping(value="/getAll")
-     public ResponseEntity<ResponseDto<List<MatchesResponseDTO>>> getAllMatches() {
-         List<MatchesResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatches();
+     public ResponseEntity<ResponseDto<List<MatchesResponseDTO>>> getAllMatches() throws JsonProcessingException {
+         List<MatchesResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatchesByRedis();
 
          return ResponseEntity.ok(ResponseDto.<List<MatchesResponseDTO>>builder()
                  .data(matchesResponseDTO)
@@ -36,7 +35,7 @@
 
      @GetMapping(value="/getmatchschedule")
      public ResponseEntity<ResponseDto<List<MatchesViewResponseDTO>>> getAllMatcheSchedule() throws JsonProcessingException {
-         List<MatchesViewResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatcheSchedule();
+         List<MatchesViewResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatchSchedule();
 
          return ResponseEntity.ok(ResponseDto.<List<MatchesViewResponseDTO>>builder()
                  .data(matchesResponseDTO)

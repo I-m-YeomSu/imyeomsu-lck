@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:fragment="match-schedule-wrapper" id="match-details" class="match-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div th:each="match:${matches}" class="match-info">
+                    <div class="match-header">
+                        <span th:text="${match.matchDate}" class="match-date">December 22nd, 2020</span>
+                        <span th:text="${match.matchState}"  class="match-status">경기 종료</span>
+                    </div>
+                    <div class="team-info-container">
+                        <div class="home-team-info">
+                            <h3 th:text="${match.homeTeamName}">홈팀 이름</h3>
+                            <img th:src="${match.homeTeamLogo}" alt="홈팀 로고">
+                        </div>
+                        <div class="match-score">
+                            <span th:text="${match.homeTeamScore}" class="home-score">0</span>
+                            <span class="vs">VS</span>
+                            <span th:text="${match.awayTeamScore}" class="away-score">0</span>
+                        </div>
+                        <div class="away-team-info">
+                            <h3 th:text="${match.awayTeamName}" style="">원정팀 이름</h3>
+                            <img th:src="${match.awayTeamLogo}" alt="원정팀 로고">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

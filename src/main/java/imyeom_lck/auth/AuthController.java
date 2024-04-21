@@ -30,4 +30,10 @@ public class AuthController {
 		return "fragments/auth/my-profile";
 
 	}
+
+	@GetMapping("/login")
+	public String loginForm() {
+		return "auth/user/login";
+
+	}
 }

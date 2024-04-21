@@ -759,9 +759,11 @@ input[type='checkbox'] {
 .header {
 	position: relative;
 	padding-top: 8rem;
-	height: 100vh;
+	/*height: 100vh;*/
+	max-height: 480px;
+	height: 380px;
 	padding-bottom: 40%;
-	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/background-lol.jpg') center center no-repeat;
+	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/lck.jpg') center center no-repeat;
 	background-size: cover;
 	text-align: center;
 	/*background: rgba( 255, 255, 255, 0.15 );*/
@@ -1543,9 +1545,13 @@ input[type='checkbox'] {
 /**********************/
 .footer {
 	padding-top: 4.75rem;
-
 	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/background-lol.jpg') center center no-repeat;
 	background-size: cover;
+	max-height: 250px;
+	/*font-size: 14px; !* 적절한 크기로 조정 *!*/
+	overflow: hidden;
+	/*text-overflow: ellipsis;*/
+	/*white-space: nowrap;*/
 }
 
 .footer .footer-col {
@@ -1554,6 +1560,7 @@ input[type='checkbox'] {
 
 .footer h5 {
 	margin-bottom: 0.5rem;
+
 }
 
 .footer a { 
@@ -1564,6 +1571,7 @@ input[type='checkbox'] {
 .footer p,
 .footer a {
 	color: #bbb;
+	/*font-size: 14px; !* 적절한 크기로 조정 *!*/
 }
 
 .footer .list-unstyled .fas {
@@ -1597,6 +1605,7 @@ input[type='checkbox'] {
 	padding-bottom: 0.375rem;
 	background-color: #000;
 	text-align: center;
+	max-height: 150px;
 }
 
 .copyright .p-small {
@@ -1608,7 +1617,11 @@ input[type='checkbox'] {
 .copyright a {
 	color: #999;
 }
+.copyright .container{
 
+	text-align: center;
+	max-height: 150px;
+}
 
 /**********************************/
 /*     19. Back To Top Button     */
@@ -2241,7 +2254,7 @@ common-header
 
 .common-header {
 	position: relative;
-	height: 400px; /* 헤더 높이 */
+	height: 200px; /* 헤더 높이 */
 }
 
 .common-header .header-bg {
@@ -2250,10 +2263,21 @@ common-header
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url('../images/background-lol.jpg');
+	background-image: url('../images/non-logo-back.png');
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
+
+	display: flex;
+	justify-content: center; /* 수평 정렬 */
+	align-items: center; /* 수직 정렬 */
+}
+
+.common-header .header-bg .lck-logo{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .common-header .header-bg::before {
@@ -2263,8 +2287,8 @@ common-header
 	left: 0;
 	width: 100%;
 	height: 100%;
-	backdrop-filter: blur(5px); /* 블러 효과 조절 */
-	background-color: rgba(255, 255, 255, 0.3); /* 글래시모피즘 효과 조절 */
+	/*backdrop-filter: blur(5px); /* 블러 효과 조절 */
+	/*background-color: rgba(255, 255, 255, 0.3); /* 글래시모피즘 효과 조절 */
 }
 
 .common-header .header-content {
@@ -2273,4 +2297,329 @@ common-header
 	color: #333; /* 텍스트 색상 */
 	text-align: center;
 	padding: 20px;
+}
+
+/*
+match schedule all
+**/
+
+.match-section {
+	background-color: #fbf9f5;
+	padding: 6rem 0;
+}
+
+.match-section .match-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/date-background.jpg') center center no-repeat;
+	background-size: cover;
+	border-radius: 0.75rem;
+	padding: 2rem;
+	text-align: center;
+}
+
+.match-section .match-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.match-section .match-date,
+.match-section .match-status {
+	color: #eee;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.match-section .team-info-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.match-section .home-team-info,
+.match-section .away-team-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #eee;
+	margin: 0 2rem;
+}
+
+.match-section .home-team-info img,
+.match-section .away-team-info img {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 0.5rem;
+}
+
+.match-section .match-score {
+	color: #eee;
+	font-size: 2rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	margin: 0 2rem;
+}
+
+.match-section .match-score span {
+	margin: 0 1rem;
+}
+
+/* 캘린더**/
+
+.schedule-calendar {
+	position: absolute; /* 화면을 기준으로 위치를 고정합니다. */
+	top: 50%; /* 상단을 기준으로 50% 위치에 요소를 배치합니다. */
+	left: 50%; /* 좌측을 기준으로 50% 위치에 요소를 배치합니다. */
+	transform: translate(-50%, -10%); /* 요소의 가로 및 세로 중앙으로 이동시킵니다. */
+	height: 200px; /* 요소의 높이를 설정합니다. */
+}
+
+
+
+/**모달 */
+/* 추가적인 스타일링 */
+/*#calendarModal {*/
+/*	display: none;*/
+/*	position: fixed;*/
+/*	z-index: 1;*/
+/*	left: 40rem;*/
+/*	top: 25.5rem;*/
+/*	max-width: 400px; !*change as per your design need *!*/
+/*	min-width: 320px;*/
+/*	overflow: auto;*/
+/*	background-color: rgba(0,0,0,0);*/
+/*	overflow:hidden;*/
+/*}*/
+
+#calendarModal {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	top: 23.5rem;
+	transform: translate(-50%, -0); /* 요소를 수평 및 수직으로 중앙 정렬 */
+	max-width: 400px; /*change as per your design need */
+	min-width: 320px;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0); /* 반투명한 배경색 */
+	overflow:hidden;
+
+}
+
+/* 미디어 쿼리를 사용하여 화면 크기에 따라 스타일 조정 */
+@media screen and (max-width: 768px) {
+	#calendarModal {
+		max-width: 80%; /* 화면 너비의 80%까지 */
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#calendarModal {
+		max-width: 90%; /* 화면 너비의 90%까지 */
+	}
+}
+
+.modal-content2 {
+	background-color: rgba(0, 0, 0, 0);
+	margin: 15% auto;
+	padding: 20px;
+	border: none;
+	width: 100%;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/* 캘린더 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+	--calendar-bg-color: #262829;
+	--calendar-font-color: #FFF;
+	--weekdays-border-bottom-color: #404040;
+	--calendar-date-hover-color: #505050;
+	--calendar-current-date-color: #1b1f21;
+	--calendar-today-color: linear-gradient(to bottom, #03a9f4, #2196f3);
+	--calendar-today-innerborder-color: transparent;
+	--calendar-nextprev-bg-color: transparent;
+	--next-prev-arrow-color : #FFF;
+	--calendar-border-radius: 16px;
+	--calendar-prevnext-date-color: #484848
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.calendar {
+	font-family: 'IBM Plex Sans', sans-serif;
+	position: relative;
+	max-width: 400px; /*change as per your design need */
+	min-width: 320px;
+	background: var(--calendar-bg-color);
+	color: var(--calendar-font-color);
+	margin: 20px auto;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-weight: normal;
+	border-radius: var(--calendar-border-radius);
+}
+
+.calendar-inner {
+	padding: 10px 10px;
+}
+
+.calendar .calendar-inner .calendar-body {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	text-align: center;
+}
+
+.calendar .calendar-inner .calendar-body div {
+	padding: 4px;
+	min-height: 30px;
+	line-height: 30px;
+	border: 1px solid transparent;
+	margin: 10px 2px 0px;
+}
+
+.calendar .calendar-inner .calendar-body div:nth-child(-n+7) {
+	border: 1px solid transparent;
+	border-bottom: 1px solid var(--weekdays-border-bottom-color);
+}
+
+.calendar .calendar-inner .calendar-body div:nth-child(-n+7):hover {
+	border: 1px solid transparent;
+	border-bottom: 1px solid var(--weekdays-border-bottom-color);
+}
+
+.calendar .calendar-inner .calendar-body div>a {
+	color: var(--calendar-font-color);
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+}
+
+.calendar .calendar-inner .calendar-body div:hover {
+	border: 1px solid var(--calendar-date-hover-color);
+	border-radius: 4px;
+}
+
+.calendar .calendar-inner .calendar-body div.empty-dates:hover {
+	border: 1px solid transparent;
+}
+
+.calendar .calendar-inner .calendar-controls {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.calendar .calendar-inner .calendar-today-date {
+	display: grid;
+	text-align: center;
+	cursor: pointer;
+	margin: 3px 0px;
+	background: var(--calendar-current-date-color);
+	padding: 8px 0px;
+	border-radius: 10px;
+	width: 80%;
+	margin: auto;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-year-month {
+	display: flex;
+	min-width: 100px;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next {
+	text-align: right;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-year-month .calendar-year-label,
+.calendar .calendar-inner .calendar-controls .calendar-year-month .calendar-month-label {
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.calendar .calendar-inner .calendar-body .calendar-today {
+	background: var(--calendar-today-color);
+	border-radius: 4px;
+}
+
+.calendar .calendar-inner .calendar-body .calendar-today:hover {
+	border: 1px solid transparent;
+}
+
+.calendar .calendar-inner .calendar-body .calendar-today a {
+	outline: 2px solid var(--calendar-today-innerborder-color);
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a,
+.calendar .calendar-inner .calendar-controls .calendar-prev a {
+	color: var(--calendar-font-color);
+	font-family: arial, consolas, sans-serif;
+	font-size: 26px;
+	text-decoration: none;
+	padding: 4px 12px;
+	display: inline-block;
+	background: var(--calendar-nextprev-bg-color);
+	margin: 10px 0 10px 0;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a svg,
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg {
+	height: 20px;
+	width: 20px;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a svg path,
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg path{
+	fill: var(--next-prev-arrow-color);
+}
+
+.calendar .calendar-inner .calendar-body .prev-dates,
+.calendar .calendar-inner .calendar-body .next-dates {
+	color: var(--calendar-prevnext-date-color);
+}
+
+.calendar .calendar-inner .calendar-body .prev-dates:hover,
+.calendar .calendar-inner .calendar-body .next-dates:hover {
+	border: 1px solid transparent;
+	pointer-events: none;
+}
+
+@media (min-width: 481px) {
+.calendarModal {
+	position: absolute;
+	top: 46px;
+	bottom: auto;
+	left: 50%;
+	z-index: 2500;
+	margin-left: -172px;
+	padding: 0;
+	width: 344px;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid #777;
+	-webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .1);
+	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .1);
+}
 }
