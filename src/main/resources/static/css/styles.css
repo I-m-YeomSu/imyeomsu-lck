@@ -773,6 +773,11 @@ input[type='checkbox'] {
 	/*box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );*/
 	/*border: 1px solid rgba( 255, 255, 255, 0.18 );*/
 }
+.header .header-img{
+
+	height: 6.5rem;
+	width: 100%;
+}
 
 .header iframe{
 	position: absolute;
@@ -783,6 +788,21 @@ input[type='checkbox'] {
 	transform: translate(-50%, -50%);
 	pointer-events: none;
 	background-size: cover;
+
+}
+
+
+.header iframe iframe-container{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	height:100vh;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	background-size: cover;
+	background-color: #0a53be;
+
 
 }
 
@@ -2779,3 +2799,95 @@ match schedule all
 }
 
 
+/*aside ranking*/
+.date.basic-5.col-lg-4 {
+	background-color: #f9f9f9;
+	padding: 20px;
+	border-radius: 8px;
+}
+
+.ranking-container {
+	border-top: 2px solid #ddd;
+	margin-top: 20px;
+}
+
+.ranking-section-title {
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	text-decoration: none;
+}
+
+.ranking-icon {
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.ranking-content {
+	margin-top: 10px;
+}
+
+.ranking-button-area {
+	margin-bottom: 10px;
+}
+
+.ranking-type-button {
+	background-color: #ddd;
+	color: #333;
+	border: none;
+	padding: 8px 16px;
+	margin-right: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.ranking-type-button.active {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.ranking-group-table {
+	margin-top: 10px;
+}
+
+.ranking-caption {
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.ranking-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.ranking-row {
+	background-color: #f3f3f3;
+}
+
+.ranking-row-title {
+	font-weight: bold;
+}
+
+.ranking-item {
+	padding: 10px 0;
+}
+
+.ranking-rank {
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+.ranking-logo {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.ranking-text {
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.ranking-num {
+	font-weight: bold;
+}
