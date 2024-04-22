@@ -72,12 +72,29 @@ function CalendarControl() {
         },
         selectDate: function (e) {
 
-            //여기서 이제 데이터 선택하면 모달 닫아지고 화면 변경되기!
-            console.log(
-                `${e.target.textContent} ${
-                    calendarControl.calMonthName[calendar.getMonth()]
-                } ${calendar.getFullYear()}`
-            );
+            var day = e.target.textContent.trim();
+            var month = calendarControl.calMonthName[calendar.getMonth()];
+            var year = calendar.getFullYear();
+
+            var selectDate = `${day}${month}${year}`;
+            console.log(selectDate);
+            $.ajax({
+                url: 'details',
+                method: 'GET',
+                data: {
+
+                    inputDate: selectDate
+                },
+
+                success: function (response){
+                    $('.replaceMatchScheduleWrapper').html(response);
+                },
+
+                error: function(xhr, status, error) {
+                    console.error('Ajax 요청 실패:', error);
+                }
+
+            });
         },
         plotSelectors: function () {
             document.querySelector(

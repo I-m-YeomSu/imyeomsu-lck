@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<!-- Image Slider -->
+<div th:fragment="slider-big-template" class="outer-container">
+    <div class="slider-container">
+        <div class="swiper-container image-slider-1">
+            <div class="swiper-wrapper">
+                <!-- Slide1 -->
+                <div class="swiper-slide" >
+                    <img class="img-fluid" src="images/zz.png" alt="alternative">
+                </div>
+
+                <!-- Slide2 -->
+                <div class="swiper-slide">
+                    <img class="img-fluid" src="images/zzz.png" alt="alternative">
+                </div>
+
+                <!-- Slide3 -->
+                <div class="swiper-slide">
+                    <img class="img-fluid" src="images/zzzz.png" alt="alternative">
+                </div>
+
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div> <!-- end of swiper-container -->
+    </div> <!-- end of slider-container -->
+</div> <!-- end of outer-container -->
+<!-- end of image slider -->
+</body>
+</html>
