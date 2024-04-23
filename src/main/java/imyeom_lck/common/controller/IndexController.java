@@ -32,6 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 public class IndexController {
 
     private final LeagueService leagueService;
+
     @GetMapping("/event/main")
     public String mainEventForm(){
         return "fragments/event/event-main-fragment";
@@ -63,14 +64,27 @@ public class IndexController {
                 break;
             }
 
+            if (value.get(i).getThumbnail().equals("No image URL found")){
+                continue;
+            }
+
             NewsDTO newsDTO = value.get(i);
             newsThree.add(newsDTO);
             i++;
         }
-
+        log.info("news count!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! {}", newsThree.size());
         model.addAttribute("newsThree", newsThree);
         //뉴스를 레디스에 저장된 값을 불러옵니다.
         model.addAttribute("newsList", newsDTOPage);
+
+
+        //팀랭킹
+        List<RankDTO> rankList = leagueService.getrank();
+        rankList = leagueService.ranksort(rankList);
+        model.addAttribute("ranking", rankList);
+        for (RankDTO rankDTO : rankList) {
+            log.info(rankDTO.getTeamName());
+        }
 
         return "main/index";
     }

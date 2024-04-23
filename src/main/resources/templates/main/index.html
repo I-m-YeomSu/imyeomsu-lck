@@ -42,26 +42,55 @@
 
 <div class="big-main-wrapper-container row mt-0">
     <div id="date" class="basic-5 col-lg-8">
-        <div th:each="news:${newsThree}" class="row">
-            <div th:style="'background-image: url(' + ${news.thumbnail} + ');'" class="col-sm-12 top-text-container">
+        <div th:object="${newsThree}"  class="row text-container-wrapper">
+            <div th:style="'background-image: url(' + ${newsThree[0].thumbnail} + '); background-size: cover; '" class="col-12 top-text-container">
                 <div class="text-container top-text-container2">
-                    <h2 th:text="${news.title}">December 22nd 2020 at Innovation Hub Space</h2>
-                    <p th:text="${news.content}">Our mission is to help people do better SEO. The team is excited to invite you to the next SEO Training Course session which undoubtedly will provide you with the necessary skills to improve your online presence. Fill out the form to register and we'll contact you in less than 24h</p>
+                    <h3 th:text="${newsThree[0].title}"></h3>
+                    <p th:text="${#strings.length(newsThree[0].content) &gt; 30 ? #strings.substring(newsThree[0].content, 0, 30) + '...' : newsThree[0].content}">
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
-            <div th:style="'background-image: url(' + ${news.thumbnail} + ');'" class="bottom-text-container1 col-sm-6">
+
+            <div th:style="'background-image: url(' + ${newsThree[1].thumbnail} + '); background-size: cover;'" class="bottom-text-container1 col-6">
                 <div class="text-container bottom-left-text-container2">
-                    <h2 th:text="${news.title}">December 22nd 2020 at Innovation Hub Space</h2>
-                    <p th:text="${news.content}">Our mission is to help people do better SEO. The team is excited to invite you to the next SEO Training Course session which undoubtedly will provide you with the necessary skills to improve your online presence. Fill out the form to register and we'll contact you in less than 24h</p>
+                    <h3 th:text="${newsThree[1].title}"></h3>
+                    <p th:text="${#strings.length(newsThree[1].content) &gt; 30 ? #strings.substring(newsThree[1].content, 0, 30) + '...' : newsThree[1].content}">
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
-            <div  th:style="'background-image: url(' + ${news.thumbnail} + ');'" class="bottom-text-container2 col-sm-6">
+            <div th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="bottom-text-container2 col-6">
                 <div class="text-container bottom-right-text-container2">
-                    <h2 th:text="${news.title}">December 22nd 2020 at Innovation Hub Space</h2>
-                    <p th:text="${news.content}">Our mission is to help people do better SEO. The team is excited to invite you to the next SEO Training Course session which undoubtedly will provide you with the necessary skills to improve your online presence. Fill out the form to register and we'll contact you in less than 24h</p>
+                    <h3 th:text="${newsThree[2].title}"></h3>
+                    <p th:text="${#strings.length(newsThree[2].content) &gt; 30 ? #strings.substring(newsThree[2].content, 0, 30) + '...' : newsThree[2].content}">
                 </div> <!-- end of text-container -->
             </div>
         </div> <!-- end of row -->
+
+        <div class="row bottom-wrapper-news">
+            <div class="col-sm-3">
+                <div th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="thumbnail-box col-3"></div>
+                <h5 th:text="${newsThree[2].title}"><a th:src="@{/api/'${newsThree[2]}'"></a>></h5>
+                <p th:text="${#strings.length(newsThree[2].content) &gt; 10 ? #strings.substring(newsThree[2].content, 0, 10) + '...' : newsThree[2].content}">
+            </div>
+
+            <div class="basic-5 col-sm-3">
+                <div th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="thumbnail-box col-3"></div>
+                <h5 th:text="${newsThree[2].title}"></h5>
+                <p th:text="${#strings.length(newsThree[2].content) &gt; 10 ? #strings.substring(newsThree[2].content, 0, 10) + '...' : newsThree[2].content}">
+            </div>
+
+            <div class="col-sm-3">
+                <div th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="thumbnail-box col-3"></div>
+                <h5 th:text="${newsThree[2].title}"></h5>
+                <p th:text="${#strings.length(newsThree[2].content) &gt; 10 ? #strings.substring(newsThree[2].content, 0, 10) + '...' : newsThree[2].content}">
+            </div>
+
+            <div class="col-sm-3">
+                <div th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="thumbnail-box col-3"></div>
+                <h5 th:text="${newsThree[2].title}"></h5>
+                <p th:text="${#strings.length(newsThree[2].content) &gt; 10 ? #strings.substring(newsThree[2].content, 0, 10) + '...' : newsThree[2].content}">
+            </div>
+
+        </div>
+
     </div> <!-- end of basic-5 -->
 
 
@@ -79,36 +108,7 @@
                     </div>
                     <div class="ranking-group-table">
                         <div class="ranking-group">
-                            <table class="ranking-table">
-                                <caption class="ranking-caption">팀 순위</caption>
-                                <colgroup>
-                                    <col width="48%">
-                                    <col width="13%" span="4">
-                                </colgroup>
-                                <thead class="ranking-title-area">
-                                <tr class="ranking-row">
-                                    <th scope="col"><div class="ranking-row-title">팀명</div></th>
-                                    <th scope="col"><div class="ranking-row-title">승</div></th>
-                                    <th scope="col"><div class="ranking-row-title">패</div></th>
-                                    <th scope="col"><div class="ranking-row-title">승률</div></th>
-                                    <th scope="col"><div class="ranking-row-title">득실차</div></th>
-                                </tr>
-                                </thead>
-                                <tbody class="ranking-item-area">
-                                <tr class="ranking-item-row first">
-                                    <td class="ranking-item">
-                                        <strong class="ranking-rank">1</strong>
-                                        <div class="ranking-logo"><img class="ranking-image" src="https://nng-phinf.pstatic.net/MjAyNDA0MTRfODAg/MDAxNzEzMDkzODYyNDQ4.eYiZxiqvEsfKTolDJgMiWGdZdPkvjqTaJCBzieidI04g.Z49TEBd7qQnvaQbYAmJLhcozS7OO9Lam1tZ-Lz-UOsUg.PNG/xEtyTgLerKLWMjBvzShJ.png?type=f60_60" width="36" height="36" alt="젠지"></div>
-                                        <span class="ranking-text">젠지</span>
-                                    </td>
-                                    <td class="ranking-item"><span class="ranking-num">17</span></td>
-                                    <td class="ranking-item"><span class="ranking-num">1</span></td>
-                                    <td class="ranking-item"><span class="ranking-num">0.94</span></td>
-                                    <td class="ranking-item"><span class="ranking-num">29</span></td>
-                                </tr>
-                                <!-- Other rows -->
-                                </tbody>
-                            </table>
+                            <div th:insert="~{fragments/league/team-ranking-fragment :: team-ranking-fragment}" class="replaceAttribute"></div>
                         </div>
                         <!-- Another group -->
                     </div>

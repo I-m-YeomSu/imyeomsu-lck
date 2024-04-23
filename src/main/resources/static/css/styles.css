@@ -1414,7 +1414,8 @@ input[type='checkbox'] {
 	padding-top: 6rem;
 	padding-bottom: 6.125rem;
 	/*border-radius: 0.75rem;*/
-	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/date-background.jpg') center center no-repeat;
+	/*background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/date-background.jpg') center center no-repeat;*/
+	/*background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) center center no-repeat;*/
 	background-size: cover;
 	text-align: center;
 }
@@ -2730,35 +2731,20 @@ match schedule all
 
 .big-main-wrapper-container{
 	background-color: rgba(255, 255, 255, 0.5);
-
 	display: flex;
 	justify-content: center;
 	padding: 0px;
 	margin-top: 7.5rem;
-
 	width: 80%;
 	padding-right: 15px;
 	padding-left: 15px;
 	padding-bottom: 10px;
 	margin-right: auto;
 	margin-left: auto;
-	margin-bottom: 7.5rem;
-
-}
-
-.bottom-text-container1 {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.bottom-text-container2 {
-
-	margin-left: auto;
-	margin-right: auto;
+	margin-bottom: 0.75rem;
 }
 
 .aside-text-container .text-container{
-
 	max-height:800px;
 }
 
@@ -2784,12 +2770,10 @@ match schedule all
 .bottom-left-text-container2{
 	border-bottom-left-radius: 10px;
 	max-height: 400px;
-
 }
 .bottom-right-text-container2{
 	border-bottom-right-radius: 10px;
 	max-height: 400px;
-
 }
 
 .aside-text-container .text-container{
@@ -2798,17 +2782,35 @@ match schedule all
 
 }
 
+.top-text-container2{
+	width: 100%;
+}
+
+.row .text-container-wrapper{
+	padding-right: 0px;
+	padding-left: 0px;
+	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) center center no-repeat;
+	margin-right: 3rem;
+}
+
+
+.text-container.bottom-right-text-container2 {
+	position: relative;
+}
+
+
 
 /*aside ranking*/
 .date.basic-5.col-lg-4 {
 	background-color: #f9f9f9;
-	padding: 20px;
-	border-radius: 8px;
+	border-radius: 10px;
+
 }
 
 .ranking-container {
-	border-top: 2px solid #ddd;
 	margin-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .ranking-section-title {
