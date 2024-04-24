@@ -2923,3 +2923,204 @@ news list
 	width: 100%;
 	height: 100px;
 }
+
+
+/**/
+
+/*--------------------------------------------------------------
+# predict
+--------------------------------------------------------------*/
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+	overflow: hidden;
+}
+
+
+.testimonials .testimonial-item .testimonial-img{
+	width: 90px;
+	border-radius: 10px;
+	border: 6px solid #fff;
+	margin: 0 10px 0 0;
+	float: left;
+}
+
+
+.testimonials .right-testimonial-item .right-testimonial-img{
+	width: 90px;
+	border-radius: 10px;
+	border: 6px solid #fff;
+	margin: 0 10px 0 0;
+	float: left;
+}
+
+.right-testimonial-item{
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+
+}
+
+.right-testimonial-item h3{
+	justify-content: right;
+	font-size: 18px;
+}
+
+.right-testimonial-item h4{
+	justify-content: right;
+	font-size: 14px;
+}
+
+.left-testimonial-item h3{
+	font-size: 18px;
+}
+
+.left-testimonial-item h4{
+	font-size: 14px;
+}
+
+.left-testimonial-item{
+
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+
+.testimonial-item .testimonial-date{
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 20px
+}
+
+.left-testimonial-item,
+.right-testimonial-item {
+	width: calc(50% - 20px); /* Adjust width as per your layout */
+	box-sizing: border-box;
+	padding: 40px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+	position: relative;
+	background: #fff;
+	float: left;
+	margin-right: 20px; /* Adjust margin between items */
+}
+
+.right-testimonial-item h3, .right-testimonial-item h4{
+	display: flex; /* 디스플레이 속성을 플렉스로 설정합니다. */
+	align-items: end; /* 항목들을 수직으로 정렬합니다. */
+	padding-right: 10px;
+
+}
+
+.left-testimonial-item h3, .left-testimonial-item h4{
+	display: flex; /* 디스플레이 속성을 플렉스로 설정합니다. */
+	align-items: end; /* 항목들을 수직으로 정렬합니다. */
+	padding-right: 10px;
+
+}
+
+.left-testimonial-item .testimonial-img,
+.right-testimonial-item .right-testimonial-img {
+	max-width: 100%; /* 이미지가 부모 요소의 크기에 맞게 조절됩니다. */
+	height: auto; /* 이미지의 세로 비율을 유지합니다. */
+	margin-right: 10px; /* 이미지와 텍스트 사이의 간격을 조정합니다. */
+	max-height: 200px;
+}
+
+
+.left-testimonial-item:hover,
+.right-testimonial-item:hover {
+	background-color: #f0f0f0; /* 호버 시 배경색 변경 */
+}
+
+.left-testimonial-item:hover h3,
+.left-testimonial-item:hover h4,
+.right-testimonial-item:hover h3,
+.right-testimonial-item:hover h4 {
+	color: #2F2F2F; /* 호버 시 텍스트 색상 변경 */
+}
+
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+	overflow: hidden;
+}
+
+.testimonials .testimonial-item {
+	box-sizing: content-box;
+	padding: 40px;
+	/*box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);*/
+	position: relative;
+	background: #fff;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+	width: 90px;
+	border-radius: 10px;
+	border: 6px solid #fff;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.testimonials .testimonial-item h3 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 10px 0 5px 0;
+	color: #394047;
+}
+
+.testimonials .testimonial-item h4 {
+	font-size: 14px;
+	color: #999;
+	margin: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+	color: #b9d4ec;
+	font-size: 26px;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+	display: inline-block;
+	left: -5px;
+	position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+	display: inline-block;
+	right: -5px;
+	position: relative;
+	top: 10px;
+}
+
+.testimonials .testimonial-item p {
+	font-style: italic;
+	margin: 15px 0 0 0;
+	padding: 0;
+}
+
+/*predict-haeder*/
+.predict-back-div{
+	background-image: url("../images/back-div.png");
+	background-size: cover;
+	width: 100%;
+	height: 400px;
+}
+
+
+.predict-back-div {
+	display: flex;
+	flex-direction: column; /* 수직으로 요소를 정렬하도록 설정 */
+	align-items: center; /* 수직 정렬 */
+	justify-content: center; /* 수평 정렬 */
+	text-align: center; /* 텍스트 수평 정렬 */
+}
+
+.predict-back-img {
+	width: 300px;
+	height: 200px;
+}
+
+.row-predict-wrapper {
+	width: 90%;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+
+}

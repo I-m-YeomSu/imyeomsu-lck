@@ -43,8 +43,14 @@ public class LeagueController {
 	}
 
 	@GetMapping("/predict")
-	public String predictForm(){
+	public String predictForm(Model model) throws JsonProcessingException{
+		//팀랭킹
+		List<RankDTO> rankList = leagueService.getrank();
 
+		rankList = leagueService.ranksort(rankList);
+		model.addAttribute("ranking", rankList);
+
+		return "leagues/predict";
 	}
 
 

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Hidayah Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/fontawesome-all.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/magnific-popup.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/4e5b2f86bb.js" crossorigin="anonymous"></script>
+
+    <link href="../css/style.css" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+
+<div th:insert="~{fragments/nav/template-nav :: template-nav}" class="replaceAttribute"></div>
+<div class="predict-haeder-wrapper">
+    <div class="predict-back-div">
+        <img class="predict-back-img" src="../images/predict-div-logo.png">
+
+        <h3>gggg뭐요?</h3>
+        <p class="predict-back-p">Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+
+    </div>
+
+
+</div>
+
+<section id="testimonials" class="testimonials section-bg">
+
+    <div class="row justify-content-between row-predict-wrapper">
+        <div class="col-lg-8">
+            <div class="row justify-content-center">
+                <div class="col-xl-8" style="width: 100%">
+                    <div class="row mb-5"> <!--얘를 돌려! th:each-->
+                            <div class="testimonial-item" style="border: none">
+                                <h3 class="testimonial-date">날짜</h3>
+                                <div class="left-testimonial-item" style="margin: 0;" onclick="sendAjaxRequest('left');">
+                                    <img src="../images/zz.png" class="testimonial-img" alt="">
+                                    <h3>Saul Goodman</h3>
+                                    <h4>Ceo &amp; Founder</h4>
+                                </div>
+                                <div class="right-testimonial-item" onclick="sendAjaxRequest('right');">
+                                    <img style="float: right;" src="../images/zz.png" class="right-testimonial-img" alt="">
+
+                                    <h3>Walter White</h3>
+                                    <h4>Chemistry Teacher</h4>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="date basic-5 col-lg-4">
+            <div class="aside-text-container">
+                <div class="ranking-container">
+                    <a class="ranking-section-title" href="/esports/League_of_Legends/record/lck">2024 LoL 챔피언스 코리아 스프링<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" class="ranking-icon">
+                        <path d="M2 2l5 5-5 5" stroke="#222" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a>
+                    <div class="ranking-content">
+                        <div class="ranking-button-area">
+                            <button type="button" class="ranking-type-button active">팀</button>
+                            <button type="button" class="ranking-type-button">선수</button>
+                        </div>
+                        <div class="ranking-group-table">
+                            <div class="ranking-group">
+                                <div th:insert="~{fragments/league/team-ranking-fragment :: team-ranking-fragment}" class="replaceAttribute"></div>
+                            </div>
+                            <!-- Another group -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End Testimonials Section -->
+<div th:insert="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
+
+
+
+<!-- Template Main JS File -->
+<script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="../js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="../js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="../js/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
+<script src="../js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+<script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+<script src="../js/scripts.js"></script> <!-- Custom scripts -->
+
+<script src="../js/predict.js"></script>
+
+</body>
+
+</html>
+</body>
+</html>

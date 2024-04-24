@@ -82,9 +82,6 @@ public class IndexController {
         List<RankDTO> rankList = leagueService.getrank();
         rankList = leagueService.ranksort(rankList);
         model.addAttribute("ranking", rankList);
-        for (RankDTO rankDTO : rankList) {
-            log.info(rankDTO.getTeamName());
-        }
 
         return "main/index";
     }
