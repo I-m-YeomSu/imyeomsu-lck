@@ -1,0 +1,11 @@
+body {
+    background: #2E95EF;
+    background: radial-gradient(circle at 50% 50%, #9BD1FF, #2E95EF);
+    padding-top: 15%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 세로 중앙 정렬 */
+}
