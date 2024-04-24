@@ -33,7 +33,6 @@ public class IndexController {
 
     private final LeagueService leagueService;
 
-
     @GetMapping("/event/main")
     public String mainEventForm(){
         return "fragments/event/event-main-fragment";
@@ -47,14 +46,42 @@ public class IndexController {
 
     @GetMapping("/")
     public String mm(Model model) throws JsonProcessingException {
-
         PageRequest pageRequest = PageRequest.of(0,9);
 
         Page<NewsDTO> newsDTOPage = leagueService.getPageAllNews(pageRequest);
 
-        log.info("{}",newsDTOPage.getTotalElements());
 
+        //뉴스 3개만 가져오기
+        Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getnews();
+        // Localdate 역순으로 newsList 저장
+        Map<LocalDate, List<NewsDTO>> reversedNewsMap = new TreeMap<>(Comparator.reverseOrder());
+        reversedNewsMap.putAll(newsMap);
+
+        List<NewsDTO> newsThree = new ArrayList<>();
+        int i =0;
+        for (List<NewsDTO> value : reversedNewsMap.values()) {
+            if (i == 3){
+                break;
+            }
+
+            if (value.get(i).getThumbnail().equals("No image URL found")){
+                continue;
+            }
+
+            NewsDTO newsDTO = value.get(i);
+            newsThree.add(newsDTO);
+            i++;
+        }
+        log.info("news count!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! {}", newsThree.size());
+        model.addAttribute("newsThree", newsThree);
+        //뉴스를 레디스에 저장된 값을 불러옵니다.
         model.addAttribute("newsList", newsDTOPage);
+
+
+        //팀랭킹
+        List<RankDTO> rankList = leagueService.getrank();
+        rankList = leagueService.ranksort(rankList);
+        model.addAttribute("ranking", rankList);
 
         return "main/index";
     }

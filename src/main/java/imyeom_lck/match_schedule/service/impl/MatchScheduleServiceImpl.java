@@ -7,13 +7,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
 import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
 import imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository;
-import imyeom_lck.match_schedule.persistence.querydsl.QueryMatchScheduleRepository;
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
-import io.lettuce.core.XReadArgs;
-import lombok.RequiredArgsConstructor;
 
 import imyeom_lck.match_schedule.domain.dto.MatchesViewResponseDTO;
-import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
+import imyeomsu.lck.common_utils.utils.StringHandlingUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -24,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+
 
 @Service
 @Slf4j
@@ -48,19 +46,20 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
 
         List<MatchesResponseDTO> dtos = new ArrayList<>();
 
-        if (!keys.isEmpty()){
+        log.info("{}",keys.size());
+        for (String key : keys) {
+            Object s = matchScheduleRedisTemplate.opsForValue().get(key);
 
-            for (String key : keys) {
-                String s = matchScheduleRedisTemplate.opsForValue().get(key);
-                log.info("서비스 - 여기는 안 오겠지?");
+            MatchesResponseDTO matchesResponseDTO = objectMapper.convertValue(s, MatchesResponseDTO.class);
 
-                String json = objectMapper.writeValueAsString(s);
-                MatchesResponseDTO matchesResponseDTO = objectMapper.readValue(json, MatchesResponseDTO.class);
+            log.info("{}", matchesResponseDTO.getMatchDate());
+            matchesResponseDTO.setMatchDate(StringHandlingUtils.extractDate(matchesResponseDTO.getMatchDate()));
 
-                dtos.add(matchesResponseDTO);
-            }
+            log.info(matchesResponseDTO.getMatchDate());
 
+            dtos.add(matchesResponseDTO);
         }
+
 
         return dtos;
     }
@@ -120,7 +119,6 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
 
         return matches;
     }
-
 
 
 

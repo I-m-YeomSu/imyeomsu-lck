@@ -78,7 +78,7 @@ coveralls {
 
 dependencies {
 	//custom common utils
-	implementation 'com.github.I-m-YeomSu:imyeomsu-lck-common-utils:0.1.0'
+	implementation 'com.github.I-m-YeomSu:imyeomsu-lck-common-utils:0.1.2'
 	
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	//implementation 'org.springframework.boot:spring-boot-starter-security'

@@ -44,7 +44,9 @@ Colors:
 /******************************/
 body,
 html {
-    width: 100%;
+	overflow-x: hidden; /* 수직 스크롤 막기 */
+
+	width: 100%;
 	height: 100%;
 }
 
@@ -771,6 +773,11 @@ input[type='checkbox'] {
 	/*box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );*/
 	/*border: 1px solid rgba( 255, 255, 255, 0.18 );*/
 }
+.header .header-img{
+
+	height: 6.5rem;
+	width: 100%;
+}
 
 .header iframe{
 	position: absolute;
@@ -781,6 +788,21 @@ input[type='checkbox'] {
 	transform: translate(-50%, -50%);
 	pointer-events: none;
 	background-size: cover;
+
+}
+
+
+.header iframe iframe-container{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	height:100vh;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	background-size: cover;
+	background-color: #0a53be;
+
 
 }
 
@@ -959,8 +981,8 @@ input[type='checkbox'] {
 /*     06. Partners     */
 /************************/
 .slider-1 {
+
 	top:-100px;
-	padding-top: 6rem;
 	padding-bottom: 3rem;
 	background-color: #fbf9f5;
 	text-align: center;
@@ -1384,14 +1406,16 @@ input[type='checkbox'] {
 /*     14. Date     */
 /********************/
 .basic-5 {
-	background-color: #fbf9f5;
+	background-color: rgba(255, 255, 255, 0);
+
 }
 
 .basic-5 .text-container {
 	padding-top: 6rem;
 	padding-bottom: 6.125rem;
-	border-radius: 0.75rem;
-	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/date-background.jpg') center center no-repeat;
+	/*border-radius: 0.75rem;*/
+	/*background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/date-background.jpg') center center no-repeat;*/
+	/*background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) center center no-repeat;*/
 	background-size: cover;
 	text-align: center;
 }
@@ -2108,8 +2132,10 @@ a:hover.back-to-top {
 	}
 
 	.header .outer-container {
+		padding-bottom: 20rem;
 		width: 69.375rem;
 		bottom: -6rem;
+		top: 30rem;
 	}
 
 	.header .swiper-container {
@@ -2183,6 +2209,7 @@ a:hover.back-to-top {
 
 	/* Testimonials */
 	.slider-2 .swiper-container {
+		position: relative;
 		width: 90%;
 	}
 
@@ -2312,11 +2339,18 @@ match schedule all
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/date-background.jpg') center center no-repeat;
-	background-size: cover;
+	/*background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/non-logo-back.png') center center no-repeat;*/
+	/*background-size: cover;*/
+	background-color: rgba(255, 255, 255, 0.5); /* 투명한 배경색 */
+	backdrop-filter: blur(10px); /* 흐림 효과 */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+	border: 1px solid rgba(0,0,0,.07);
 	border-radius: 0.75rem;
 	padding: 2rem;
 	text-align: center;
+	margin-bottom: 3rem;
+
 }
 
 .match-section .match-header {
@@ -2329,7 +2363,7 @@ match schedule all
 
 .match-section .match-date,
 .match-section .match-status {
-	color: #eee;
+	color: #403a3a;
 	font-size: 1.2rem;
 	font-weight: bold;
 }
@@ -2357,7 +2391,7 @@ match schedule all
 }
 
 .match-section .match-score {
-	color: #eee;
+	color: #403a3a;
 	font-size: 2rem;
 	font-weight: bold;
 	display: flex;
@@ -2368,15 +2402,42 @@ match schedule all
 .match-section .match-score span {
 	margin: 0 1rem;
 }
+.match-info {
+	display: flex;
+	justify-content: center;
 
+}
+
+.match-score {
+	/*display: flex;*/
+	/*align-items: center;*/
+	display: flex;
+	justify-content: center; /* score를 수평 가운데 정렬합니다. */
+	align-items: center; /* score를 수직 가운데 정렬합니다. */
+
+}
 /* 캘린더**/
 
+.p-schedule-calendar{
+
+	position: relative; /* 자식 요소를 기준으로 사용할 부모 요소에 상대적인 위치를 설정합니다. */
+	width: 100%; /* 부모 요소가 전체 너비를 차지하도록 설정합니다. */
+	height: 100%; /* 부모 요소가 전체 높이를 차지하도록 설정합니다. */
+	height: 100px; /* 요소의 높이를 설정합니다. */
+
+}
 .schedule-calendar {
+	/*position: absolute; !* 화면을 기준으로 위치를 고정합니다. *!*/
+	/*top: 27.5%; !* 상단을 기준으로 50% 위치에 요소를 배치합니다. *!*/
+	/*left: 50%; !* 좌측을 기준으로 50% 위치에 요소를 배치합니다. *!*/
+	/*transform: translate(-50%, -10%); !* 요소의 가로 및 세로 중앙으로 이동시킵니다. *!*/
+	/*height: 200px; !* 요소의 높이를 설정합니다. *!*/
+	/*font-size: large;*/
 	position: absolute; /* 화면을 기준으로 위치를 고정합니다. */
-	top: 50%; /* 상단을 기준으로 50% 위치에 요소를 배치합니다. */
-	left: 50%; /* 좌측을 기준으로 50% 위치에 요소를 배치합니다. */
-	transform: translate(-50%, -10%); /* 요소의 가로 및 세로 중앙으로 이동시킵니다. */
-	height: 200px; /* 요소의 높이를 설정합니다. */
+	top: 50%; /* 상위 요소(.parent-container)의 중앙을 기준으로 요소를 배치합니다. */
+	left: 50%; /* 상위 요소(.parent-container)의 중앙을 기준으로 요소를 배치합니다. */
+	transform: translate(-50%, -50%); /* 요소의 가로 및 세로 중앙으로 이동시킵니다. */
+	font-size: large;
 }
 
 
@@ -2401,7 +2462,7 @@ match schedule all
 	position: absolute;
 	z-index: 1;
 	left: 50%;
-	top: 23.5rem;
+	top: 11.5rem;
 	transform: translate(-50%, -0); /* 요소를 수평 및 수직으로 중앙 정렬 */
 	max-width: 400px; /*change as per your design need */
 	min-width: 320px;
@@ -2622,4 +2683,444 @@ match schedule all
 	-webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .1);
 	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .1);
 }
+}
+
+/*
+		메인화면 main
+*/
+.big-main-wrapper-container{
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.text-container2 {
+	margin-bottom: 20px;
+	align-content: center;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+
+
+}
+
+.btn-solid-lg {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+.btn-solid-lg:hover {
+	background-color: #0056b3;
+}
+
+
+.bottom-text-container1 {
+	border-radius: 0px;
+	padding-right: 0px;
+}
+
+.bottom-text-container2 {
+	border-radius: 0px;
+	padding-left: 0px;
+}
+
+.big-main-wrapper-container{
+	background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: center;
+	padding: 0px;
+	margin-top: 7.5rem;
+	width: 80%;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0.75rem;
+}
+
+.aside-text-container .text-container{
+	max-height:800px;
+}
+
+.top-text-container,
+.aside-text-container {
+	display: flex;
+	justify-content: center; /* 수평 가운데 정렬 */
+	width: 100%;
+}
+
+.top-text-container .text-container,
+.aside-text-container .text-container {
+	text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+
+.top-text-container2{
+	border-top-left-radius: 10px; /* 왼쪽 위의 모서리 반지름 값을 변경 */
+	border-top-right-radius: 10px;
+	max-height: 400px;
+}
+
+.bottom-left-text-container2{
+	border-bottom-left-radius: 10px;
+	max-height: 400px;
+}
+.bottom-right-text-container2{
+	border-bottom-right-radius: 10px;
+	max-height: 400px;
+}
+
+.aside-text-container .text-container{
+	border-radius: 10px;
+	max-height: 800px;
+
+}
+
+.top-text-container2{
+	width: 100%;
+}
+
+.row .text-container-wrapper{
+	padding-right: 0px;
+	padding-left: 0px;
+	/*background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) center center no-repeat;*/
+	margin-right: 3rem;
+
+}
+
+
+.text-container.bottom-right-text-container2 {
+	position: relative;
+}
+
+
+
+/*aside ranking*/
+.date.basic-5.col-lg-4 {
+	background-color: #f9f9f9;
+	border-radius: 10px;
+
+}
+
+.ranking-container {
+	margin-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.ranking-section-title {
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	text-decoration: none;
+}
+
+.ranking-icon {
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.ranking-content {
+	margin-top: 10px;
+}
+
+.ranking-button-area {
+	margin-bottom: 10px;
+}
+
+.ranking-type-button {
+	background-color: #ddd;
+	color: #333;
+	border: none;
+	padding: 8px 16px;
+	margin-right: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.ranking-type-button.active {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.ranking-group-table {
+	margin-top: 10px;
+}
+
+.ranking-caption {
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.ranking-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.ranking-row {
+	background-color: #f3f3f3;
+}
+
+.ranking-row-title {
+	font-weight: bold;
+}
+
+.ranking-item {
+	padding: 10px 0;
+}
+
+.ranking-rank {
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+.ranking-logo {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.ranking-text {
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.ranking-num {
+	font-weight: bold;
+}
+/**
+news list
+*/
+
+.new-ul{
+	margin-top: 20px;
+	background: white;
+	text-align: center !important;
+}
+
+.main_news_info {
+	width: 200px;
+	height: 100px;
+}
+
+.new-ul li {
+	list-style: none;
+	padding: 0;
+	margin-right: 0;
+	overflow: hidden;
+
+}
+
+.news_item{
+	border-radius: 10px;
+	background-size: cover;
+	width: 100%;
+	height: 100px;
+}
+
+
+/**/
+
+/*--------------------------------------------------------------
+# predict
+--------------------------------------------------------------*/
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+	overflow: hidden;
+}
+
+
+.testimonials .testimonial-item .testimonial-img{
+	width: 90px;
+	border-radius: 10px;
+	border: 6px solid #fff;
+	margin: 0 10px 0 0;
+	float: left;
+}
+
+
+.testimonials .right-testimonial-item .right-testimonial-img{
+	width: 90px;
+	border-radius: 10px;
+	border: 6px solid #fff;
+	margin: 0 10px 0 0;
+	float: left;
+}
+
+.right-testimonial-item{
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+
+}
+
+.right-testimonial-item h3{
+	justify-content: right;
+	font-size: 18px;
+}
+
+.right-testimonial-item h4{
+	justify-content: right;
+	font-size: 14px;
+}
+
+.left-testimonial-item h3{
+	font-size: 18px;
+}
+
+.left-testimonial-item h4{
+	font-size: 14px;
+}
+
+.left-testimonial-item{
+
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+
+.testimonial-item .testimonial-date{
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 20px
+}
+
+.left-testimonial-item,
+.right-testimonial-item {
+	width: calc(50% - 20px); /* Adjust width as per your layout */
+	box-sizing: border-box;
+	padding: 40px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+	position: relative;
+	background: #fff;
+	float: left;
+	margin-right: 20px; /* Adjust margin between items */
+}
+
+.right-testimonial-item h3, .right-testimonial-item h4{
+	display: flex; /* 디스플레이 속성을 플렉스로 설정합니다. */
+	align-items: end; /* 항목들을 수직으로 정렬합니다. */
+	padding-right: 10px;
+
+}
+
+.left-testimonial-item h3, .left-testimonial-item h4{
+	display: flex; /* 디스플레이 속성을 플렉스로 설정합니다. */
+	align-items: end; /* 항목들을 수직으로 정렬합니다. */
+	padding-right: 10px;
+
+}
+
+.left-testimonial-item .testimonial-img,
+.right-testimonial-item .right-testimonial-img {
+	max-width: 100%; /* 이미지가 부모 요소의 크기에 맞게 조절됩니다. */
+	height: auto; /* 이미지의 세로 비율을 유지합니다. */
+	margin-right: 10px; /* 이미지와 텍스트 사이의 간격을 조정합니다. */
+	max-height: 200px;
+}
+
+
+.left-testimonial-item:hover,
+.right-testimonial-item:hover {
+	background-color: #f0f0f0; /* 호버 시 배경색 변경 */
+}
+
+.left-testimonial-item:hover h3,
+.left-testimonial-item:hover h4,
+.right-testimonial-item:hover h3,
+.right-testimonial-item:hover h4 {
+	color: #2F2F2F; /* 호버 시 텍스트 색상 변경 */
+}
+
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+	overflow: hidden;
+}
+
+.testimonials .testimonial-item {
+	box-sizing: content-box;
+	padding: 40px;
+	/*box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);*/
+	position: relative;
+	background: #fff;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+	width: 90px;
+	border-radius: 10px;
+	border: 6px solid #fff;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.testimonials .testimonial-item h3 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 10px 0 5px 0;
+	color: #394047;
+}
+
+.testimonials .testimonial-item h4 {
+	font-size: 14px;
+	color: #999;
+	margin: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+	color: #b9d4ec;
+	font-size: 26px;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+	display: inline-block;
+	left: -5px;
+	position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+	display: inline-block;
+	right: -5px;
+	position: relative;
+	top: 10px;
+}
+
+.testimonials .testimonial-item p {
+	font-style: italic;
+	margin: 15px 0 0 0;
+	padding: 0;
+}
+
+/*predict-haeder*/
+.predict-back-div{
+	background-image: url("../images/back-div.png");
+	background-size: cover;
+	width: 100%;
+	height: 400px;
+}
+
+
+.predict-back-div {
+	display: flex;
+	flex-direction: column; /* 수직으로 요소를 정렬하도록 설정 */
+	align-items: center; /* 수직 정렬 */
+	justify-content: center; /* 수평 정렬 */
+	text-align: center; /* 텍스트 수평 정렬 */
+}
+
+.predict-back-img {
+	width: 300px;
+	height: 200px;
+}
+
+.row-predict-wrapper {
+	width: 90%;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+
 }

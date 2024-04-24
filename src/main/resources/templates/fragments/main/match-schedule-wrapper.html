@@ -11,18 +11,18 @@
                         <span th:text="${match.matchDate}" class="match-date">December 22nd, 2020</span>
                         <span th:text="${match.matchState}"  class="match-status">경기 종료</span>
                     </div>
-                    <div class="team-info-container">
-                        <div class="home-team-info">
-                            <h3 th:text="${match.homeTeamName}">홈팀 이름</h3>
+                    <div class="team-info-container row">
+                        <div class="home-team-info col-sm">
+                            <h4 th:text="${match.homeTeamName}">홈팀 이름</h4>
                             <img th:src="${match.homeTeamLogo}" alt="홈팀 로고">
                         </div>
-                        <div class="match-score">
+                        <div class="match-score col-sm">
                             <span th:text="${match.homeTeamScore}" class="home-score">0</span>
                             <span class="vs">VS</span>
                             <span th:text="${match.awayTeamScore}" class="away-score">0</span>
                         </div>
-                        <div class="away-team-info">
-                            <h3 th:text="${match.awayTeamName}" style="">원정팀 이름</h3>
+                        <div class="away-team-info col-sm">
+                            <h4 th:text="${match.awayTeamName}" style="">원정팀 이름</h4>
                             <img th:src="${match.awayTeamLogo}" alt="원정팀 로고">
                         </div>
                     </div>
@@ -31,5 +31,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

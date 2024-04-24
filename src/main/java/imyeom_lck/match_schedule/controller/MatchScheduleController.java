@@ -1,14 +1,21 @@
 package imyeom_lck.match_schedule.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.SignStyle;
 import java.time.temporal.ChronoField;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+
+import imyeom_lck.league.service.inter.LeagueService;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -30,38 +37,64 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MatchScheduleController {
 
 	private final MatchScheduleService matchScheduleService;
-	private StringBuilder stringBuilder = new StringBuilder();
+	private final LeagueService leagueService;
+
+	private static StringBuilder stringBuilder = new StringBuilder();
 
 	/**
 	 * 경기 일정 보는 버튼을 누르면 현재 레디스에 담겨 있는 데이터를 이용해서 해당 month에 있는 경기 목록을 모두 보여줍니다.
 	 * */
 	@GetMapping("/all-matches")
 	public String getAllMatchSchedule(Model model) throws JsonProcessingException {
-		log.info("여기를 오고");
+
 		List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
+
+		List<MatchesResponseDTO> dtos = getMatchesResponseDTOS(allMatchesByRedis);
+
 		log.info("여기도 오나?");
-		model.addAttribute("matches", allMatchesByRedis);
+		model.addAttribute("matches", dtos);
 
 		return "schedule/match-schedule";
 	}
 
 
-	@GetMapping("/dd")
-	public String getMatchSchedule(@RequestParam(name = "scheduleDate") String scheduleDate,
-								   Model model) throws JsonProcessingException {
 
+	// @GetMapping("/dd")
+	// public String getMatchSchedule(@RequestParam(name = "scheduleDate") String scheduleDate,
+	// 							   Model model) throws JsonProcessingException {
+	//
+	// 	LocalDate now = LocalDate.now();
+	// 	int month = now.getMonth().getValue();
+	// 	int year = now.getYear();
+	// 	int day = now.getDayOfMonth();
+	//
+	// 	LocalDate date = getLocalDate(scheduleDate);
+	//
+	// 	int chooseMonth = date.getMonth().getValue();
+	// 	int chooseYear = date.getYear();
+	// 	int chooseDay = date.getDayOfMonth();
+	//
+	// 	if (chooseMonth == month && chooseYear == year && chooseDay == day){
+	// 		log.info("여기 동작해야 됨");
+	// 		List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
+	// 		model.addAttribute("matches", allMatchesByRedis);
+	// 	}
+	//
+	// 	List<MatchesResponseDTO> allMatchesByRdb = matchScheduleService.getAllMatchesByRdb();
+	// 	model.addAttribute("matches", allMatchesByRdb);
+	//
+	// 	return "schedule/match-schedule";
+	//
+	// }
+
+	@GetMapping("/details")
+	public String getMatchScheduleByDetails(@RequestParam(name = "inputDate") String inputDate, Model model) throws JsonProcessingException {
 		LocalDate now = LocalDate.now();
 		int month = now.getMonth().getValue();
 		int year = now.getYear();
 		int day = now.getDayOfMonth();
 
-
-		DateTimeFormatter formatter = new DateTimeFormatterBuilder()
-				.appendValue(ChronoField.DAY_OF_MONTH, 1, 2, SignStyle.NOT_NEGATIVE) // 일 (1~2자리)
-				.appendValue(ChronoField.MONTH_OF_YEAR, 1, 2, SignStyle.NOT_NEGATIVE) // 월 (1~2자리)
-				.appendValue(ChronoField.YEAR, 4, 10, SignStyle.NOT_NEGATIVE) // 연도 (4자리)
-				.toFormatter();
-		LocalDate date = LocalDate.parse(scheduleDate, formatter);
+		LocalDate date = getLocalDate(inputDate);
 
 		int chooseMonth = date.getMonth().getValue();
 		int chooseYear = date.getYear();
@@ -76,32 +109,31 @@ public class MatchScheduleController {
 		List<MatchesResponseDTO> allMatchesByRdb = matchScheduleService.getAllMatchesByRdb();
 		model.addAttribute("matches", allMatchesByRdb);
 
-		return "schedule/match-schedule";
-
-	}
-
-	@GetMapping("/test")
-	public String getMatchScheduleByDetails(String chooseMonth, String chooseDay, String chooseYear, Model model) throws JsonProcessingException {
-		LocalDate now = LocalDate.now();
-		int month = now.getMonth().getValue();
-		int year = now.getYear();
-		int day = now.getDayOfMonth();
-
-
-		if (Integer.parseInt(chooseMonth) == month && Integer.parseInt(chooseYear) == year && Integer.parseInt(chooseDay) == day){
-
-			List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
-			model.addAttribute("matches", allMatchesByRedis);
-		}
-
-		List<MatchesResponseDTO> allMatchesByRdb = matchScheduleService.getAllMatchesByRdb();
-		model.addAttribute("matches", allMatchesByRdb);
-
 		return "fragments/main/match-schedule-wrapper";
 
 	}
 
+	private static LocalDate getLocalDate(String scheduleDate) {
 
+		DateTimeFormatter formatter;
+		String resultDate = null;
+		if (scheduleDate.length() == 7) {
+			stringBuilder.append("0");
+			stringBuilder.append(scheduleDate);
+			scheduleDate = stringBuilder.toString();
+		}
 
+		formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
+		LocalDate date = LocalDate.parse(scheduleDate, formatter);
+		return date;
+	}
+
+	public static List<MatchesResponseDTO> getMatchesResponseDTOS(List<MatchesResponseDTO> allMatchesByRedis) {
+		List<MatchesResponseDTO> dtos = allMatchesByRedis.stream()
+			.sorted(Comparator.comparing(MatchesResponseDTO::getMatchDate)
+				.thenComparing(Comparator.comparing(MatchesResponseDTO::getMatchTime).reversed()))
+			.collect(Collectors.toList());
+		return dtos;
+	}
 
 }
