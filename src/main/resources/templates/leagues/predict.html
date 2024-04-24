@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <meta charset="utf-8">
@@ -51,26 +50,20 @@
 
     <div class="row justify-content-between row-predict-wrapper">
         <div class="col-lg-8">
-            <div class="row justify-content-center">
-                <div class="col-xl-8" style="width: 100%">
+            <div class="row row-predict-container">
                     <div class="row mb-5"> <!--얘를 돌려! th:each-->
-                            <div class="testimonial-item" style="border: none">
+                            <div class="testimonial-item" style="border: none;">
                                 <h3 class="testimonial-date">날짜</h3>
                                 <div class="left-testimonial-item" style="margin: 0;" onclick="sendAjaxRequest('left');">
                                     <img src="../images/zz.png" class="testimonial-img" alt="">
-                                    <h3>Saul Goodman</h3>
-                                    <h4>Ceo &amp; Founder</h4>
+                                    <h4>Saul Goodman</h4>
                                 </div>
                                 <div class="right-testimonial-item" onclick="sendAjaxRequest('right');">
                                     <img style="float: right;" src="../images/zz.png" class="right-testimonial-img" alt="">
-
-                                    <h3>Walter White</h3>
-                                    <h4>Chemistry Teacher</h4>
+                                    <h4>Walter White</h4>
                                 </div>
-
-                        </div>
-                    </div>
-
+                                <img src="../images/vs.png" style="width: 50px; height: 50px; position: absolute; top: 50%; left: 53.5%; transform: translate(-50%, -50%);">
+                            </div>
                 </div>
             </div>
         </div>
@@ -85,17 +78,47 @@
                             <button type="button" class="ranking-type-button active">팀</button>
                             <button type="button" class="ranking-type-button">선수</button>
                         </div>
-                        <div class="ranking-group-table">
-                            <div class="ranking-group">
-                                <div th:insert="~{fragments/league/team-ranking-fragment :: team-ranking-fragment}" class="replaceAttribute"></div>
-                            </div>
-                            <!-- Another group -->
-                        </div>
+                        <table th:fragment="team-ranking-fragment" class="ranking-table">
+                            <thead class="ranking-title-area">
+                            <tr class="ranking-row">
+                                <th><div class="col-sm-1 ranking-row-title">팀 순위</div></th>
+                                <th><div class="col-sm-4 ranking-row-title">팀명</div></th>
+                                <th><div class="col-sm-1 ranking-row-title">승</div></th>
+                                <th><div class="col-sm-1 ranking-row-title">패</div></th>
+                                <th><div class="col-sm-3 ranking-row-title">승률</div></th>
+                                <th><div class="col-sm-2 ranking-row-title">득실차</div></th>
+                            </tr>
+                            </thead>
+                            <tbody class="ranking-item-area">
+                                <tr th:scope="col" th:each="rank ,userStat : ${ranking}" class="ranking-item-row first">
+
+                                    <td class="ranking-item col-sm-1">
+                                        <strong th:text="${userStat.index+1}" class="ranking-rank">1</strong>
+                                    </td>
+
+                                    <td class="col-sm-5">
+                                        <div class="ranking-logo">
+                                            <img class="ranking-image" th:src="@{${rank.logo}}" src="https://nng-phinf.pstatic.net/MjAyNDA0MTRfODAg/MDAxNzEzMDkzODYyNDQ4.eYiZxiqvEsfKTolDJgMiWGdZdPkvjqTaJCBzieidI04g.Z49TEBd7qQnvaQbYAmJLhcozS7OO9Lam1tZ-Lz-UOsUg.PNG/xEtyTgLerKLWMjBvzShJ.png?type=f60_60" width="36" height="36" alt="젠지">
+                                        </div>
+                                        <span th:text="${rank.teamName}" class="ranking-text"></span>
+                                    </td>
+                                    <td class="ranking-item col-sm-1"><span class="ranking-num" th:text="${rank.win}">17</span></td>
+                                    <td class="ranking-item col-sm-1"><span class="ranking-num" th:text="${rank.lose}">1</span></td>
+                                    <td class="ranking-item col-sm-2"><span class="ranking-num" th:text="${rank.winrate}">0.94</span></td>
+                                    <td class="ranking-item col-sm-2"><span class="ranking-num" th:text="${rank.difference}">29</span></td>
+                                </tr>
+                            <hr>
+                            <!-- Other rows -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 </section><!-- End Testimonials Section -->
 <div th:insert="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
 <div th:insert="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
