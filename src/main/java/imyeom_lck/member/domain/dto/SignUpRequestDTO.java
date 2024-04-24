@@ -3,6 +3,7 @@ package imyeom_lck.member.domain.dto;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.util.List;

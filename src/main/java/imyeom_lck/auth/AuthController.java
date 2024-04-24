@@ -1,13 +1,17 @@
 package imyeom_lck.auth;
 
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
+import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.service.inter.MemberService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 /*
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/auth")
+@Slf4j
 public class AuthController {
 
 	private final MemberService memberService;
@@ -35,5 +40,14 @@ public class AuthController {
 	public String loginForm() {
 		return "auth/user/login";
 
+	}
+
+	@PostMapping("/register")
+	public String register(SignUpRequestDTO signUpRequestDTO) {
+
+		// 회원가입 처리 로직
+		memberService.signUp(signUpRequestDTO);
+
+		return "redirect:/auth/login";
 	}
 }
