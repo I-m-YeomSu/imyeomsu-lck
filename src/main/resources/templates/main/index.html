@@ -45,23 +45,23 @@
 <div class="big-main-wrapper-container row mt-0">
     <div id="date" class="basic-5 col-lg-8">
         <div th:object="${newsThree}"  class="row text-container-wrapper">
-            <div th:style="'background-image: url(' + ${newsThree[0].thumbnail} + '); background-size: cover; '" class="col-12 top-text-container">
+            <div th:if="${#lists.size(newsThree)>0}" th:style="'background-image: url(' + ${newsThree[0].thumbnail} + '); background-size: cover; '" class="col-12 top-text-container">
                 <div class="text-container top-text-container2">
-                    <h3 th:text="${newsThree[0].title}"></h3>
-                    <p th:text="${#strings.length(newsThree[0].content) &gt; 30 ? #strings.substring(newsThree[0].content, 0, 30) + '...' : newsThree[0].content}">
+                    <h3 th:if="${#lists.size(newsThree)>0}" th:text="${newsThree[0].title}"></h3>
+                    <p th:if="${#lists.size(newsThree)>0}" th:text="${#strings.length(newsThree[0].content) &gt; 30 ? #strings.substring(newsThree[0].content, 0, 30) + '...' : newsThree[0].content}">
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
 
-            <div th:style="'background-image: url(' + ${newsThree[1].thumbnail} + '); background-size: cover;'" class="bottom-text-container1 col-6">
-                <div class="text-container bottom-left-text-container2">
-                    <h3 th:text="${newsThree[1].title}"></h3>
-                    <p th:text="${#strings.length(newsThree[1].content) &gt; 30 ? #strings.substring(newsThree[1].content, 0, 30) + '...' : newsThree[1].content}">
+            <div th:if="${#lists.size(newsThree)>0}" th:style="'background-image: url(' + ${newsThree[1].thumbnail} + '); background-size: cover;'" class="bottom-text-container1 col-6">
+                <div th:if="${#lists.size(newsThree)>0}" class="text-container bottom-left-text-container2">
+                    <h3 th:if="${#lists.size(newsThree)>0}" th:text="${newsThree[1].title}"></h3>
+                    <p th:if="${#lists.size(newsThree)>0}" th:text="${#strings.length(newsThree[1].content) &gt; 30 ? #strings.substring(newsThree[1].content, 0, 30) + '...' : newsThree[1].content}">
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
-            <div th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="bottom-text-container2 col-6">
-                <div class="text-container bottom-right-text-container2">
-                    <h3 th:text="${newsThree[2].title}"></h3>
-                    <p th:text="${#strings.length(newsThree[2].content) &gt; 30 ? #strings.substring(newsThree[2].content, 0, 30) + '...' : newsThree[2].content}">
+            <div th:if="${#lists.size(newsThree)>0}" th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="bottom-text-container2 col-6">
+                <div th:if="${#lists.size(newsThree)>0}" class="text-container bottom-right-text-container2">
+                    <h3 th:if="${#lists.size(newsThree)>0}" th:text="${newsThree[2].title}"></h3>
+                    <p th:if="${#lists.size(newsThree)>0}" th:text="${#strings.length(newsThree[2].content) &gt; 30 ? #strings.substring(newsThree[2].content, 0, 30) + '...' : newsThree[2].content}">
                 </div> <!-- end of text-container -->
             </div>
 
