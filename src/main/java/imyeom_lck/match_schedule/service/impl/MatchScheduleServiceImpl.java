@@ -51,6 +51,8 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
             Object s = matchScheduleRedisTemplate.opsForValue().get(key);
 
             MatchesResponseDTO matchesResponseDTO = objectMapper.convertValue(s, MatchesResponseDTO.class);
+
+            log.info("{}", matchesResponseDTO.getMatchDate());
             matchesResponseDTO.setMatchDate(StringHandlingUtils.extractDate(matchesResponseDTO.getMatchDate()));
 
             log.info(matchesResponseDTO.getMatchDate());

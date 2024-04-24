@@ -15,9 +15,11 @@
     </thead>
     <tbody class="ranking-item-area">
     <tr th:scope="col" th:each="rank ,userStat : ${ranking}" class="ranking-item-row first">
+
         <td class="ranking-item col-sm-1">
             <strong th:text="${userStat.index+1}" class="ranking-rank">1</strong>
         </td>
+
         <td class="col-sm-5">
             <div class="ranking-logo">
                 <img class="ranking-image" th:src="@{${rank.logo}}" src="https://nng-phinf.pstatic.net/MjAyNDA0MTRfODAg/MDAxNzEzMDkzODYyNDQ4.eYiZxiqvEsfKTolDJgMiWGdZdPkvjqTaJCBzieidI04g.Z49TEBd7qQnvaQbYAmJLhcozS7OO9Lam1tZ-Lz-UOsUg.PNG/xEtyTgLerKLWMjBvzShJ.png?type=f60_60" width="36" height="36" alt="젠지">
@@ -29,6 +31,7 @@
         <td class="ranking-item col-sm-2"><span class="ranking-num" th:text="${rank.winrate}">0.94</span></td>
         <td class="ranking-item col-sm-2"><span class="ranking-num" th:text="${rank.difference}">29</span></td>
     </tr>
+    <hr>
     <!-- Other rows -->
     </tbody>
 </table>
