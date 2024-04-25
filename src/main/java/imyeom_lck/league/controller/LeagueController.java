@@ -29,7 +29,6 @@ public class LeagueController {
 	private final LeagueService leagueService;
 	private final MatchScheduleService matchScheduleService;
 	private final PredictService predictService;
-	private final VotedUserRepository votedUserRepository;
 	private final VotedUserService votedUserService;
 
 	@GetMapping

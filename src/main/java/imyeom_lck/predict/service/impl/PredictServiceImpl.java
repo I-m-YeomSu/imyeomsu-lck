@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -36,13 +37,29 @@ public class PredictServiceImpl implements PredictService {
         Long appliedUser = predictCountRepository.add(predictRequestDTO.getPredictId(), predictRequestDTO.getMemberId());
         Long appliedUserAll = predictAllCountRepository.add(predictRequestDTO.getMemberId());
 
+        LocalDate currentDate = LocalDate.now();
+
         log.info("applyuser:{} {}", appliedUser, appliedUserAll);
 
         if(appliedUserAll==1){
             predictAllCountRepository.increment();
         }
 
-        Predict predict = predictRepository.findById(predictRequestDTO.getPredictId()).orElseThrow();
+        Optional<Predict> optionalPredict = predictRepository.findByPredictIndex(predictRequestDTO.getPredictId());
+        Predict predict;
+        if (optionalPredict.isPresent()) {
+            predict = optionalPredict.get();
+        } else {
+            predict = Predict.builder()
+                    .homeTeamVote(0L)
+                    .awayTeamVote(0L)
+                    .month(currentDate.getMonthValue())
+                    .year(currentDate.getYear())
+                    .predictIndex(predictRequestDTO.getPredictId())
+                    .build();
+            predict = predictRepository.save(predict);
+        }
+
         log.info("predict:{}", predict.getPredictId());
 
         if(appliedUser != 1){
@@ -61,9 +78,6 @@ public class PredictServiceImpl implements PredictService {
         }
 
         log.info("count:{}", predict.getHomeTeamVote());
-
-        // 현재 날짜 가져오기
-        LocalDate currentDate = LocalDate.now();
 
         VotedUser votedUser = VotedUser.builder()
                 .year(currentDate.getYear())

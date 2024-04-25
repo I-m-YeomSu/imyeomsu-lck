@@ -43,7 +43,11 @@ public class Predict {
 	
 	private Long awayTeamVote;
 	
-	private LocalDateTime matchDate;
+	private int year;
+
+	private int month;
+
+	private Long predictIndex;
 
 	
 }

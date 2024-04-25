@@ -5,7 +5,10 @@ import imyeom_lck.predict.domain.entity.Predict;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface PredictRepository extends JpaRepository<Predict, Long> {
 
 
+    Optional<Predict> findByPredictIndex(Long predictIndex);
 }
