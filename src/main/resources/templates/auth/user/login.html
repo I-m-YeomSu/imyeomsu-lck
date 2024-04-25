@@ -77,6 +77,17 @@
 
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const signupButton = document.querySelector('.signup label[for="check"]');
+        const registrationForm = document.querySelector('.registration.form');
+
+        // signup 버튼 클릭 시 이벤트 처리
+        signupButton.addEventListener('click', function() {
+            registrationForm.classList.toggle('wrapper-container'); // expanded 클래스를 토글하여 확장/축소
+        });
+    });
+</script>
 <div th:replace="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
 <div th:replace="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
 

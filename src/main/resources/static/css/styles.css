@@ -3169,11 +3169,35 @@ thead, tbody, tr,.ranking-item-row first{
 	.ranking-content {
 		width: 50%; /* 원하는 너비로 조정 */
 	}
+	.testimonials{
+		font-size: 14px;
+	}
 }
 
-/* 화면 너비가 768px보다 작을 때 */
-@media (max-width: 768px) {
-	.ranking-content {
-		width: 100%; /* 전체 너비로 조정 */
+@media screen and (max-width: 600px) {
+	.ranking-item {
+		width: 100%; /* 아이템의 너비를 100%로 설정하여 부모 요소에 맞게 조정 */
 	}
+	.testimonial-item {
+		text-align: center;
+	}
+	.testimonials{
+		font-size: 12px;
+	}
+}
+
+/* 추가적인 미디어 쿼리를 사용하여 특정 크기 이하에서 요소들을 아래로 이동 */
+@media screen and (max-width: 576px) {
+	.left-testimonial-item,
+	.right-testimonial-item {
+		display: block;
+		margin-bottom: 20px; /* 요소들 사이의 간격 조절 */
+	}
+}
+
+
+
+.wrapper-container {
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
