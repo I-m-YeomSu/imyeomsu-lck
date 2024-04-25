@@ -25,19 +25,21 @@ public class PredictServiceImpl implements PredictService {
     @Override
     public PredictDTO vote(PredictRequestDTO predictRequestDTO) throws InterruptedException {
 
-        Long appliedUser = predictCountRepository.add(predictRequestDTO.getMemberId(), predictRequestDTO.getPredictId());
+        Long appliedUser = predictCountRepository.add(predictRequestDTO.getPredictId(), predictRequestDTO.getMemberId());
         Long appliedUserAll = predictAllCountRepository.add(predictRequestDTO.getMemberId());
+
+        log.info("applyuser:{} {}", appliedUser, appliedUserAll);
+
         if(appliedUserAll==1){
             predictAllCountRepository.increment();
         }
 
         Predict predict = predictRepository.findById(predictRequestDTO.getPredictId()).orElseThrow();
+        log.info("predict:{}", predict.getPredictId());
 
         if(appliedUser != 1){
             return PredictDTO.fromEntity(predict);
         }
-
-        long count = predictRepository.count();
 
         if(predictRequestDTO.isFlag()){ // 홈
             Long homeVote = predict.getHomeTeamVote()+1;

@@ -44,9 +44,9 @@
             <div class="row justify-content-center" >
                 <div class="col-xl-8" style="width: 100%" >
                     <div  class="row mb-5" > <!--얘를 돌려! th:each-->
-                        <div class="testimonial-item" style="border: none" th:each="match:${matches}">
+                        <div class="testimonial-item" style="border: none" th:each="match, iterStat : ${matches}">
                                 <h3  class="testimonial-date" th:text="${match.matchDate}">December 22nd, 2020</h3>
-                                <div class="left-testimonial-item" style="margin: 0;" onclick="sendAjaxRequest('left');">
+                                     <div class="left-testimonial-item" style="margin: 0;" th:onclick="'sendPrediction(' + ${iterStat.count} + ', true);'">
                                     <img th:src="${match.homeTeamLogo}" class="testimonial-img" alt="">
                                     <h3 th:text="${match.homeTeamName}"></h3>
                                 </div>
@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-
+</div>
 여기에 댓글 다는 기능 달자잉?
 
 </section><!-- End Testimonials Section -->
@@ -135,4 +135,35 @@
 
 </html>
 </body>
+
+<script>
+    function sendPrediction(matchId, isHomeTeam) {
+        var memberId = 1; // memberId는 기본적으로 1로 설정
+        var predictId = matchId; // 매치의 ID를 예측 ID로 사용
+        var flag = isHomeTeam; // 홈팀인지 어웨이팀인지에 따라 flag 설정
+
+        var data = {
+            memberId: memberId,
+            predictId: predictId,
+            flag: flag
+        };
+
+        // AJAX 요청 보내기
+        $.ajax({
+            type: "POST",
+            url: "/api/predict/vote",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(response) {
+                // 성공 시 할 일
+                console.log("Prediction sent successfully!");
+            },
+            error: function(xhr, status, error) {
+                // 에러 처리
+                console.error("Error sending prediction:", error);
+            }
+        });
+    }
+</script>
+
 </html>
