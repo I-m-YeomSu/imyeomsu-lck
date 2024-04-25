@@ -55,7 +55,6 @@ public class LeagueController {
 		List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
 		Comparator<MatchesResponseDTO> comparator = Comparator.comparing(MatchesResponseDTO::getMatchDate);
 		Collections.sort(allMatchesByRedis, comparator);
-//		predictService.vote();
 
 		rankList = leagueService.ranksort(rankList);
 		model.addAttribute("ranking", rankList);

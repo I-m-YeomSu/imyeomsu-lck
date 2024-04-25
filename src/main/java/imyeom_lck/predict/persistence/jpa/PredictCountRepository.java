@@ -25,4 +25,6 @@ public class PredictCountRepository {
         return predictRedisTemplate.opsForSet().add(predictId.toString(), userid.toString());
     }
 
+
+
 }

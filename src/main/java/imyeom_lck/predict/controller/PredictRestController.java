@@ -24,11 +24,13 @@ public class PredictRestController {
 
         PredictDTO predictDTO = predictService.vote(predictRequestDTO);
         // flag true 면 홈, flase 면 어웨이
+        log.info("test:{} {} {}", predictRequestDTO.getPredictId(), predictRequestDTO.getMemberId(),predictRequestDTO.isFlag());
 
         return ResponseDto.<PredictDTO>builder()
                 .data(predictDTO)
                 .status(HttpStatus.OK)
                 .success(true)
+
                 .build();
     }
 
