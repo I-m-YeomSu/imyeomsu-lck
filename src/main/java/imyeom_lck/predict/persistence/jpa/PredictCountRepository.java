@@ -21,8 +21,8 @@ public class PredictCountRepository {
         return predictRedisTemplate.opsForValue().increment("predict_count");
     }
 
-    public Long add(Long userid){
-        return predictRedisTemplate.opsForSet().add("voted_user", userid.toString());
+    public Long add(Long userid, Long predictId){
+        return predictRedisTemplate.opsForSet().add(predictId.toString(), userid.toString());
     }
 
 }
