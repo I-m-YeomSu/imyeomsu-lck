@@ -4,6 +4,7 @@ package imyeom_lck.predict.controller;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.predict.domain.dto.PredictDTO;
 import imyeom_lck.predict.domain.dto.PredictRequestDTO;
+import imyeom_lck.predict.domain.dto.VotedUserDTO;
 import imyeom_lck.predict.service.inter.PredictService;
 import imyeomsu.lck.common_utils.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -30,11 +31,8 @@ public class PredictRestController {
                 .data(predictDTO)
                 .status(HttpStatus.OK)
                 .success(true)
-
                 .build();
     }
-
-
 
 
 }
