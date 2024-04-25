@@ -1,17 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-</head>
-<body>
-
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     <title>Hidayah Bootstrap Template - Index</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
@@ -25,7 +16,6 @@
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/4e5b2f86bb.js" crossorigin="anonymous"></script>
-
     <link href="../css/style.css" rel="stylesheet">
 
 </head>
@@ -48,6 +38,7 @@
 
 <section id="testimonials" class="testimonials section-bg">
 
+    <div th:text="votedUserAll"></div>
     <div class="row justify-content-between row-predict-wrapper">
         <div class="col-lg-8">
             <div class="row row-predict-container">
@@ -61,6 +52,19 @@
                                 <div class="right-testimonial-item" onclick="sendAjaxRequest('right');">
                                     <img style="float: right;" src="../images/zz.png" class="right-testimonial-img" alt="">
                                     <h4>Walter White</h4>
+            <div class="row justify-content-center" >
+                <div class="col-xl-8" style="width: 100%" >
+                    <div  class="row mb-5" > <!--얘를 돌려! th:each-->
+                        <div class="testimonial-item" style="border: none" th:each="match:${matches}">
+                                <h3  class="testimonial-date" th:text="${match.matchDate}">December 22nd, 2020</h3>
+                                <div class="left-testimonial-item" style="margin: 0;" onclick="sendAjaxRequest('left');">
+                                    <img th:src="${match.homeTeamLogo}" class="testimonial-img" alt="">
+                                    <h3 th:text="${match.homeTeamName}"></h3>
+                                </div>
+                                <div class="right-testimonial-item" onclick="sendAjaxRequest('right');">
+                                    <img style="float: right;" th:src="${match.awayTeamLogo}" class="right-testimonial-img" alt="">
+
+                                    <h3 th:text="${match.awayTeamName}"></h3>
                                 </div>
                                 <img src="../images/vs.png" style="width: 50px; height: 50px; position: absolute; top: 50%; left: 53.5%; transform: translate(-50%, -50%);">
                             </div>
