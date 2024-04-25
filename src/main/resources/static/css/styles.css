@@ -2807,6 +2807,10 @@ match schedule all
 .date.basic-5.col-lg-4 {
 	background-color: #f9f9f9;
 	border-radius: 10px;
+	height: 800px;
+	max-height: 800px;
+	width: 400px;
+	align-content: center;
 
 }
 
@@ -2874,6 +2878,7 @@ match schedule all
 
 .ranking-row-title {
 	font-weight: bold;
+	display: contents; /* inline으로 설정하여 가로로 출력되도록 변경 */
 
 }
 
@@ -3118,8 +3123,8 @@ news list
 
 /*predict-haeder*/
 .predict-back-div{
-	background-image: url("../images/back-div.png");
-	background-size: cover;
+	background-image: url("../images/neon-background.png");
+	background-size: contain;
 	width: 100%;
 	height: 400px;
 }
@@ -3159,3 +3164,16 @@ thead, tbody, tr,.ranking-item-row first{
 	appWrap
 
 */
+/* 화면 너비가 992px보다 작을 때 */
+@media (max-width: 992px) {
+	.ranking-content {
+		width: 50%; /* 원하는 너비로 조정 */
+	}
+}
+
+/* 화면 너비가 768px보다 작을 때 */
+@media (max-width: 768px) {
+	.ranking-content {
+		width: 100%; /* 전체 너비로 조정 */
+	}
+}

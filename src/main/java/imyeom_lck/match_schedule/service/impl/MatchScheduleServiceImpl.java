@@ -56,7 +56,6 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
             dtos.add(matchesResponseDTO);
         }
 
-
         return dtos;
     }
 
