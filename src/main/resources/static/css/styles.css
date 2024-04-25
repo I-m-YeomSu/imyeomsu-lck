@@ -2909,6 +2909,7 @@ news list
 	margin-top: 20px;
 	background: white;
 	text-align: center !important;
+	display: contents;
 }
 
 .main_news_info {
