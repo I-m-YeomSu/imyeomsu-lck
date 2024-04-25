@@ -3194,10 +3194,3 @@ thead, tbody, tr,.ranking-item-row first{
 		margin-bottom: 20px; /* 요소들 사이의 간격 조절 */
 	}
 }
-
-
-
-.wrapper-container {
-	margin-top: 100px;
-	margin-bottom: 100px;
-}

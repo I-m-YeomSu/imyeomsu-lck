@@ -80,13 +80,20 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const signupButton = document.querySelector('.signup label[for="check"]');
-        const registrationForm = document.querySelector('.registration.form');
+        const wrapperContainer = document.querySelector('.wrapper-container');
 
         // signup 버튼 클릭 시 이벤트 처리
         signupButton.addEventListener('click', function() {
-            registrationForm.classList.toggle('wrapper-container'); // expanded 클래스를 토글하여 확장/축소
+            // 현재의 margin 값을 가져옴
+            const currentMarginTop = parseInt(getComputedStyle(wrapperContainer).marginTop);
+            const currentMarginBottom = parseInt(getComputedStyle(wrapperContainer).marginBottom);
+
+            // margin 값을 더해줌
+            wrapperContainer.style.marginTop = (currentMarginTop + 100) + 'px';
+            wrapperContainer.style.marginBottom = (currentMarginBottom + 100) + 'px';
         });
     });
+
 </script>
 <div th:replace="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
 <div th:replace="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
