@@ -1,5 +1,6 @@
 package imyeom_lck.auth;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.service.inter.MemberService;
@@ -49,5 +50,17 @@ public class AuthController {
 
 		return "redirect:/auth/login";
 	}
+
+
+	@GetMapping("/myPage")
+	public String myPage(Model model) {
+		MemberDetailsResponseDTO memberDetailsResponseDTO = memberService.getMemberDetails(1L);
+
+		model.addAttribute("memberDetails", memberDetailsResponseDTO);
+
+		return "auth/user/my-page";
+	}
+
+
 
 }
