@@ -18,7 +18,7 @@
                 <div class="card" th:each="news, iterStat : ${newsList}" th:if="${iterStat.index < 9}">
                     <div class="card-image">
 <!--                            <i th:style="'background-image: url('+${news.thumbnail}+')'"></i>-->
-                        <img src="${news.thumbnail}">
+                        <img th:src="${news.thumbnail}">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title" th:text="${#strings.length(news.title) > 15 ? #strings.substring(news.title, 0, 15) + '...' : news.title}"></h4>

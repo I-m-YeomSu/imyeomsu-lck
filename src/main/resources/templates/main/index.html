@@ -27,6 +27,8 @@
     <link href="../css/swiper.css" rel="stylesheet">
     <link href="../css/magnific-popup.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/wooristyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
 
     <!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
@@ -43,23 +45,23 @@
 <div class="big-main-wrapper-container row mt-0">
     <div id="date" class="basic-5 col-lg-8">
         <div th:object="${newsThree}"  class="row text-container-wrapper">
-            <div th:style="'background-image: url(' + ${newsThree[0].thumbnail} + '); background-size: cover; '" class="col-12 top-text-container">
+            <div th:if="${#lists.size(newsThree)>0}" th:style="'background-image: url(' + ${newsThree[0].thumbnail} + '); background-size: cover; '" class="col-12 top-text-container">
                 <div class="text-container top-text-container2">
-                    <h3 th:text="${newsThree[0].title}"></h3>
-                    <p th:text="${#strings.length(newsThree[0].content) &gt; 30 ? #strings.substring(newsThree[0].content, 0, 30) + '...' : newsThree[0].content}">
+                    <h3 th:if="${#lists.size(newsThree)>0}" th:text="${newsThree[0].title}"></h3>
+                    <p th:if="${#lists.size(newsThree)>0}" th:text="${#strings.length(newsThree[0].content) &gt; 30 ? #strings.substring(newsThree[0].content, 0, 30) + '...' : newsThree[0].content}">
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
 
-            <div th:style="'background-image: url(' + ${newsThree[1].thumbnail} + '); background-size: cover;'" class="bottom-text-container1 col-6">
-                <div class="text-container bottom-left-text-container2">
-                    <h3 th:text="${newsThree[1].title}"></h3>
-                    <p th:text="${#strings.length(newsThree[1].content) &gt; 30 ? #strings.substring(newsThree[1].content, 0, 30) + '...' : newsThree[1].content}">
+            <div th:if="${#lists.size(newsThree)>0}" th:style="'background-image: url(' + ${newsThree[1].thumbnail} + '); background-size: cover;'" class="bottom-text-container1 col-6">
+                <div th:if="${#lists.size(newsThree)>0}" class="text-container bottom-left-text-container2">
+                    <h3 th:if="${#lists.size(newsThree)>0}" th:text="${newsThree[1].title}"></h3>
+                    <p th:if="${#lists.size(newsThree)>0}" th:text="${#strings.length(newsThree[1].content) &gt; 30 ? #strings.substring(newsThree[1].content, 0, 30) + '...' : newsThree[1].content}">
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
-            <div th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="bottom-text-container2 col-6">
-                <div class="text-container bottom-right-text-container2">
-                    <h3 th:text="${newsThree[2].title}"></h3>
-                    <p th:text="${#strings.length(newsThree[2].content) &gt; 30 ? #strings.substring(newsThree[2].content, 0, 30) + '...' : newsThree[2].content}">
+            <div th:if="${#lists.size(newsThree)>0}" th:style="'background-image: url(' + ${newsThree[2].thumbnail} + '); background-size: cover;'" class="bottom-text-container2 col-6">
+                <div th:if="${#lists.size(newsThree)>0}" class="text-container bottom-right-text-container2">
+                    <h3 th:if="${#lists.size(newsThree)>0}" th:text="${newsThree[2].title}"></h3>
+                    <p th:if="${#lists.size(newsThree)>0}" th:text="${#strings.length(newsThree[2].content) &gt; 30 ? #strings.substring(newsThree[2].content, 0, 30) + '...' : newsThree[2].content}">
                 </div> <!-- end of text-container -->
             </div>
 
@@ -89,7 +91,6 @@
                     </div>
                     <div class="main_news_info">
                        <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>
-                       <p>기드온' 김민성이 OK저축은행 브리온을 떠났다. OK저축은행 브리온은 23일 공식 SNS를 통해 '기드온' 김민성과 상호 합의 하에 계약을 종료했다고 밝히며 "2024 스프링 시즌, 팀을 위해 활약해 준 김민성 선수에게 감사의 마음을 전하며, 앞으로의 도전도 계속해서 응원하겠다"고 전했다. 그리핀에서 데뷔해 kt 롤스터를...</p>
                        <span th:text="'인벤'">인벤</span>
                     </div>
                 </li>
@@ -103,7 +104,6 @@
                     </div>
                     <div class="main_news_info">
                        <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>
-                       <p>기드온' 김민성이 OK저축은행 브리온을 떠났다. OK저축은행 브리온은 23일 공식 SNS를 통해 '기드온' 김민성과 상호 합의 하에 계약을 종료했다고 밝히며 "2024 스프링 시즌, 팀을 위해 활약해 준 김민성 선수에게 감사의 마음을 전하며, 앞으로의 도전도 계속해서 응원하겠다"고 전했다. 그리핀에서 데뷔해 kt 롤스터를...</p>
                        <span th:text="'인벤'">인벤</span>
                     </div>
                 </li>
@@ -117,7 +117,6 @@
                     </div>
                     <div class="main_news_info">
                        <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>
-                       <p>기드온' 김민성이 OK저축은행 브리온을 떠났다. OK저축은행 브리온은 23일 공식 SNS를 통해 '기드온' 김민성과 상호 합의 하에 계약을 종료했다고 밝히며 "2024 스프링 시즌, 팀을 위해 활약해 준 김민성 선수에게 감사의 마음을 전하며, 앞으로의 도전도 계속해서 응원하겠다"고 전했다. 그리핀에서 데뷔해 kt 롤스터를...</p>
                        <span th:text="'인벤'">인벤</span>
                     </div>
                 </li>
@@ -193,6 +192,29 @@
 <!--<div th:insert="~{fragments/utils/ranking-team :: ranking-team-fragment}" class="replaceAttribute"></div>-->
 
 
+<div class="appWrap">
+    <div class="appCon">
+        <p class="title">
+            우리은행을<br>
+            가장 쉽게 만나는 방법</p>
+        <span class="sub">지금 <strong>우리은행 우리 WON 뱅킹</strong>에서 확인해보세요!</span>
+
+        <ul class="qr clearFix">
+            <li>
+                <a href="#void">
+                    <img src="../images/imyeomsu-qr.PNG" alt="google qr code">
+                    <span><img src="../images/git-logo.png" alt="google app icon">ImYeomSu github</span>
+                </a>
+            </li>
+            <li>
+                <a href="#void">
+                    <img src="../images/lckQR.PNG" alt="apple qr code">
+                    <span><img src="../images/lck-logo.png" alt="apple app icon">LCK</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 
 <!-- Testimonials -->
@@ -272,8 +294,6 @@
 </div> <!-- end of slider-2 -->
 <!-- end of testimonials -->
 
-
-
 <div th:insert="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
 <div th:insert="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
 
@@ -291,6 +311,8 @@
 <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
 <script src="../js/scripts.js"></script> <!-- Custom scripts -->
 
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/main.js"></script>
 </body>
 
 
