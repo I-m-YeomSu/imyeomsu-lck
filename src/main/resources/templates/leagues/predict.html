@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -49,23 +41,22 @@
 
 <section id="testimonials" class="testimonials section-bg">
 
+    <div th:text="votedUserAll"></div>
     <div class="row justify-content-between row-predict-wrapper">
         <div class="col-lg-8">
-            <div class="row justify-content-center">
-                <div class="col-xl-8" style="width: 100%">
-                    <div class="row mb-5"> <!--얘를 돌려! th:each-->
-                            <div class="testimonial-item" style="border: none">
-                                <h3 class="testimonial-date">날짜</h3>
+            <div class="row justify-content-center" >
+                <div class="col-xl-8" style="width: 100%" >
+                    <div  class="row mb-5" > <!--얘를 돌려! th:each-->
+                        <div class="testimonial-item" style="border: none" th:each="match:${matches}">
+                                <h3  class="testimonial-date" th:text="${match.matchDate}">December 22nd, 2020</h3>
                                 <div class="left-testimonial-item" style="margin: 0;" onclick="sendAjaxRequest('left');">
-                                    <img src="../images/zz.png" class="testimonial-img" alt="">
-                                    <h3>Saul Goodman</h3>
-                                    <h4>Ceo &amp; Founder</h4>
+                                    <img th:src="${match.homeTeamLogo}" class="testimonial-img" alt="">
+                                    <h3 th:text="${match.homeTeamName}"></h3>
                                 </div>
                                 <div class="right-testimonial-item" onclick="sendAjaxRequest('right');">
-                                    <img style="float: right;" src="../images/zz.png" class="right-testimonial-img" alt="">
+                                    <img style="float: right;" th:src="${match.awayTeamLogo}" class="right-testimonial-img" alt="">
 
-                                    <h3>Walter White</h3>
-                                    <h4>Chemistry Teacher</h4>
+                                    <h3 th:text="${match.awayTeamName}"></h3>
                                 </div>
 
                         </div>

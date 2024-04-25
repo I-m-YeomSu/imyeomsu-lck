@@ -4,6 +4,7 @@ import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
 import imyeom_lck.predict.domain.dto.PredictDTO;
 import imyeom_lck.predict.domain.dto.PredictRequestDTO;
 import imyeom_lck.predict.domain.entity.Predict;
+import imyeom_lck.predict.persistence.jpa.PredictAllCountRepository;
 import imyeom_lck.predict.persistence.jpa.PredictCountRepository;
 import imyeom_lck.predict.persistence.jpa.PredictRepository;
 import imyeom_lck.predict.service.inter.PredictService;
@@ -18,13 +19,17 @@ import org.springframework.stereotype.Service;
 public class PredictServiceImpl implements PredictService {
 
     private final PredictCountRepository predictCountRepository;
+    private final PredictAllCountRepository predictAllCountRepository;
     private final PredictRepository predictRepository;
 
     @Override
     public PredictDTO vote(PredictRequestDTO predictRequestDTO) throws InterruptedException {
 
-        log.info("lg:{}{}{}",predictRequestDTO.getPredictId(), predictRequestDTO.getMemberId(), predictRequestDTO.isFlag());
-        Long appliedUser = predictCountRepository.add(predictRequestDTO.getMemberId());
+        Long appliedUser = predictCountRepository.add(predictRequestDTO.getMemberId(), predictRequestDTO.getPredictId());
+        Long appliedUserAll = predictAllCountRepository.add(predictRequestDTO.getMemberId());
+        if(appliedUserAll==1){
+            predictAllCountRepository.increment();
+        }
 
         Predict predict = predictRepository.findById(predictRequestDTO.getPredictId()).orElseThrow();
 
@@ -35,11 +40,11 @@ public class PredictServiceImpl implements PredictService {
         long count = predictRepository.count();
 
         if(predictRequestDTO.isFlag()){ // 홈
-            Long homeVote = count + predict.getHomeTeamVote();
+            Long homeVote = predict.getHomeTeamVote()+1;
             predict.setHomeTeamVote(homeVote);
         }
         else{ //어웨이
-            Long awayVote = count + predict.getAwayTeamVote();
+            Long awayVote = predict.getAwayTeamVote()+1;
             predict.setAwayTeamVote(awayVote);
         }
 

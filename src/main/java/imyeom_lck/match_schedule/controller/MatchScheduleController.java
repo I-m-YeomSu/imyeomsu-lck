@@ -37,7 +37,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MatchScheduleController {
 
 	private final MatchScheduleService matchScheduleService;
-	private final LeagueService leagueService;
 
 	private static StringBuilder stringBuilder = new StringBuilder();
 
@@ -51,7 +50,6 @@ public class MatchScheduleController {
 
 		List<MatchesResponseDTO> dtos = getMatchesResponseDTOS(allMatchesByRedis);
 
-		log.info("여기도 오나?");
 		model.addAttribute("matches", dtos);
 
 		return "schedule/match-schedule";
