@@ -36,70 +36,27 @@
 <section id="testimonials" class="testimonials section-bg">
 <div class="row">
     <div class="col-lg-8">
-        <div  class="row mb-5" style="background-color: black; padding-left: 50px; padding-top: 35px"> <!--얘를 돌려! th:each-->
+        <div  class="row mb-5" style="background-color: black; padding-left: 50px;"> <!--얘를 돌려! th:each-->
             <div class="testimonial-item" style="border: none; background-color: black" th:each="match:${matches}">
                 <div class="left-testimonial-item" style="margin: 0; background-color: rgba(255,255,255,0.1);" onclick="sendAjaxRequest('left');">
                     <img th:src="${match.homeTeamLogo}" class="testimonial-img" alt="" style="border: none;">
-                    <h3 th:text="${match.homeTeamName}"></h3>
+                    <h3 th:text="${match.homeTeamName}" style="color: #FFFFFF"></h3>
                 </div>
                 <div class="right-testimonial-item" style="background-color: rgba(255,255,255,0.1);" onclick="sendAjaxRequest('right');">
                     <img style="float: right; border: none;" th:src="${match.awayTeamLogo}" class="right-testimonial-img" alt="">
 
 
-                    <h3 th:text="${match.awayTeamName}"></h3>
+                    <h3 th:text="${match.awayTeamName}" style="color: #FFFFFF"></h3>
                 </div>
-                <img src="../images/vs.png" style="width: 50px; height: 50px; position: absolute; top: 50%; left: 53.5%; transform: translate(-50%, -50%);">
+                <img src="../images/vs-white.png" style="width: 50px; height: 50px; position: absolute; top: 50%; left: 53.5%; transform: translate(-50%, -50%);">
             </div>
-
-
-    <div class="row justify-content-between row-predict-wrapper">
-        <div class="col-lg-8">
-            <div class="row row-predict-container">
-            <div class="row justify-content-center" >
-                <div class="col-xl-8" style="width: 100%" >
-                    <div  class="row mb-5" > <!--얘를 돌려! th:each-->
-                        <div class="testimonial-item" style="border: none" th:each="match, iterStat : ${matches}">
-                                <h3  class="testimonial-date" th:text="${match.matchDate}">December 22nd, 2020</h3>
-                                     <div class="left-testimonial-item" style="margin: 0;" th:onclick="'sendPrediction(' + ${iterStat.count} + ', true);'">
-                                    <img th:src="${match.homeTeamLogo}" class="testimonial-img" alt="">
-                                    <h3 th:text="${match.homeTeamName}"></h3>
-
-                                         <div th:each="votedUser, iterStat2:${votedUserList}">
-                                             <div th:if="${iterStat.count == votedUser.getPredictId()}">
-                                                 시작
-                                             <br>
-                                                 <div th:text="${votedUser.isFlag()}"></div>
-                                             <br>
-                                                 끝
-                                             </div>
-                                         </div>
-
-                                </div>
-                                <div class="right-testimonial-item" onclick="sendAjaxRequest('right');">
-                                    <div class="left-testimonial-item" style="margin: 0;" th:onclick="'sendPrediction(' + ${iterStat.count} + ', false);'">
-                                    <img style="float: right;" th:src="${match.awayTeamLogo}" class="right-testimonial-img" alt="">
-
-                                    <h3 th:text="${match.awayTeamName}"></h3>
-
-                                        <div th:each="votedUser, iterStat3:${votedUserList}">
-                                            <div th:if="${iterStat.count == votedUser.getPredictId()}">
-                                                시작
-                                                <br>
-                                                <div th:text="${votedUser.isFlag()}"></div>
-                                                <br>
-                                                끝
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <img src="../images/vs.png" style="width: 50px; height: 50px; position: absolute; top: 50%; left: 53.5%; transform: translate(-50%, -50%);">
-                            </div>
         </div>
     </div>
-    <div class="ranking-content date basic-5 col-lg-4" style="position: relative; right: 100px; background-color: rgba(255,255,255,0.5); backdrop-filter: blur(5px);">
+
+    <div class="ranking-content date basic-5 col-lg-4" style="position: relative; right: 10rem; background-color: rgba(255,255,255,0.1); backdrop-filter: blur(10px); margin-top: 40px; border: solid 1px #202020;">
 
         <div class="container">
-            <a class="ranking-section-title justify-content-center" href="/match-schedule/all-matches">2024 LoL 챔피언스 코리아 스프링<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" class="ranking-icon">
+            <a class="ranking-section-title justify-content-center" href="/match-schedule/all-matches" style="color: white; text-decoration: none;">2024 LoL 챔피언스 코리아 스프링<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" class="ranking-icon">
                 <path d="M2 2l5 5-5 5" stroke="#222" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg></a>
             <div class="ranking-button-area row justify-content-center">

@@ -24,9 +24,11 @@
 
 <div class="wrapper-container">
     <div class="login-container">
-        <div th:insert="~{fragments/auth/login-fragment :: login-fragment}" class="replace-login-signup-fragment"></div>
+        <div th:insert="~{fragments/auth/signup-fragment :: signup-fragment}" class="replace-login-signup-fragment"></div>
     </div>
 </div>
+
+
 
 
 <div th:replace="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>

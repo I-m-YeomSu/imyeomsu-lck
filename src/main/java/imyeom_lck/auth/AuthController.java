@@ -63,4 +63,16 @@ public class AuthController {
 
 
 
+	@GetMapping("/loginForm")
+	public String fragmentloginForm(){
+
+		return "fragments/auth/login-fragment";
+	}
+
+	@GetMapping("/signupForm")
+	public String fragmentsignupForm(){
+
+		return "fragments/auth/signup-fragment";
+	}
+
 }
