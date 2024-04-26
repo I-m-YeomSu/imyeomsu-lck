@@ -28,7 +28,7 @@
         <img class="predict-back-img" src="../images/predict-div-logo.png">
 
         <h3>gggg뭐요?</h3>
-        <p class="predict-back-p">Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <p class="predict-back-p" th:text="${votedAllUserCount}">Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
 
     </div>
 </div>
@@ -45,10 +45,55 @@
                 <div class="right-testimonial-item" style="background-color: rgba(255,255,255,0.1);" onclick="sendAjaxRequest('right');">
                     <img style="float: right; border: none;" th:src="${match.awayTeamLogo}" class="right-testimonial-img" alt="">
 
+
                     <h3 th:text="${match.awayTeamName}"></h3>
                 </div>
                 <img src="../images/vs.png" style="width: 50px; height: 50px; position: absolute; top: 50%; left: 53.5%; transform: translate(-50%, -50%);">
             </div>
+
+
+    <div class="row justify-content-between row-predict-wrapper">
+        <div class="col-lg-8">
+            <div class="row row-predict-container">
+            <div class="row justify-content-center" >
+                <div class="col-xl-8" style="width: 100%" >
+                    <div  class="row mb-5" > <!--얘를 돌려! th:each-->
+                        <div class="testimonial-item" style="border: none" th:each="match, iterStat : ${matches}">
+                                <h3  class="testimonial-date" th:text="${match.matchDate}">December 22nd, 2020</h3>
+                                     <div class="left-testimonial-item" style="margin: 0;" th:onclick="'sendPrediction(' + ${iterStat.count} + ', true);'">
+                                    <img th:src="${match.homeTeamLogo}" class="testimonial-img" alt="">
+                                    <h3 th:text="${match.homeTeamName}"></h3>
+
+                                         <div th:each="votedUser, iterStat2:${votedUserList}">
+                                             <div th:if="${iterStat.count == votedUser.getPredictId()}">
+                                                 시작
+                                             <br>
+                                                 <div th:text="${votedUser.isFlag()}"></div>
+                                             <br>
+                                                 끝
+                                             </div>
+                                         </div>
+
+                                </div>
+                                <div class="right-testimonial-item" onclick="sendAjaxRequest('right');">
+                                    <div class="left-testimonial-item" style="margin: 0;" th:onclick="'sendPrediction(' + ${iterStat.count} + ', false);'">
+                                    <img style="float: right;" th:src="${match.awayTeamLogo}" class="right-testimonial-img" alt="">
+
+                                    <h3 th:text="${match.awayTeamName}"></h3>
+
+                                        <div th:each="votedUser, iterStat3:${votedUserList}">
+                                            <div th:if="${iterStat.count == votedUser.getPredictId()}">
+                                                시작
+                                                <br>
+                                                <div th:text="${votedUser.isFlag()}"></div>
+                                                <br>
+                                                끝
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../images/vs.png" style="width: 50px; height: 50px; position: absolute; top: 50%; left: 53.5%; transform: translate(-50%, -50%);">
+                            </div>
         </div>
     </div>
     <div class="ranking-content date basic-5 col-lg-4" style="position: relative; right: 100px; background-color: rgba(255,255,255,0.5); backdrop-filter: blur(5px);">
@@ -107,6 +152,7 @@
     </div>
 </div>
 
+
 여기에 댓글 다는 기능 달자잉?
 
 </section><!-- End Testimonials Section -->
@@ -132,4 +178,35 @@
 
 </html>
 </body>
+
+<script>
+    function sendPrediction(matchId, isHomeTeam) {
+        var memberId = 1; // memberId는 기본적으로 1로 설정
+        var predictId = matchId; // 매치의 ID를 예측 ID로 사용
+        var flag = isHomeTeam; // 홈팀인지 어웨이팀인지에 따라 flag 설정
+
+        var data = {
+            memberId: memberId,
+            predictId: predictId,
+            flag: flag
+        };
+
+        // AJAX 요청 보내기
+        $.ajax({
+            type: "POST",
+            url: "/api/predict/vote",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(response) {
+                // 성공 시 할 일
+                console.log("Prediction sent successfully!");
+            },
+            error: function(xhr, status, error) {
+                // 에러 처리
+                console.error("Error sending prediction:", error);
+            }
+        });
+    }
+</script>
+
 </html>

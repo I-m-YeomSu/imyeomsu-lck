@@ -4,6 +4,7 @@ package imyeom_lck.predict.controller;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.predict.domain.dto.PredictDTO;
 import imyeom_lck.predict.domain.dto.PredictRequestDTO;
+import imyeom_lck.predict.domain.dto.VotedUserDTO;
 import imyeom_lck.predict.service.inter.PredictService;
 import imyeomsu.lck.common_utils.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,7 @@ public class PredictRestController {
 
         PredictDTO predictDTO = predictService.vote(predictRequestDTO);
         // flag true 면 홈, flase 면 어웨이
+        log.info("test:{} {} {}", predictRequestDTO.getPredictId(), predictRequestDTO.getMemberId(),predictRequestDTO.isFlag());
 
         return ResponseDto.<PredictDTO>builder()
                 .data(predictDTO)
@@ -31,8 +33,6 @@ public class PredictRestController {
                 .success(true)
                 .build();
     }
-
-
 
 
 }

@@ -18,13 +18,19 @@ public class PredictDTO {
 
     private Long awayTeamVote;
 
-    private LocalDateTime matchDate;
+    private int year;
+
+    private int month;
+
+    private Long predictIndex;
 
     public static PredictDTO fromEntity(Predict predict){
         return PredictDTO.builder()
                 .homeTeamVote(predict.getHomeTeamVote())
                 .awayTeamVote(predict.getAwayTeamVote())
-                .matchDate(predict.getMatchDate())
+                .month(predict.getMonth())
+                .year(predict.getYear())
+                .predictIndex(predict.getPredictIndex())
                 .build();
     }
 
