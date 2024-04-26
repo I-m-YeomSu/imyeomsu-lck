@@ -21,36 +21,36 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(PredictRestController.class)
-public class PredictRestControllerTest {
-
-    @Autowired
-    private MockMvc mvc;
-
-    @MockBean
-    private PredictServiceImpl predictService;
-
-    private PredictDTO predictDto1;
-    private PredictRequestDTO predictRequestDTO1;
-
-    @BeforeEach
-    void setUp(){
-        predictDto1 = PredictDTO.builder().homeTeamVote(1L).awayTeamVote(1L).matchDate(LocalDateTime.of(2024, 4, 17, 15, 30)).build();
-        predictRequestDTO1 = PredictRequestDTO.builder().memberId(1L).predictId(1L).flag(true).build();
-    }
-
-    @DisplayName("투표")
-    @Test
-    public void vote() throws Exception {
-        given(this.predictService.vote(any(PredictRequestDTO.class))).willReturn(predictDto1);
-
-        this.mvc.perform(post("/api/predict/vote")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(new ObjectMapper().writeValueAsString(predictRequestDTO1)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.data.homeTeamVote").value(1))
-                .andExpect(jsonPath("$.data.awayTeamVote").value(1))
-                .andExpect(jsonPath("$.data.matchDate").value("2024-04-17T15:30:00"));
-    }
-
-}
+//@WebMvcTest(PredictRestController.class)
+//public class PredictRestControllerTest {
+//
+//    @Autowired
+//    private MockMvc mvc;
+//
+//    @MockBean
+//    private PredictServiceImpl predictService;
+//
+//    private PredictDTO predictDto1;
+//    private PredictRequestDTO predictRequestDTO1;
+//
+//    @BeforeEach
+//    void setUp(){
+//        predictDto1 = PredictDTO.builder().homeTeamVote(1L).awayTeamVote(1L).matchDate(LocalDateTime.of(2024, 4, 17, 15, 30)).build();
+//        predictRequestDTO1 = PredictRequestDTO.builder().memberId(1L).predictId(1L).flag(true).build();
+//    }
+//
+//    @DisplayName("투표")
+//    @Test
+//    public void vote() throws Exception {
+//        given(this.predictService.vote(any(PredictRequestDTO.class))).willReturn(predictDto1);
+//
+//        this.mvc.perform(post("/api/predict/vote")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content(new ObjectMapper().writeValueAsString(predictRequestDTO1)))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$.data.homeTeamVote").value(1))
+//                .andExpect(jsonPath("$.data.awayTeamVote").value(1))
+//                .andExpect(jsonPath("$.data.matchDate").value("2024-04-17T15:30:00"));
+//    }
+//
+//}

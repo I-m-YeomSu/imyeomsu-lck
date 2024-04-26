@@ -11,7 +11,7 @@ public class DummyRankDTO {
 
     public static RankDTO dummy(String name, String logo, int win){
         return RankDTO.builder()
-                .name(name)
+                .teamName(name)
                 .logo(logo)
                 .win(win)
                 .build();
