@@ -1,0 +1,44 @@
+/* 큰 화면 스타일 */
+@media (min-width: 992px) {
+    .big-main-wrapper-container {
+        /* 큰 화면에 대한 스타일 */
+        font-size: 14px; /* 폰트 크기 조정 */
+        line-height: 1.6; /* 줄 간격 조정 */
+        /* 필요한 다른 스타일 조정 */
+    }
+
+    .text-container h3{
+        font-size: 20px;
+
+    }
+}
+
+/* 중간 화면 스타일 */
+@media (max-width: 991px) {
+    .big-main-wrapper-container {
+        /* 중간 화면에 대한 스타일 */
+        font-size: 14px; /* 폰트 크기 조정 */
+        line-height: 1.4; /* 줄 간격 조정 */
+        /* 필요한 다른 스타일 조정 */
+    }
+
+    .big-main-wrapper-container h3 {
+        /* 중간 화면에 대한 h3 폰트 크기 조정 */
+        font-size: 16px;
+    }
+}
+
+/* 작은 화면 스타일 */
+@media (max-width: 767px) {
+    .big-main-wrapper-container {
+        /* 작은 화면에 대한 스타일 */
+        font-size: 12px; /* 폰트 크기 조정 */
+        line-height: 1.2; /* 줄 간격 조정 */
+        /* 필요한 다른 스타일 조정 */
+    }
+
+    .big-main-wrapper-container h3 {
+        /* 작은 화면에 대한 h3 폰트 크기 조정 */
+        font-size: 14px;
+    }
+}

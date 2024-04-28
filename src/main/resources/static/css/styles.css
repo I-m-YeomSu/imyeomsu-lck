@@ -38,7 +38,9 @@ Colors:
 - Body text - dark gray #555
 ******************************************/
 
-
+body{
+	font-family: 'NanumSquare', sans-serif
+}
 /******************************/
 /*     01. General Styles     */
 /******************************/
@@ -3199,3 +3201,26 @@ thead, tbody, tr,.ranking-item-row first{
 		margin-bottom: 20px; /* 요소들 사이의 간격 조절 */
 	}
 }
+@media screen and (max-width: 1350px) {
+	.ranking-item-area .ranking-item {
+		font-size: 12px; /* 폰트 크기 조정 */
+	}
+}
+
+.img-fluid {
+	width: 75px;
+	height: 75px;
+
+}
+/*랭킹 테이블 */
+.ranking-table {
+	width: 100%;
+}
+
+.ranking-table th,
+.ranking-table td {
+	white-space: nowrap; /* 텍스트가 너무 길 경우 줄 바꿈 방지 */
+	overflow: hidden; /* 넘치는 부분을 감춤 */
+	text-overflow: ellipsis; /* 넘치는 부분에 대한 생략 부호(...) */
+}
+

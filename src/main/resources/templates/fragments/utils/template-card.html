@@ -3,7 +3,7 @@
 
 <body>
 <!-- Takeaways -->
-<div th:fragment="template-news" class="cards">
+<div th:fragment="template-news" id="main-news-card" class="cards">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -16,26 +16,36 @@
             <div class="col-lg-12">
                 <!-- Card -->
                 <div class="card" th:each="news, iterStat : ${newsList}" th:if="${iterStat.index < 9}">
-                    <div class="card-image">
+                    <div class="card-image" style="width: 18rem; border: none;">
 <!--                            <i th:style="'background-image: url('+${news.thumbnail}+')'"></i>-->
-                        <img th:src="${news.thumbnail}">
+                        <img class="card-img-top" style="border-radius: 10px" th:src="@{${news.thumbnail}}" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title" th:text="${#strings.length(news.title) > 15 ? #strings.substring(news.title, 0, 15) + '...' : news.title}"></h4>
-                        <p th:text="${#strings.length(news.content) > 30 ? #strings.substring(news.content, 0, 30) + '...(더보기)' : news.content}"></p>
+                        <h5 th:text="${news.title}" style="overflow: hidden; max-height: 50px; margin-top: 50px;" class="card-title" ></h5>
+                        <p th:text="${news.content}" style="max-height: 30px; overflow: hidden;" class="card-text"></p>
                     </div>
                 </div>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
+        <input type="checkbox" class="card-content__more-btn">
 
-        <!-- 소식 전체 보기 링크 -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <a href="/all-news" class="btn btn-light border-0">소식 전체 보기</a>
-            </div>
-        </div>
+        <!--        &lt;!&ndash; 더 보기 버튼 &ndash;&gt;-->
+<!--        <div class="row" id="loadMoreButtonSection">-->
+<!--            <div class="col-lg-12 text-center">-->
+<!--                <button id="loadMoreButton" class="btn btn-light border-0">더 보기</button>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; 소식 전체 보기 링크 &ndash;&gt;-->
+<!--        <div class="row" id="showAllNewsLinkSection" style="display: none;">-->
+<!--            <div class="col-lg-12 text-center">-->
+<!--                <a href="/all-news" class="btn btn-light border-0">소식 전체 보기</a>-->
+<!--            </div>-->
+<!--        </div>-->
     </div> <!-- end of container -->
 </div> <!-- end of cards -->
 
 </body>
+
+
 </html>

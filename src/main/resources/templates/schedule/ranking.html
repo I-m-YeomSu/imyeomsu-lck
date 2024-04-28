@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/fontawesome-all.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/magnific-popup.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/wooristyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main-reactive.css">
+
+
+    <!--font-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+
+    <!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+
+<div th:insert="~{fragments/nav/template-nav :: template-nav}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/header/common-template-header :: common-template-header}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/utils/match-calender :: template-modal-calendar}" class="replaceAttribute"></div>
+
+<div class="container" style="border-radius: 10px; border: 1px solid #0c63e4">
+    <table class="table ranking-table" style="width: 100%;">
+        <thead>
+        <tr>
+            <th style="text-align: center;">팀 순위</th>
+            <th style="text-align: center;">팀명</th>
+            <th style="text-align: center;">승</th>
+            <th style="text-align: center;">패</th>
+            <th style="text-align: center;">승률</th>
+            <th style="text-align: center;">득실차</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 여기에 동적으로 팀 순위 데이터를 추가 -->
+        <tr th:scope="row" th:each="rank, userStat : ${ranking}">
+            <td style="text-align: center;">
+                <strong th:text="${userStat.index + 1}">1</strong>
+            </td>
+            <td>
+                <div class="row">
+                    <div class="col-2 ranking-logo" style="display: flex; align-items: center;">
+                        <img class="ranking-image" th:src="@{${rank.logo}}" width="36" height="36" alt="젠지">
+                    </div>
+                    <div class="col-10">
+                        <span th:text="${rank.teamName}" style="font-weight: bold;"></span>
+                    </div>
+                </div>
+            </td>
+            <td style="text-align: center;">
+                <span th:text="${rank.win}">17</span>
+            </td>
+            <td style="text-align: center;">
+                <span th:text="${rank.lose}">1</span>
+            </td>
+            <td style="text-align: center;">
+                <span th:text="${rank.winrate}">0.94</span>
+            </td>
+            <td style="text-align: center;">
+                <span th:text="${rank.difference}">29</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+<div th:insert="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
+
+
+<!-- Scripts -->
+<script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="../js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="../js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="../js/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
+<script src="../js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+<script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+<script src="../js/scripts.js"></script> <!-- Custom scripts -->
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

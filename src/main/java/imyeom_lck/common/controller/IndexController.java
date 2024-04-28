@@ -45,7 +45,7 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String mm(Model model) throws JsonProcessingException {
+    public String indexForm(Model model) throws JsonProcessingException {
         PageRequest pageRequest = PageRequest.of(0,9);
 
         Page<NewsDTO> newsDTOPage = leagueService.getPageAllNews(pageRequest);
