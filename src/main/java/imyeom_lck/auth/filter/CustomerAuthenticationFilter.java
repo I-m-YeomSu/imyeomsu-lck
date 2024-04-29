@@ -18,7 +18,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CustomerAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	private final AuthenticationManager authenticationManager;
+	public CustomerAuthenticationFilter(AuthenticationManager authenticationManager) {
+		super(authenticationManager);
+	}
 
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws
@@ -39,7 +41,8 @@ public class CustomerAuthenticationFilter extends UsernamePasswordAuthentication
 		Authentication authResult) throws IOException, ServletException {
 
 
-		super.successfulAuthentication(request, response, chain, authResult);
+		response.sendRedirect("/");
+
 	}
 
 	@Override
@@ -47,6 +50,6 @@ public class CustomerAuthenticationFilter extends UsernamePasswordAuthentication
 		AuthenticationException failed) throws IOException, ServletException {
 
 
-		super.unsuccessfulAuthentication(request, response, failed);
+		response.sendRedirect("/auth/login");
 	}
 }

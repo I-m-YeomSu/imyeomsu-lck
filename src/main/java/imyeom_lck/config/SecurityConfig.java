@@ -22,7 +22,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-
 	private final CustomUserDetailsService customUserDetailsService;
 
 
@@ -71,7 +70,6 @@ public class SecurityConfig {
 
 	@Bean
 	public CustomerAuthenticationFilter authenticationFilter() throws Exception {
-
 		CustomerAuthenticationFilter customAuthenticationFilter = new CustomerAuthenticationFilter(authenticationManager(null));
 
 		// 해당 부분은 Custom한 AuthenticationManager를 사용해도 되지만 굳이 사용하지 않아도 되기 떄문에 설정을 이렇게 진행해줌
@@ -88,7 +86,6 @@ public class SecurityConfig {
 
 	@Bean
 	public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-
 		return authenticationConfiguration.getAuthenticationManager();
 
 	}
