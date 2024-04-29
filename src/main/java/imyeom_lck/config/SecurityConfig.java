@@ -1,5 +1,6 @@
 package imyeom_lck.config;
 
+import org.apache.catalina.filters.CorsFilter;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 
 @Configuration
 @RequiredArgsConstructor
+@EnableWebSecurity
 public class SecurityConfig {
 
 	private final CustomUserDetailsService customUserDetailsService;
@@ -29,13 +32,17 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 		http.cors(corsConfigurer -> corsConfigurer.disable());
+
 		http.csrf(csrfConfigurer -> csrfConfigurer.disable());
+
 		http.headers(headerConfig -> headerConfig.frameOptions(
 			frameOptionsConfig -> frameOptionsConfig.disable()));
 
+		http.addFilter(new CorsFilter());
+
 		http.formLogin(httpSecurityFormLoginConfigurer -> {
 			httpSecurityFormLoginConfigurer.loginPage("/auth/login");
-			httpSecurityFormLoginConfigurer.passwordParameter("pwd");
+			httpSecurityFormLoginConfigurer.passwordParameter("password");
 			httpSecurityFormLoginConfigurer.usernameParameter("loginId");
 		});
 
@@ -56,11 +63,17 @@ public class SecurityConfig {
 			logout.deleteCookies("JSESSIONID", "remember-me");
 		});
 
-		http.addFilterAt(authenticationFilter() ,UsernamePasswordAuthenticationFilter.class);
+		http.addFilterAt(authenticationFilter(),UsernamePasswordAuthenticationFilter.class);
 
+
+		//사용자 권한이 필요한 곳엔 로그인 작업을 할수 있게 합니다.
 		http.authorizeHttpRequests(auth ->{
 			auth.anyRequest().permitAll();
-			auth.requestMatchers("/apply/**", "comments/**", "/api/predict/vote").authenticated();
+			auth.requestMatchers("/apply/**", "comments/**", "/api/predict/vote", "").authenticated();
+			auth.requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN"); // 관리자만 접근 가능하게 합니다.
+			auth.requestMatchers("/members/**").hasAuthority("ROLE_USER");
+			auth.requestMatchers("/admin/**").hasRole("ADMIN"); // 관리자만 접근 가능하게 합니다.
+			auth.requestMatchers("/members/**").hasRole("USER");
 		});
 
 		return http.build();
@@ -72,7 +85,7 @@ public class SecurityConfig {
 	public CustomerAuthenticationFilter authenticationFilter() throws Exception {
 		CustomerAuthenticationFilter customAuthenticationFilter = new CustomerAuthenticationFilter(authenticationManager(null));
 
-		// 해당 부분은 Custom한 AuthenticationManager를 사용해도 되지만 굳이 사용하지 않아도 되기 떄문에 설정을 이렇게 진행해줌
+		// 해당 부분은 Custom한 AuthenticationManager를 사용해도 되지만 굳이 사용하지 않아도 되기 떄문에 설정을 이렇게 진행 해줌
 		customAuthenticationFilter.setAuthenticationManager(new ProviderManager(customAuthenticationProvider()));
 
 		return customAuthenticationFilter;
@@ -87,7 +100,6 @@ public class SecurityConfig {
 	@Bean
 	public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
 		return authenticationConfiguration.getAuthenticationManager();
-
 	}
 
 	/**
