@@ -1,23 +1,17 @@
-package imyeom_lck.member.persistence.querydsl;
+package imyeom_lck.member.persistence.querydsl.impl;
 
-import com.querydsl.core.types.Projections;
-import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.domain.entity.QMember;
-import imyeom_lck.pointusage.domain.dto.PointUsageResponseDTO;
+import imyeom_lck.member.persistence.querydsl.inter.QueryMemberRepository;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 import imyeom_lck.pointusage.domain.entity.QPointUsage;
-import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-
-import static org.hibernate.query.results.Builders.fetch;
 
 @Repository
 @RequiredArgsConstructor
