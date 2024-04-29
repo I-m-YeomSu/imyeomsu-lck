@@ -2,7 +2,7 @@ package imyeom_lck.member.service.impl;
 
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.entity.Member;
-import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
+import imyeom_lck.member.persistence.querydsl.inter.QueryMemberRepository;
 import imyeom_lck.member.service.inter.QueryMemberService;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

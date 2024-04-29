@@ -1,27 +1,18 @@
 package imyeom_lck.member.service;
 
-import com.querydsl.jpa.impl.JPAQueryFactory;
-import imyeom_lck.config.QuerydslTestConfig;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.dummy.DummyMember;
 import imyeom_lck.member.dummy.dummyPointUsage;
-import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
-import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
-import imyeom_lck.member.persistence.querydsl.QueryMemberRepositoryImpl;
-import imyeom_lck.member.service.impl.MemberServiceImpl;
+import imyeom_lck.member.persistence.querydsl.inter.QueryMemberRepository;
 import imyeom_lck.member.service.impl.QueryMemberServiceImpl;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
-import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Import;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
