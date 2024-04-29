@@ -30,10 +30,10 @@ public class LeagueController {
 	private final PredictService predictService;
 	private final VotedUserService votedUserService;
 
-	@GetMapping
+	@GetMapping("/news")
 	public String leagueInfoForm(Model model) throws JsonProcessingException {
-		List<RankDTO> rankList = rankService.getRank();
-		rankList = rankService.rankSort(rankList);
+//		List<RankDTO> rankList = rankService.getRank();
+//		rankList = rankService.rankSort(rankList);
 
 		Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getNews();
 
@@ -44,11 +44,11 @@ public class LeagueController {
 		// Localdate만 역순으로 저장
 		List<LocalDate> reversedDates = new ArrayList<>(reversedNewsMap.keySet());
 
-		model.addAttribute("ranking", rankList);
+//		model.addAttribute("ranking", rankList);
 		model.addAttribute("newsList", reversedNewsMap);
 		model.addAttribute("reversedDates", reversedDates);
 
-		return "fragments/league/league-fragment";
+		return "news/news";
 	}
 
 	@GetMapping("/predict")
