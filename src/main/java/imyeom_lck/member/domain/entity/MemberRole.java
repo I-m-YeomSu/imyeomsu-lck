@@ -39,6 +39,7 @@ CREATE TABLE members_roles (
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
+@Getter
 public class MemberRole {
 
 
