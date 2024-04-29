@@ -16,9 +16,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class CustomerAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	public CustomerAuthenticationFilter(AuthenticationManager authenticationManager) {
+	public CustomAuthenticationFilter(AuthenticationManager authenticationManager) {
 		super(authenticationManager);
 	}
 
@@ -39,8 +39,6 @@ public class CustomerAuthenticationFilter extends UsernamePasswordAuthentication
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 		Authentication authResult) throws IOException, ServletException {
-
-
 		response.sendRedirect("/");
 
 	}
