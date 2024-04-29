@@ -1,6 +1,5 @@
-package imyeom_lck.member.persistence.querydsl;
+package imyeom_lck.member.persistence.querydsl.inter;
 
-import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 

@@ -17,20 +17,24 @@ import imyeomsu.lck.common_utils.code.ErrorCode;
 import imyeomsu.lck.common_utils.exception.ClientException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
+@Transactional(readOnly = true)
 public class MemberServiceImpl implements MemberService {
 
     private final JpaMemberRepository memberRepository;
-    private final JpaMemberPredictRepository memberPredictRepository;
     private final JpaRoleRepository jpaRoleRepository;
     private final JpaMemberRoleRepository jpaMemberRoleRepository;
+    private final BCryptPasswordEncoder encoder;
 
+    @Override
     public MemberDetailsResponseDTO getMemberDetails(Long memberId) {
         Member member = memberRepository.findById(memberId)
                 .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_INVALID_REQUEST, "잘못된 회원 정보 조회 요청입니다."));
@@ -45,12 +49,13 @@ public class MemberServiceImpl implements MemberService {
         return MemberDetailsResponseDTO.fromEntity(member);
     }
 
+    @Transactional
     @Override
     public SignUpMemberResponse signUp(SignUpRequestDTO signUpRequestDTO) {
 
         Member member = Member.builder()
                 .loginId(signUpRequestDTO.getLoginId())
-                .password(signUpRequestDTO.getPassword())
+                .password(encoder.encode(signUpRequestDTO.getPassword())) // pwd encoding
                 .name(signUpRequestDTO.getName())
                 .phoneNumber(signUpRequestDTO.getPhoneNumber())
                 .build();
@@ -68,6 +73,7 @@ public class MemberServiceImpl implements MemberService {
         return SignUpMemberResponse.fromEntity(member, role);
     }
 
+    @Transactional
     @Override
     public MemberDetailsResponseDTO deleteMember(Long memberId) {
         Member deleteMember = memberRepository.findById(memberId)
@@ -78,6 +84,7 @@ public class MemberServiceImpl implements MemberService {
         return MemberDetailsResponseDTO.fromEntity(deleteMember);
     }
 
+    @Transactional
     @Override
     public MemberDetailsResponseDTO updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO){
         Member updateMember = memberRepository.findById(memberId)

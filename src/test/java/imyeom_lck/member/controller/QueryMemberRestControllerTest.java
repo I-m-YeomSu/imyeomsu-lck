@@ -3,7 +3,7 @@ package imyeom_lck.member.controller;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.MemberUpdateDTO;
 import imyeom_lck.member.domain.entity.Member;
-import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
+import imyeom_lck.member.persistence.querydsl.inter.QueryMemberRepository;
 import imyeom_lck.member.service.impl.QueryMemberServiceImpl;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 import org.junit.jupiter.api.BeforeEach;

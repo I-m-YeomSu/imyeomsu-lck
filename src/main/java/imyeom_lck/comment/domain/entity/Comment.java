@@ -32,11 +32,13 @@ public class Comment {
     @Builder.Default
     @Column(nullable = false)
     @CreationTimestamp
+    @Builder.Default
     private LocalDate commentDate = LocalDate.now();
 
     @Builder.Default
     @Column(nullable = false)
     @CreationTimestamp
+    @Builder.Default
     private LocalDateTime commentCreateTime = LocalDateTime.now();
 
     @Column(nullable = false, length = 1000)

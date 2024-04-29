@@ -5,12 +5,11 @@ import imyeom_lck.config.QuerydslTestConfig;
 import imyeom_lck.member.domain.entity.Member;
 import imyeom_lck.member.dummy.DummyMember;
 import imyeom_lck.member.dummy.dummyPointUsage;
-import imyeom_lck.member.persistence.querydsl.QueryMemberRepository;
-import imyeom_lck.member.persistence.querydsl.QueryMemberRepositoryImpl;
+import imyeom_lck.member.persistence.querydsl.inter.QueryMemberRepository;
+import imyeom_lck.member.persistence.querydsl.impl.QueryMemberRepositoryImpl;
 import imyeom_lck.pointusage.domain.entity.PointUsage;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,7 +20,6 @@ import org.springframework.context.annotation.Import;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,17 +1,13 @@
-package imyeom_lck.auth;
+package imyeom_lck.auth.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.service.inter.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 /*
@@ -38,6 +34,8 @@ public class AuthController {
 
 	@GetMapping("/login")
 	public String loginForm() {
+
+
 		return "auth/user/login";
 
 	}
@@ -74,5 +72,12 @@ public class AuthController {
 
 		return "fragments/auth/signup-fragment";
 	}
+
+	@GetMapping("/signup")
+	public String signup() {
+
+		return "auth/user/signup";
+	}
+
 
 }
