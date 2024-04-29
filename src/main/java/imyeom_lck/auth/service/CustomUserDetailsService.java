@@ -1,5 +1,9 @@
 package imyeom_lck.auth.service;
 
+import imyeom_lck.member.domain.entity.Member;
+import imyeom_lck.member.domain.entity.MemberRole;
+import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
+import imyeom_lck.member.persistence.querydsl.inter.QueryMemberRoleRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -7,27 +11,24 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
+
+	private final JpaMemberRepository memberRepository;
+	private final QueryMemberRoleRepository memberRoleRepository;
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return null;
+		List<MemberRole> roles = memberRoleRepository.findByMemberLoginId(username);
+		Member member = memberRepository.findByLoginId(username)
+				.orElseThrow(() -> new UsernameNotFoundException(username));
+
+
+		return CustomUserDetails.createUser(member, roles);
 	}
-	//
-	// private final QueryAccountRoleRepository queryAccountRoleRepository;
-	// private final AccountRepository accountRepository;
-	//
-	// @Override
-	// public CustomUserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-	//
-	// 	List<RoleNameDTO> roles = queryAccountRoleRepository.findAccountRoleByLoginId(username);
-	// 	Optional<Account> optionalAccount = accountRepository.findAccountByLoginId(username);
-	//
-	// 	if (optionalAccount.isEmpty()) {
-	// 		throw new BadCredentialsException("해당 로그인 아이디를 가진 회원이 존재하지 않습니다.");
-	// 	}
-	// 	Account account = optionalAccount.get();
-	// 	return new CustomUserDetails(account, roles);
-	// }
+
+
+
 }
