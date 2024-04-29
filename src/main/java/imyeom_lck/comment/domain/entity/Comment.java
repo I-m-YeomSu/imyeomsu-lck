@@ -29,11 +29,13 @@ public class Comment {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @Builder.Default
     @Column(nullable = false)
     @CreationTimestamp
     @Builder.Default
     private LocalDate commentDate = LocalDate.now();
 
+    @Builder.Default
     @Column(nullable = false)
     @CreationTimestamp
     @Builder.Default
