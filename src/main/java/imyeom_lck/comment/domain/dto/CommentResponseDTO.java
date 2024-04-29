@@ -20,6 +20,7 @@ public class CommentResponseDTO {
     private String memberName;
     private LocalDateTime commentCreateTime;
     private String content;
+    @Builder.Default
     private List<CommentResponseDTO> childrenComment = new ArrayList<>();
 
 

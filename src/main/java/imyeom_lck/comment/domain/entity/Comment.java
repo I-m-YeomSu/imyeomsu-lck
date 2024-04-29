@@ -29,10 +29,12 @@ public class Comment {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @Builder.Default
     @Column(nullable = false)
     @CreationTimestamp
     private LocalDate commentDate = LocalDate.now();
 
+    @Builder.Default
     @Column(nullable = false)
     @CreationTimestamp
     private LocalDateTime commentCreateTime = LocalDateTime.now();
@@ -45,6 +47,7 @@ public class Comment {
     private Comment parentComment;
 
     //부모 댓글 삭제 되면, 자식 댓글도 삭제
+    @Builder.Default
     @OneToMany(mappedBy = "parentComment",orphanRemoval = true, cascade = CascadeType.REMOVE)
     private List<Comment> childrenComment = new ArrayList<>();
 
