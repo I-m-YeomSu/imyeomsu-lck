@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/main-reactive.css">
 
-
     <!--font-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 
@@ -26,51 +25,22 @@
 <div th:insert="~{fragments/header/common-template-header :: common-template-header}" class="replaceAttribute"></div>
 <div th:insert="~{fragments/utils/match-calender :: template-modal-calendar}" class="replaceAttribute"></div>
 
-<div class="container" style="border-radius: 10px; border: 1px solid #0c63e4">
-    <table class="table ranking-table" style="width: 100%;">
-        <thead>
-        <tr>
-            <th style="text-align: center;">팀 순위</th>
-            <th style="text-align: center;">팀명</th>
-            <th style="text-align: center;">승</th>
-            <th style="text-align: center;">패</th>
-            <th style="text-align: center;">승률</th>
-            <th style="text-align: center;">득실차</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- 여기에 동적으로 팀 순위 데이터를 추가 -->
-        <tr th:scope="row" th:each="rank, userStat : ${ranking}">
-            <td style="text-align: center;">
-                <strong th:text="${userStat.index + 1}">1</strong>
-            </td>
-            <td>
-                <div class="row">
-                    <div class="col-2 ranking-logo" style="display: flex; align-items: center;">
-                        <img class="ranking-image" th:src="@{${rank.logo}}" width="36" height="36" alt="젠지">
-                    </div>
-                    <div class="col-10">
-                        <span th:text="${rank.teamName}" style="font-weight: bold;"></span>
-                    </div>
-                </div>
-            </td>
-            <td style="text-align: center;">
-                <span th:text="${rank.win}">17</span>
-            </td>
-            <td style="text-align: center;">
-                <span th:text="${rank.lose}">1</span>
-            </td>
-            <td style="text-align: center;">
-                <span th:text="${rank.winrate}">0.94</span>
-            </td>
-            <td style="text-align: center;">
-                <span th:text="${rank.difference}">29</span>
-            </td>
-        </tr>
-        </tbody>
-    </table>
 
+
+<div class="container">
+    <div class="row justify-content-center text-center">
+        <div class="col-3">
+            <div class="dropup">
+                <button name="asc-ranking" id="asc-ranking" class="dropdown-toggle sortBtn btn btn-link btn-lg justify-content-center" style="text-decoration: none; color: silver" onclick="btnClick(this.name)">팀 오름차순 정렬</button>
+            </div>
+        </div>
+        <div class="col-3">
+            <button name="desc-ranking" id="desc-ranking" class="dropdown-toggle sortBtn btn btn-link btn-lg justify-content-center" style="text-decoration: none; color: silver" onclick="btnClick(this.name)">팀 내림차순 정렬</button>
+        </div>
+    </div>
 </div>
+
+<div th:insert="~{fragments/league/team-ranking-fragment:: team-ranking-fragment}" class="team-ranking-replaceAttribute"></div>
 
 
 
@@ -91,5 +61,29 @@
 
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script src="../js/main.js"></script>
+
+<script>
+    const rankingElement = document.querySelector('.team-ranking-replaceAttribute');
+
+    function btnClick(nameAttr) {
+        let buttonToggle = document.getElementById(nameAttr);
+        buttonToggle.addEventListener('click', () => {
+            fetch(`/ranks/ranking/reverse-ranking-fragment?buttonName=${nameAttr}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+
+            })
+                .then(response => response.text())
+                .then(html => {
+                    rankingElement.innerHTML = html;
+                })
+                .catch(error => console.error(error));
+        });
+    };
+</script>
+
 </body>
 </html>

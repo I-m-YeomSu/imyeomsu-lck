@@ -1,11 +1,6 @@
 package imyeom_lck.league.dummy;
 
-import imyeom_lck.league.domain.dto.RankDTO;
-import imyeom_lck.league.domain.entity.League;
-import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
-import imyeom_lck.team.domain.entity.Team;
-
-import java.time.LocalDateTime;
+import imyeom_lck.rank.domain.dto.RankDTO;
 
 public class DummyRankDTO {
 

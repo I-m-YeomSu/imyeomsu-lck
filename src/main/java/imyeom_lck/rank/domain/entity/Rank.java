@@ -1,4 +1,4 @@
-package imyeom_lck.rank.domain;
+package imyeom_lck.rank.domain.entity;
 
 
 import jakarta.persistence.*;

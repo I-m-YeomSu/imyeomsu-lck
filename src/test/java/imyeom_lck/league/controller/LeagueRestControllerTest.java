@@ -2,21 +2,18 @@ package imyeom_lck.league.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import imyeom_lck.league.domain.dto.NewsDTO;
-import imyeom_lck.league.domain.dto.RankDTO;
+import imyeom_lck.rank.domain.dto.RankDTO;
 import imyeom_lck.league.dummy.DummyNewsDTO;
 import imyeom_lck.league.dummy.DummyRankDTO;
 import imyeom_lck.league.service.impl.LeagueServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -88,7 +85,7 @@ public class LeagueRestControllerTest {
     @DisplayName("뉴스 가져오기")
     @Test
     public void testNews() throws JsonProcessingException, Exception {
-        given(leagueService.getnews()).willReturn(newsMap);
+        given(leagueService.getNews()).willReturn(newsMap);
 
         mvc.perform(get("/api/leagues/getnews").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

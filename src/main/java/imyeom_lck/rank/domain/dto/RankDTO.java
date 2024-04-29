@@ -1,4 +1,4 @@
-package imyeom_lck.league.domain.dto;
+package imyeom_lck.rank.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

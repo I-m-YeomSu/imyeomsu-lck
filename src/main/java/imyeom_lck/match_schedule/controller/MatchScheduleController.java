@@ -1,32 +1,23 @@
 package imyeom_lck.match_schedule.controller;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.time.format.SignStyle;
-import java.time.temporal.ChronoField;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import imyeom_lck.league.domain.dto.RankDTO;
+import imyeom_lck.rank.domain.dto.RankDTO;
 import imyeom_lck.league.service.inter.LeagueService;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.RedisTemplate;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import imyeom_lck.match_schedule.domain.entity.MatchSchedule;
 import imyeom_lck.match_schedule.service.inter.MatchScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -63,6 +54,7 @@ public class MatchScheduleController {
 		return "schedule/match-schedule";
 
 	}
+
 	@GetMapping("/details")
 	public String getMatchScheduleByDetails(@RequestParam(name = "inputDate") String inputDate, Model model) throws JsonProcessingException {
 		LocalDate now = LocalDate.now();
@@ -89,26 +81,7 @@ public class MatchScheduleController {
 
 	}
 
-	@GetMapping("/ranking")
-	public String getRanking(Model model) throws JsonProcessingException {
 
-		//팀랭킹
-		List<RankDTO> rankList = leagueService.getrank();
-		rankList = leagueService.ranksort(rankList);
-		model.addAttribute("ranking", rankList);
-
-		return "schedule/ranking";
-	}
-	@GetMapping("/match-schedule/all-news")
-	public String getNews(Model model) throws JsonProcessingException {
-
-		//팀랭킹
-		List<RankDTO> rankList = leagueService.getrank();
-		rankList = leagueService.ranksort(rankList);
-		model.addAttribute("ranking", rankList);
-
-		return "schedule/ranking";
-	}
 
 	private static LocalDate getLocalDate(String scheduleDate) {
 

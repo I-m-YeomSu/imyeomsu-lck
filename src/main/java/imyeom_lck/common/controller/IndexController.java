@@ -9,11 +9,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +17,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import imyeom_lck.league.domain.dto.NewsDTO;
-import imyeom_lck.league.domain.dto.RankDTO;
+import imyeom_lck.rank.domain.dto.RankDTO;
 import imyeom_lck.league.service.inter.LeagueService;
+import imyeom_lck.rank.service.RankService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,6 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 public class IndexController {
 
     private final LeagueService leagueService;
+    private final RankService rankService;
 
     @GetMapping("/event/main")
     public String mainEventForm(){
@@ -52,7 +50,7 @@ public class IndexController {
 
 
         //뉴스 3개만 가져오기
-        Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getnews();
+        Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getNews();
         // Localdate 역순으로 newsList 저장
         Map<LocalDate, List<NewsDTO>> reversedNewsMap = new TreeMap<>(Comparator.reverseOrder());
         reversedNewsMap.putAll(newsMap);
@@ -79,15 +77,15 @@ public class IndexController {
 
 
         //팀랭킹
-        List<RankDTO> rankList = leagueService.getrank();
-        rankList = leagueService.ranksort(rankList);
+        List<RankDTO> rankList = rankService.getRank();
+        rankList = rankService.rankSort(rankList);
         model.addAttribute("ranking", rankList);
 
         return "main/index";
     }
 
     private Map<LocalDate, List<NewsDTO>> getReversedNewsMap() throws JsonProcessingException {
-        Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getnews();
+        Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getNews();
 
         // newsMap의 LocalDate를 역순으로 정렬
         Map<LocalDate, List<NewsDTO>> reversedNewsMap = new TreeMap<>(Comparator.reverseOrder());

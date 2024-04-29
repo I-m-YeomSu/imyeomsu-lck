@@ -1,6 +1,6 @@
 package imyeom_lck.team.domain.entity;
 
-import imyeom_lck.rank.domain.Rank;
+import imyeom_lck.rank.domain.entity.Rank;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

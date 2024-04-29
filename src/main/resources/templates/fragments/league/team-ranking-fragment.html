@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
-
 <body>
-<table th:fragment="team-ranking-fragment" class="ranking-table">
-    <thead class="ranking-title-area">
-    <tr class="ranking-row">
-        <th class="col-sm-1"><div class="ranking-row-title">팀 순위</div></th>
-        <th class="col-sm-5"><div class="col-sm-4 ranking-row-title">팀명</div></th>
-        <th class="col-sm-1"><div class="col-sm-1 ranking-row-title">승</div></th>
-        <th class="col-sm-1"><div class="col-sm-1 ranking-row-title">패</div></th>
-        <th class="col-sm-2"><div class="col-sm-3 ranking-row-title">승률</div></th>
-        <th class="col-sm-2"><div class="col-sm-2 ranking-row-title">득실차</div></th>
-    </tr>
-    </thead>
-    <tbody class="ranking-item-area">
-    <tr th:scope="col" th:each="rank ,userStat : ${ranking}" class="ranking-item-row first">
 
-        <td class="ranking-item col-sm-1">
-            <strong th:text="${userStat.index+1}" class="ranking-rank">1</strong>
-        </td>
+<div class="container p-large table-responsive table-wrap scrollbox mg-b20" th:fragment="team-ranking-fragment">
+    <table class="table table-striped table-borderless" style="table-layout: fixed; width: 100%;">
 
-        <td class="col-sm-5">
-            <div class="ranking-logo">
-                <img class="ranking-image" th:src="@{${rank.logo}}" src="https://nng-phinf.pstatic.net/MjAyNDA0MTRfODAg/MDAxNzEzMDkzODYyNDQ4.eYiZxiqvEsfKTolDJgMiWGdZdPkvjqTaJCBzieidI04g.Z49TEBd7qQnvaQbYAmJLhcozS7OO9Lam1tZ-Lz-UOsUg.PNG/xEtyTgLerKLWMjBvzShJ.png?type=f60_60" width="36" height="36" alt="젠지">
-            </div>
-            <span th:text="${rank.teamName}" class="ranking-text"></span>
-        </td>
-        <td class="ranking-item col-sm-1"><span class="ranking-num" th:text="${rank.win}">17</span></td>
-        <td class="ranking-item col-sm-1"><span class="ranking-num" th:text="${rank.lose}">1</span></td>
-        <td class="ranking-item col-sm-2"><span class="ranking-num" th:text="${rank.winrate}">0.94</span></td>
-        <td class="ranking-item col-sm-2"><span class="ranking-num" th:text="${rank.difference}">29</span></td>
-    </tr>
-    <hr>
-    <!-- Other rows -->
-    </tbody>
-</table>
+        <thead>
+            <tr>
+                <th width="12%" scope="col">팀순위</th>
+                <th width="42%" scope="col">팀명</th>
+                <th width="12%" scope="col">승</th>
+                <th width="12%" scope="col">패</th>
+                <th width="15%" scope="col">승률</th>
+                <th width="12%" scope="col">득실차</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="rank: ${ranking}" style="font-size: 24px;">
+                <th style="width: 183px;" th:text="${rank.ranking}">팀 순위</th>
+                <td style="width: 732px;" width="42%" >
+                    <img style="width:36px; height:36px;" th:src="@{${rank.logo}}">
+                    <span th:text="${rank.teamName}"></span>
+                </td>
+                <td style="width: 183px;" th:text="${rank.win}"></td>
+                <td style="width: 183px;" th:text="${rank.lose}">패</td>
+                <td style="width: 186px;" th:text="${rank.winrate}">패</td>
+                <td style="width: 180px;" th:text="${rank.difference}">패</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
 </body>
 </html>

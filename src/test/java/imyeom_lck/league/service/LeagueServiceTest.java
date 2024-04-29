@@ -1,15 +1,11 @@
 package imyeom_lck.league.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import imyeom_lck.league.domain.dto.RankDTO;
+import imyeom_lck.rank.domain.dto.RankDTO;
 import imyeom_lck.league.dummy.DummyRankDTO;
 import imyeom_lck.league.service.impl.LeagueServiceImpl;
-import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
-import imyeom_lck.member.service.impl.MemberServiceImpl;
+
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -20,8 +16,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
