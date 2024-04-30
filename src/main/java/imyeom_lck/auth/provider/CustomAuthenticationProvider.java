@@ -1,10 +1,12 @@
 package imyeom_lck.auth.provider;
 
+import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import imyeom_lck.auth.service.CustomUserDetailsService;
@@ -28,6 +30,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
 
 		if (userDetails.getUsername().equals(loginId) && encoder.matches(pwd, userDetails.getPassword())) {
 
+			throw new UsernameNotFoundException("해당 회원의 매칭 정보가 올바르지 않습니다. 다시 확인해주세요");
 
 		}
 

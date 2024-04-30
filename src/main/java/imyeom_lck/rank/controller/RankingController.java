@@ -6,13 +6,11 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import imyeom_lck.league.service.inter.LeagueService;
 import imyeom_lck.rank.domain.dto.RankDTO;
 import imyeom_lck.rank.domain.dto.RankingDTO;
 import imyeom_lck.rank.service.RankService;
@@ -60,11 +58,11 @@ public class RankingController {
 
 			List<RankingDTO> rankingDto = rankService.getRankingDto(rankService.rankSort(rank));
 			model.addAttribute("ranking",rankingDto);
-			return "schedule/ranking";
+			return "rank/ranking";
 		}
 
 		//이제 else로  해당 요청에 대한  RDB에서 데이터 찾아와서 처리 ㄱㄱ
-		return "schedule/ranking";
+		return "rank/ranking";
 
 	}
 

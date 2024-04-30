@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +14,10 @@ import java.time.LocalDateTime;
 @Builder
 public class MatchesViewResponseDTO {
 
-    private LocalDateTime matchDate;
+    @Setter
+    private String matchDate;
+    private String matchTime;
+    private String matchState;
     private String matchTitle;
     private String homeTeamScore;
     private String awayTeamScore;

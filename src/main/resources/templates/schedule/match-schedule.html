@@ -41,7 +41,6 @@
         <span id="currentDate"></span><i class="fas fa-regular fa-calendar-days ml-1" onclick="showCalendar()"></i>
         <span id="nextMonth" onclick="changeMonth(1)">&#62;</span>
     </div>
-
 </div>
 
 <div id="calendarModal" class="modal">
@@ -52,7 +51,6 @@
 </div>
 
 <div th:insert="~{fragments/main/match-schedule-wrapper :: match-schedule-wrapper}" class="replaceMatchScheduleWrapper"></div>
-
 <div th:insert="~{fragments/footer/template-footer :: template-footer}" class="replaceAttribute"></div>
 <div th:insert="~{fragments/footer/template-copyright :: template-copyright}" class="replaceAttribute"></div>
 
@@ -68,7 +66,8 @@
 <script src="../js/scripts.js"></script> <!-- Custom scripts -->
 <script src="../js/calendar.js"></script> <!-- Custom scripts -->
 
-<script>let currentDate = new Date(2024, 3, 19); // 년, 월, 일 (월은 0부터 시작)
+<script>
+    let currentDate = new Date(2024, 3, 19); // 년, 월, 일 (월은 0부터 시작)
 
 function changeMonth(offset) {
     currentDate.setMonth(currentDate.getMonth() + offset);
@@ -85,8 +84,6 @@ function updateDateDisplay() {
 
 function showCalendar() {
     const calendarModal = document.getElementById('calendarModal');
-
-
     calendarModal.style.display = 'block';
 
 }
@@ -151,18 +148,25 @@ function handleDateClick(year, month, date) {
 }
 
 function fetchMatchSchedule(year, month, date, time) {
-    const url = `/match-schedule?year=${year}&month=${month}&time=${time}&date=${date}`;
+    const url = `/match-schedule/datails?year=${year}&month=${month}&time=${time}&date=${date}`;
 
-    // AJAX 요청 보내기
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            // 데이터 처리 로직 작성
-            console.log(data);
+    const replaceElement = document.querySelector('.replaceMatchScheduleWrapper');
+    function getMatchScheduleByDate(){
+        fetch(url,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
         })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+            .then(response => response.text())
+            .then(html => {
+                replaceElement.innerHTML = html;
+            })
+            .catch(error => console.error(error));
+    };
+
+
 }
 
 updateDateDisplay();
@@ -188,8 +192,6 @@ function showCalendar() {
 }
 
 </script>
-
-
 
 </body>
 </html>

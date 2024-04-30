@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Objects;
 
 @Controller
-public class ExceptionHandlingController implements ErrorController {
+public class ExceptionHandlerController implements ErrorController {
 
     @GetMapping("/error")
     public String handleError(HttpServletRequest request) {
@@ -21,15 +21,15 @@ public class ExceptionHandlingController implements ErrorController {
 
             // 400
             if (Objects.equals(statusCode, HttpStatus.BAD_REQUEST.value())) {
-                return "/errorcode/400.html";
+                return "/error-page/400.html";
             }
             // 404
             else if (Objects.equals(statusCode, HttpStatus.NOT_FOUND.value())) {
-                return "/errorcode/404.html";
+                return "/error-page/404.html";
             }
             // 500
             else if (Objects.equals(statusCode, HttpStatus.INTERNAL_SERVER_ERROR.value())) {
-                return "/errorcode/500.html";
+                return "/error-page/500.html";
             }
         }
 

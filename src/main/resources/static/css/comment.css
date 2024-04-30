@@ -1,0 +1,56 @@
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.comment-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.comment-input-container .author-text {
+    margin-right: 10px; /* 작성자 이름과 입력 폼 사이의 간격 조절 */
+}
+.comment-input-container input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+}
+.comment-input-container button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+.comment {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.comment .author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.comment .timestamp {
+    font-size: smaller;
+    color: #666;
+    margin-bottom: 5px;
+}
+.comment .content {
+    margin-bottom: 5px;
+}
+.comment .actions {
+    display: flex;
+    justify-content: flex-end;
+}
+.comment .actions button {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+.reply-list {
+    display: none; /* 대댓글 리스트 초기에는 숨김 */
+    margin-top: 10px; /* 대댓글과 이전 댓글 사이 간격 설정 */
+}

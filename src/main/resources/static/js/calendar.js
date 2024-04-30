@@ -2,6 +2,26 @@
 //Fixed day highlight
 //Added previous month and next month view
 
+
+function getNewMatchSchedule(year, month, day){
+    const url = `/match-schedule/details?year=${year}&month=${month}&day=${day}`;
+
+    const replaceElement = document.querySelector('.replaceMatchScheduleWrapper');
+    fetch(url,{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+    })
+        .then(response => response.text())
+        .then(html => {
+            replaceElement.innerHTML = html;
+        })
+        .catch(error => console.error(error));
+
+};
+
 function CalendarControl() {
     const calendar = new Date();
     const calendarControl = {
@@ -70,31 +90,18 @@ function CalendarControl() {
             );
             monthLabel.innerHTML = calendarControl.calMonthName[calendar.getMonth()];
         },
-        selectDate: function (e) {
 
+
+        selectDate: function (e) {
             var day = e.target.textContent.trim();
             var month = calendarControl.calMonthName[calendar.getMonth()];
             var year = calendar.getFullYear();
+            console.log(day)
+            console.log(month)
+            console.log(year)
 
-            var selectDate = `${day}${month}${year}`;
-            console.log(selectDate);
-            $.ajax({
-                url: 'details',
-                method: 'GET',
-                data: {
+            getNewMatchSchedule(year,month,day);
 
-                    inputDate: selectDate
-                },
-
-                success: function (response){
-                    $('.replaceMatchScheduleWrapper').html(response);
-                },
-
-                error: function(xhr, status, error) {
-                    console.error('Ajax 요청 실패:', error);
-                }
-
-            });
         },
         plotSelectors: function () {
             document.querySelector(
@@ -116,6 +123,7 @@ function CalendarControl() {
           </div>
           <div class="calendar-body"></div></div>`;
         },
+
         plotDayNames: function () {
             for (let i = 0; i < calendarControl.calWeekDays.length; i++) {
                 document.querySelector(
@@ -123,6 +131,7 @@ function CalendarControl() {
                 ).innerHTML += `<div>${calendarControl.calWeekDays[i]}</div>`;
             }
         },
+
         plotDates: function () {
             // 이전에 추가된 요소들을 모두 제거합니다.
             document.querySelector(".calendar .calendar-body").innerHTML = "";
@@ -142,6 +151,7 @@ function CalendarControl() {
                 calendar.getMonth() + 1,
                 calendar.getFullYear()
             );
+
             // dates of current month
             for (let i = 1; i < calendarDays; i++) {
                 if (i < calendarControl.firstDayNumber()) {
@@ -153,7 +163,7 @@ function CalendarControl() {
                 } else {
                     document.querySelector(
                         ".calendar .calendar-body"
-                    ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+                    ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" onclick="getMatchScheduleByDate(,count)" ">${count++}</a></div>`;
                 }
             }
             //remaining dates after month dates
@@ -162,6 +172,7 @@ function CalendarControl() {
                     ".calendar .calendar-body"
                 ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
             }
+
             calendarControl.highlightToday();
             calendarControl.plotPrevMonthDates(prevMonthDatesArray);
             calendarControl.plotNextMonthDates();
@@ -189,6 +200,7 @@ function CalendarControl() {
                     false
                 );
             }
+
         },
         highlightToday: function () {
             let currentMonth = calendarControl.localDate.getMonth() + 1;
@@ -244,8 +256,38 @@ function CalendarControl() {
             calendarControl.plotSelectors();
             calendarControl.plotDates();
             calendarControl.attachEvents();
+        },
+
+        clickCalendar: function (){
+            const url = `/match-schedule/datails?year=${year}&month=${month}&time=${time}&day=${day}`;
+            const replaceElement = document.querySelector('.replaceMatchScheduleWrapper');
+            let numberA = document.querySelector('.dataNumber');
+            var day = e.target.textContent.trim();
+            var month = calendarControl.calMonthName[calendar.getMonth()];
+            var year = calendar.getFullYear();
+
+
+
+            numberA.addEventListener('click', () => {
+                fetch(url,{
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                })
+                    .then(response => response.text())
+                    .then(html => {
+                        replaceElement.innerHTML = html;
+                    })
+                    .catch(error => console.error(error));
+
+            });
+
         }
+
     };
+
     calendarControl.init();
 }
 

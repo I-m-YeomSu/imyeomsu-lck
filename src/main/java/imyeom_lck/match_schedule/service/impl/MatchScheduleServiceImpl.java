@@ -83,35 +83,38 @@ public class MatchScheduleServiceImpl implements MatchScheduleService {
             Object keys2 = matchScheduleRedisTemplate.opsForValue().get(key);
 
             String s = objectMapper.writeValueAsString(keys2);
-            objectMapper.readValue(s, MatchesViewResponseDTO.class);
+            MatchesViewResponseDTO matchesViewResponseDTO = objectMapper.readValue(s, MatchesViewResponseDTO.class);
 
-            JsonNode node = objectMapper.readTree(s);
-            String matchDate = node.get("matchDate").asText();
-            String matchTime = node.get("matchTime").asText();
+            // JsonNode node = objectMapper.readTree(s);
+            // String matchDate = node.get("matchDate").asText();
+            // String matchTime = node.get("matchTime").asText();
             // 숫자와 일부 특수 문자('-')만 남기고 다른 문자 제거
-            matchDate = matchDate.replaceAll("[^0-9\\-]", "");
-            // 년도, - 더해주기
-            matchDate = "2024-" + matchDate.substring(0, 2) + "-" + matchDate.substring(2, 4);
-            // ISO-8601 형식에 맞게 조정
-            String isoDateTime = matchDate + "T" + matchTime;
-            // LocalDateTime으로 변환
-            LocalDateTime dateTime = LocalDateTime.parse(isoDateTime);
+            String replaceAll = matchesViewResponseDTO.getMatchDate().replaceAll("[^0-9\\-]","");
+            StringBuilder sb = new StringBuilder();
+            log.info("{}=================", s);
+            sb.append("2024-").append(replaceAll.substring(0,2)).append(replaceAll.substring(2,4));
+            matchesViewResponseDTO.setMatchDate(sb.toString());
 
-            MatchesViewResponseDTO match = MatchesViewResponseDTO.builder()
-                            .matchDate(dateTime)
-                            .matchTitle(node.get("matchTitle").asText())
-                            .homeTeamScore(node.get("homeTeamScore").asText())
-                            .awayTeamScore(node.get("awayTeamScore").asText())
-                            .homeTeamName(node.get("homeTeamName").asText())
-                            .homeTeamLogo(node.get("homeTeamLogo").asText())
-                            .awayTeamName(node.get("awayTeamName").asText())
-                            .awayTeamLogo(node.get("awayTeamLogo").asText())
-                            .build();
+            // // ISO-8601 형식에 맞게 조정
+            // String isoDateTime = matchDate + "T" + matchTime;
+            // // LocalDateTime으로 변환
+            // LocalDateTime dateTime = LocalDateTime.parse(isoDateTime);
+            //
+            // MatchesViewResponseDTO match = MatchesViewResponseDTO.builder()
+            //                 .matchDate(dateTime)
+            //                 .matchTitle(node.get("matchTitle").asText())
+            //                 .homeTeamScore(node.get("homeTeamScore").asText())
+            //                 .awayTeamScore(node.get("awayTeamScore").asText())
+            //                 .homeTeamName(node.get("homeTeamName").asText())
+            //                 .homeTeamLogo(node.get("homeTeamLogo").asText())
+            //                 .awayTeamName(node.get("awayTeamName").asText())
+            //                 .awayTeamLogo(node.get("awayTeamLogo").asText())
+            //                 .build();
 
-            matches.add(match);
+            matches.add(matchesViewResponseDTO);
         }
         matches.sort(Comparator.comparing(MatchesViewResponseDTO::getMatchDate));
-
+        log.info("size@!@@@@@@{}", matches.size());
         return matches;
     }
 

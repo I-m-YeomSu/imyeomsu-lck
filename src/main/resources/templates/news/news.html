@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/4e5b2f86bb.js" crossorigin="anonymous"></script>
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/comments.css" rel="stylesheet">
 
     <!--font-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
@@ -25,30 +26,11 @@
 <body data-spy="scroll" data-target=".fixed-top" >
 
 <div th:insert="~{fragments/nav/template-nav :: template-nav}" class="replaceAttribute"></div>
-<div th:insert="~{fragments/header/common-header :: common-header-fragment}" class="replaceAttribute"></div>
+<div th:insert="~{fragments/header/common-template-header :: common-template-header}" class="replaceAttribute"></div>
 
-<div class="container">
-    <div class="custom-block bg-white col-8">
-        <h5 class="mb-4">리그 뉴스</h5>
-        <div th:each="entry : ${newsList}" id="news-container">
-            <br>
-            <h5 class="mb-4" th:text="${entry.key}"></h5>
-            <div class="card mb-3 border-0 custom-card" th:each="news : ${entry.value}">
-                <div class="row g-0">
-                    <div class="col-md-4" th:style="'border-radius: 10px; background-image: url(' + ${news.thumbnail} + ');background-size: contain; max-height:192px; height: 108px; overflow: hidden;'"></div>
-                    <div class="col-md-8">
-                        <div class="card-body border-0 pt-0" th:style="'max-height:192px height: 108px; overflow: hidden;'">
-                            <h5 style="overflow: hidden;" class="card-title" th:text="${news.title}"></h5>
-                            <p style="overflow: hidden; font-size: 12px; max-height: 50px; max-width: 100%;" class="card-text" th:text="${news.content}"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-4">
-
-
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div class="container row p-0">
+        <div class="col-12 p-0 replace-news-fragment" th:insert="~{fragments/news/news-fragment :: news-fragment}"></div>
     </div>
 </div>
 
@@ -62,7 +44,7 @@
             </a>
         </li>
         <li class="page-item" th:each="date : ${reversedDates}">
-            <a class="page-link" href="#" th:text="${date}" onclick="showNews(this.getAttribute('date'))"></a>
+            <a class="page-link" th:text="${date}"  th:attr="data-date=${date}" onclick="getNewsDataByDate(this.getAttribute('data-date'))"></a>
         </li>
         <li class="page-item">
             <a class="page-link" href="#" aria-label="Next">
@@ -89,18 +71,24 @@
 <script src="../js/scripts.js"></script> <!-- Custom scripts -->
 
 <script src="../js/predict.js"></script>
-<script th:inline="javascript">
-    function showNews(date) {
-        var newsContainers = document.querySelectorAll('#news-container .mb-4');
-        for (var i = 0; i < newsContainers.length; i++) {
-            var containerDate = newsContainers[i].textContent;
-            if (containerDate === date) {
-                newsContainers[i].parentNode.style.display = 'block';
-            } else {
-                newsContainers[i].parentNode.style.display = 'none';
-            }
-        }
-    }
+<script>
+    const replaceElement = document.querySelector('.replace-news-fragment');
+    function getNewsDataByDate(newsDate){
+        console.log("newsData? ", newsDate)
+        fetch(`/news/${newsDate}`,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+        })
+            .then(response => response.text())
+            .then(html => {
+                replaceElement.innerHTML = html;
+            })
+            .catch(error => console.error(error));
+    };
+
 </script>
 
 </div>

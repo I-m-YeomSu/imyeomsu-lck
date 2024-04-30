@@ -35,7 +35,6 @@ public class AuthController {
 	@GetMapping("/login")
 	public String loginForm() {
 
-
 		return "auth/user/login";
 
 	}
@@ -59,19 +58,6 @@ public class AuthController {
 		return "auth/user/my-page";
 	}
 
-
-
-	@GetMapping("/loginForm")
-	public String fragmentloginForm(){
-
-		return "fragments/auth/login-fragment";
-	}
-
-	@GetMapping("/signupForm")
-	public String fragmentsignupForm(){
-
-		return "fragments/auth/signup-fragment";
-	}
 
 	@GetMapping("/signup")
 	public String signup() {

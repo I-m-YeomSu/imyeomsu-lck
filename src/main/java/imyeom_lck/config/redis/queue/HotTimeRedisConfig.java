@@ -1,4 +1,4 @@
-package imyeom_lck.config.redis;
+package imyeom_lck.config.redis.queue;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,26 +9,27 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import imyeom_lck.config.redis.RedisConfig;
+
 @Configuration
-public class PredictAllRedisConfig extends RedisConfig{
+public class HotTimeRedisConfig extends RedisConfig {
 
     @Bean
-    public RedisConnectionFactory predictAllRedisConnectionFactory() {
-        return redisConnectionFactory(5);  // Redis DB 선택
+    public RedisConnectionFactory hotTimeRedisConnectionFactory() {
+        return redisConnectionFactory(3);  // Redis DB 선택
     }
 
 
     @Bean
-    @Qualifier("predictAllRedisTemplate")
-    public RedisTemplate<?, ?> predictAllRedisTemplate(ObjectMapper objectMapper) {
+    @Qualifier("hotTimeRedisTemplate")
+    public RedisTemplate<?, ?> hotTimeRedisTemplate(ObjectMapper objectMapper) {
         RedisTemplate<?, ?> template = new RedisTemplate<>();
 
         template.setKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
         template.setHashKeySerializer(new StringRedisSerializer());
         template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
-        template.setConnectionFactory(predictAllRedisConnectionFactory());
+        template.setConnectionFactory(hotTimeRedisConnectionFactory());
         return template;
     }
-
 }

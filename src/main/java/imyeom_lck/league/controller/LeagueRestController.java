@@ -1,10 +1,9 @@
 package imyeom_lck.league.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import imyeom_lck.league.domain.dto.NewsDTO;
+import imyeom_lck.news.domain.NewsDTO;
+import imyeom_lck.news.service.NewsService;
 import imyeom_lck.rank.domain.dto.RankDTO;
-import imyeom_lck.league.service.inter.LeagueService;
-import imyeom_lck.rank.domain.entity.Rank;
 import imyeom_lck.rank.service.RankService;
 import imyeomsu.lck.common_utils.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -24,10 +23,10 @@ import java.util.*;
 @RequiredArgsConstructor
 public class LeagueRestController {
 
-    private final LeagueService leagueService;
+    private final NewsService newsService;
     private final RankService rankService;
 
-    @GetMapping("/getrank")
+    @GetMapping("/getRank")
     public ResponseEntity<ResponseDto<List<RankDTO>>> getRank() throws JsonProcessingException {
         List<RankDTO> rankList = rankService.getRank();
 
@@ -40,10 +39,10 @@ public class LeagueRestController {
                 .build());
     }
 
-    @GetMapping("/getnews")
+    @GetMapping("/getNews")
     public ResponseEntity<ResponseDto<Map<LocalDate, List<NewsDTO>>>> getnews() throws JsonProcessingException {
 
-        Map<LocalDate, List<NewsDTO>> newsMap = leagueService.getNews();
+        Map<LocalDate, List<NewsDTO>> newsMap = newsService.getNews();
 
         return ResponseEntity.ok(ResponseDto.<Map<LocalDate, List<NewsDTO>>>builder()
                 .data(newsMap)

@@ -12,7 +12,7 @@ public interface MatchScheduleService {
 
     List<MatchesResponseDTO> getAllMatchesByRedis() throws JsonProcessingException;
     List<MatchesResponseDTO> getAllMatchesByRdb() throws JsonProcessingException;
-
     List<MatchesViewResponseDTO> getAllMatchSchedule() throws JsonProcessingException;
+
 
 }

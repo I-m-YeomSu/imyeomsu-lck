@@ -1,11 +1,16 @@
 package imyeom_lck.league.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import imyeom_lck.league.domain.dto.NewsDTO;
+
+import imyeom_lck.league.service.inter.LeagueService;
+import imyeom_lck.news.domain.NewsDTO;
+import imyeom_lck.news.service.NewsService;
 import imyeom_lck.rank.domain.dto.RankDTO;
 import imyeom_lck.league.dummy.DummyNewsDTO;
 import imyeom_lck.league.dummy.DummyRankDTO;
-import imyeom_lck.league.service.impl.LeagueServiceImpl;
+import imyeom_lck.rank.domain.entity.Rank;
+import imyeom_lck.rank.service.RankService;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,7 +36,11 @@ public class LeagueRestControllerTest {
     private MockMvc mvc;
 
     @MockBean
-    private LeagueServiceImpl leagueService;
+    private NewsService newsService;
+
+
+    @MockBean
+    private RankService rankService;
 
     private RankDTO rankDTO1;
     private RankDTO rankDTO2;
@@ -72,8 +81,8 @@ public class LeagueRestControllerTest {
     @DisplayName("랭킹 가져오기")
     @Test
     public void testRank() throws Exception {
-        given(leagueService.getrank()).willReturn(rankList);
-        given(leagueService.ranksort(rankList)).willReturn(rankList);
+        given(rankService.getRank()).willReturn(rankList);
+        given(rankService.rankSort(rankList)).willReturn(rankList);
 
         mvc.perform(get("/api/leagues/getrank").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -85,7 +94,7 @@ public class LeagueRestControllerTest {
     @DisplayName("뉴스 가져오기")
     @Test
     public void testNews() throws JsonProcessingException, Exception {
-        given(leagueService.getNews()).willReturn(newsMap);
+        given(newsService.getNews()).willReturn(newsMap);
 
         mvc.perform(get("/api/leagues/getnews").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
