@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-spring
+  name: lck-spring
 spec:
   selector:
     matchLabels:
-      app: hello-spring
+      app: lck-spring
   template:
     metadata:
       labels:
-        app: hello-spring
+        app: lck-spring
     spec:
       containers:
-        - name: hello-spring
+        - name: lck-spring
           image: yurilim/lck:latest
           ports:
             - containerPort: 8080
