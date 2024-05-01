@@ -11,6 +11,10 @@ plugins {
 java {
 	sourceCompatibility = '17'
 }
+bootJar{
+	archivesBaseName = 'imyeomsu-lck'
+	archiveFileName = 'imyeomsu-lck.jar'
+}
 
 configurations {
 	compileOnly {
