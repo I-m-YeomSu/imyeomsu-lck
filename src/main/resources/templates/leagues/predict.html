@@ -39,15 +39,13 @@
 <div class="row">
     <div class="col-lg-8">
         <div  class="row mb-5" style="background-color: black; padding-left: 50px;"> <!--얘를 돌려! th:each-->
-            <div class="testimonial-item" style="border: none; background-color: black" th:each="match:${matches}">
-                <div class="left-testimonial-item" style="margin: 0; background-color: rgba(255,255,255,0.1);" onclick="sendAjaxRequest('left');">
+            <div class="testimonial-item" style="border: none; background-color: black" th:each="match, index:${matches}">
+                <div class="left-testimonial-item testimonial-items" style="margin: 0; background-color: rgba(255,255,255,0.1);" th:data-index="${index}" onclick="clickVoted(event)">
                     <img th:src="${match.homeTeamLogo}" class="testimonial-img" alt="" style="border: none;">
                     <h3 th:text="${match.homeTeamName}" style="color: #FFFFFF"></h3>
                 </div>
-                <div class="right-testimonial-item" style="background-color: rgba(255,255,255,0.1);" onclick="sendAjaxRequest('right');">
+                <div class="right-testimonial-item testimonial-items" style="background-color: rgba(255,255,255,0.1);" th:data-index="${index}" onclick="clickVoted(event)">
                     <img style="float: right; border: none;" th:src="${match.awayTeamLogo}" class="right-testimonial-img" alt="">
-
-
                     <h3 th:text="${match.awayTeamName}" style="color: #FFFFFF"></h3>
                 </div>
                 <img src="../images/vs-white.png" style="width: 50px; height: 50px; position: absolute; top: 50%; left: 53.5%; transform: translate(-50%, -50%);">
@@ -167,5 +165,37 @@
         });
     }
 </script>
+
+<script>
+    let selectedElementIndex = null;
+
+    const left = document.querySelectorAll(".left-testimonial-item.testimonial-items");
+    const right = document.querySelectorAll(".right-testimonial-item.testimonial-items");
+
+    function clickVoted(event) {
+        // div에서 모든 "click" 클래스 제거 선택된 요소 출력을 위해서 진행
+        // nonClick.forEach((e) => {
+        //     e.classList.remove("clicked");
+        //     event.target.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+        //
+        // });
+        // 클릭한 div만 "click"클래스 추가
+        event.target.classList.add("clicked");
+        event.target.style.backgroundColor = "rgb(80, 5, 82)";
+
+        let leftClassName = event.target.className;
+        let rightClassName = right.
+
+        console.log(className);
+
+
+    }
+    nonClick.forEach((e) => {
+        e.addEventListener("click", handleClick);
+    });
+
+</script>
+
+</body>
 
 </html>

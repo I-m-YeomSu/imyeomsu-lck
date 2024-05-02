@@ -3005,6 +3005,12 @@ news list
 }
 
 
+.left-testimonial-item .testimonial-items,
+.right-testimonial-item .testimonial-items {
+	background-color: rgba(255,255,255,0.1);
+
+}
+
 .testimonial-item .testimonial-date{
 	font-size: 20px;
 	text-align: center;
@@ -3224,3 +3230,7 @@ thead, tbody, tr,.ranking-item-row first{
 	text-overflow: ellipsis; /* 넘치는 부분에 대한 생략 부호(...) */
 }
 
+.clicked {
+	background-color: rgb(80,5,82);
+	backdrop-filter: blur(10px);
+}
