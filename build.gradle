@@ -77,15 +77,6 @@ jacocoTestReport {
 }
 
 
-sourceSets {
-	main {
-		resources {
-			srcDirs = ["src/main/resources"]
-			include '/static/**'
-			include '/templates/**'
-		}
-	}
-}
 
 coveralls {
 	jacocoReportPath 'build/customJacocoReportDir/test/jacocoTestReport.xml'
@@ -111,6 +102,7 @@ dependencies {
 	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	runtimeOnly 'com.mysql:mysql-connector-j'
+
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	implementation 'org.springframework.session:spring-session-data-redis'
