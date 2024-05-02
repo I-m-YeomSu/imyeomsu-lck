@@ -5,6 +5,8 @@ import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.service.inter.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +36,13 @@ public class AuthController {
 
 	@GetMapping("/login")
 	public String loginForm() {
+
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		log.info("{} {} {}",authentication.getCredentials(), authentication.isAuthenticated(), authentication.getName());
+
+		if (authentication.isAuthenticated()){
+			return "redirect:/";
+		}
 
 		return "auth/user/login";
 

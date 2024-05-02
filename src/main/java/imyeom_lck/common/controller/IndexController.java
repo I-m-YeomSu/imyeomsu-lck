@@ -68,6 +68,7 @@ public class IndexController {
         rankList = rankService.rankSort(rankList);
         model.addAttribute("ranking", rankList);
 
+
         return "main/index";
     }
 

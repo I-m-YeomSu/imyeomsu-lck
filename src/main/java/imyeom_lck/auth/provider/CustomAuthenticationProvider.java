@@ -1,5 +1,6 @@
 package imyeom_lck.auth.provider;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import imyeom_lck.auth.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 
+@Slf4j
 @RequiredArgsConstructor
 public class CustomAuthenticationProvider implements AuthenticationProvider{
 
@@ -25,10 +27,13 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
 		String loginId = authentication.getName();
 		String pwd = String.valueOf(authentication.getCredentials());
 
+		log.info("{} {}", loginId, pwd);
 
 		UserDetails userDetails = customUserDetailsService.loadUserByUsername(loginId); //실제 DB에서 받아온 값을 Custom 한 객체
 
-		if (userDetails.getUsername().equals(loginId) && encoder.matches(pwd, userDetails.getPassword())) {
+		log.info("{} {}", pwd, userDetails.getPassword());
+		if (userDetails.getUsername().equals(loginId) && encoder.matches(encoder.encode(pwd), userDetails.getPassword())) {
+			log.info("UsernameNotFoundException {} {}", loginId, pwd);
 
 			throw new UsernameNotFoundException("해당 회원의 매칭 정보가 올바르지 않습니다. 다시 확인해주세요");
 

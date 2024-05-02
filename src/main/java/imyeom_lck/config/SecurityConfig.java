@@ -52,8 +52,8 @@ public class SecurityConfig {
 
 		http.formLogin(httpSecurityFormLoginConfigurer -> {
 			httpSecurityFormLoginConfigurer.loginPage("/auth/login").permitAll();
-			httpSecurityFormLoginConfigurer.passwordParameter("password");
 			httpSecurityFormLoginConfigurer.usernameParameter("loginId");
+			httpSecurityFormLoginConfigurer.passwordParameter("password");
 		});
 
 		http.sessionManagement(sessionManagementConfigurer -> {
