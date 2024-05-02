@@ -76,6 +76,15 @@ jacocoTestReport {
 	}
 }
 
+
+sourceSets {
+	main {
+		resources {
+			srcDirs = ["src/main/resources"]
+		}
+	}
+}
+
 coveralls {
 	jacocoReportPath 'build/customJacocoReportDir/test/jacocoTestReport.xml'
 }
