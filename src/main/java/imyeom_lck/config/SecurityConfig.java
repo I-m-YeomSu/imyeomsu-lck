@@ -1,6 +1,10 @@
 package imyeom_lck.config;
 
 
+import imyeom_lck.auth.handler.CustomAuthenticationSuccessHandler;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.ApplicationContext;
@@ -67,7 +71,8 @@ public class SecurityConfig {
 			rememberMecConfig.userDetailsService(customUserDetailsService);
 		});
 
-		http.logout(logout -> {logout.logoutUrl("/auth/logout");
+		http.logout(logout -> {
+			logout.logoutUrl("/auth/logout").permitAll();
 			logout.logoutSuccessUrl("/");
 			logout.invalidateHttpSession(true); // 로그아웃 후 JSESSIONID 이름의 쿠키값 삭제
 			logout.deleteCookies("JSESSIONID", "remember-me");
@@ -98,9 +103,15 @@ public class SecurityConfig {
 
 		// 해당 부분은 Custom한 AuthenticationManager를 사용해도 되지만 굳이 사용하지 않아도 되기 떄문에 설정을 이렇게 진행 해줌
 		customAuthenticationFilter.setAuthenticationManager(new ProviderManager(customAuthenticationProvider()));
-
+//		customAuthenticationFilter.setAuthenticationSuccessHandler(customAuthenticationSuccessHandler());
 		return customAuthenticationFilter;
 	}
+
+//	@Bean
+//	public AuthenticationSuccessHandler customAuthenticationSuccessHandler() {
+//		return new CustomAuthenticationSuccessHandler();
+//
+//	}
 
 	@Bean
 	public CustomAuthenticationProvider customAuthenticationProvider() {

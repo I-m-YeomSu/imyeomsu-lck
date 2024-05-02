@@ -13,7 +13,7 @@
     </button>
     <!-- end of mobile menu toggle button -->
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="collapse navbar-collapse" style="margin-right: 40px;" id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="/">HOME</a>
@@ -43,16 +43,15 @@
             <!-- Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a th:block th:if="${#authentication.isAuthenticated()}" class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown2" role="button" aria-haspopup="true" aria-expanded="false">마이페이지</a>
-                <a th:block th:if="${!#authentication.isAuthenticated()}" class="nav-link dropdown-toggle page-scroll" href="/auth/login" role="button" aria-haspopup="true" aria-expanded="false">로그인하기</a>
 
                 <div th:block th:if="${#authentication.isAuthenticated()}" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/auth/myPage">
+                    <a class="dropdown-item" href="/auth/my-page">
                         <span class="item-text">내 정보 확인하기</span>
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <a  class="dropdown-item" href="terms-conditions.html">
-                        <span class="item-text">내 정보 수정하기</span>
-                    </a>
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a  class="dropdown-item" href="terms-conditions.html">-->
+<!--                        <span class="item-text">내 정보 수정하기</span>-->
+<!--                    </a>-->
                 </div>
             </li>
 
@@ -62,17 +61,19 @@
         </ul>
         <span class="nav-item social-icons">
             <span class="fa-stack">
-                <a href="/auth/login">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-user fa-stack-1x"></i>
-                </a>
-            </span>
-<!--            <span class="fa-stack">-->
-<!--                <a href="#your-link">-->
+                <a th:block href="/auth/login" class="btn" th:if="${!#authentication.isAuthenticated()}">
+                    Login
 <!--                    <i class="fas fa-circle fa-stack-2x"></i>-->
-<!--                    <i class="fab fa-twitter fa-stack-1x"></i>-->
-<!--                </a>-->
-<!--            </span>-->
+<!--                    <i class="fas fa-user fa-stack-1x"></i>-->
+                </a>
+                <form th:block th:if="${#authentication.isAuthenticated()}" action="/auth/logout" method="post">
+                     <button class="btn btn-sm btn-primary" type="submit">
+                            Logout
+                         <!--                    <i class="fas fa-circle fa-stack-2x"></i>-->
+                         <!--                    <i class="fab fa-twitter fa-stack-1x"></i>-->
+                    </button>
+                </form>
+            </span>
         </span>
     </div>
 </nav> <!-- end of navbar -->

@@ -8,8 +8,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +35,14 @@ public class IndexController {
     private final RankService rankService;
 
     @GetMapping("/")
-    public String indexForm(Model model) throws JsonProcessingException {
+    public String indexForm(Model model, HttpSession session) throws JsonProcessingException {
+
+        session.invalidate();
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        log.info("{} {} {}", authentication.getPrincipal().toString(), authentication.getCredentials().toString(), authentication.getDetails().toString());
+
+
         PageRequest pageRequest = PageRequest.of(0,9);
 
         Page<NewsDTO> newsDTOPage = newsService.getPageAllNews(pageRequest);

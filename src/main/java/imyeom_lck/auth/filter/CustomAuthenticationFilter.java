@@ -51,6 +51,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 		Authentication authResult) throws IOException, ServletException {
 
+
+		log.info("{} {} {}", authResult.getPrincipal().toString(), authResult.getCredentials().toString(), authResult.getName());
 		SecurityContextHolder.getContext().setAuthentication(authResult);
 
 		response.sendRedirect("/");

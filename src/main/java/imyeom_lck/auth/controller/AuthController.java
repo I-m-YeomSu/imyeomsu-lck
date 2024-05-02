@@ -1,5 +1,6 @@
 package imyeom_lck.auth.controller;
 
+import imyeom_lck.auth.service.CustomUserDetails;
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.service.inter.MemberService;
@@ -7,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,14 +25,18 @@ public class AuthController {
 
 	private final MemberService memberService;
 
-	@GetMapping("/{memberId}")
+	@GetMapping("/my-page/{memberId}")
 	public String profileForm(@PathVariable("memberId") Long memberId, Model model) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		UserDetails details = (UserDetails)authentication.getDetails();
+		String username = details.getUsername();
+		MemberDetailsResponseDTO byLoginId = memberService.findByLoginId(username);
 
-		MemberDetailsResponseDTO memberDetailsResponseDTO = memberService.getMemberDetails(memberId);
+		//MemberDetailsResponseDTO memberDetailsResponseDTO = memberService.getMemberDetails(username);
 
-		model.addAttribute("memberDetails", memberDetailsResponseDTO);
+		model.addAttribute("memberDetails", byLoginId);
 
-		return "fragments/auth/my-profile";
+		return "fragments/auth/my-page";
 
 	}
 
@@ -58,11 +64,14 @@ public class AuthController {
 	}
 
 
-	@GetMapping("/myPage")
+	@GetMapping("/my-page")
 	public String myPage(Model model) {
-		MemberDetailsResponseDTO memberDetailsResponseDTO = memberService.getMemberDetails(1L);
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String loginId = authentication.getName();
+		log.info("{}", loginId);
+		MemberDetailsResponseDTO byLoginId = memberService.findByLoginId(loginId);
 
-		model.addAttribute("memberDetails", memberDetailsResponseDTO);
+		model.addAttribute("memberDetails", byLoginId);
 
 		return "auth/user/my-page";
 	}
@@ -75,4 +84,14 @@ public class AuthController {
 	}
 
 
+	@GetMapping("/logout")
+	public String logout(Model model){
+
+
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		log.info("{} {} {}",authentication.getCredentials(), authentication.isAuthenticated(), authentication.getName());
+
+		model.addAttribute("message", "회원 로그인이 정상적으로 이뤄졌습니다.");
+		return "redirect:/auth/login";
+	}
 }
