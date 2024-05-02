@@ -71,7 +71,7 @@ jacocoTestReport {
 								"**/*Exception*"
 						] + QDomains)
 					})
-			) 
+			)
 		}
 	}
 }
@@ -81,6 +81,8 @@ sourceSets {
 	main {
 		resources {
 			srcDirs = ["src/main/resources"]
+			include '/static/**'
+			include '/templates/**'
 		}
 	}
 }
