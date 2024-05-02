@@ -54,7 +54,6 @@ public class ApplyRestController {
         applyService.applyLast();
     }
 
-    @GetMapping
 
 }
 
