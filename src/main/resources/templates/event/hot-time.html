@@ -143,7 +143,10 @@
         <span class="sub"> <strong></strong></span>
     </div>
     <button class="btn btn-lg btn-close-white align-content-center hover-bg-gray" id="monthlyButton" style="display:none;position: absolute;
-            bottom: 20px; color: #2e3339;">보상 받기!</button>
+            bottom: 20px; color: #2e3339;" onclick="hotTimeEvent()">보상 받기!</button>
+    <div id="isParticipated" th:text="${isParticipated}"></div>
+    <div id="flag" th:text="${flag}"></div>
+
 
 </div>
 
@@ -195,8 +198,30 @@
         var currentMinute = currentDate.getMinutes();
 
         // 매월 1일이며 오후 8시 이후인 경우에만 버튼을 표시합니다.
-        if (currentDay === 3 && currentHour >= 20) {
+        if (currentDay === 3 && currentHour >= 8) {
             document.getElementById('monthlyButton').style.display = 'block';
+        }
+
+
+        function hotTimeEvent() {
+
+            var isParticipated = document.getElementById('isParticipated').textContent; // 참여 유무 정보
+            var flag = document.getElementById('isParticipated');
+
+            $.ajax({
+                type: "GET",
+                url: "/event/click", // Java 컨트롤러의 URL
+                contentType: "application/json",
+                success: function(response) {
+                    // 성공 시 서버에서 받은 응답을 alert 창에 출력
+                    flag.innerText=""
+                    flag.innerText= "쿠폰 발급 완료!"
+                },
+                error: function(xhr, status, error) {
+                    // 에러 시 에러 메시지를 alert 창에 출력
+                    alert("에러 발생: " + error);
+                }
+            });
         }
 </script>
 </body>
