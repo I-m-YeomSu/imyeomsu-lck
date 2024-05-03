@@ -1,12 +1,14 @@
 package imyeom_lck.auth.controller;
 
-import imyeom_lck.auth.service.CustomUserDetails;
+import org.springframework.security.access.prepost.PreAuthorize;
+
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
 import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.service.inter.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
 	private final MemberService memberService;
+
 
 	@GetMapping("/my-page/{memberId}")
 	public String profileForm(@PathVariable("memberId") Long memberId, Model model) {
@@ -76,6 +79,26 @@ public class AuthController {
 		model.addAttribute("memberDetails", byLoginId);
 
 		return "auth/user/my-page";
+	}
+
+
+	@GetMapping("/modify/password")
+	public String modifyPasswordForm(Model model){
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String loginId = authentication.getName();
+		log.info("ppppppppppppppppppppaaaaaaaaaaaaaaaaaaaa{}", loginId);
+
+		MemberDetailsResponseDTO byLoginId = memberService.findByLoginId(loginId);
+
+		model.addAttribute("memberDetails", byLoginId);
+		return "auth/user/modify-password";
+	}
+
+	@PostMapping("/modify/password/{loginId}")
+	public String modifyPassword(@PathVariable(name = "loginId") String loginId, String newPassword){
+
+		memberService.updatePassword(loginId,newPassword);
+		return "redirect:/auth/my-page";
 	}
 
 

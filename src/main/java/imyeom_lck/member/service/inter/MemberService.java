@@ -17,4 +17,7 @@ public interface MemberService {
 	MemberDetailsResponseDTO deleteMember(Long memberId);
 
 	MemberDetailsResponseDTO updateMember(Long memberId, MemberUpdateDTO memberUpdateDTO);
+
+	MemberDetailsResponseDTO updatePassword(String loginId,String newPassword);
+
 }

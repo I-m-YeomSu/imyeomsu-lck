@@ -8,9 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import imyeom_lck.auth.service.CustomUserDetails;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -38,9 +41,9 @@ public class IndexController {
     public String indexForm(Model model, HttpSession session) throws JsonProcessingException {
 
 
-
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        log.info("{} {}", authentication.getPrincipal().toString(), authentication.getDetails().toString());
+
+        log.info("index {} {}", authentication.getClass().getName(),authentication.getName());
 
 
         PageRequest pageRequest = PageRequest.of(0,9);
@@ -58,7 +61,7 @@ public class IndexController {
         List<NewsDTO> newsThree = new ArrayList<>();
         int i =0;
         for (List<NewsDTO> value : newsMap.values()) {
-            if (i == 3){
+            if (i == 7){
                 break;
             }
             NewsDTO newsDTO = value.get(i);

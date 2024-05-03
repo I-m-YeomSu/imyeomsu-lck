@@ -69,62 +69,62 @@
                 </div> <!-- end of text-container -->
             </div>
 
-            <div class="container row mt-2" style="text-align: center;">
-                <ul class="row new-ul">
-                    <li class="main_news_item col-sm-3">
-                        <div class="col-10 news_item" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'">
-                            <a th:href="@{https://sports.news.naver.com/news.nhn}" class="main_news_card">
-                                <div class="image_lazy_loader_main_news">
-                                    <div class="main_news_thumbnail_area" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="main_news_info">
-                            <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>
-                            <span th:text="'인벤'">인벤</span>
-                        </div>
-                    </li>
-                    <li class="main_news_item col-sm-3">
-                        <div class="col-10 news_item" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'">
-                            <a th:href="@{https://sports.news.naver.com/news.nhn}" class="main_news_card">
-                                <div class="image_lazy_loader_main_news">
-                                    <div class="main_news_thumbnail_area" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="main_news_info">
-                            <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>
-                            <span th:text="'인벤'">인벤</span>
-                        </div>
-                    </li>
-                    <li class="main_news_item col-sm-3">
-                        <div class="col-10 news_item" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'">
-                            <a th:href="@{https://sports.news.naver.com/news.nhn}" class="main_news_card">
-                                <div class="image_lazy_loader_main_news">
-                                    <div class="main_news_thumbnail_area" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="main_news_info">
-                            <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>
-                            <span th:text="'인벤'">인벤</span>
-                        </div>
-                    </li>
-                    <li class="main_news_item col-sm-3">
-                        <div class="col-10 news_item" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'">
-                            <a th:href="@{https://sports.news.naver.com/news.nhn}" class="main_news_card">
-                                <div class="image_lazy_loader_main_news">
-                                    <div class="main_news_thumbnail_area" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="main_news_info">
-                            <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>
-                            <span th:text="'인벤'">인벤</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+<!--            <div class="container row mt-2" style="text-align: center;">-->
+<!--                <ul class="row new-ul" th:object="${newsThree}">-->
+<!--                    <li class="main_news_item col-sm-3">-->
+<!--                        <div class="col-10 news_item" th:style="'background-image: url(' + '${newsThree[3].thumbnail}' + ');'">-->
+<!--                            <a th:href="@{https://sports.news.naver.com/news.nhn}" class="main_news_card">-->
+<!--                                <div class="image_lazy_loader_main_news">-->
+<!--                                    <div class="main_news_thumbnail_area" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'"></div>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="main_news_info">-->
+<!--                            <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>-->
+<!--                            <span th:text="'인벤'">인벤</span>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="main_news_item col-sm-3">-->
+<!--                        <div class="col-10 news_item" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'">-->
+<!--                            <a th:href="@{https://sports.news.naver.com/news.nhn}" class="main_news_card">-->
+<!--                                <div class="image_lazy_loader_main_news">-->
+<!--                                    <div class="main_news_thumbnail_area" th:style="'background-image: url(' + '${newsThree[3].thumbnail}' + ');'"></div>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="main_news_info">-->
+<!--                            <strong th:text="${newsThree.title}">기드온' 김민성, OK저축은행 브리온 떠난다</strong>-->
+<!--                            <span th:text="'인벤'">인벤</span>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="main_news_item col-sm-3">-->
+<!--                        <div class="col-10 news_item" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'">-->
+<!--                            <a th:href="@{https://sports.news.naver.com/news.nhn}" class="main_news_card">-->
+<!--                                <div class="image_lazy_loader_main_news">-->
+<!--                                    <div class="main_news_thumbnail_area" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'"></div>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="main_news_info">-->
+<!--                            <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>-->
+<!--                            <span th:text="'인벤'">인벤</span>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="main_news_item col-sm-3">-->
+<!--                        <div class="col-10 news_item" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'">-->
+<!--                            <a th:href="@{https://sports.news.naver.com/news.nhn}" class="main_news_card">-->
+<!--                                <div class="image_lazy_loader_main_news">-->
+<!--                                    <div class="main_news_thumbnail_area" th:style="'background-image: url(' + 'https://imgnews.pstatic.net/image/442/2024/04/23/0000171631_001_20240423114301451.jpg?type=nf440_300' + ');'"></div>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="main_news_info">-->
+<!--                            <strong>기드온' 김민성, OK저축은행 브리온 떠난다</strong>-->
+<!--                            <span th:text="'인벤'">인벤</span>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
         </div> <!-- end of row -->
     </div>
 
@@ -161,6 +161,7 @@
                                 </td>
 
                                 <td class="col-5">
+                                    <div class="ranking-logo">
                                     <div class="ranking-logo">
                                         <img class="ranking-image" th:src="@{${rank.logo}}" src="https://nng-phinf.pstatic.net/MjAyNDA0MTRfODAg/MDAxNzEzMDkzODYyNDQ4.eYiZxiqvEsfKTolDJgMiWGdZdPkvjqTaJCBzieidI04g.Z49TEBd7qQnvaQbYAmJLhcozS7OO9Lam1tZ-Lz-UOsUg.PNG/xEtyTgLerKLWMjBvzShJ.png?type=f60_60" width="36" height="36" alt="젠지">
                                     </div>
@@ -223,7 +224,6 @@
                 </a>
             </li>
         </ul>
-
     </div>
 </div>
 

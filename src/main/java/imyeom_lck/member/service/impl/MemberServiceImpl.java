@@ -94,5 +94,19 @@ public class MemberServiceImpl implements MemberService {
 
         return MemberDetailsResponseDTO.fromEntity(updateMember);
     }
+
+
+    @Transactional
+    @Override
+    public MemberDetailsResponseDTO updatePassword(String loginId, String newPassword) {
+
+        Member member = memberRepository.findByLoginId(loginId)
+            .orElseThrow(() -> new ClientException(ErrorCode.MEMBER_NOT_FOUND, "회원을 찾을 수 없습니다."));
+
+        member.changePassword(newPassword);
+        memberRepository.save(member);
+
+        return MemberDetailsResponseDTO.fromEntity(member);
+    }
 }
 

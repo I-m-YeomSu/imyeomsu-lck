@@ -5,7 +5,7 @@
 <body>
 <nav th:fragment="template-nav" class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
 
-    <a class="navbar-brand logo-image" href="/"><img src="images/lck_woori.png" alt="alternative"></a>
+<!--    <a class="navbar-brand logo-image" href="/"><img src="../images/logo/real-logo.png" alt="alternative"></a>-->
 
     <!-- Mobile Menu Toggle Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,6 +41,7 @@
                 </div>
             </li>
 
+
             <!-- Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a th:block sec:authorize="!isAnonymous()" class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown2" role="button" aria-haspopup="true" aria-expanded="false">마이페이지</a>
@@ -62,13 +63,13 @@
         </ul>
         <span class="nav-item social-icons">
             <span class="fa-stack">
-                <a th:block sec:authorize="isAnonymous()"  href="/auth/login" class="btn btn-sm btn-primary">
+                <a th:block sec:authorize="isAnonymous()" href="/auth/login" style="text-decoration: none; background-color: rgba(255, 255, 255, 0.1);color: white" class="btn btn-sm btn-light border-0">
                     Login
 <!--                    <i class="fas fa-circle fa-stack-2x"></i>-->
 <!--                    <i class="fas fa-user fa-stack-1x"></i>-->
                 </a>
                 <form th:block sec:authorize="!isAnonymous()" action="/auth/logout" method="post">
-                     <button class="btn btn-sm btn-primary" type="submit">
+                     <button class="btn btn-sm btn-primary btn-light border-0" style="text-decoration: none; background-color: rgba(255, 255, 255, 0.1); color: white" type="submit">
                             Logout
                          <!--                    <i class="fas fa-circle fa-stack-2x"></i>-->
                          <!--                    <i class="fab fa-twitter fa-stack-1x"></i>-->
