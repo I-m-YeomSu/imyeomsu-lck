@@ -38,9 +38,15 @@ public class HotTimeServiceImpl implements HotTimeService {
         return "이미참여";
     }
 
-    public boolean checkIfValue(String loginId) {
+    public String checkIfValue(String loginId) {
         Long memberId = memberRepository.findByLoginId(loginId).get().getMemberId();
-        return couponCountRepository.isMemberOfSet(memberId);
+        boolean check = couponCountRepository.isMemberOfSet(memberId);
+        if(check){
+            return "쿠폰 발급 완료!";
+        }
+        else {
+            return "";
+        }
     }
 
 }

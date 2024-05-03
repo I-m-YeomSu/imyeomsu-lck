@@ -214,10 +214,8 @@
                 contentType: "application/json",
                 success: function(response) {
                     // 성공 시 서버에서 받은 응답을 alert 창에 출력
-                    console.log(flag)
                     flag.innerText=""
-                    flag.innerText= "이미 쿠폰을 발급 받았습니다."
-                    alert(flag);
+                    flag.innerText= "쿠폰 발급 완료!"
                 },
                 error: function(xhr, status, error) {
                     // 에러 시 에러 메시지를 alert 창에 출력

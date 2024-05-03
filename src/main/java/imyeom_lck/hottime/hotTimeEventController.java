@@ -31,7 +31,7 @@ public class hotTimeEventController {
 		if (authentication instanceof UsernamePasswordAuthenticationToken){
 
 			String loginId = authentication.getPrincipal().toString();
-			boolean flag = hotTimeService.checkIfValue(loginId);
+			String flag = hotTimeService.checkIfValue(loginId);
 			model.addAttribute("isParticipated", flag);
 
 		}
