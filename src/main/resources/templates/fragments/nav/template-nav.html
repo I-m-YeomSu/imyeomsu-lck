@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 
 <body>
 <nav th:fragment="template-nav" class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
@@ -42,9 +43,9 @@
 
             <!-- Dropdown Menu -->
             <li class="nav-item dropdown">
-                <a th:block th:if="${#authentication.isAuthenticated()}" class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown2" role="button" aria-haspopup="true" aria-expanded="false">마이페이지</a>
+                <a th:block sec:authorize="!isAnonymous()" class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown2" role="button" aria-haspopup="true" aria-expanded="false">마이페이지</a>
 
-                <div th:block th:if="${#authentication.isAuthenticated()}" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div th:block sec:authorize="!isAnonymous()" class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/auth/my-page">
                         <span class="item-text">내 정보 확인하기</span>
                     </a>
@@ -61,12 +62,12 @@
         </ul>
         <span class="nav-item social-icons">
             <span class="fa-stack">
-                <a th:block href="/auth/login" class="btn" th:if="${!#authentication.isAuthenticated()}">
+                <a th:block sec:authorize="isAnonymous()"  href="/auth/login" class="btn btn-sm btn-primary">
                     Login
 <!--                    <i class="fas fa-circle fa-stack-2x"></i>-->
 <!--                    <i class="fas fa-user fa-stack-1x"></i>-->
                 </a>
-                <form th:block th:if="${#authentication.isAuthenticated()}" action="/auth/logout" method="post">
+                <form th:block sec:authorize="!isAnonymous()" action="/auth/logout" method="post">
                      <button class="btn btn-sm btn-primary" type="submit">
                             Logout
                          <!--                    <i class="fas fa-circle fa-stack-2x"></i>-->

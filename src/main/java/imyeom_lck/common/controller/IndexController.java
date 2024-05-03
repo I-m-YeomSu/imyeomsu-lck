@@ -37,10 +37,10 @@ public class IndexController {
     @GetMapping("/")
     public String indexForm(Model model, HttpSession session) throws JsonProcessingException {
 
-        session.invalidate();
+
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        log.info("{} {} {}", authentication.getPrincipal().toString(), authentication.getCredentials().toString(), authentication.getDetails().toString());
+        log.info("{} {}", authentication.getPrincipal().toString(), authentication.getDetails().toString());
 
 
         PageRequest pageRequest = PageRequest.of(0,9);

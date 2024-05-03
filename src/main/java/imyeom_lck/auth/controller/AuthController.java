@@ -44,13 +44,15 @@ public class AuthController {
 	public String loginForm() {
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
 		log.info("{} {} {}",authentication.getCredentials(), authentication.isAuthenticated(), authentication.getName());
 
-		if (authentication.isAuthenticated()){
-			return "redirect:/";
+		if (authentication.getPrincipal().toString().equals("anonymousUser")){
+			return "auth/user/login";
 		}
 
-		return "auth/user/login";
+
+		return "redirect:/";
 
 	}
 

@@ -54,10 +54,12 @@ public class SecurityConfig {
 			frameOptionsConfig -> frameOptionsConfig.disable()));
 
 
-		http.formLogin(httpSecurityFormLoginConfigurer -> {
-			httpSecurityFormLoginConfigurer.loginPage("/auth/login").permitAll();
-			httpSecurityFormLoginConfigurer.usernameParameter("loginId");
-			httpSecurityFormLoginConfigurer.passwordParameter("password");
+		http.formLogin((formLogin) -> {
+			formLogin.loginPage("/auth/login")
+				.usernameParameter("loginId")
+				.passwordParameter("password")
+				.loginProcessingUrl("/auth/login")
+				.defaultSuccessUrl("/", true);
 		});
 
 		http.sessionManagement(sessionManagementConfigurer -> {
@@ -66,29 +68,29 @@ public class SecurityConfig {
 
 
 		http.rememberMe(rememberMecConfig -> {
-			rememberMecConfig.rememberMeParameter("remember");
-			rememberMecConfig.alwaysRemember(false);//체크박스 사용 없이도 늘 활성화 시키기
-			rememberMecConfig.userDetailsService(customUserDetailsService);
+			rememberMecConfig.rememberMeParameter("remember")
+				.alwaysRemember(false)
+				.userDetailsService(customUserDetailsService);
 		});
 
-		http.logout(logout -> {
-			logout.logoutUrl("/auth/logout").permitAll();
-			logout.logoutSuccessUrl("/");
-			logout.invalidateHttpSession(true); // 로그아웃 후 JSESSIONID 이름의 쿠키값 삭제
-			logout.deleteCookies("JSESSIONID", "remember-me");
+		http.logout((logout) -> {
+			logout.logoutUrl("/auth/logout").permitAll()
+				.logoutSuccessUrl("/")
+				.invalidateHttpSession(true)
+				.deleteCookies("JSESSIONID", "remember-me");
 		});
 
 
 		//사용자 권한이 필요한 곳엔 로그인 작업을 할수 있게 합니다.
-		http.authorizeHttpRequests(auth -> {
+		http.authorizeHttpRequests((auth) -> {
 
-			auth.requestMatchers(antMatcher("/auth/**")).permitAll();
-			auth.requestMatchers(antMatcher("/apply/**")).authenticated();
-			auth.requestMatchers(antMatcher("comments/**")).authenticated();
-			auth.requestMatchers(antMatcher("/api/predict/vote")).authenticated();
-			auth.requestMatchers(antMatcher("/admin/**")).hasAuthority("ROLE_ADMIN"); // 관리자만 접근 가능하게 합니다.
-			auth.requestMatchers(antMatcher("/members/**")).hasAuthority("ROLE_USER");
-			auth.anyRequest().permitAll();
+			auth.requestMatchers(antMatcher("/auth/**")).permitAll()
+				.requestMatchers(antMatcher("/apply/**")).authenticated()
+				.requestMatchers(antMatcher("comments/**")).authenticated()
+				.requestMatchers(antMatcher("/api/predict/vote")).authenticated()
+				.requestMatchers(antMatcher("/admin/**")).hasAuthority("ROLE_ADMIN")
+				.requestMatchers(antMatcher("/members/**")).hasAuthority("ROLE_USER")
+				.anyRequest().permitAll();
 		});
 
 
