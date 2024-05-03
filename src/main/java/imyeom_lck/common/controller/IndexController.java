@@ -37,9 +37,10 @@ public class IndexController {
     private final NewsService newsService;
     private final RankService rankService;
 
+
+    // 최신 정보를 redis에서 가져옵니다. 또한 해당 정보가 redis에 없ㄷ
     @GetMapping("/")
     public String indexForm(Model model, HttpSession session) throws JsonProcessingException {
-
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
@@ -72,15 +73,21 @@ public class IndexController {
         log.info("news count!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! {}", newsThree.size());
 
         model.addAttribute("newsThree", newsThree);
+
         //뉴스를 레디스에 저장된 값을 불러옵니다.
         model.addAttribute("newsList", newsDTOPage);
 
-
         //팀랭킹
         List<RankDTO> rankList = rankService.getRank();
+
+        log.info("{}", rankList.get(1).getTeamName());
+        // 있으면 레디스꺼 ! 없다면 RDB
+        if(rankList.isEmpty()){
+            rankList = rankService.getRanks();
+        }
+
         rankList = rankService.rankSort(rankList);
         model.addAttribute("ranking", rankList);
-
 
         return "main/index";
     }

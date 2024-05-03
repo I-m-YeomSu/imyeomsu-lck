@@ -16,17 +16,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import imyeom_lck.rank.domain.dto.RankDTO;
 import imyeom_lck.rank.domain.dto.RankingDTO;
+import imyeom_lck.rank.domain.entity.Rank;
+import imyeom_lck.rank.persistence.JpaRankRepository;
 
 @Service
 @Transactional(readOnly = true)
 public class RankServiceImpl implements RankService{
 
+	private final JpaRankRepository rankRepository;
 
 	private final RedisTemplate<String, String> matchRankingRedisTemplate;
 	private final ObjectMapper objectMapper;
 
-	public RankServiceImpl(@Qualifier("matchRankingRedisTemplate") RedisTemplate<String, String> matchRankingRedisTemplate,
+	public RankServiceImpl(JpaRankRepository rankRepository, @Qualifier("matchRankingRedisTemplate") RedisTemplate<String, String> matchRankingRedisTemplate,
 		ObjectMapper objectMapper) {
+		this.rankRepository = rankRepository;
 		this.matchRankingRedisTemplate = matchRankingRedisTemplate;
 		this.objectMapper = objectMapper;
 	}
@@ -75,4 +79,17 @@ public class RankServiceImpl implements RankService{
 		}
 		return result;
 	}
+
+	@Override
+	public List<RankDTO> getRanks() {
+
+		List<Rank> all = rankRepository.findAll();
+		List<RankDTO> result = new ArrayList<>();
+		for (Rank rank : all) {
+			result.add(RankDTO.fromEntity(rank));
+		}
+
+		return result;
+	}
+
 }

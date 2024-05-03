@@ -14,5 +14,6 @@ public interface RankService {
 	List<RankDTO> rankSort(List<RankDTO> rankList);
 	List<RankingDTO> getRankingDto(List<RankDTO> rankList);
 
+	List<RankDTO> getRanks();
 
 }

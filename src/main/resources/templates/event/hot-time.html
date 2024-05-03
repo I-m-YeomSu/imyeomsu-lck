@@ -21,7 +21,7 @@
     <meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Corso - Training Course Landing Page Template</title>
+    <title>imyeomsu - hot time event</title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
     <link href="../css/bootstrap.css" rel="stylesheet">
@@ -74,22 +74,21 @@
         <div class="slider-container">
             <div class="swiper-container image-slider-1">
                 <div class="swiper-wrapper">
-
                     <!-- Slide -->
                     <div class="swiper-slide" >
-                        <img class="img-fluid" src="../images/lck-hot-01.png" alt="alternative">
+                        <img class="img-fluid" src="../images/lck-hot-01.png" style="width: 1100px; height: 500px" alt="alternative">
                     </div>
                     <!-- end of slide -->
 
                     <!-- Slide -->
                     <div class="swiper-slide">
-                        <img class="img-fluid" src="../images/lck-hot-02.png" alt="alternative">
+                        <img style="width: 1100px; height: 500px" class="img-fluid" src="../images/lck-hot-02.png" alt="alternative">
                     </div>
                     <!-- end of slide -->
 
                     <!-- Slide -->
                     <div class="swiper-slide">
-                        <img class="img-fluid" src="../images/lck-hot-03.png" alt="alternative">
+                        <img class="img-fluid" src="../images/lck-hot-03 (1).png" style="width: 1100px; height: 500px" alt="alternative">
                     </div>
                     <!-- end of slide -->
 
@@ -107,13 +106,13 @@
 <!-- end of header -->
 
 <!-- Video -->
-<div class="basic-4">
+<div class="basic-4" style="margin-top: 200px; background-color: #FFFFFF">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h2>Hot Time Event</h2>
 
-                <div style="width: 100%; height: 300px; background-image: url('https://images.freeimages.com/clg/images/31/319757/metal-background_f.jpg');">
+                <div style="width: 100%; height: 300px; background-image: url('https://img.tf.co.kr/article/home/2024/04/14/202485571713095820.jpg'); background-size: cover;">
                     <!-- Video Preview, 링크는 이후에 마음대로 추가 -->
                     <div class="image-container center" style="margin: 0 auto">
                         <a class="popup-youtube" href="https://www.youtube.com/watch?v=yxJQccavKO4" data-effect="fadeIn">
@@ -134,14 +133,15 @@
 
 <div class="appWrap mt-0"  style="display: flex;
                                   justify-content: center;
-                                  align-items: flex-end;">
+                                  align-items: flex-end; background-image: url('https://static.gosugamers.net/d2/f4/b8/d94fa86b605565de707de437442c4bff065d1648ef06dc0ca15cef3312.webp?w=1080'); background-size: cover;">
     <div class="appCon text-right">
         <p class="title">
             지금 당장 타임어택! <br>
-            매달 1일 저녁 8시 <br>
+            매달 1일 저녁 8시 1시간 동안<br>
             최고의 보상을 얻어보세요.</p>
-        <span class="sub"> <strong></strong></span>
+        <span class="sub"> <strong>1일 8시에 쿠폰 지급 버튼이 열립니다.</strong></span>
     </div>
+
     <button class="btn btn-lg btn-close-white align-content-center hover-bg-gray" id="monthlyButton" style="display:none;position: absolute;
             bottom: 20px; color: #2e3339;" onclick="hotTimeEvent()">보상 받기!</button>
     <div id="isParticipated" th:text="${isParticipated}"></div>
@@ -153,7 +153,7 @@
 
 
 <!-- Newsletter -->
-<div class="form-2">
+<div class="form-2" style="background-color: #FFFFFF">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -198,7 +198,7 @@
         var currentMinute = currentDate.getMinutes();
 
         // 매월 1일이며 오후 8시 이후인 경우에만 버튼을 표시합니다.
-        if (currentDay === 3 && currentHour >= 8) {
+        if (currentDay === 1 && currentHour >= 20 && currentHour >= 21) {
             document.getElementById('monthlyButton').style.display = 'block';
         }
 

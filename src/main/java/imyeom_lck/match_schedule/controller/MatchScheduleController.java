@@ -46,7 +46,6 @@ public class MatchScheduleController {
 		List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
 		List<MatchesResponseDTO> dtos = getMatchesResponseDTOS(allMatchesByRedis);
 
-
 		model.addAttribute("matches", dtos);
 
 
@@ -72,7 +71,7 @@ public class MatchScheduleController {
 		int nowDay = now.getDayOfMonth();
 		log.info("dldldldldldl이이이ㅣ거 오나22? {} {} {} ", nowYear, nowMonth, nowDay);
 
-
+		
 		//올해 이번달을 선택하면 레디스 정보를 보여줘도 됨
 		if (nowMonth== Integer.parseInt(month) && nowYear == Integer.parseInt(year)){
 

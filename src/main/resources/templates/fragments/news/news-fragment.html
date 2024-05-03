@@ -10,7 +10,7 @@
             <h5 class="mb-4" th:text="${entry.key}"></h5>
             <div class="card mb-3 border-0 custom-card" th:each="news : ${entry.value}">
                 <div class="row g-0">
-                    <div class="col-md-4" th:style="'border-radius: 10px; background-image: url(' + ${news.thumbnail} + ');background-size: contain; max-height:192px; height: 108px; overflow: hidden;'"></div>
+                    <div class="col-md-4" th:style="'border-radius: 10px; background-image: url(' + ${news.thumbnail} + ');background-size: cover; max-height:192px; height: 108px; overflow: hidden;'"></div>
                     <div class="col-md-8">
                         <div class="card-body border-0 pt-0" th:style="'max-height:192px height: 108px; overflow: hidden;'">
                             <h5 style="overflow: hidden;" class="card-title" th:text="${news.title}"></h5>

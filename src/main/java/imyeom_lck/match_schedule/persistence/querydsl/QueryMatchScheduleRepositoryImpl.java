@@ -28,4 +28,19 @@ public class QueryMatchScheduleRepositoryImpl implements QueryMatchScheduleRepos
 
 		return new PageImpl<>(results, pageable, results.size());
 	}
+
+	@Override
+	public List<MatchSchedule> findMatchScheduleByMonth(String month) {
+		QMatchSchedule matchSchedule = QMatchSchedule.matchSchedule;
+		return jpaQueryFactory.selectFrom(matchSchedule).where(matchSchedule.matchDate.substring(4, 6).eq(month)).fetch();
+	}
+
+	@Override
+	public List<MatchSchedule> findMatchScheduleByMonthDay(String month, String day) {
+		QMatchSchedule matchSchedule = QMatchSchedule.matchSchedule;
+		return jpaQueryFactory.selectFrom(matchSchedule)
+			.where(matchSchedule.matchDate.substring(6, matchSchedule.matchDate.length()).eq(day).and(matchSchedule.matchDate.substring(4, 6).eq(month)))
+			.fetch();
+
+	}
 }

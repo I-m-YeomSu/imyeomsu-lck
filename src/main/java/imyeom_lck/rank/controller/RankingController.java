@@ -58,8 +58,14 @@ public class RankingController {
 
 			List<RankingDTO> rankingDto = rankService.getRankingDto(rankService.rankSort(rank));
 			model.addAttribute("ranking",rankingDto);
-			return "rank/ranking";
+
+		} else {
+
+			List<RankingDTO> rankingDto = rankService.getRankingDto(rankService.getRanks());
+			model.addAttribute("ranking",rankingDto);
+
 		}
+
 
 		//이제 else로  해당 요청에 대한  RDB에서 데이터 찾아와서 처리 ㄱㄱ
 		return "rank/ranking";
