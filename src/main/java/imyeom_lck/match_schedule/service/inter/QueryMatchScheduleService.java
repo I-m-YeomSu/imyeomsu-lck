@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface QueryMatchScheduleService {
     List<MatchesResponseDTO> getAllMatchScheduleByMonth(String month, Pageable pageable);
+    List<MatchesResponseDTO> getMatchScheduleByMonth(String month);
+    List<MatchesResponseDTO> getMatchScheduleByMonthDay(String month, String day);
 
 }

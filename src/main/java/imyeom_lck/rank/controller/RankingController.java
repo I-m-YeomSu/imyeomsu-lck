@@ -67,7 +67,6 @@ public class RankingController {
 		}
 
 
-		//이제 else로  해당 요청에 대한  RDB에서 데이터 찾아와서 처리 ㄱㄱ
 		return "rank/ranking";
 
 	}

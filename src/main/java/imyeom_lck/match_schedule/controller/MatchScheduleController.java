@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import imyeom_lck.match_schedule.domain.dto.MatchesViewResponseDTO;
+import imyeom_lck.match_schedule.persistence.querydsl.QueryMatchScheduleRepository;
+import imyeom_lck.match_schedule.service.inter.QueryMatchScheduleService;
 import imyeom_lck.rank.domain.dto.RankDTO;
 import imyeom_lck.league.service.inter.LeagueService;
 import imyeom_lck.match_schedule.domain.dto.MatchesResponseDTO;
@@ -33,9 +35,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class MatchScheduleController {
 
 	private final MatchScheduleService matchScheduleService;
-
+	private final QueryMatchScheduleService queryMatchScheduleService;
 	private static StringBuilder stringBuilder = new StringBuilder();
-	private final LeagueService leagueService;
+
 	/**
 	 * 경기 일정 보는 버튼을 누르면 현재 레디스에 담겨 있는 데이터를 이용해서 해당 month에 있는 경기 목록을 모두 보여줍니다.
 	 * 한달 기준을 기점으로 진행합니다.
@@ -56,8 +58,21 @@ public class MatchScheduleController {
 	public String getMain(Model model) throws JsonProcessingException {
 
 		List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
+
+		if (allMatchesByRedis.isEmpty()){
+			List<MatchesResponseDTO> allMatchesByRdb = matchScheduleService.getAllMatchesByRdb();
+
+			List<MatchesResponseDTO> matchesResponseDTOS = getMatchesResponseDTOS(allMatchesByRdb);
+			model.addAttribute("matches", matchesResponseDTOS);
+
+			return "schedule/match-schedule";
+
+		}
+
 		List<MatchesResponseDTO> dtos = getMatchesResponseDTOS(allMatchesByRedis);
 		model.addAttribute("matches", dtos);
+
+
 		return "schedule/match-schedule";
 
 	}
@@ -69,12 +84,11 @@ public class MatchScheduleController {
 		int nowMonth = now.getMonth().getValue();
 		int nowYear = now.getYear();
 		int nowDay = now.getDayOfMonth();
-		log.info("dldldldldldl이이이ㅣ거 오나22? {} {} {} ", nowYear, nowMonth, nowDay);
+
 
 		
 		//올해 이번달을 선택하면 레디스 정보를 보여줘도 됨
 		if (nowMonth== Integer.parseInt(month) && nowYear == Integer.parseInt(year)){
-
 			List<MatchesViewResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatchSchedule();
 			List<MatchesViewResponseDTO> resultDTO = new ArrayList<>();
 			for (MatchesViewResponseDTO matchesViewResponseDTO : matchesResponseDTO) {
@@ -104,6 +118,11 @@ public class MatchScheduleController {
 			}
 			model.addAttribute("matches", resultDTO);
 			return "fragments/main/match-schedule-wrapper";
+		} else if(nowMonth != Integer.parseInt(month) || nowYear != Integer.parseInt(year)){
+			List<MatchesResponseDTO> matchScheduleByMonthDay = queryMatchScheduleService.getMatchScheduleByMonthDay(
+				month, day);
+
+
 		}
 
 

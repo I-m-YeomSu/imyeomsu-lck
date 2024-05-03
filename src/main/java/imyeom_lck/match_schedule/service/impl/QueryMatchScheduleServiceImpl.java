@@ -29,4 +29,33 @@ public class QueryMatchScheduleServiceImpl implements QueryMatchScheduleService 
 
         return dtos;
     }
+
+    @Override
+    public List<MatchesResponseDTO> getMatchScheduleByMonth(String month) {
+
+        List<MatchSchedule> matchScheduleByMonth = queryMatchScheduleRepository.findMatchScheduleByMonth(month);
+        List<MatchesResponseDTO> dtos = new ArrayList<>();
+
+        for (MatchSchedule matchSchedule :matchScheduleByMonth) {
+            dtos.add(MatchesResponseDTO.fromEntity(matchSchedule));
+        }
+
+        return dtos;
+    }
+
+    @Override
+    public List<MatchesResponseDTO> getMatchScheduleByMonthDay(String month, String day) {
+
+        List<MatchSchedule> matchScheduleByMonthDay = queryMatchScheduleRepository.findMatchScheduleByMonthDay(month,
+            day);
+        List<MatchesResponseDTO> dtos = new ArrayList<>();
+
+        for (MatchSchedule matchSchedule : matchScheduleByMonthDay) {
+            dtos.add(MatchesResponseDTO.fromEntity(matchSchedule));
+
+        }
+
+        return dtos;
+    }
+
 }
