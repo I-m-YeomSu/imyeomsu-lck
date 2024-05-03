@@ -33,7 +33,7 @@ public class LeagueController {
 	@GetMapping("/predict")
 	public String predictForm(Model model) throws JsonProcessingException{
 		//팀랭킹
-		List<RankDTO> rankList =rankService.getRank();
+		List<RankDTO> rankList = rankService.getRank();
 
 		List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
 		Comparator<MatchesResponseDTO> comparator = Comparator.comparing(MatchesResponseDTO::getMatchDate);

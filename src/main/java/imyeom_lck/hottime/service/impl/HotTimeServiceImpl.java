@@ -1,8 +1,8 @@
 package imyeom_lck.hottime.service.impl;
 
 import imyeom_lck.hottime.Coupon;
-import imyeom_lck.hottime.CouponCountRepository;
-import imyeom_lck.hottime.CouponRepository;
+import imyeom_lck.hottime.persistence.redis.CouponCountRepository;
+import imyeom_lck.hottime.persistence.jpa.CouponRepository;
 import imyeom_lck.hottime.service.inter.HotTimeService;
 import imyeom_lck.member.persistence.jpa.JpaMemberRepository;
 import lombok.RequiredArgsConstructor;

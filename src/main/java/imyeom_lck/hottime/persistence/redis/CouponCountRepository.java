@@ -1,4 +1,4 @@
-package imyeom_lck.hottime;
+package imyeom_lck.hottime.persistence.redis;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import imyeom_lck.member.persistence.jpa.JpaMemberRepository;

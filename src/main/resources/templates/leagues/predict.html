@@ -156,11 +156,11 @@
             contentType: "application/json",
             success: function(response) {
                 // 성공 시 할 일
-                console.log("Prediction sent successfully!");
+                alert("Prediction sent successfully!");
             },
             error: function(xhr, status, error) {
                 // 에러 처리
-                console.error("Error sending prediction:", error);
+                alert(error);
             }
         });
     }

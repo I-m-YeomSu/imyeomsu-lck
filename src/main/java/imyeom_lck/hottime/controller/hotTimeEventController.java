@@ -1,4 +1,4 @@
-package imyeom_lck.hottime;
+package imyeom_lck.hottime.controller;
 
 import imyeom_lck.hottime.service.inter.HotTimeService;
 import imyeom_lck.member.domain.entity.Member;

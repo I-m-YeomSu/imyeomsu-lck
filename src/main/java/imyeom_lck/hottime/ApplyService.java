@@ -1,18 +1,14 @@
 package imyeom_lck.hottime;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import imyeom_lck.hottime.persistence.jpa.CouponRepository;
+import imyeom_lck.hottime.persistence.redis.CouponCountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static com.mysema.commons.lang.Assert.assertThat;
 
 @Service
 @RequiredArgsConstructor

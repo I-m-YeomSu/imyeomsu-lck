@@ -37,7 +37,9 @@ public class PredictServiceImpl implements PredictService {
         Long appliedUser = predictCountRepository.add(predictRequestDTO.getPredictId(), predictRequestDTO.getMemberId());
         Long appliedUserAll = predictAllCountRepository.add(predictRequestDTO.getMemberId());
 
-        LocalDate currentDate = LocalDate.now();
+//        LocalDate currentDate = LocalDate.now();
+        // 5월 경기가 없으니까 4월로지정
+        LocalDate currentDate = LocalDate.of(2024, 4, 31);
 
         log.info("applyuser:{} {}", appliedUser, appliedUserAll);
 
