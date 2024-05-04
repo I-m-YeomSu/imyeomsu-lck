@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lck-spring
+  namespace: lck
+  labels:
+    app: lck-spring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lck-spring
+  template:
+    metadata:
+      name: lck-spring
+      labels:
+        app: lck-spring
+    spec:
+      containers:
+        - name: lck-spring
+          image: yurilim/lck:$BUILD_NUMBER
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+      restartPolicy: Always
+
