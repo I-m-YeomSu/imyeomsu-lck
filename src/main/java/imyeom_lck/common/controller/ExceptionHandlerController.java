@@ -21,15 +21,15 @@ public class ExceptionHandlerController implements ErrorController {
 
             // 400
             if (Objects.equals(statusCode, HttpStatus.BAD_REQUEST.value())) {
-                return "/error-page/400.html";
+                return "/error/400.html";
             }
             // 404
             else if (Objects.equals(statusCode, HttpStatus.NOT_FOUND.value())) {
-                return "/error-page/404.html";
+                return "/error/404.html";
             }
             // 500
             else if (Objects.equals(statusCode, HttpStatus.INTERNAL_SERVER_ERROR.value())) {
-                return "/error-page/500.html";
+                return "/error/500.html";
             }
         }
 
