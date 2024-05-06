@@ -80,7 +80,6 @@ public class IndexController {
         //팀랭킹
         List<RankDTO> rankList = rankService.getRank();
 
-        log.info("{}", rankList.get(1).getTeamName());
         // 있으면 레디스꺼 ! 없다면 RDB
         if(rankList.isEmpty()){
             rankList = rankService.getRanks();

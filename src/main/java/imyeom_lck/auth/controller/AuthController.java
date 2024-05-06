@@ -119,4 +119,22 @@ public class AuthController {
 		model.addAttribute("message", "회원 로그인이 정상적으로 이뤄졌습니다.");
 		return "redirect:/auth/login";
 	}
+
+	@GetMapping("/admin/login")
+	public String adminLogin(){
+
+		return "auth/admin/login";
+	}
+
+	@GetMapping("/admin/signup")
+	public String adminSignup(){
+		return "auth/admin/signup";
+	}
+
+	@PreAuthorize("isAuthenticated() and (( #user.name == principal.name ) or hasRole('ROLE_ADMIN'))")
+	@GetMapping("/admin/main")
+	public String adminMain(){
+
+		return "auth/admin/main";
+	}
 }
