@@ -32,7 +32,7 @@
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                            <form action="/auth/login" method="post">
+                            <form action="/auth/login" method="post" >
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <input name="loginId" type="loginId" id="form3Example3cg" class="form-control form-control-lg" />
                                     <label class="form-label" for="form3Example3cg">Your Email</label>
@@ -45,7 +45,10 @@
 
                                 <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="/auth/signup"
                                                                                                         class="fw-bold text-body"><u>Sign Up here</u></a></p>
-                                <button class="btn btn-primary btn-lg" style="text: center;" type="submit">Login</button>
+                                <div class="text-center">
+
+                                    <button class="btn btn-primary btn-lg " type="submit">Login</button>
+                                </div>
                             </form>
 
                         </div>

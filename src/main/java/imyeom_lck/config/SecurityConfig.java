@@ -88,6 +88,10 @@ public class SecurityConfig {
 				.requestMatchers(antMatcher("/apply/**")).authenticated()
 				.requestMatchers(antMatcher("comments/**")).authenticated()
 				.requestMatchers(antMatcher("/api/predict/vote")).authenticated()
+				.requestMatchers(antMatcher("/auth/admin/login")).permitAll()
+				.requestMatchers(antMatcher("/auth/admin/signup")).permitAll()
+				.requestMatchers(antMatcher("/auth/admin/main")).permitAll()
+
 				.requestMatchers(antMatcher("/admin/**")).hasAuthority("ROLE_ADMIN")
 				.requestMatchers(antMatcher("/members/**")).hasAuthority("ROLE_USER")
 				.anyRequest().permitAll();

@@ -131,10 +131,10 @@ public class AuthController {
 		return "auth/admin/signup";
 	}
 
-	@PreAuthorize("isAuthenticated() and (( #user.name == principal.name ) or hasRole('ROLE_ADMIN'))")
+	// @PreAuthorize("isAuthenticated() and (( #user.name == principal.name ) or hasRole('ROLE_ADMIN'))")
 	@GetMapping("/admin/main")
 	public String adminMain(){
 
-		return "auth/admin/main";
+		return "auth/admin/index";
 	}
 }
