@@ -56,40 +56,42 @@ public class MatchScheduleController {
 
 	@GetMapping("/main")
 	public String getMain(Model model) throws JsonProcessingException {
-
+		//레디스 정보 보여주고 없으면 바로 해당 데이터 없다고 ㄱㄱ
 		List<MatchesResponseDTO> allMatchesByRedis = matchScheduleService.getAllMatchesByRedis();
-
-		if (allMatchesByRedis.isEmpty()){
-			List<MatchesResponseDTO> allMatchesByRdb = matchScheduleService.getAllMatchesByRdb();
-
-			List<MatchesResponseDTO> matchesResponseDTOS = getMatchesResponseDTOS(allMatchesByRdb);
-			model.addAttribute("matches", matchesResponseDTOS);
-
+		List<MatchesResponseDTO> nowMonthDate = new ArrayList<>();
+		for (MatchesResponseDTO allMatchesByRedi : allMatchesByRedis) {
+			if (allMatchesByRedi.getMatchDate().substring(0,1).equals(String.valueOf(LocalDate.now().getMonth().getValue()))){
+				nowMonthDate.add(allMatchesByRedi);
+			}
+		}
+		if (nowMonthDate.isEmpty()){
+			model.addAttribute("matches", List.of(getEmptyResponseDTO()));
 			return "schedule/match-schedule";
-
 		}
 
-		List<MatchesResponseDTO> dtos = getMatchesResponseDTOS(allMatchesByRedis);
-		model.addAttribute("matches", dtos);
-
-
+		model.addAttribute("matches", nowMonthDate);
 		return "schedule/match-schedule";
 
 	}
 
 	@GetMapping("/details")//http://localhost:8080/match-schedule/details?year=2024&month=4&day=10
 	public String getMatchScheduleByDetails(@RequestParam("year") String year, @RequestParam("month") String month, @RequestParam("day")String day, Model model) throws JsonProcessingException {
-		log.info("dldldldldldl이이이ㅣ거 오나? {} {} {} ", year, month, day);
 		LocalDate now = LocalDate.now();
 		int nowMonth = now.getMonth().getValue();
 		int nowYear = now.getYear();
-		int nowDay = now.getDayOfMonth();
+		log.info("111111 {} {} {} ", year, month, day);
+		log.info("222222 {} {} ", nowYear, nowMonth);
+
+		String nowMonthString = String.valueOf(nowMonth);
+		if (nowMonth < 10){
+			nowMonthString = "0"+nowMonth;
+		}
 
 
-		
 		//올해 이번달을 선택하면 레디스 정보를 보여줘도 됨
-		if (nowMonth== Integer.parseInt(month) && nowYear == Integer.parseInt(year)){
+		if (nowMonthString.equals(month) && nowYear == Integer.parseInt(year)){
 			List<MatchesViewResponseDTO> matchesResponseDTO = matchScheduleService.getAllMatchSchedule();
+
 			List<MatchesViewResponseDTO> resultDTO = new ArrayList<>();
 			for (MatchesViewResponseDTO matchesViewResponseDTO : matchesResponseDTO) {
 				String matchDate = matchesViewResponseDTO.getMatchDate();
@@ -103,38 +105,47 @@ public class MatchScheduleController {
 			}
 
 			if (resultDTO.isEmpty()) {
-				resultDTO.add(MatchesViewResponseDTO.builder()
-						.matchDate("해당 날짜에 해당 하는 경기가 없습니다.")
-						.matchTime("0000")
-						.matchState("경기 없음")
-						.matchTitle("경기 없음")
-						.homeTeamScore("0")
-						.awayTeamScore("0")
-						.homeTeamLogo("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozIMGwRtwhEldcwjYieSffaiTlMF0fnRPsQ33YoMANQ&s")
-						.awayTeamLogo("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozIMGwRtwhEldcwjYieSffaiTlMF0fnRPsQ33YoMANQ&s")
-						.homeTeamName(" ")
-						.awayTeamName(" ")
-					.build());
+				resultDTO.add(getEmptyResponseDTO());
+				model.addAttribute("matches", resultDTO);
+				return "fragments/main/match-schedule-wrapper";
+
 			}
+
 			model.addAttribute("matches", resultDTO);
 			return "fragments/main/match-schedule-wrapper";
+
 		} else if(nowMonth != Integer.parseInt(month) || nowYear != Integer.parseInt(year)){
+
 			List<MatchesResponseDTO> matchScheduleByMonthDay = queryMatchScheduleService.getMatchScheduleByMonthDay(
 				month, day);
 
+			if (matchScheduleByMonthDay.isEmpty()) {
+				model.addAttribute("matches", List.of(getEmptyResponseDTO()));
+				return "fragments/main/match-schedule-wrapper";
 
+			}
+			model.addAttribute("matches", matchScheduleByMonthDay);
+			return "fragments/main/match-schedule-wrapper";
 		}
-
-
-
-		List<MatchesResponseDTO> allMatchesByRdb = matchScheduleService.getAllMatchesByRdb();
-		model.addAttribute("matches", allMatchesByRdb);
-
+		model.addAttribute("matches", List.of(getEmptyResponseDTO()));
 		return "fragments/main/match-schedule-wrapper";
 
 	}
 
-
+	private MatchesViewResponseDTO getEmptyResponseDTO(){
+		return MatchesViewResponseDTO.builder()
+				.matchDate("해당 날짜에 해당 하는 경기가 없습니다.")
+				.matchTime("0000")
+				.matchState("경기 없음")
+				.matchTitle("경기 없음")
+				.homeTeamScore("0")
+				.awayTeamScore("0")
+				.homeTeamLogo("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozIMGwRtwhEldcwjYieSffaiTlMF0fnRPsQ33YoMANQ&s")
+				.awayTeamLogo("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozIMGwRtwhEldcwjYieSffaiTlMF0fnRPsQ33YoMANQ&s")
+				.homeTeamName(" ")
+				.awayTeamName(" ")
+				.build();
+	}
 
 	private static LocalDate getLocalDate(String scheduleDate) {
 

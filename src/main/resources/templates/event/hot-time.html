@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 
     <!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="/images/logo/apple-icon.png">
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
 
@@ -139,11 +139,15 @@
             지금 당장 타임어택! <br>
             매달 1일 저녁 8시 1시간 동안<br>
             최고의 보상을 얻어보세요.</p>
-        <span class="sub"> <strong>1일 8시에 쿠폰 지급 버튼이 열립니다.</strong></span>
+        <span class="sub"> <strong>매달 1일 쿠폰 지급 버튼이 열립니다.</strong></span>
     </div>
 
-    <button class="btn btn-lg btn-close-white align-content-center hover-bg-gray" id="monthlyButton" style="display:none;position: absolute;
-            bottom: 20px; color: #2e3339;" onclick="hotTimeEvent()">보상 받기!</button>
+<!--    <button class="btn btn-lg btn-close-white align-content-center hover-bg-gray" id="monthlyButton" style="display:none;position: absolute;-->
+<!--            bottom: 20px; color: #2e3339;" onclick="hotTimeEvent()">보상 받기!</button>-->
+    <button class="btn btn-lg btn-close-white align-content-center hover-bg-gray" id="monthlyButton" style="position: absolute; bottom: 20px; color: #2e3339;"
+            th:if="${#temporals.day(localDate)} eq 7"
+            onclick="hotTimeEvent()">보상 받기!</button>
+
     <div id="isParticipated" th:text="${isParticipated}"></div>
     <div id="flag" th:text="${flag}"></div>
 
@@ -188,43 +192,63 @@
 
 <script>
 
-        // 현재 날짜 객체 생성
-        var currentDate = new Date();
-
-        // 현재 날짜의 일(day)과 달(month) 가져오기
-        // 현재 날짜의 일(day), 시(hour), 분(minute) 가져오기
-        var currentDay = currentDate.getDate();
-        var currentHour = currentDate.getHours();
-        var currentMinute = currentDate.getMinutes();
-
-        // 매월 1일이며 오후 8시 이후인 경우에만 버튼을 표시합니다.
-        // if (currentDay === 7 && currentHour >= 20 && currentHour >= 21) {
-            document.getElementById('monthlyButton').style.display = 'block';
-        //}
-
-
+        // function hotTimeEvent() {
+        //
+        //     var monthlyButton = document.getElementById('monthlyButton');
+        //     var userId = monthlyButton.getAttribute('data-userId');
+        //     var isParticipated = document.getElementById('isParticipated').textContent; // 참여 유무 정보
+        //     var flag = document.getElementById('isParticipated');
+        //
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/event/click", // Java 컨트롤러의 URL
+        //         contentType: "application/json",
+        //
+        //         success: function(response) {
+        //             // 성공 시 서버에서 받은 응답을 alert 창에 출력
+        //             flag.innerText=""
+        //             flag.innerText= "쿠폰 발급 완료!"
+        //         },
+        //         error: function(jqXHR, textStatus, errorThrown) {
+        //             // 에러 시 처리
+        //             var userHeader = jqXHR
+        //
+        //             alert("에러 발생: " + jqXHR.getResponseHeader("user"));
+        //
+        //         }
+        //     });
+        // }
         function hotTimeEvent() {
-
             var monthlyButton = document.getElementById('monthlyButton');
-            var userId = monthlyButton.getAttribute('data-userId');
             var isParticipated = document.getElementById('isParticipated').textContent; // 참여 유무 정보
             var flag = document.getElementById('isParticipated');
 
             $.ajax({
                 type: "GET",
-                url: "/event/click", // Java 컨트롤러의 URL
+                url: "/event/click",
                 contentType: "application/json",
                 success: function(response) {
-                    // 성공 시 서버에서 받은 응답을 alert 창에 출력
-                    flag.innerText=""
-                    flag.innerText= "쿠폰 발급 완료!"
+                    // 성공 시 서버에서 받은 응답을 출력
+                    console.log("서버 응답:", response);
+                    // 받은 응답을 파싱하여 원하는 작업을 수행
+                    flag.innerText = "쿠폰 발급 완료!";
                 },
-                error: function(xhr, status, error) {
-                    // 에러 시 에러 메시지를 alert 창에 출력
-                    alert("에러 발생: " + error.toString());
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // 에러 시 처리
+                    if (jqXHR.status === 401) {
+                        // 인증되지 않은 사용자일 경우 에러 메시지 출력
+                        var errorResponse = JSON.parse(jqXHR.responseText);
+                        var errorMessage = errorResponse.error;
+                        alert(errorMessage);
+                    } else {
+                        // 그 외의 에러 처리
+                        alert(textStatus);
+                    }
                 }
             });
         }
+
+
 </script>
 </body>
 </html>

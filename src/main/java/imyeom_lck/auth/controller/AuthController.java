@@ -1,5 +1,8 @@
 package imyeom_lck.auth.controller;
 
+import imyeom_lck.auth.dto.AdminLoginRequest;
+import imyeom_lck.member.domain.entity.MemberRole;
+import imyeom_lck.member.persistence.querydsl.inter.QueryMemberRoleRepository;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import imyeom_lck.member.domain.dto.MemberDetailsResponseDTO;
@@ -7,13 +10,19 @@ import imyeom_lck.member.domain.dto.SignUpRequestDTO;
 import imyeom_lck.member.service.inter.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /*
@@ -26,7 +35,8 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
 	private final MemberService memberService;
-
+	private final BCryptPasswordEncoder encoder;
+	private final QueryMemberRoleRepository queryMemberRoleRepository;
 
 	@GetMapping("/my-page/{memberId}")
 	public String profileForm(@PathVariable("memberId") Long memberId, Model model) {
@@ -136,5 +146,44 @@ public class AuthController {
 	public String adminMain(){
 
 		return "auth/admin/index";
+	}
+
+	@PostMapping("/admin/login")
+	public String adminLogin(@RequestBody AdminLoginRequest adminLoginRequest, Model model){
+
+		String loginId = adminLoginRequest.getLoginId();
+		String password = adminLoginRequest.getPassword();
+		if (loginId.isEmpty() || loginId.isBlank() || password.isEmpty() || password.isBlank()){
+			model.addAttribute("error", "해당 회원의 로그인 정보가 맞지 않습니다. ");
+			return "redirect:auth/admin/login";
+		}
+
+		MemberDetailsResponseDTO findByMemberByLoginId = memberService.findByLoginId(loginId);
+
+		//어드민 계정 롤 확인.
+		List<MemberRole> byMemberLoginId = queryMemberRoleRepository.findByMemberLoginId(loginId);
+		Long roleId =null;
+		for (MemberRole memberRole : byMemberLoginId) {
+			if (memberRole.getRole().getRoleId()==1){
+
+				roleId = memberRole.getRole().getRoleId();
+
+			}
+		}
+		// 어드민 계정 로그인 성공
+		if (findByMemberByLoginId.getMemberPassword().equals(encoder.encode(password)) && findByMemberByLoginId.getLoginId().equals(loginId) && roleId==1){
+
+			SecurityContextHolder.clearContext();
+			List<SimpleGrantedAuthority> roles = new ArrayList<>();
+			for (MemberRole memberRole : byMemberLoginId) {
+				roles.add(new SimpleGrantedAuthority(memberRole.getRole().getName()));
+			}
+
+			SecurityContextHolder.getContext().setAuthentication(UsernamePasswordAuthenticationToken.authenticated(loginId, "", roles));
+			return "redirect:/admin/main";
+		}
+
+		model.addAttribute("error", "해당 회원의 로그인 정보가 맞지 않습니다. ");
+		return "redirect:auth/admin/login";
 	}
 }
