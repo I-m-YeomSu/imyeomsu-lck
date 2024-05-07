@@ -21,7 +21,7 @@
             </layout>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>logbackTest/logback/logTest.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>logall/logback/logTest.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxFileSize>100MB</maxFileSize>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -37,38 +37,41 @@
             </layout>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>logbackTest/request/request.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>logall/request/request.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxFileSize>100MB</maxFileSize>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
     </appender>
 
-    <logger name="imyeom_lck.common.advisor.RequestAdvisor" level="INFO">
-        <appender-ref ref="REQUEST" />
-    </logger>
+    <!--    <logger name="imyeom_lck.common.advisor.RequestAdvisor" level="INFO">-->
+    <!--        <appender-ref ref="REQUEST" />-->
+    <!--        <appender-ref ref="CONSOLE" />-->
+    <!--        <appender-ref ref="FILE" />-->
+    <!--    </logger>-->
 
-<!--    <springProfile name="local">-->
-<!--        <root level="INFO">-->
-<!--            <appender-ref ref="CONSOLE" />-->
-<!--            <appender-ref ref="FILE" />-->
-<!--        </root>-->
-<!--    </springProfile>-->
-<!--    <springProfile name="prod">-->
-        <root level="INFO">
-            <appender-ref ref="CONSOLE" />
-            <appender-ref ref="FILE" />
-        </root>
-<!--    </springProfile>-->
+    <!--    <springProfile name="local">-->
+    <!--        <root level="INFO">-->
+    <!--            <appender-ref ref="CONSOLE" />-->
+    <!--            <appender-ref ref="FILE" />-->
+    <!--        </root>-->
+    <!--    </springProfile>-->
+    <!--    <springProfile name="prod">-->
+    <root level="INFO">
+        <appender-ref ref="REQUEST" />
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+    <!--    </springProfile>-->
     <!--    <springProfile name="dev|stg">-->
     <!--        <root level="INFO">-->
     <!--            <appender-ref ref="CONSOLE" />-->
     <!--            <appender-ref ref="FILE" />-->
     <!--        </root>-->
     <!--    </springProfile>-->
-<!--    <springProfile name="local">-->
-<!--        <root level="INFO">-->
-<!--            <appender-ref ref="CONSOLE" />-->
-<!--            <appender-ref ref="FILE" />-->
-<!--        </root>-->
-<!--    </springProfile>-->
+    <!--    <springProfile name="local">-->
+    <!--        <root level="INFO">-->
+    <!--            <appender-ref ref="CONSOLE" />-->
+    <!--            <appender-ref ref="FILE" />-->
+    <!--        </root>-->
+    <!--    </springProfile>-->
 </configuration>
