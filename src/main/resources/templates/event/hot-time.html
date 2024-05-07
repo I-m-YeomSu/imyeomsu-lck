@@ -198,13 +198,15 @@
         var currentMinute = currentDate.getMinutes();
 
         // 매월 1일이며 오후 8시 이후인 경우에만 버튼을 표시합니다.
-        if (currentDay === 1 && currentHour >= 20 && currentHour >= 21) {
+        // if (currentDay === 7 && currentHour >= 20 && currentHour >= 21) {
             document.getElementById('monthlyButton').style.display = 'block';
-        }
+        //}
 
 
         function hotTimeEvent() {
 
+            var monthlyButton = document.getElementById('monthlyButton');
+            var userId = monthlyButton.getAttribute('data-userId');
             var isParticipated = document.getElementById('isParticipated').textContent; // 참여 유무 정보
             var flag = document.getElementById('isParticipated');
 
@@ -219,7 +221,7 @@
                 },
                 error: function(xhr, status, error) {
                     // 에러 시 에러 메시지를 alert 창에 출력
-                    alert("에러 발생: " + error);
+                    alert("에러 발생: " + error.toString());
                 }
             });
         }

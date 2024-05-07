@@ -34,8 +34,10 @@ public class hotTimeEventController {
 			String flag = hotTimeService.checkIfValue(loginId);
 			model.addAttribute("isParticipated", flag);
 
+			model.addAttribute("user", loginId);
 		}
 
+		model.addAttribute("user", "로그인 사용자가 아닙니다." );
 
 		return "event/hot-time";
 	}
@@ -54,7 +56,7 @@ public class hotTimeEventController {
 		}
 
 		else{
-			model.addAttribute("로그인 사용자가 아닙니다.", "kk" );
+			model.addAttribute("로그인 사용자가 아닙니다.", "user" );
 			return "/auth/login";
 		}
 
