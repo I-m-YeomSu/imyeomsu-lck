@@ -1,0 +1,3180 @@
+{
+  "timestamp" : "1715125896917",
+  "level" : "INFO",
+  "thread" : "File Watcher",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener",
+  "message" : "Restarting due to 3 class path changes (0 additions, 3 deletions, 0 modifications)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125896947",
+  "level" : "INFO",
+  "thread" : "Thread-67",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Stopping ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125898615",
+  "level" : "INFO",
+  "thread" : "Thread-67",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715125898616",
+  "level" : "INFO",
+  "thread" : "Thread-67",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-17 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1715125898647",
+  "level" : "INFO",
+  "thread" : "Thread-67",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-17 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125899230",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 3452 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125899232",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901446",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901446",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901791",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 343 ms. Found 18 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901811",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901811",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Redis repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901861",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.board.persistence.jpa.JpaBoardRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901862",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.comment.persistence.jpa.JpaCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901862",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.hottime.persistence.jpa.CouponRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901865",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.league.persistence.jpa.LeagueRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901877",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901877",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberPredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901878",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901879",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901879",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaSignUpRequestRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901880",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.merchandise.persistence.jpa.MerchandiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901880",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.player.persistence.jpa.PlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901880",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.pointusage.persistence.jpa.PointUsageRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901880",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.PredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901881",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.VotedUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901884",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.rank.persistence.JpaRankRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901885",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.role.persistence.jpa.JpaRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901885",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamPlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901886",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715125901886",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 74 ms. Found 0 Redis repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903107",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 8081 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903114",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903114",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903114",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903195",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903195",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 3960 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903465",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-18 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903468",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-18 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53c11e4a",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903468",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-18 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903563",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903573",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903585",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903593",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125903593",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1715125904257",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125904396",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715125906660",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext",
+  "message" : "Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'commentController': Lookup method resolution failed",
+  "context" : "default"
+}{
+  "timestamp" : "1715125906661",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715125906661",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-18 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1715125906669",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-18 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125906671",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Stopping service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125906689",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger",
+  "message" : "\r\n\r\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125906745",
+  "level" : "ERROR",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.SpringApplication",
+  "message" : "Application run failed",
+  "context" : "default",
+  "exception" : "org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'commentController': Lookup method resolution failed\r\n\tat org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497)\r\n\tat org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367)\r\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1294)\r\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)\r\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)\r\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)\r\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)\r\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)\r\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)\r\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)\r\n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)\r\n\tat org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)\r\n\tat org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)\r\n\tat org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)\r\n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)\r\n\tat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)\r\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:334)\r\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)\r\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)\r\n\tat imyeom_lck.ImyeomsuLckApplication.main(ImyeomsuLckApplication.java:12)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\r\n\tat org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)\r\nCaused by: java.lang.IllegalStateException: Failed to introspect Class [imyeom_lck.comment.controller.CommentController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@70b625bf]\r\n\tat org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)\r\n\tat org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)\r\n\tat org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475)\r\n\t... 24 common frames omitted\r\nCaused by: java.lang.NoClassDefFoundError: imyeom_lck/comment/domain/dto/CommentRequestDTO\r\n\tat java.base/java.lang.Class.getDeclaredMethods0(Native Method)\r\n\tat java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)\r\n\tat java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)\r\n\tat org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)\r\n\t... 26 common frames omitted\r\nCaused by: java.lang.ClassNotFoundException: imyeom_lck.comment.domain.dto.CommentRequestDTO\r\n\tat java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)\r\n\tat java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)\r\n\tat java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)\r\n\tat java.base/java.lang.Class.forName0(Native Method)\r\n\tat java.base/java.lang.Class.forName(Class.java:467)\r\n\tat org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)\r\n\tat java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)\r\n\t... 30 common frames omitted\r\n"
+}{
+  "timestamp" : "1715125914278",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 3452 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125914279",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1715125914981",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715125914982",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125914993",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125914998",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715125914998",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Redis repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915002",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915431",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 8081 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915433",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915433",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915433",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915482",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915483",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 1201 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915559",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-19 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915565",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-19 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2791f6ca",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915566",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-19 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915944",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915951",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915973",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915981",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125915982",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1715125916429",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125916564",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715125916741",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "context" : "default"
+}{
+  "timestamp" : "1715125921145",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration",
+  "message" : "\r\n\r\nUsing generated security password: d4d88770-6ef6-4099-b2b4-a0055187425b\r\n\r\nThis generated password is for development use only. Your security configuration must be updated before running your application in production.\r\n",
+  "context" : "default"
+}{
+  "timestamp" : "1715125921581",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@f9f1426, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@388266ff, org.springframework.security.web.context.SecurityContextHolderFilter@28e8c457, org.springframework.security.web.header.HeaderWriterFilter@59adfcbe, org.springframework.web.filter.CorsFilter@7b5f6ad2, org.springframework.security.web.csrf.CsrfFilter@5bddbc88, org.springframework.security.web.authentication.logout.LogoutFilter@2e527481, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c9a42b7, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@582d3a15, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5448b90d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7c1a6450, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e67043e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e53736d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2381a986, org.springframework.security.web.access.ExceptionTranslationFilter@5a05583f, org.springframework.security.web.access.intercept.AuthorizationFilter@3bd9bbba]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125921611",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+  "message" : "LiveReload server is running on port 35729",
+  "context" : "default"
+}{
+  "timestamp" : "1715125921642",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715125921645",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port 8081 (http) with context path ''",
+  "context" : "default"
+}{
+  "timestamp" : "1715125921677",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Started ImyeomsuLckApplication in 7.474 seconds (process running for 44817.098)",
+  "context" : "default"
+}{
+  "timestamp" : "1715125921685",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener",
+  "message" : "Condition evaluation delta:\r\n\r\n\r\n==========================\r\nCONDITION EVALUATION DELTA\r\n==========================\r\n\r\n\r\nPositive matches:\r\n-----------------\r\n\r\n   ErrorMvcAutoConfiguration#basicErrorController matched:\r\n      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)\r\n\r\n   LettuceConnectionConfiguration#redisConnectionFactory matched:\r\n      - @ConditionalOnMissingBean (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)\r\n      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)\r\n\r\n   RedisReactiveAutoConfiguration#reactiveRedisTemplate matched:\r\n      - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) found bean 'redisConnectionFactory'; @ConditionalOnMissingBean (names: reactiveRedisTemplate; SearchStrategy: all) did not find any beans (OnBeanCondition)\r\n\r\n   RedisReactiveAutoConfiguration#reactiveStringRedisTemplate matched:\r\n      - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) found bean 'redisConnectionFactory'; @ConditionalOnMissingBean (names: reactiveStringRedisTemplate; SearchStrategy: all) did not find any beans (OnBeanCondition)\r\n\r\n   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:\r\n      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)\r\n\r\n   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:\r\n      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)\r\n      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)\r\n\r\n   UserDetailsServiceAutoConfiguration matched:\r\n      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)\r\n      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)\r\n      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)\r\n\r\n\r\nNegative matches:\r\n-----------------\r\n\r\n   MultipleOpenApiSupportConfiguration:\r\n      Did not match:\r\n         - AnyNestedCondition 0 matched 2 did not; NestedCondition on MultipleOpenApiSupportCondition.OnActuatorDifferentPort @ConditionalOnProperty (springdoc.show-actuator) did not find property 'springdoc.show-actuator'; NestedCondition on MultipleOpenApiSupportCondition.OnMultipleOpenApiSupportCondition AnyNestedCondition 0 matched 2 did not; NestedCondition on MultipleOpenApiGroupsCondition.OnGroupConfigProperty @ConditionalOnProperty (springdoc.group-configs[0].group) did not find property 'springdoc.group-configs[0].group'; NestedCondition on MultipleOpenApiGroupsCondition.OnGroupedOpenApiBean @ConditionalOnBean (types: org.springdoc.core.models.GroupedOpenApi; SearchStrategy: all) did not find any beans of type org.springdoc.core.models.GroupedOpenApi (MultipleOpenApiSupportCondition)\r\n      Matched:\r\n         - found 'session' scope (OnWebApplicationCondition)\r\n         - @ConditionalOnProperty (springdoc.api-docs.enabled) matched (OnPropertyCondition)\r\n\r\n   SpringDocConfiguration#springdocBeanFactoryPostProcessor:\r\n      Did not match:\r\n         - AnyNestedCondition 0 matched 2 did not; NestedCondition on CacheOrGroupedOpenApiCondition.OnCacheDisabled found non-matching nested conditions @ConditionalOnProperty (springdoc.cache.disabled) did not find property 'springdoc.cache.disabled'; NestedCondition on CacheOrGroupedOpenApiCondition.OnMultipleOpenApiSupportCondition AnyNestedCondition 0 matched 2 did not; NestedCondition on MultipleOpenApiSupportCondition.OnActuatorDifferentPort @ConditionalOnProperty (springdoc.show-actuator) did not find property 'springdoc.show-actuator'; NestedCondition on MultipleOpenApiSupportCondition.OnMultipleOpenApiSupportCondition AnyNestedCondition 0 matched 2 did not; NestedCondition on MultipleOpenApiGroupsCondition.OnGroupConfigProperty @ConditionalOnProperty (springdoc.group-configs[0].group) did not find property 'springdoc.group-configs[0].group'; NestedCondition on MultipleOpenApiGroupsCondition.OnGroupedOpenApiBean @ConditionalOnBean (types: org.springdoc.core.models.GroupedOpenApi; SearchStrategy: all) did not find any beans of type org.springdoc.core.models.GroupedOpenApi (CacheOrGroupedOpenApiCondition)\r\n      Matched:\r\n         - @ConditionalOnClass found required class 'org.springframework.boot.context.properties.bind.BindResult' (OnClassCondition)\r\n\r\n\r\nExclusions:\r\n-----------\r\n\r\n    None\r\n\r\n\r\nUnconditional classes:\r\n----------------------\r\n\r\n    None\r\n\r\n\r\n",
+  "context" : "default"
+}{
+  "timestamp" : "1715126138569",
+  "level" : "INFO",
+  "thread" : "File Watcher",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener",
+  "message" : "Restarting due to 2083 class path changes (0 additions, 0 deletions, 2083 modifications)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126138583",
+  "level" : "INFO",
+  "thread" : "Thread-71",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Stopping ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126138609",
+  "level" : "INFO",
+  "thread" : "Thread-71",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126138609",
+  "level" : "INFO",
+  "thread" : "Thread-71",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-19 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1715126138611",
+  "level" : "INFO",
+  "thread" : "Thread-71",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-19 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126138829",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 3452 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126138830",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139311",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139311",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139400",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 88 ms. Found 18 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139406",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139407",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Redis repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139426",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.board.persistence.jpa.JpaBoardRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139426",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.comment.persistence.jpa.JpaCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139427",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.hottime.persistence.jpa.CouponRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139427",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.league.persistence.jpa.LeagueRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139427",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139427",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberPredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139427",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139427",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139428",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaSignUpRequestRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139428",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.merchandise.persistence.jpa.MerchandiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139428",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.player.persistence.jpa.PlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139428",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.pointusage.persistence.jpa.PointUsageRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139428",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.PredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139428",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.VotedUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139428",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.rank.persistence.JpaRankRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139429",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.role.persistence.jpa.JpaRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139429",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamPlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139429",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139429",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139877",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 8081 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139878",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139878",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139878",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139909",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139909",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 1076 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1715126139998",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-20 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140003",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-20 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46ced867",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140003",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-20 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140059",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140084",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140137",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140140",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140140",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140497",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126140593",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126141805",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "context" : "default"
+}{
+  "timestamp" : "1715126142784",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@524ae5f3, org.springframework.security.web.session.ForceEagerSessionCreationFilter@55bd4cdc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@317b0ef5, org.springframework.security.web.context.SecurityContextHolderFilter@4c8733d3, org.springframework.security.web.header.HeaderWriterFilter@5144d525, org.springframework.web.filter.CorsFilter@3d7d3e90, org.springframework.web.filter.CorsFilter@3d7d3e90, org.springframework.security.web.authentication.logout.LogoutFilter@5d6b7622, imyeom_lck.auth.filter.CustomAuthenticationFilter@4bb1644c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a6572bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66bc26b4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11263abb, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7ab678a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ffdc512, org.springframework.security.web.session.SessionManagementFilter@3711c124, org.springframework.security.web.access.ExceptionTranslationFilter@5cfeddfa, org.springframework.security.web.access.intercept.AuthorizationFilter@1b70ad0d]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126142793",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.config.annotation.web.builders.WebSecurity",
+  "message" : "You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@af8ae6. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126142793",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@af8ae6",
+  "context" : "default"
+}{
+  "timestamp" : "1715126143449",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+  "message" : "LiveReload server is running on port 35729",
+  "context" : "default"
+}{
+  "timestamp" : "1715126143472",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126143476",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port 8081 (http) with context path ''",
+  "context" : "default"
+}{
+  "timestamp" : "1715126143484",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Started ImyeomsuLckApplication in 4.692 seconds (process running for 45038.905)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126143487",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener",
+  "message" : "Condition evaluation delta:\r\n\r\n\r\n==========================\r\nCONDITION EVALUATION DELTA\r\n==========================\r\n\r\n\r\nPositive matches:\r\n-----------------\r\n\r\n   MultipleOpenApiSupportConfiguration matched:\r\n      - found 'session' scope (OnWebApplicationCondition)\r\n      - @ConditionalOnProperty (springdoc.api-docs.enabled) matched (OnPropertyCondition)\r\n      - AnyNestedCondition 1 matched 1 did not; NestedCondition on MultipleOpenApiSupportCondition.OnActuatorDifferentPort @ConditionalOnProperty (springdoc.show-actuator) did not find property 'springdoc.show-actuator'; NestedCondition on MultipleOpenApiSupportCondition.OnMultipleOpenApiSupportCondition AnyNestedCondition 1 matched 1 did not; NestedCondition on MultipleOpenApiGroupsCondition.OnGroupConfigProperty @ConditionalOnProperty (springdoc.group-configs[0].group) did not find property 'springdoc.group-configs[0].group'; NestedCondition on MultipleOpenApiGroupsCondition.OnGroupedOpenApiBean @ConditionalOnBean (types: org.springdoc.core.models.GroupedOpenApi; SearchStrategy: all) found bean 'memberControllerApi' (MultipleOpenApiSupportCondition)\r\n\r\n   MultipleOpenApiSupportConfiguration#multipleOpenApiResource matched:\r\n      - @ConditionalOnProperty (springdoc.use-management-port=false) matched (OnPropertyCondition)\r\n      - @ConditionalOnMissingBean (types: org.springdoc.webmvc.api.MultipleOpenApiWebMvcResource; SearchStrategy: all) did not find any beans (OnBeanCondition)\r\n\r\n   SpringDocConfiguration#springdocBeanFactoryPostProcessor matched:\r\n      - @ConditionalOnClass found required class 'org.springframework.boot.context.properties.bind.BindResult' (OnClassCondition)\r\n      - AnyNestedCondition 1 matched 1 did not; NestedCondition on CacheOrGroupedOpenApiCondition.OnCacheDisabled found non-matching nested conditions @ConditionalOnProperty (springdoc.cache.disabled) did not find property 'springdoc.cache.disabled', @ConditionalOnMissingBean (types: org.springdoc.core.models.GroupedOpenApi; SearchStrategy: all) found beans of type 'org.springdoc.core.models.GroupedOpenApi' memberControllerApi; NestedCondition on CacheOrGroupedOpenApiCondition.OnMultipleOpenApiSupportCondition AnyNestedCondition 1 matched 1 did not; NestedCondition on MultipleOpenApiSupportCondition.OnActuatorDifferentPort @ConditionalOnProperty (springdoc.show-actuator) did not find property 'springdoc.show-actuator'; NestedCondition on MultipleOpenApiSupportCondition.OnMultipleOpenApiSupportCondition AnyNestedCondition 1 matched 1 did not; NestedCondition on MultipleOpenApiGroupsCondition.OnGroupConfigProperty @ConditionalOnProperty (springdoc.group-configs[0].group) did not find property 'springdoc.group-configs[0].group'; NestedCondition on MultipleOpenApiGroupsCondition.OnGroupedOpenApiBean @ConditionalOnBean (types: org.springdoc.core.models.GroupedOpenApi; SearchStrategy: all) found bean 'memberControllerApi' (CacheOrGroupedOpenApiCondition)\r\n\r\n\r\nNegative matches:\r\n-----------------\r\n\r\n   ErrorMvcAutoConfiguration#basicErrorController:\r\n      Did not match:\r\n         - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) found beans of type 'org.springframework.boot.web.servlet.error.ErrorController' exceptionHandlerController (OnBeanCondition)\r\n\r\n   LettuceConnectionConfiguration#redisConnectionFactory:\r\n      Did not match:\r\n         - @ConditionalOnMissingBean (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) found beans of type 'org.springframework.data.redis.connection.RedisConnectionFactory' loginSessionRedisConnectionFactory, matchRankingRedisConnectionFactory, matchScheduleRedisConnectionFactory, newsRedisConnectionFactory, hotTimeRedisConnectionFactory, predictAllRedisConnectionFactory, predictRedisConnectionFactory (OnBeanCondition)\r\n\r\n   RedisReactiveAutoConfiguration#reactiveRedisTemplate:\r\n      Did not match:\r\n         - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) did not find any beans of type org.springframework.data.redis.connection.ReactiveRedisConnectionFactory (OnBeanCondition)\r\n\r\n   RedisReactiveAutoConfiguration#reactiveStringRedisTemplate:\r\n      Did not match:\r\n         - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) did not find any beans of type org.springframework.data.redis.connection.ReactiveRedisConnectionFactory (OnBeanCondition)\r\n\r\n   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:\r\n      Did not match:\r\n         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' filterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)\r\n\r\n   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:\r\n      Did not match:\r\n         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)\r\n      Matched:\r\n         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)\r\n\r\n   UserDetailsServiceAutoConfiguration:\r\n      Did not match:\r\n         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' customUserDetailsService and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' customAuthenticationProvider (OnBeanCondition)\r\n      Matched:\r\n         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)\r\n         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)\r\n\r\n\r\nExclusions:\r\n-----------\r\n\r\n    None\r\n\r\n\r\nUnconditional classes:\r\n----------------------\r\n\r\n    None\r\n\r\n\r\n",
+  "context" : "default"
+}{
+  "timestamp" : "1715126147085",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126147085",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-20 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1715126147086",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-20 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126150488",
+  "level" : "INFO",
+  "thread" : "background-preinit",
+  "logger" : "org.hibernate.validator.internal.util.Version",
+  "message" : "HV000001: Hibernate Validator 8.0.1.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1715126150526",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 18324 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126150527",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1715126150568",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+  "message" : "Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable",
+  "context" : "default"
+}{
+  "timestamp" : "1715126150569",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+  "message" : "For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151447",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151449",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151639",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 181 ms. Found 18 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151655",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151658",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Redis repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151680",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.board.persistence.jpa.JpaBoardRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151680",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.comment.persistence.jpa.JpaCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151681",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.hottime.persistence.jpa.CouponRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151681",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.league.persistence.jpa.LeagueRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151681",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151683",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberPredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151683",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151684",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151685",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaSignUpRequestRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151685",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.merchandise.persistence.jpa.MerchandiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151685",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.player.persistence.jpa.PlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151685",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.pointusage.persistence.jpa.PointUsageRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151686",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.PredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151686",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.VotedUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151686",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.rank.persistence.JpaRankRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151686",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.role.persistence.jpa.JpaRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151687",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamPlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151687",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126151687",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152531",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 8081 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152540",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152542",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152542",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152594",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152594",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 2025 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152687",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152857",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@580665d5",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152859",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126152938",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126153000",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.Version",
+  "message" : "HHH000412: Hibernate ORM core version 6.4.4.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1715126153034",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1715126153259",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1715126153321",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126153323",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1715126154329",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126154434",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126154934",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.jpa.repository.query.QueryEnhancerFactory",
+  "message" : "Hibernate is in classpath; If applicable, HQL parser will be used.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126155805",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "context" : "default"
+}{
+  "timestamp" : "1715126156609",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@194e9e9a, org.springframework.security.web.session.ForceEagerSessionCreationFilter@30319778, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c0f752a, org.springframework.security.web.context.SecurityContextHolderFilter@44a79953, org.springframework.security.web.header.HeaderWriterFilter@54e9a9e0, org.springframework.web.filter.CorsFilter@259d2718, org.springframework.web.filter.CorsFilter@259d2718, org.springframework.security.web.authentication.logout.LogoutFilter@2bcd4149, imyeom_lck.auth.filter.CustomAuthenticationFilter@635bb61c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7dd45632, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2539629f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51df8399, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@48248dd2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f469235, org.springframework.security.web.session.SessionManagementFilter@43b6a9e1, org.springframework.security.web.access.ExceptionTranslationFilter@159e5692, org.springframework.security.web.access.intercept.AuthorizationFilter@3b0d12ec]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126156617",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.config.annotation.web.builders.WebSecurity",
+  "message" : "You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@41a36cef. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126156618",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@41a36cef",
+  "context" : "default"
+}{
+  "timestamp" : "1715126157359",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+  "message" : "LiveReload server is running on port 35729",
+  "context" : "default"
+}{
+  "timestamp" : "1715126157380",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126157404",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port 8081 (http) with context path ''",
+  "context" : "default"
+}{
+  "timestamp" : "1715126157414",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Started ImyeomsuLckApplication in 7.481 seconds (process running for 8.176)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126732098",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126732107",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1715126732114",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126738086",
+  "level" : "INFO",
+  "thread" : "background-preinit",
+  "logger" : "org.hibernate.validator.internal.util.Version",
+  "message" : "HV000001: Hibernate Validator 8.0.1.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1715126738141",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 8456 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126738144",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1715126738190",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+  "message" : "Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable",
+  "context" : "default"
+}{
+  "timestamp" : "1715126738190",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+  "message" : "For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739058",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739060",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739224",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 158 ms. Found 18 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739237",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739238",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Redis repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739254",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.board.persistence.jpa.JpaBoardRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739255",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.comment.persistence.jpa.JpaCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739255",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.hottime.persistence.jpa.CouponRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739255",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.league.persistence.jpa.LeagueRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739255",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739256",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberPredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739256",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739257",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739257",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaSignUpRequestRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739258",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.merchandise.persistence.jpa.MerchandiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739258",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.player.persistence.jpa.PlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739258",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.pointusage.persistence.jpa.PointUsageRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739259",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.PredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739259",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.VotedUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739259",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.rank.persistence.JpaRankRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739259",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.role.persistence.jpa.JpaRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739260",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamPlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739260",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715126739260",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740097",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 8081 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740105",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740107",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740107",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740152",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740152",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 1961 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740242",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740390",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5944d8a3",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740393",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740465",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740512",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.Version",
+  "message" : "HHH000412: Hibernate ORM core version 6.4.4.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740546",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740736",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740790",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126740792",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1715126741754",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126741866",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126742353",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.jpa.repository.query.QueryEnhancerFactory",
+  "message" : "Hibernate is in classpath; If applicable, HQL parser will be used.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126743183",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744025",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@29baf53a, org.springframework.security.web.session.ForceEagerSessionCreationFilter@3fe43f1a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73ea4a79, org.springframework.security.web.context.SecurityContextHolderFilter@7bf13821, org.springframework.security.web.header.HeaderWriterFilter@6c87be25, org.springframework.web.filter.CorsFilter@23f6efdc, org.springframework.web.filter.CorsFilter@23f6efdc, org.springframework.security.web.authentication.logout.LogoutFilter@63fa8272, imyeom_lck.auth.filter.CustomAuthenticationFilter@52045a32, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3d44ec3f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15b74811, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@640807d6, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@35f411ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@159e5692, org.springframework.security.web.session.SessionManagementFilter@20f04edf, org.springframework.security.web.access.ExceptionTranslationFilter@6845789d, org.springframework.security.web.access.intercept.AuthorizationFilter@77123016]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744033",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.config.annotation.web.builders.WebSecurity",
+  "message" : "You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@48409652. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744033",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@48409652",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744742",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+  "message" : "LiveReload server is running on port 35729",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744762",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744780",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port 8081 (http) with context path ''",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744789",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Started ImyeomsuLckApplication in 7.509 seconds (process running for 8.163)",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744960",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring DispatcherServlet 'dispatcherServlet'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744960",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "org.springframework.web.servlet.DispatcherServlet",
+  "message" : "Initializing Servlet 'dispatcherServlet'",
+  "context" : "default"
+}{
+  "timestamp" : "1715126744961",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "org.springframework.web.servlet.DispatcherServlet",
+  "message" : "Completed initialization in 1 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1715126745337",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "index org.springframework.security.authentication.AnonymousAuthenticationToken anonymousUser",
+  "context" : "default"
+}{
+  "timestamp" : "1715126745504",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "newMap -> 8",
+  "context" : "default"
+}{
+  "timestamp" : "1715126745504",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "news count!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 7",
+  "context" : "default"
+}{
+  "timestamp" : "1715126745522",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126745336",
+  "context" : "default"
+}{
+  "timestamp" : "1715126745522",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/",
+  "context" : "default"
+}{
+  "timestamp" : "1715126745522",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126745522",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126745522",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126752503",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-2",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126752503",
+  "context" : "default"
+}{
+  "timestamp" : "1715126752505",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-2",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/event/hot-time",
+  "context" : "default"
+}{
+  "timestamp" : "1715126752505",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-2",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126752505",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-2",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126752507",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-2",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126764334",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "index org.springframework.security.authentication.AnonymousAuthenticationToken anonymousUser",
+  "context" : "default"
+}{
+  "timestamp" : "1715126764383",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "newMap -> 8",
+  "context" : "default"
+}{
+  "timestamp" : "1715126764383",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "news count!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 7",
+  "context" : "default"
+}{
+  "timestamp" : "1715126764388",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126764334",
+  "context" : "default"
+}{
+  "timestamp" : "1715126764388",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/",
+  "context" : "default"
+}{
+  "timestamp" : "1715126764388",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126764388",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126764388",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767757",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-4",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126767757",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767757",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-4",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/auth/admin/main",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767757",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-4",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767758",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-4",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767758",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-4",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767790",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126767790",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767790",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/error",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767791",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767791",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126767791",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781494",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126781494",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781495",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/auth/admin/main",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781495",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781495",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781495",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781522",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-6",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126781522",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781523",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-6",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/error",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781523",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-6",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781523",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-6",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126781523",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-6",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842615",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126842614",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842615",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/auth/admin/main",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842615",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842615",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842615",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842637",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126842637",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842637",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/error",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842637",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842637",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126842637",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854009",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126854009",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854009",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/auth/admin/main",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854009",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854009",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854009",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-1",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854029",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-7",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715126854029",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854029",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-7",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/error",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854029",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-7",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854029",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-7",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715126854029",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-7",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715127795907",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "index org.springframework.security.authentication.AnonymousAuthenticationToken anonymousUser",
+  "context" : "default"
+}{
+  "timestamp" : "1715127795950",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "newMap -> 8",
+  "context" : "default"
+}{
+  "timestamp" : "1715127795950",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.controller.IndexController",
+  "message" : "news count!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 7",
+  "context" : "default"
+}{
+  "timestamp" : "1715127795953",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715127795907",
+  "context" : "default"
+}{
+  "timestamp" : "1715127795954",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/",
+  "context" : "default"
+}{
+  "timestamp" : "1715127795954",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715127795954",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715127795954",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-10",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969425",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715127969425",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969425",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/auth/admin/main",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969426",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969426",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969426",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-3",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969441",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Time: 1715127969441",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969442",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request URL: http://localhost:8081/error",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969442",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Request Method: GET",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969442",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Client IP: 0:0:0:0:0:0:0:1",
+  "context" : "default"
+}{
+  "timestamp" : "1715127969442",
+  "level" : "INFO",
+  "thread" : "http-nio-8081-exec-8",
+  "logger" : "imyeom_lck.common.advisor.RequestAdvisor",
+  "message" : "Session ID: c39ba3f3-07e9-46ea-ad50-3880a7fe5498",
+  "context" : "default"
+}{
+  "timestamp" : "1715128063982",
+  "level" : "INFO",
+  "thread" : "File Watcher",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener",
+  "message" : "Restarting due to 2083 class path changes (0 additions, 0 deletions, 2083 modifications)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128063988",
+  "level" : "INFO",
+  "thread" : "Thread-5",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Stopping ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128064767",
+  "level" : "INFO",
+  "thread" : "Thread-5",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715128064771",
+  "level" : "INFO",
+  "thread" : "Thread-5",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1715128064781",
+  "level" : "INFO",
+  "thread" : "Thread-5",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128064945",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 8456 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128064946",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065334",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065334",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065382",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 47 ms. Found 18 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065385",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065385",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Redis repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065394",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.board.persistence.jpa.JpaBoardRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065394",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.comment.persistence.jpa.JpaCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.hottime.persistence.jpa.CouponRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.league.persistence.jpa.LeagueRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberPredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaSignUpRequestRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.merchandise.persistence.jpa.MerchandiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.player.persistence.jpa.PlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065395",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.pointusage.persistence.jpa.PointUsageRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065396",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.PredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065396",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.VotedUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065396",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.rank.persistence.JpaRankRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065396",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.role.persistence.jpa.JpaRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065396",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamPlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065396",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065396",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065623",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 8081 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065624",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065624",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065624",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065656",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065657",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 708 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065701",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-2 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065704",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46b986ba",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065705",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-2 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065730",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065734",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065740",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065742",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065742",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1715128065978",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128066049",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715128066581",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "context" : "default"
+}{
+  "timestamp" : "1715128067170",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a1d071e, org.springframework.security.web.session.ForceEagerSessionCreationFilter@3b76d40, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6053d85c, org.springframework.security.web.context.SecurityContextHolderFilter@68765c3a, org.springframework.security.web.header.HeaderWriterFilter@68a08855, org.springframework.web.filter.CorsFilter@778ba542, org.springframework.web.filter.CorsFilter@778ba542, org.springframework.security.web.authentication.logout.LogoutFilter@64a894ff, imyeom_lck.auth.filter.CustomAuthenticationFilter@4d96acc8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7b7bafc7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d925bc6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@611c9801, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7e22ec39, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58b348cb, org.springframework.security.web.session.SessionManagementFilter@69b6c20d, org.springframework.security.web.access.ExceptionTranslationFilter@179e53e9, org.springframework.security.web.access.intercept.AuthorizationFilter@4cbe8cd9]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128067175",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.config.annotation.web.builders.WebSecurity",
+  "message" : "You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@1bb21b8a. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128067176",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@1bb21b8a",
+  "context" : "default"
+}{
+  "timestamp" : "1715128067541",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+  "message" : "LiveReload server is running on port 35729",
+  "context" : "default"
+}{
+  "timestamp" : "1715128067555",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128067557",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port 8081 (http) with context path ''",
+  "context" : "default"
+}{
+  "timestamp" : "1715128067561",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Started ImyeomsuLckApplication in 2.712 seconds (process running for 1330.935)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128067563",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener",
+  "message" : "Condition evaluation unchanged",
+  "context" : "default"
+}{
+  "timestamp" : "1715128119956",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Closing JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715128119956",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-2 - Shutdown initiated...",
+  "context" : "default"
+}{
+  "timestamp" : "1715128119957",
+  "level" : "INFO",
+  "thread" : "SpringApplicationShutdownHook",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-2 - Shutdown completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128126272",
+  "level" : "INFO",
+  "thread" : "background-preinit",
+  "logger" : "org.hibernate.validator.internal.util.Version",
+  "message" : "HV000001: Hibernate Validator 8.0.1.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1715128126333",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Starting ImyeomsuLckApplication using Java 17 with PID 10752 (C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck\\build\\classes\\java\\main started by Admin in C:\\Users\\Admin\\Documents\\GitHub\\imyeomsu-lck)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128126335",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "The following 1 profile is active: \"local\"",
+  "context" : "default"
+}{
+  "timestamp" : "1715128126399",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+  "message" : "Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable",
+  "context" : "default"
+}{
+  "timestamp" : "1715128126400",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+  "message" : "For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127561",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127563",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127797",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 224 ms. Found 18 JPA repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127822",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127826",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Redis repositories in DEFAULT mode.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127850",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.board.persistence.jpa.JpaBoardRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127850",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.comment.persistence.jpa.JpaCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127851",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.hottime.persistence.jpa.CouponRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127851",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.league.persistence.jpa.LeagueRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127851",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.match_schedule.persistence.jpa.JpaMatchScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127852",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberPredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127853",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127853",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaMemberRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127857",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.member.persistence.jpa.JpaSignUpRequestRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127858",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.merchandise.persistence.jpa.MerchandiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127858",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.player.persistence.jpa.PlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127858",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.pointusage.persistence.jpa.PointUsageRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127859",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.PredictRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127859",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.predict.persistence.jpa.VotedUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127860",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.rank.persistence.JpaRankRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127860",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.role.persistence.jpa.JpaRoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127860",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamPlayerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127861",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface imyeom_lck.team.persistence.jpa.TeamRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "context" : "default"
+}{
+  "timestamp" : "1715128127861",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128128873",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port 8081 (http)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128128883",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128128884",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128128885",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.19]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128128942",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "context" : "default"
+}{
+  "timestamp" : "1715128128943",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 2542 ms",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129049",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Starting...",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129247",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.pool.HikariPool",
+  "message" : "HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@676531fb",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129249",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "com.zaxxer.hikari.HikariDataSource",
+  "message" : "HikariPool-1 - Start completed.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129347",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129420",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.Version",
+  "message" : "HHH000412: Hibernate ORM core version 6.4.4.Final",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129468",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.cache.internal.RegionFactoryInitiator",
+  "message" : "HHH000026: Second-level cache disabled",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129725",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129783",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128129784",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead",
+  "context" : "default"
+}{
+  "timestamp" : "1715128130803",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "context" : "default"
+}{
+  "timestamp" : "1715128130922",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "context" : "default"
+}{
+  "timestamp" : "1715128131451",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.data.jpa.repository.query.QueryEnhancerFactory",
+  "message" : "Hibernate is in classpath; If applicable, HQL parser will be used.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128132353",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "context" : "default"
+}{
+  "timestamp" : "1715128133240",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@587db274, org.springframework.security.web.session.ForceEagerSessionCreationFilter@6ed30b6f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1478eb0, org.springframework.security.web.context.SecurityContextHolderFilter@36ff9a0b, org.springframework.security.web.header.HeaderWriterFilter@2ae90737, org.springframework.web.filter.CorsFilter@453bb1a9, org.springframework.web.filter.CorsFilter@453bb1a9, org.springframework.security.web.authentication.logout.LogoutFilter@57e075d5, imyeom_lck.auth.filter.CustomAuthenticationFilter@729b9117, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62d98e9a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@470e976c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@24285d07, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@aa87555, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78954328, org.springframework.security.web.session.SessionManagementFilter@5ddcf49d, org.springframework.security.web.access.ExceptionTranslationFilter@7f2ec9d9, org.springframework.security.web.access.intercept.AuthorizationFilter@3719c646]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128133249",
+  "level" : "WARN",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.config.annotation.web.builders.WebSecurity",
+  "message" : "You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@6a964b4. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.",
+  "context" : "default"
+}{
+  "timestamp" : "1715128133249",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@6a964b4",
+  "context" : "default"
+}{
+  "timestamp" : "1715128134091",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+  "message" : "LiveReload server is running on port 35729",
+  "context" : "default"
+}{
+  "timestamp" : "1715128134113",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"http-nio-8081\"]",
+  "context" : "default"
+}{
+  "timestamp" : "1715128134133",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port 8081 (http) with context path ''",
+  "context" : "default"
+}{
+  "timestamp" : "1715128134142",
+  "level" : "INFO",
+  "thread" : "restartedMain",
+  "logger" : "imyeom_lck.ImyeomsuLckApplication",
+  "message" : "Started ImyeomsuLckApplication in 8.798 seconds (process running for 10.148)",
+  "context" : "default"
+}
