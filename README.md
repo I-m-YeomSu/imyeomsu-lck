@@ -15,11 +15,49 @@
 ---
 # 서비스 설명
 ## 사용 기술 스택
+### 프론트 엔드
+html
+css
+javascript
+bootstrap
+jquery
+thymeleaf
+
+### 백엔드
+spring boot
+spring security
+spring data jpa
+queryDsl
+
+
+### 형상 관리
+git
+github
+
+### 데이터베이스
+Mysql
+Redis
+
+### 테스트
+junit5
+mockito
+jacoco
+coverrals
+
+### 로그
+logstash
+logback
+slf4j
+
+### 기타 
+jitpack
+
 
 ## 인증/인가
 - 세션을 이용한 사용자 로그인 유지
 - 분산 환경에서 서버가 여러대인 경우를 고려한 세션 스토리지 도입
 - 세션 스토리지로 Redis 사용
+
 ### session storage redis
 - 
 
@@ -30,6 +68,8 @@
 ## 트러블 슈팅
 ### 1. 동시성 이슈 해결 
 - [우리는 왜 레디스를 도입해서 분산 환경에서의 동시성 이슈를 해결했을까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/83)
+- [싱글 쓰레드인 레디스를 이용한 동시성 이슈 해결 방법](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/84)
+
 ----
 
 # 인프라 설명
