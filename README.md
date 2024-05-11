@@ -58,8 +58,8 @@ jitpack
 - 분산 환경에서 서버가 여러대인 경우를 고려한 세션 스토리지 도입
 - 세션 스토리지로 Redis 사용
 
-### session storage redis
-- 
+### 세션 유지를 위한 Redis(Session Storage)
+- [분산 환경에서 세션 유지를 위해서 우리는 왜 redis를 선택했으며, 세션 스토리지 방식을 채택했을까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/85)
 
 ## 배치
 
