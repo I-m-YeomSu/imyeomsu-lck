@@ -1,5 +1,5 @@
 # Imyeomsu - Lck X 우리은행 
-클라우드 환경에서 고가용성 고려한 탄력적 서비스를 위한 LCK X 우리은행 ImYeomSu 팀의 서비스 입니다.
+클라우드 환경에서 고가용성을 고려한 탄력적 서비스, LCK X 우리은행 ImYeomSu 팀의 서비스 입니다.
 ## ImYeomSu Server
 - [ImYeomsu - crawling Server](https://github.com/I-m-YeomSu/imyeomsu-crawling)
 - [ImYeomsu - Batch Server](https://github.com/I-m-YeomSu/imyeomsu-batch)
