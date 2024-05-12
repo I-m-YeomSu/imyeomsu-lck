@@ -1,13 +1,10 @@
-# imyeomsu
-##  Imyeomsu - Lck X 우리은행 
+# Imyeomsu - Lck X 우리은행 
 클라우드 환경에서 고가용성 고려한 탄력적 서비스를 위한 LCK X 우리은행 ImYeomSu 팀의 서비스 입니다.
----
-# ImYeomSu Server
-- [크롤링](https://github.com/I-m-YeomSu/imyeomsu-crawling)
-- [배치 서버](https://github.com/I-m-YeomSu/imyeomsu-batch)
-- [코드 재사용성을 위한 공통 모듈](https://github.com/I-m-YeomSu/imyeomsu-lck-common-utils)
+## ImYeomSu Server
+- [ImYeomsu - crawling Server](https://github.com/I-m-YeomSu/imyeomsu-crawling)
+- [ImYeomsu - Batch Server](https://github.com/I-m-YeomSu/imyeomsu-batch)
+- [ImYeomsu - Common Utils Server](https://github.com/I-m-YeomSu/imyeomsu-lck-common-utils)
 
----
 # Application
 ## Application Architecture
 ![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/1625c015-3eab-4c6a-97c5-b7932ef1678d)
@@ -82,9 +79,6 @@
 - 기존의 싱글 스레드를 제공하는 레디스를 세션 스토리지로 사용하고 있어 추가적인 인프라 구성이 없어 이를 동시성 문제 해결에 도입하고자 했다. 그러나 이 역시 분산 환경에서는 문제가 되었고 추가적으로 분산 환경에서의 동시성 문제 해결을 위해서 레디스 분산 락을 이용해서 이를 해결했다.
 - [싱글 쓰레드인 레디스를 이용한 동시성 이슈 해결 방법 - 동시성 문제 해결 (단일 서버)](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/84)
 - [우리는 왜 레디스를 도입해서 분산 환경에서의 동시성 이슈를 해결했을까? - 동시성 문제 해결 (분산 서버)](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/83)
-
-
-----
 
 # Infra
 ## System Architecture
