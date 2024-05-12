@@ -100,7 +100,7 @@
 ## Log and Monitoring - 로그와 모니터링 
 ### 1. Application Log and Monitoring
 ![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/a36c826e-8201-44f6-89b1-97b7d805e7b2)
-- [우리는 어떻게 애플리케이션 레벌의 로그를 정제하고 사용했을까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/86)
+- [우리는 어떻게 애플리케이션 레벨의 로그를 정제하고 사용했을까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/86)
 
 
 ## 대용량 트래픽 해결
