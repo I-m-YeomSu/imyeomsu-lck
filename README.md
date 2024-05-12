@@ -8,17 +8,10 @@
 - [코드 재사용성을 위한 공통 모듈](https://github.com/I-m-YeomSu/imyeomsu-lck-common-utils)
 
 ---
-# 아키텍처
+# 서비스 설명
 ## 애플리케이션 아키텍처
 ![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/1625c015-3eab-4c6a-97c5-b7932ef1678d)
 
-
-## 시스템 아키텍처
-![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/0bed8ca7-52c9-4991-8ed7-3fe22dbd5afd)
-
-
----
-# 서비스 설명
 ## 사용 기술 스택 - 서비스
 ### 프론트 엔드
 <div>
@@ -94,7 +87,10 @@
 
 ----
 
-# 인프라 설명
+# 인프라
+## 시스템 아키텍처
+![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/0bed8ca7-52c9-4991-8ed7-3fe22dbd5afd)
+
 ## 우리는 왜 EKS를 선택했을까?
 - [임염수 팀이 EKS를 선택한 이유는 무엇일까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/87)
 ---
