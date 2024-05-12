@@ -96,7 +96,7 @@
 
 # 인프라 설명
 ## 우리는 왜 EKS를 선택했을까?
-
+- [임염수 팀이 EKS를 선택한 이유는 무엇일까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/87)
 ---
 # 배포
 ## CI/CD 플로우
