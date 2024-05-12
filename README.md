@@ -84,6 +84,9 @@ jitpack
 ---
 # 로그와 모니터링
 ## 로그 모니터링 플로우
+### 1. 애플리케이션 로그 플로우 
+![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/a36c826e-8201-44f6-89b1-97b7d805e7b2)
+- [우리는 어떻게 애플리케이션 레벌의 로그를 정제하고 사용했을까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/86)
 
 ---
 # 트러블 슈팅
