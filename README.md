@@ -100,7 +100,8 @@
 ---
 # 배포
 ## CI/CD 플로우
-
+![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/0e7ff775-65fb-46d9-8f01-f8f891c05e67)
+- [EKS 환경에서의 CI/CD는 어떻게 진행했을까?]()
 ## 배포 플로우
 
 ---
