@@ -57,6 +57,7 @@
 
 ### ETC - 기타 
 <img src="https://img.shields.io/badge/-Jitpack-33485C?style=flat"/>
+[WBS](https://docs.google.com/spreadsheets/d/1I1WK-1JCvNs0hG4PDDv7Ypw4TtAw7-VgCnqHPtyDScw/edit#gid=0)
 
 ### Collaboration tool - 협업 툴
 <div>
