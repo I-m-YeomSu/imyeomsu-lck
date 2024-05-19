@@ -87,7 +87,6 @@
 ## 우리는 왜 EKS를 선택했을까?
 - [임염수 팀이 EKS를 선택한 이유는 무엇일까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/87)
 
-
 ## CI/CD
 ### 1. CI/CD Flow
 ![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/0e7ff775-65fb-46d9-8f01-f8f891c05e67)
@@ -102,6 +101,8 @@
 ![image](https://github.com/I-m-YeomSu/imyeomsu-lck/assets/81970382/a36c826e-8201-44f6-89b1-97b7d805e7b2)
 - [우리는 어떻게 애플리케이션 레벨의 로그를 정제하고 사용했을까?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/86)
 
+### 2. System Metric 
+- [우리는 어떻게 메트릭 정보를 모니터링 했고 추후 어떻게 더 발전시켜 반영할 것인가?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/88)
 
 ## 대용량 트래픽 해결
 
