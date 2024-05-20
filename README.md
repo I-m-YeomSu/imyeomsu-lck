@@ -4,6 +4,10 @@
 - [ImYeomsu - crawling Server](https://github.com/I-m-YeomSu/imyeomsu-crawling)
 - [ImYeomsu - Batch Server](https://github.com/I-m-YeomSu/imyeomsu-batch)
 - [ImYeomsu - Common Utils Server](https://github.com/I-m-YeomSu/imyeomsu-lck-common-utils)
+## ImYeomSu Docs
+- [임염수팀 WBS](https://docs.google.com/spreadsheets/d/1I1WK-1JCvNs0hG4PDDv7Ypw4TtAw7-VgCnqHPtyDScw/edit#gid=0)
+- [임염수팀 ERD](https://www.erdcloud.com/d/bgob3mffRuqrbbxDd)
+
 
 # Application
 ## Application Architecture
@@ -54,10 +58,8 @@
   <img src="https://img.shields.io/badge/-Slf4j-189C01?style=flat" />
 </div>
 
-
 ### ETC - 기타 
 <img src="https://img.shields.io/badge/-Jitpack-33485C?style=flat"/>
-[WBS](https://docs.google.com/spreadsheets/d/1I1WK-1JCvNs0hG4PDDv7Ypw4TtAw7-VgCnqHPtyDScw/edit#gid=0)
 
 ### Collaboration tool - 협업 툴
 <div>
