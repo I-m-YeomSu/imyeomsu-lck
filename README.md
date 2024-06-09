@@ -114,6 +114,9 @@
 ### 2. System Metric 
 - [우리는 어떻게 메트릭 정보를 모니터링 했고 추후 어떻게 더 발전시켜 반영할 것인가?](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/88)
 
+### 3. Kubernetes Monitoring Dashboard
+- [쿠버네티스 대시보드 사용기]()
+
 ## 대용량 트래픽 해결
 
 ## 테스트 커버리지
