@@ -116,6 +116,7 @@
 
 ### 3. Kubernetes Monitoring Dashboard
 - [쿠버네티스 대시보드 사용기]()
+- [쿠버네티스 대시보드와 관련된 트러블 슈팅](https://github.com/I-m-YeomSu/imyeomsu-lck/issues/92)
 
 ## 대용량 트래픽 해결
 
